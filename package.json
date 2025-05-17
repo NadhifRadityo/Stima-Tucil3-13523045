@@ -1,0 +1,29 @@
+{
+	"name": "stima-tucil3-13523045",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "set NODE_ENV=production&& node index.mjs",
+		"dev": "set NODE_ENV=development&& nodemon --ignore *.json --ignore public/** --exec node index.mjs",
+		"watch-css": "postcss public/main-template.css -o public/main.css --watch",
+		"build-css": "postcss public/main-template.css -o public/main.css"
+	},
+	"author": "Nadhif Radityo",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@hono/node-server": "^1.14.1",
+		"@hono/zod-validator": "^0.5.0",
+		"console-stamp": "^3.1.2",
+		"ejs": "^3.1.10",
+		"hono": "^4.7.9",
+		"zod": "^3.24.4"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.7",
+		"nodemon": "^3.1.10",
+		"postcss": "^8.5.3",
+		"postcss-cli": "^11.0.1",
+		"tailwindcss": "^4.1.7",
+		"tw-animate-css": "^1.3.0"
+	}
+}

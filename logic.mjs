@@ -44,15 +44,18 @@ export class Solver {
 			/** @type {[number[], number[]][]} */
 			const newStatesCars = [];
 			/** @type {Set<number>} */
-			const visitedCar = new Set();
 			const allCars = state.getAllCars();
 			const width = state.getWidth();
 			const fields = state.getFields();
+			// Optimisation: Do not compute car positions. Iterating the fields and storing the visited car is faster.
+			// Optimisation: Check the visited cars by bit fields. `Set` is slower.
+			let visitedCars = 0;
 			for(let i = 0; i < fields.length; i++) {
-				if(fields[i] == FIELD_EMPTY || fields[i] == FIELD_WALL) continue;
-				const carId = fields[i] - 1;
-				if(visitedCar.has(carId)) continue;
-				visitedCar.add(carId);
+				const fieldValue = fields[i];
+				if(fieldValue == FIELD_EMPTY || fieldValue == FIELD_WALL) continue;
+				const carId = fieldValue - 1;
+				if(visitedCars & (1 << carId)) continue;
+				visitedCars |= (1 << carId);
 				const car = allCars[carId];
 				const x = i % width;
 				const y = Math.floor(i / width);
@@ -73,7 +76,7 @@ export class Solver {
 			toAddStateQueue.push([this.#heuristicCalculator(expandedState), expandedState]);
 			this.#stateQueueHashes.add(expandedState.hashCode());
 		}
-		// Optimization: Sort the newly added states, and merge sort to the queue.
+		// Optimisation: Sort the newly added states, and merge sort to the queue.
 		// The premise is, the newly added states will always be smaller than the existing states.
 		// Because inserting to queue first and sort the queue, will unnecessarily compare sorted entries.
 		toAddStateQueue.sort(([a], [b]) => a - b);
@@ -111,7 +114,7 @@ export const heuristicCarBlocked = state => {
 	const height = state.getHeight();
 	const fields = state.getFields();
 	const primaryCar = state.getAllCars()[0];
-	const primaryCarPosition = fields.indexOf(FIELD_PRIMARY_CAR); // Premise: Car anchor must be on top-left edge
+	const primaryCarPosition = state.getPrimaryCarPosition();
 	const primaryCarPositionX = primaryCarPosition % width;
 	const primaryCarPositionY = Math.floor(primaryCarPosition / width);
 	const exitPosition = state.getExitPosition();
@@ -122,13 +125,15 @@ export const heuristicCarBlocked = state => {
 		if(primaryCarPositionX > exitPositionX) {
 			for(let i = primaryCarPositionX; i >= 0; i--) {
 				const index = primaryCarPositionY * width + i;
-				if(fields[index] == FIELD_EMPTY || fields[index] == FIELD_PRIMARY_CAR) continue;
+				const fieldValue = fields[index];
+				if(fieldValue == FIELD_EMPTY || fieldValue == FIELD_PRIMARY_CAR) continue;
 				carBlocked++;
 			}
 		} else {
 			for(let i = primaryCarPositionX; i < width; i++) {
 				const index = primaryCarPositionY * width + i;
-				if(fields[index] == FIELD_EMPTY || fields[index] == FIELD_PRIMARY_CAR) continue;
+				const fieldValue = fields[index];
+				if(fieldValue == FIELD_EMPTY || fieldValue == FIELD_PRIMARY_CAR) continue;
 				carBlocked++;
 			}
 		}
@@ -137,13 +142,15 @@ export const heuristicCarBlocked = state => {
 		if(primaryCarPositionY > exitPositionY) {
 			for(let i = primaryCarPositionY; i >= 0; i--) {
 				const index = i * width + primaryCarPositionX;
-				if(fields[index] == FIELD_EMPTY || fields[index] == FIELD_PRIMARY_CAR) continue;
+				const fieldValue = fields[index];
+				if(fieldValue == FIELD_EMPTY || fieldValue == FIELD_PRIMARY_CAR) continue;
 				carBlocked++;
 			}
 		} else {
 			for(let i = primaryCarPositionY; i < height; i++) {
 				const index = i * width + primaryCarPositionX;
-				if(fields[index] == FIELD_EMPTY || fields[index] == FIELD_PRIMARY_CAR) continue;
+				const fieldValue = fields[index];
+				if(fieldValue == FIELD_EMPTY || fieldValue == FIELD_PRIMARY_CAR) continue;
 				carBlocked++;
 			}
 		}
@@ -175,6 +182,7 @@ export const FIELD_PRIMARY_CAR = 1;
 export const HORIZONTAL = 0;
 export const VERTICAL = 1;
 
+// `State` is effectively constant. You should cache the computation over `State` whenever possible.
 export class State {
 	/**
 	 * 
@@ -230,17 +238,19 @@ export class State {
 	/** @type {number} */
 	#depth;
 	/** @type {number} */
-	#width;
+	#width; // Optimisation: Positions are encoded as (y * width + x). Applies for carPositions, walls, and exitPosition.
 	/** @type {number} */
 	#height;
 	/** @type {boolean} */
-	#isDifference;
+	#isDifference; // Optimisation: Store the difference instead of copying all objects.
 	/** @type {Car[]} */
-	#allCars
+	#allCars; // Optimisation: Avoid traversing up to the root node.
 	/** @type {number[]} */
 	#carIds;
 	/** @type {number[]} */
 	#carPositions;
+	/** @type {number} */
+	#primaryCarPosition; // Optimisation: Heuristic needs this. Instead of searching the fields, just cache when constructing state.
 	/** @type {number[]} */
 	#walls;
 	/** @type {number} */
@@ -271,6 +281,7 @@ export class State {
 		this.#allCars = allCars;
 		this.#carIds = allCars.map(c => c.id);
 		this.#carPositions = carPositions;
+		this.#primaryCarPosition = carPositions[0];
 		this.#walls = walls;
 		this.#exitPosition = exitPosition;
 		this.#fields = new Uint8Array(width * height);
@@ -302,6 +313,7 @@ export class State {
 		this.#allCars = parent.#allCars;
 		this.#carIds = carIds;
 		this.#carPositions = carPositions;
+		this.#primaryCarPosition = parent.#primaryCarPosition;
 		this.#walls = parent.#walls;
 		this.#exitPosition = parent.#exitPosition;
 		this.#fields = new Uint8Array(parent.#fields);
@@ -333,6 +345,8 @@ export class State {
 				throw new Error(`Cannot place Car#${car.id} at position (${x}, ${y}) with direction ${car.direction} and size ${car.size}.\n${this.toString()}`);
 			}
 			this.#fillField(car.direction, newPosition, car.size, car.id + 1);
+			if(car.id == 0)
+				this.#primaryCarPosition = newPosition;
 		}
 		if(hintPositionsCount == this.#carIds.length)
 			this.#calculateProgressiveHashCode();
@@ -368,6 +382,9 @@ export class State {
 	getCarPositions() {
 		return this.#carPositions;
 	}
+	getPrimaryCarPosition() {
+		return this.#primaryCarPosition;
+	}
 	getWalls() {
 		return this.#walls;
 	}
@@ -379,9 +396,15 @@ export class State {
 	}
 	#calculateHashCode() {
 		let hash = 0x811c9dc5;
-		for(let i = 0; i < this.#fields.length; i++) {
-			hash ^= this.#fields[i];
-			hash = (hash * 0x01000193) >>> 0;
+		// Optimisation: This hashCode is not 100% correct. But that's what we sacrifice to half the computation.
+		// Optimisation: Compute the hashCode over checkered board pattern to reduce clashes.
+		// This hash is safe as long as there's no one-sized car.
+		for(let y = 0; y < this.#height; y++) {
+			for(let x = y % 2 == 0 ? 0 : 1; x < this.#width; x++) {
+				const i = y * this.#width + x;
+				hash ^= this.#fields[i];
+				hash = (hash * 0x010193) >>> 0;
+			}
 		}
 		this.#hashCode = hash;
 	}
@@ -389,7 +412,7 @@ export class State {
 		this.#calculateHashCode();
 	}
 	/** @type {number[]} */
-	#__cachedComputedCarPositions = null;
+	#__cachedComputedCarPositions = null; // Optimisation: Cache.
 	getComputedCarPositions() {
 		if(this.#__cachedComputedCarPositions != null)
 			return this.#__cachedComputedCarPositions;
@@ -405,7 +428,7 @@ export class State {
 		return this.#__cachedComputedCarPositions = computedCars;
 	}
 	/** @type {string?} */
-	#__cachedStepDescription = null;
+	#__cachedStepDescription = null; // Optimisation: Cache.
 	getStepDescription() {
 		if(this.#__cachedStepDescription != null)
 			return this.#__cachedStepDescription;
@@ -430,7 +453,7 @@ export class State {
 		return this.#__cachedStepDescription = descriptions.join(" ");
 	}
 	/** @type {string?} */
-	#__cachedMoveDescription = null;
+	#__cachedMoveDescription = null; // Optimisation: Cache.
 	getMoveDescription() {
 		if(this.#__cachedMoveDescription != null)
 			return this.#__cachedMoveDescription;
@@ -604,17 +627,45 @@ export function parseBoardInput(inputText) {
 	const [width, height] = lines[0].split(" ").map(s => parseInt(s));
 	const carCount = parseInt(lines[1], 10);
 	const boardLines = lines.slice(2);
+	if(isNaN(width))
+		throw new Error("Width is not a number");
+	if(isNaN(height))
+		throw new Error("Height is not a number");
+	if(isNaN(carCount))
+		throw new Error("Car count is not a number");
 	const carCells = new Map();
 	let exitPosition = null;
+	const walls = [];
 	for(let y = 0; y < boardLines.length; y++) {
 		for(let x = 0; x < boardLines[y].length; x++) {
 			const ch = boardLines[y][x];
-			if(ch == null || ch == "." || ch == "K") continue;
+			if(ch == null || ch == " " || ch == ".") continue;
+			if(ch == "K") {
+				if(exitPosition != null)
+					throw new Error("Multiple 'K' characters found");
+				exitPosition = [
+					Math.max(0, Math.min(width - 1, x)),
+					Math.max(0, Math.min(height - 1, y))
+				];
+				continue;
+			}
+			if(ch == "#") {
+				walls.push([x, y]);
+				continue;
+			}
+			if(!/^[A-Z]+$/g.test(ch))
+				throw new Error(`Unexpected character ${ch}`);
 			if(!carCells.has(ch))
 				carCells.set(ch, []);
 			carCells.get(ch).push([x, y]);
 		}
 	}
+	if(exitPosition == null)
+		throw new Error("No exit 'K' found");
+	if(exitPosition[0] != width - 1 && exitPosition[1] != height - 1)
+		throw new Error("Exit position is not on the edge");
+	if(carCells.size != carCount)
+		throw new Error(`Unexpected car count, got ${carCells.size} expected ${carCount}`);
 	const cars = [];
 	for(const [ch, cells] of carCells.entries()) {
 		cells.sort(([x1, y1], [x2, y2]) => y1 - y2 || x1 - x2);
@@ -623,40 +674,23 @@ export function parseBoardInput(inputText) {
 		const vertical = cells.every(([x, y]) => x == x0);
 		const size = cells.length;
 		if(!horizontal && !vertical)
-			throw new Error(`Piece ${ch} has inconsistent shape`);
+			throw new Error(`Car piece ${ch} has inconsistent shape`);
 		cars.push({
 			symbol: ch,
 			direction: horizontal ? HORIZONTAL : VERTICAL,
 			positionX: x0,
 			positionY: y0,
-			size
+			size: size
 		});
 	}
-	const primaryIndex = cars.findIndex(c => {
-		const isP = [...carCells.entries()].find(([k]) => k == "P");
-		if(!isP) throw new Error("No primary piece 'P' found");
-		return carCells.get("P")[0][0] == c.positionX && carCells.get("P")[0][1] == c.positionY;
-	});
+	const primaryIndex = cars.findIndex(c => c.symbol == "P");
+	if(primaryIndex == -1)
+		throw new Error("Cannot find primary car piece 'P'");
 	if(primaryIndex > 0) {
 		const temp = cars[0];
 		cars[0] = cars[primaryIndex];
 		cars[primaryIndex] = temp;
 	}
-	for(let y = 0; y < boardLines.length; y++) {
-		for(let x = 0; x < boardLines[y].length; x++) {
-			if(boardLines[y][x] == "K") {
-				x = Math.max(0, Math.min(width - 1, x));
-				y = Math.max(0, Math.min(height - 1, y));
-				exitPosition = [x, y];
-				break;
-			}
-		}
-		if(exitPosition)
-			break;
-	}
-	if(exitPosition == null)
-		throw new Error("No exit 'K' found");
-	const walls = [];
 	return {
 		width: width,
 		height: height,

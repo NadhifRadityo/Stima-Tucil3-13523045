@@ -7,7 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-600: oklch(54.6% 0.245 262.881);
@@ -187,8 +189,14 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .absolute {
     position: absolute;
+  }
+  .fixed {
+    position: fixed;
   }
   .relative {
     position: relative;
@@ -199,11 +207,20 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .isolate {
+    isolation: isolate;
+  }
   .z-0 {
     z-index: 0;
+  }
+  .z-10 {
+    z-index: 10;
   }
   .col-start-1 {
     grid-column-start: 1;
@@ -246,6 +263,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .w-fit {
+    width: fit-content;
   }
   .w-full {
     width: 100%;
@@ -341,6 +361,12 @@
   .bg-green-300 {
     background-color: var(--color-green-300);
   }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -355,6 +381,12 @@
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .p-10 {
+    padding: calc(var(--spacing) * 10);
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
@@ -412,6 +444,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .opacity-50 {
+    opacity: 50%;
+  }
   .mix-blend-difference {
     mix-blend-mode: difference;
   }
@@ -430,6 +465,10 @@
   .duration-75 {
     --tw-duration: 75ms;
     transition-duration: 75ms;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
   }
   .running {
     animation-play-state: running;
@@ -491,6 +530,13 @@
       }
     }
   }
+  .hover\:bg-red-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-700);
+      }
+    }
+  }
   .disabled\:cursor-default {
     &:disabled {
       cursor: default;
@@ -511,9 +557,19 @@
       background-color: var(--color-gray-500);
     }
   }
+  .disabled\:bg-red-400 {
+    &:disabled {
+      background-color: var(--color-red-400);
+    }
+  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:p-6 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 6);
     }
   }
 }

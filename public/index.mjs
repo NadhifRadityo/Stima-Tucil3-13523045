@@ -24,6 +24,7 @@ const reconstructCarPositions = (board, solutionSteps) => {
 };
 
 const ApplicationElement = () => {
+	const boardElementRef = useRef(null);
 	const [boardText, setBoardText] = useState(`6 6
 11
 AAB..F
@@ -69,6 +70,103 @@ LLJMM.`);
 		setStepPositions(stepPositions);
 		setCurrentStepPosition(stepPositions.length - 1);
 	};
+
+	const stepPositionsRef = useRef(null);
+	stepPositionsRef.current = stepPositions;
+	const handleSubmitRef = useRef(null);
+	handleSubmitRef.current = handleSubmit;
+	const waitRerendersRef = useRef(new Set());
+	[...waitRerendersRef.current].forEach(r => r());
+	waitRerendersRef.current.clear();
+	const waitRerender = () => new Promise(r => waitRerendersRef.current.add(r));
+	const [showRecorder, setShowRecorder] = useState(false);
+	const [recording, setRecording] = useState(false);
+	const recorderVideoRef = useRef(null);
+	useLayoutEffect(() => {
+		setShowRecorder(globalThis.showRecorder ?? false);
+		const handle = setInterval(() => {
+			setShowRecorder(globalThis.showRecorder ?? false);
+		}, 1000);
+		return () => {
+			clearInterval(handle);
+		};
+	}, []);
+	useLayoutEffect(() => {
+		if(!recording) {
+			if(recorderVideoRef.current != null) {
+				recorderVideoRef.current.abortController?.abort(new Error("Aborted"));
+				recorderVideoRef.current.abortController = null;
+				recorderVideoRef.current.srcObject?.getTracks().forEach(track => track.stop());
+				recorderVideoRef.current.srcObject = null;
+			}
+			return;
+		}
+		let stream_;
+		let abortController_;
+		(async () => {
+			const directoryHandle = await showDirectoryPicker({ id: "rushhour-recorder", mode: "readwrite" });
+			const stream = stream_ = await navigator.mediaDevices.getDisplayMedia({
+				video: {
+					displaySurface: "window",
+				},
+				audio: false,
+				preferCurrentTab: true
+			});
+			const [track] = stream.getVideoTracks();
+			recorderVideoRef.current.srcObject = stream;
+			const abortController = abortController_ = new AbortController();
+			const abortPromise = new Promise((_, r) => abortController.signal.addEventListener("abort", r));
+			recorderVideoRef.current.abortController = abortController;
+			const puzzles = boardText.split("=====================================\n").filter(p => p.trim() != "");
+			for(const puzzle of puzzles) {
+				const lines = puzzle.split("\n");
+				const name = lines.shift().trim();
+				const board = lines.join("\n");
+				const fileHandle = await Promise.race([directoryHandle.getFileHandle(`${name}_${algorithmName}_${heuristicName}.mp4`, { create: true }), abortPromise]);
+				const fileWritable = await Promise.race([fileHandle.createWritable(), abortPromise]);
+				setBoardText(board);
+				setAlgorithmName(algorithmName);
+				setHeuristicName(heuristicName);
+				await Promise.race([waitRerender(), abortPromise]);
+				await Promise.race([handleSubmitRef.current(), abortPromise]);
+				setCurrentStepPosition(0);
+				await Promise.race([waitRerender(), abortPromise]);
+				recorderVideoRef.current.style.width = `${boardElementRef.current.parentElement.offsetWidth}px`;
+				recorderVideoRef.current.style.height = `${boardElementRef.current.parentElement.offsetHeight}px`;
+				boardElementRef.current.parentElement.scrollIntoViewIfNeeded();
+				const restrictionTarget = await RestrictionTarget.fromElement(boardElementRef.current.parentElement);
+				await Promise.race([track.restrictTo(restrictionTarget), abortPromise]);
+				const writePromises = [];
+				const recorder = new MediaRecorder(stream);
+				recorder.addEventListener("dataavailable", e => writePromises.push(fileWritable.write(e.data)));
+				recorder.start();
+				const stopped = new Promise((resolve, reject) => {
+					recorder.addEventListener("stop", resolve);
+					recorder.addEventListener("error", reject);
+				});
+				await Promise.race([new Promise(r => setTimeout(r, 600)), stopped, abortPromise]);
+				for(let i = 1; i < stepPositionsRef.current.length; i++) {
+					setCurrentStepPosition(i);
+					await Promise.race([waitRerender(), stopped, abortPromise]);
+					await Promise.race([new Promise(r => setTimeout(r, 100)), stopped, abortPromise]);
+				}
+				await Promise.race([new Promise(r => setTimeout(r, 400)), stopped, abortPromise]);
+				if(recorder.state == "recording")
+					recorder.stop();
+				await Promise.race([stopped, abortPromise]);
+				await Promise.race([Promise.all(writePromises), abortPromise]);
+				await Promise.race([fileWritable.close(), abortPromise]);
+			}
+			setRecording(false);
+		})().catch(e => {
+			console.log(e);
+			setRecording(false);
+		});
+		return () => {
+			abortController_?.abort(new Error("Aborted"));
+			stream_?.getTracks().forEach(track => track.stop());
+		};
+	}, [recording]);
 	return html`
 		<div className="max-w-5xl mx-auto p-6 space-y-6">
 			<h1 className="text-3xl font-bold text-center">🚗 Rush Hour Puzzle Solver</h1>
@@ -130,6 +228,17 @@ LLJMM.`);
 					>
 						${isPending ? "⌛ Menjalankan solver..." : "🔍 Jalankan Solver"}
 					</button>
+					${showRecorder ? html`<${React.Fragment}>
+						<button
+							onClick=${() => setRecording(r => !r)}
+							className="w-full bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white py-2 px-4 rounded mt-2 cursor-pointer disabled:cursor-default"
+						>
+							${recording ? "🚫 Stop" : "🔴 Record"}
+						</button>
+						${recording ? html`
+							<video ref=${recorderVideoRef} className="z-10 fixed right-0 top-0 border opacity-50 pointer-events-none select-none" autoPlay />
+						` : null}
+					</${React.Fragment}>` : null}
 				</div>
 			</div>
 			${result && html`<${React.Fragment}>
@@ -179,8 +288,38 @@ LLJMM.`);
 								/>
 							</div>
 						</div>
-						<div>
-							<${BoardView} key=${JSON.stringify(result.board)} board=${result.board} carPositions=${stepPositions[currentStepPosition]} />
+						<div
+							className=${`mx-auto w-fit ${recording ? "p-10 bg-white" : ""}`}
+							style=${{ isolation: "isolate", transformStyle: "flat" }}
+						>
+							<${BoardView}
+								ref=${boardElementRef}
+								key=${JSON.stringify(result.board)}
+								board=${result.board}
+								carPositions=${stepPositions[currentStepPosition]}
+								animationDuration=${recording ? 0.1 : 0.5}
+							/>
+							${recording ? html`
+								<div className="bg-gray-100 p-4 rounded shadow text-sm" style=${{ width: `${64 * result.board.width}px` }}>
+									<p><strong>Waktu eksekusi:</strong> ${result.duration}ms</p>
+									<p><strong>Tick count:</strong> ${result.tickCount}</p>
+									<p><strong>Node diperiksa:</strong> ${result.visitedNodes}</p>
+									<p><strong>Banyak pencarian:</strong> ${result.searchCount}</p>
+									${result.solutionSteps != null ? html`<${React.Fragment}>
+										<p><strong>Branching factor:</strong> ${result.branchingFactor}</p>
+										<p><strong>Langkah:</strong> ${currentStepPosition} / ${stepPositions.length - 1}</p>
+										<p><strong>Step:</strong> ${result.solutionSteps.split(" ").map(s => [...s.matchAll(/^([0-9]+)([\+-][0-9]+)$/g)][0]).map((r, i) => html`
+											<span
+												key=${i}
+												className=${`inline-block m-1 px-[1px] rounded-sm border border-neutral-500 cursor-pointer transition-colors duration-75 ${currentStepPosition == i ? "bg-green-300" : ""}`}
+												onClick=${() => setCurrentStepPosition(i)}
+											>
+												${r == null ? "∅" : `${result.board.cars.find(c => `${c.id}` == r[1])?.symbol ?? "?"}${r[2]}`}
+											</span>${' '}
+										`)}</p>
+									</${React.Fragment}>` : null}
+								</div>
+							` : null}
 						</div>
 					</div>
 				`}

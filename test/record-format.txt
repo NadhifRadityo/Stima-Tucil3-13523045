@@ -1,0 +1,400 @@
+=====================================
+Jam-1
+6 6
+7
+CC...H 
+B..D.H 
+BPPD.HK
+B..D.. 
+F...GG 
+F.EEE. 
+=====================================
+Jam-2
+6 6
+10
+B..FFF 
+B..G.L 
+PP.GHLK
+CCC.HL 
+..E.II 
+DDEJJ. 
+=====================================
+Jam-3
+6 6
+5
+...... 
+...... 
+.PPC..K
+.BBC.F 
+.D.C.F 
+.DEE.F 
+=====================================
+Jam-4
+6 6
+6
+D..F.. 
+D..F.. 
+DPPF..K
+..BCCC 
+..B..E 
+..GGGE 
+=====================================
+Jam-5
+6 6
+10
+BB.F.G 
+L..FCG 
+LPPFCJK
+LHHHCJ 
+E...II 
+E...DD 
+=====================================
+Jam-6
+6 6
+10
+BB.G.. 
+HH.GFL 
+.PPCFLK
+EEICFL 
+D.IC.. 
+D..JJJ 
+=====================================
+Jam-7
+6 6
+8
+.BFFGE 
+.B.HGE 
+.PPH.DK
+..II.D 
+...C.. 
+...C.. 
+=====================================
+Jam-8
+6 6
+13
+...BBF 
+..GGHF 
+PPEIHFK
+DDEIJJ 
+MMNLLL 
+OONCCC 
+=====================================
+Jam-9
+6 6
+11
+.BGGHH 
+.B.EII 
+PP.EFDK
+LCCCFD 
+L.J.FM 
+L.J..M 
+=====================================
+Jam-10
+6 6
+11
+BBG.HH 
+EEG..F 
+LPP..FK
+LCCC.F 
+L..IDD 
+JJ.IMM 
+=====================================
+Jam-11
+6 6
+7
+EBBH.. 
+E..H.. 
+EPPH..K
+..FCCC 
+..F..G 
+..DDDG 
+=====================================
+Jam-12
+6 6
+7
+BFF..E 
+B.H..E 
+PPH..EK
+..HCCC 
+....G. 
+DDD.G. 
+=====================================
+Jam-13
+6 6
+12
+BBGGH. 
+..E.HF 
+.IEPPFK
+LI.DDF 
+L..JCC 
+LMMJNN 
+=====================================
+Jam-14
+6 6
+11
+BBG... 
+..G.HH 
+EIPPDJK
+EIMMDJ 
+..L.CC 
+FFL... 
+=====================================
+Jam-15
+6 6
+13
+.BBGG. 
+HHEEFL 
+CMPPFLK
+CMIDFL 
+CMIDJJ 
+.NNOO. 
+=====================================
+Jam-16
+6 6
+10
+BBGGHF 
+E.IIHF 
+EDLPPFK
+.DLCCC 
+..L... 
+JJ.... 
+=====================================
+Jam-17
+6 6
+11
+BFFF.. 
+B.GGHH 
+PPE...K
+IIEL.. 
+CCCLDJ 
+MMMLDJ 
+=====================================
+Jam-18
+6 6
+8
+BBGF.. 
+HHGF.. 
+IPPF..K
+ICCC.. 
+IEE... 
+DDD... 
+=====================================
+Jam-19
+6 6
+7
+..BFF. 
+..B.G. 
+.DPPG.K
+.DHHC. 
+.EEEC. 
+...... 
+=====================================
+Jam-20
+6 6
+9
+B..FFF 
+BGGH.. 
+PPEH.JK
+..E..J 
+..IDDJ 
+..ICCC 
+=====================================
+Jam-21
+6 6
+6
+BBFE.. 
+G.FE.. 
+GPPE..K
+GCCC.. 
+...... 
+...DDD 
+=====================================
+Jam-22
+6 6
+11
+..BFFF 
+G.BLHH 
+GPPL..K
+.E.LII 
+DEJJ.M 
+DCCC.M 
+=====================================
+Jam-23
+6 6
+9
+..FFFJ 
+..BGGJ 
+..BPPJK
+..HEII 
+..HEDD 
+..CCC. 
+=====================================
+Jam-24
+6 6
+9
+..BGG. 
+.HB... 
+EHPPI.K
+EDD.I. 
+FFF.J. 
+CC..J. 
+=====================================
+Jam-25
+6 6
+12
+BBG.HH 
+EEG..F 
+LPP.IFK
+LCCCIF 
+LD.JMM 
+.D.JNN 
+=====================================
+Jam-26
+6 6
+11
+.B.FFF 
+GB.HM. 
+GPPHMEK
+ILLLME 
+I.D..J 
+..DCCJ 
+=====================================
+Jam-27
+6 6
+9
+BGGF.. 
+BHHF.. 
+PPEF.JK
+..EIIJ 
+..D..J 
+..DCCC 
+=====================================
+Jam-28
+6 6
+11
+FFFB.. 
+..LBGG 
+PPL...K
+HELIIM 
+HECCCM 
+DDJJ.M 
+=====================================
+Jam-29
+6 6
+11
+FFF.L. 
+..B.L. 
+PPB.LGK
+HEEIIG 
+HDDJ.M 
+CCCJ.M 
+=====================================
+Jam-30
+6 6
+9
+F.BJJJ 
+F.BG.. 
+FPPG..K
+HHEE.C 
+.....C 
+IIDD.C 
+=====================================
+Jam-31
+6 6
+10
+BB.FFF 
+...GHH 
+EPPG.LK
+E.CIIL 
+DDC..L 
+..CJJJ 
+=====================================
+Jam-32
+6 6
+10
+BBFGHH 
+..FG.. 
+PPF...K
+EIIDDL 
+E..J.L 
+CC.J.L 
+=====================================
+Jam-33
+6 6
+11
+.BF.GG 
+.BF... 
+PPF...K
+MEEIIL 
+MDDJHL 
+CCCJHL 
+=====================================
+Jam-34
+6 6
+11
+B..FFF 
+B..G.L 
+PP.GHLK
+CCCEHL 
+..IEDD 
+MMIJJ. 
+=====================================
+Jam-35
+6 6
+10
+..FBBL 
+..FG.L 
+PPFG.LK
+HCCC.. 
+HEEID. 
+JJ.ID. 
+=====================================
+Jam-36
+6 6
+11
+FLLLBB 
+FGHH.C 
+FGPP.CK
+MMME.C 
+..IEDD 
+JJI... 
+=====================================
+Jam-37
+6 6
+12
+BBG.HH 
+EEG.FL 
+CPP.FLK
+CMMMFL 
+C..IDD 
+JJ.INN 
+=====================================
+Jam-38
+6 6
+10
+B..FFF 
+BGGH.. 
+PPEH.LK
+..EIIL 
+..DJJL 
+..DCCC 
+=====================================
+Jam-39
+6 6
+11
+..BFFF 
+..BG.. 
+PPHG.CK
+EEHIIC 
+DJLL.C 
+DJMM.. 
+=====================================
+Jam-40
+6 6
+12
+FBB.G. 
+FHE.GL 
+FHEPPLK
+CCCI.L 
+..DIJJ 
+MMDNN. 

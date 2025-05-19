@@ -4,10 +4,11 @@ import { html } from "./shared.mjs";
 
 const CELL_SIZE = 64;
 
-export const BoardView = ({ board, carPositions }) => {
+export const BoardView = ({ ref, board, carPositions, animationDuration = 0.5 }) => {
 	const { width, height, cars, walls, exitPosition } = board;
 	return html`
 		<div
+			ref=${ref}
 			className="relative bg-gray-200 border border-gray-700 mx-auto"
 			style=${{
 				width: width * CELL_SIZE,
@@ -73,6 +74,7 @@ export const BoardView = ({ board, carPositions }) => {
 						size=${car.size}
 						direction=${car.direction}
 						cellSize=${CELL_SIZE}
+						animationDuration=${animationDuration}
 					/>
 				`;
 			})}

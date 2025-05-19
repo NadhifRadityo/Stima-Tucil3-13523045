@@ -37,9 +37,11 @@ const seedToHue = seed => {
 	return Math.floor(getRand() * 360);
 };
 
-export const CarBlock = ({ id, symbol, x, y, size, direction, cellSize }) => {
+export const CarBlock = ({ id, symbol, x, y, size, direction, cellSize, animationDuration = 0.5 }) => {
 	const ref = useRef();
 	const firstRenderRef = useRef(true);
+	const animationDurationRef = useRef(null);
+	animationDurationRef.current = animationDuration;
 	const carImage = `/public/assets/car-${size}.png`;
 	useEffect(() => {
 		if(ref.current == null)
@@ -55,7 +57,7 @@ export const CarBlock = ({ id, symbol, x, y, size, direction, cellSize }) => {
 		gsap.to(ref.current, {
 			top: y * cellSize,
 			left: x * cellSize,
-			duration: 0.5,
+			duration: animationDurationRef.current,
 			ease: "power2.out"
 		});
 	}, [x, y]);

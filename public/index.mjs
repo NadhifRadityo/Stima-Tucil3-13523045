@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import ReactDOMClient from "react-dom/client";
-import { html, HORIZONTAL, VERTICAL } from "./shared.mjs";
+import { html, HORIZONTAL, VERTICAL, solvePuzzle } from "./shared.mjs";
 import BoardView from "./BoardView.mjs";
 
 const reconstructCarPositions = (board, solutionSteps) => {
@@ -24,7 +24,7 @@ const reconstructCarPositions = (board, solutionSteps) => {
 };
 
 const ApplicationElement = () => {
-	const [inputText, setInputText] = useState(`6 6
+	const [boardText, setBoardText] = useState(`6 6
 11
 AAB..F
 ..BCDF
@@ -32,8 +32,9 @@ GPPCDFK
 GH.III
 GHJ...
 LLJMM.`);
-	const [algorithm, setAlgorithm] = useState("ucs");
-	const [heuristic, setHeuristic] = useState("none");
+	const [algorithmName, setAlgorithmName] = useState("ucs");
+	const [heuristicName, setHeuristicName] = useState("none");
+	const [isPending, setIsPending] = useState(false);
 	const [result, setResult] = useState(null);
 	const [stepPositions, setStepPositions] = useState(null);
 	const [currentStepPosition, setCurrentStepPosition] = useState(null);
@@ -42,23 +43,21 @@ LLJMM.`);
 		const file = e.target.files?.[0];
 		if(file == null) return;
 		const reader = new FileReader();
-		reader.onload = event => setInputText(event.target.result);
+		reader.onload = event => setBoardText(event.target.result);
 		reader.readAsText(file);
 	};
 	const handleSubmit = async () => {
-		const payload = new FormData();
-		payload.set("board", inputText),
-		payload.set("algorithmName", algorithm);
-		payload.set("heuristicName", heuristic);
-		const response = await fetch("/api/solve", {
-			method: "POST",
-			body: payload
-		});
-		if(!response.ok) {
-			alert(`Tidak dapat menjalankan solver: ${await response.text()}`);
+		if(isPending) return;
+		setIsPending(true);
+		let result;
+		try {
+			result = await solvePuzzle(boardText, algorithmName, heuristicName);
+		} catch(e) {
+			alert(`Tidak dapat menjalankan solver: ${e.stack ?? e.message ?? e}`);
 			return;
+		} finally{
+			setIsPending(false);
 		}
-		const result = await response.json();
 		setResult(result);
 		if(result.solutionSteps == null) {
 			alert("Tidak ada solusi!");
@@ -77,8 +76,8 @@ LLJMM.`);
 				<div className="space-y-4">
 					<label className="block font-semibold">Konfigurasi Permainan:</label>
 					<textarea
-						value=${inputText}
-						onInput=${e => setInputText(e.target.value)}
+						value=${boardText}
+						onInput=${e => setBoardText(e.target.value)}
 						className="w-full p-3 border rounded h-44 font-mono text-sm resize-none"
 						placeholder="Paste konfigurasi dari file .txt di sini"
 					></textarea>
@@ -94,13 +93,13 @@ LLJMM.`);
 					<div>
 						<label className="font-semibold block mb-1">Algoritma Pathfinding:</label>
 						<select
-							value=${algorithm}
+							value=${algorithmName}
 							onChange=${e => {
-								setAlgorithm(e.target.value);
-								if(e.target.value == "ucs" && heuristic != "none")
-									setHeuristic("none");
-								if(e.target.value != "ucs" && heuristic == "none")
-									setHeuristic("car-blocked");
+								setAlgorithmName(e.target.value);
+								if(e.target.value == "ucs" && heuristicName != "none")
+									setHeuristicName("none");
+								if(e.target.value != "ucs" && heuristicName == "none")
+									setHeuristicName("car-blocked");
 							}}
 							className="w-full border rounded p-2"
 						>
@@ -114,21 +113,22 @@ LLJMM.`);
 					<div>
 						<label className="font-semibold block mb-1">Heuristik:</label>
 						<select
-							value=${heuristic}
-							onChange=${e => setHeuristic(e.target.value)}
+							value=${heuristicName}
+							onChange=${e => setHeuristicName(e.target.value)}
 							className="w-full border rounded p-2"
 						>
-							<option value="none" disabled=${algorithm != "ucs"}>Tanpa Heuristik</option>
-							<option value="car-distance" disabled=${algorithm == "ucs"}>Jarak Mobil</option>
-							<option value="car-blocked" disabled=${algorithm == "ucs"}>Mobil Terhalangi</option>
-							<option value="car-blocked-recursive" disabled=${algorithm == "ucs"}>Mobil Terhalangi (Rekursif)</option>
+							<option value="none" disabled=${algorithmName != "ucs"}>Tanpa Heuristik</option>
+							<option value="car-distance" disabled=${algorithmName == "ucs"}>Jarak Mobil</option>
+							<option value="car-blocked" disabled=${algorithmName == "ucs"}>Mobil Terhalangi</option>
+							<option value="car-blocked-recursive" disabled=${algorithmName == "ucs"}>Mobil Terhalangi (Rekursif)</option>
 						</select>
 					</div>
 					<button
 						onClick=${handleSubmit}
-						className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded mt-2"
+						disabled=${isPending}
+						className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-2 px-4 rounded mt-2 cursor-pointer disabled:cursor-default"
 					>
-						🔍 Jalankan Solver
+						${isPending ? "⌛ Menjalankan solver..." : "🔍 Jalankan Solver"}
 					</button>
 				</div>
 			</div>
@@ -159,12 +159,14 @@ LLJMM.`);
 								<div className="space-x-2">
 									<button
 										onClick=${() => setCurrentStepPosition(s => Math.max(0, s - 1))}
-										className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
+										disabled=${currentStepPosition == 0}
+										className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:bg-gray-100 rounded cursor-pointer disabled:cursor-default"
 									>⬅️</button>
 									<span className="font-medium">Langkah ${currentStepPosition} / ${stepPositions.length - 1}</span>
 									<button
 										onClick=${() => setCurrentStepPosition(s => Math.min(stepPositions.length - 1, s + 1))}
-										className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
+										disabled=${currentStepPosition == stepPositions.length - 1}
+										className="px-3 py-1 bg-gray-300 hover:bg-gray-400 disabled:bg-gray-100 rounded cursor-pointer disabled:cursor-default"
 									>➡️</button>
 								</div>
 								<input

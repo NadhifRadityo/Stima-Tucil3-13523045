@@ -32,6 +32,18 @@ export const BoardView = ({ board, carPositions }) => {
 				}}
 				alt="exit"
 			/>
+			<div
+				className="absolute"
+				style=${{
+					boxShadow: "0px 0px 20px 5px rgba(255, 0, 0, 0.9)",
+					top: Math.floor(exitPosition / width) * CELL_SIZE,
+					left: (exitPosition % width) * CELL_SIZE,
+					width: CELL_SIZE,
+					height: CELL_SIZE,
+					zIndex: 110
+				}}
+				alt="exit"
+			/>
 			${walls.map((pos, i) => html`
 				<img
 					key=${i}
@@ -55,6 +67,7 @@ export const BoardView = ({ board, carPositions }) => {
 					<${CarBlock}
 						key=${idx}
 						id=${car.id}
+						symbol=${car.symbol}
 						x=${x}
 						y=${y}
 						size=${car.size}

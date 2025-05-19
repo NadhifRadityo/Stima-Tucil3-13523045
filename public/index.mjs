@@ -24,7 +24,14 @@ const reconstructCarPositions = (board, solutionSteps) => {
 };
 
 const ApplicationElement = () => {
-	const [inputText, setInputText] = useState("");
+	const [inputText, setInputText] = useState(`6 6
+11
+AAB..F
+..BCDF
+GPPCDFK
+GH.III
+GHJ...
+LLJMM.`);
 	const [algorithm, setAlgorithm] = useState("ucs");
 	const [heuristic, setHeuristic] = useState("none");
 	const [result, setResult] = useState(null);
@@ -41,8 +48,8 @@ const ApplicationElement = () => {
 	const handleSubmit = async () => {
 		const payload = new FormData();
 		payload.set("board", inputText),
-		payload.set("algorithm", algorithm);
-		payload.set("heuristic", heuristic);
+		payload.set("algorithmName", algorithm);
+		payload.set("heuristicName", heuristic);
 		const response = await fetch("/api/solve", {
 			method: "POST",
 			body: payload
@@ -88,12 +95,20 @@ const ApplicationElement = () => {
 						<label className="font-semibold block mb-1">Algoritma Pathfinding:</label>
 						<select
 							value=${algorithm}
-							onChange=${e => setAlgorithm(e.target.value)}
+							onChange=${e => {
+								setAlgorithm(e.target.value);
+								if(e.target.value == "ucs" && heuristic != "none")
+									setHeuristic("none");
+								if(e.target.value != "ucs" && heuristic == "none")
+									setHeuristic("car-blocked");
+							}}
 							className="w-full border rounded p-2"
 						>
 							<option value="ucs">UCS (Uniform Cost Search)</option>
 							<option value="gbfs">GBFS (Greedy Best First Search)</option>
 							<option value="a-star">A* (A-Star)</option>
+							<option value="ida-star">IDA* (Iterative Deepening A-Star)</option>
+							<option value="ida-star-approx">IDA* (Iterative Deepening A-Star) [Approx]</option>
 						</select>
 					</div>
 					<div>
@@ -103,8 +118,10 @@ const ApplicationElement = () => {
 							onChange=${e => setHeuristic(e.target.value)}
 							className="w-full border rounded p-2"
 						>
-							<option value="none">Tanpa Heuristik</option>
-							<option value="car-blocked">Mobil Terhalangi</option>
+							<option value="none" disabled=${algorithm != "ucs"}>Tanpa Heuristik</option>
+							<option value="car-distance" disabled=${algorithm == "ucs"}>Jarak Mobil</option>
+							<option value="car-blocked" disabled=${algorithm == "ucs"}>Mobil Terhalangi</option>
+							<option value="car-blocked-recursive" disabled=${algorithm == "ucs"}>Mobil Terhalangi (Rekursif)</option>
 						</select>
 					</div>
 					<button
@@ -117,8 +134,22 @@ const ApplicationElement = () => {
 			</div>
 			${result && html`<${React.Fragment}>
 				<div className="bg-gray-100 p-4 rounded shadow text-sm">
-					<p><strong>Node diperiksa:</strong> ${result.visitedNodes}</p>
 					<p><strong>Waktu eksekusi:</strong> ${result.duration}ms</p>
+					<p><strong>Tick count:</strong> ${result.tickCount}</p>
+					<p><strong>Node diperiksa:</strong> ${result.visitedNodes}</p>
+					<p><strong>Banyak pencarian:</strong> ${result.searchCount}</p>
+					${result.solutionSteps != null ? html`<${React.Fragment}>
+						<p><strong>Branching factor:</strong> ${result.branchingFactor}</p>
+						<p><strong>Step:</strong> ${result.solutionSteps.split(" ").map(s => [...s.matchAll(/^([0-9]+)([\+-][0-9]+)$/g)][0]).map((r, i) => html`
+							<span
+								key=${i}
+								className=${`inline-block m-1 px-[1px] rounded-sm border border-neutral-500 cursor-pointer transition-colors duration-75 ${currentStepPosition == i ? "bg-green-300" : ""}`}
+								onClick=${() => setCurrentStepPosition(i)}
+							>
+								${r == null ? "∅" : `${result.board.cars.find(c => `${c.id}` == r[1])?.symbol ?? "?"}${r[2]}`}
+							</span>${' '}
+						`)}</p>
+					</${React.Fragment}>` : null}
 				</div>
 				${stepPositions.length > 0 && html`
 					<div className="space-y-4">
@@ -130,7 +161,7 @@ const ApplicationElement = () => {
 										onClick=${() => setCurrentStepPosition(s => Math.max(0, s - 1))}
 										className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
 									>⬅️</button>
-									<span className="font-medium">Langkah ${currentStepPosition + 1} / ${stepPositions.length}</span>
+									<span className="font-medium">Langkah ${currentStepPosition} / ${stepPositions.length - 1}</span>
 									<button
 										onClick=${() => setCurrentStepPosition(s => Math.min(stepPositions.length - 1, s + 1))}
 										className="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded"
@@ -139,15 +170,15 @@ const ApplicationElement = () => {
 								<input
 									className="self-stretch"
 									type="range"
-									min="1"
-									max=${stepPositions.length}
-									value=${currentStepPosition + 1}
-									onChange=${e => setCurrentStepPosition(e.target.valueAsNumber - 1)}
+									min="0"
+									max=${stepPositions.length - 1}
+									value=${currentStepPosition}
+									onChange=${e => setCurrentStepPosition(e.target.valueAsNumber)}
 								/>
 							</div>
 						</div>
 						<div>
-							<${BoardView} board=${result.board} carPositions=${stepPositions[currentStepPosition]} />
+							<${BoardView} key=${JSON.stringify(result.board)} board=${result.board} carPositions=${stepPositions[currentStepPosition]} />
 						</div>
 					</div>
 				`}

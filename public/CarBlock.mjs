@@ -37,7 +37,7 @@ const seedToHue = seed => {
 	return Math.floor(getRand() * 360);
 };
 
-export const CarBlock = ({ id, x, y, size, direction, cellSize }) => {
+export const CarBlock = ({ id, symbol, x, y, size, direction, cellSize }) => {
 	const ref = useRef();
 	const firstRenderRef = useRef(true);
 	const carImage = `/public/assets/car-${size}.png`;
@@ -60,24 +60,32 @@ export const CarBlock = ({ id, x, y, size, direction, cellSize }) => {
 		});
 	}, [x, y]);
 	return html`
-		<img
+		<div
 			ref=${ref}
-			src=${carImage}
-			alt=${`car-${id}`}
+			className="absolute top-0 left-0 rounded-md grid grid-cols-1 grid-rows-1"
 			style=${{
-				boxShadow: id == 0 ? "0px 0px 20px 5px rgba(255,234,0,0.9)" : null,
+				width: direction == HORIZONTAL ? cellSize * size : cellSize,
+				height: direction == HORIZONTAL ? cellSize : cellSize * size,
 				zIndex: id == 0 ? 100 : 10,
-				position: "absolute",
-				top: 0,
-				left: 0,
-				width: cellSize,
-				height: cellSize * size,
-				transformOrigin: `${cellSize / 2}px ${cellSize / 2}px`,
-				rotate: `${direction == HORIZONTAL ? -90 : 0}deg`,
-				background: "red",
-				filter: `hue-rotate(${seedToHue(`car-${id}-${size}`)}deg)`,
+				boxShadow: id == 0 ? "0px 0px 20px 5px rgba(13, 255, 0, 0.9)" : null
 			}}
-		/>
+		>
+			<img
+				src=${carImage}
+				alt=${`car-${id}`}
+				className="row-start-1 row-end-2 col-start-1 col-end-2"
+				style=${{
+					width: cellSize,
+					height: cellSize * size,
+					transformOrigin: `${cellSize / 2}px ${cellSize / 2}px`,
+					rotate: `${direction == HORIZONTAL ? -90 : 0}deg`,
+					filter: `hue-rotate(${seedToHue(`car-${id}-${size}`)}deg)`
+				}}
+			/>
+			<div className="z-0 flex items-center justify-center row-start-1 row-end-2 col-start-1 col-end-2">
+				<span className="font-bold text-4xl text-white">${symbol}</span>
+			</div>
+		</div>
 	`;
 };
 export default CarBlock;

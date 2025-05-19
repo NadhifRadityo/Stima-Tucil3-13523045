@@ -1,5 +1,6 @@
 import path from "path";
 import url from "url";
+import { Worker } from "worker_threads";
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { compress } from "hono/compress";
@@ -21,6 +22,7 @@ const PORT = process.env.PORT || 3000;
 
 const publicPath = path.join(__dirname, "public");
 const viewsPath = path.join(__dirname, "views");
+const workerFile = path.join(__dirname, "worker.mjs");
 
 app.use(async (c, next) => {
 	const requestIp = c.req.header("x-forwarded-for") ?? c.env.incoming.socket.remoteAddress;
@@ -45,34 +47,96 @@ app.get("*", async (c, next) => {
 app.get("/", async c => {
 	return c.render("index");
 });
+/** @type {Worker} */
+let worker_ = null;
+const getWorker = async () => {
+	if(worker_ != null)
+		return worker_;
+	const worker = worker_ = new Worker(workerFile, { type: "module" });
+	worker.addListener("exit", () => { if(worker_ == worker) worker_ = null; });
+	worker.addListener("error", () => { if(worker_ == worker) worker_ = null; });
+	worker.receiveMessage = () => new Promise((resolve, reject) => {
+		const onExit = e => { cleanup(); reject(e); };
+		const onError = e => { cleanup(); reject(e); };
+		const onMessage = e => { cleanup(); resolve(e); };
+		const onMessageError = e => { cleanup(); reject(e); };
+		const cleanup = () => {
+			worker.removeListener("exit", onExit);
+			worker.removeListener("error", onError);
+			worker.removeListener("message", onMessage);
+			worker.removeListener("messageerror", onMessageError);
+		};
+		worker.addListener("exit", onExit);
+		worker.addListener("error", onError);
+		worker.addListener("message", onMessage);
+		worker.addListener("messageerror", onMessageError);
+	});
+	const startMessage = await worker.receiveMessage();
+	if(!startMessage.ready)
+		throw new Error(`Unexpected message ${JSON.stringify(startMessage)}`);
+	return worker;
+};
 app.post(
 	"/api/solve",
 	zValidator("form", z.object({
 		board: z.string(),
-		algorithm: z.enum(["ucs", "gbfs", "a-star"]),
-		heuristic: z.enum(["none", "car-blocked"])
+		algorithmName: z.enum(["ucs", "gbfs", "a-star", "ida-star", "ida-star-approx"]),
+		heuristicName: z.enum(["none", "car-distance", "car-blocked", "car-blocked-recursive"])
 	})),
 	async c => {
-		const { board, algorithm, heuristic } = c.req.valid("form");
-		/** @type {logic.HeuristicCalculator} */
-		let heuristicCalculator;
-		if(algorithm == "ucs") {
-			if(heuristic == "none")
-				heuristicCalculator = logic.heuristicUCS;
+		const { board, algorithmName, heuristicName } = c.req.valid("form");
+		let solverName;
+		let heuristic;
+		if(algorithmName == "ucs") {
+			solverName = "QueueSolver";
+			if(heuristicName == "none")
+				heuristic = "UCS";
 			else
-				throw new HTTPException(400, { message: `Unknown heuristic for UCS algorithm: ${heuristic}` });
+				throw new HTTPException(400, { message: `Unknown heuristic for UCS algorithm: ${heuristicName}` });
 		}
-		if(algorithm == "gbfs") {
-			if(heuristic == "car-blocked")
-				heuristicCalculator = logic.heuristicGBFSCarBlocked;
+		if(algorithmName == "gbfs") {
+			solverName = "QueueSolver";
+			if(heuristicName == "car-distance")
+				heuristic = "GBFSCarDistance";
+			else if(heuristicName == "car-blocked")
+				heuristic = "GBFSCarBlocked";
+			else if(heuristicName == "car-blocked-recursive")
+				heuristic = "GBFSCarBlockedRecursive";
 			else
-				throw new HTTPException(400, { message: `Unknown heuristic for GBFS algorithm: ${heuristic}` });
+				throw new HTTPException(400, { message: `Unknown heuristic for GBFS algorithm: ${heuristicName}` });
 		}
-		if(algorithm == "a-star") {
-			if(heuristic == "car-blocked")
-				heuristicCalculator = logic.heuristicAStarCarBlocked;
+		if(algorithmName == "a-star") {
+			solverName = "QueueSolver";
+			if(heuristicName == "car-distance")
+				heuristic = "AStarCarDistance";
+			else if(heuristicName == "car-blocked")
+				heuristic = "AStarCarBlocked";
+			else if(heuristicName == "car-blocked-recursive")
+				heuristic = "AStarCarBlockedRecursive";
 			else
-				throw new HTTPException(400, { message: `Unknown heuristic for A-Star algorithm: ${heuristic}` });
+				throw new HTTPException(400, { message: `Unknown heuristic for A-Star algorithm: ${heuristicName}` });
+		}
+		if(algorithmName == "ida-star") {
+			solverName = "StackSolver";
+			if(heuristicName == "car-distance")
+				heuristic = "AStarCarDistance";
+			else if(heuristicName == "car-blocked")
+				heuristic = "AStarCarBlocked";
+			else if(heuristicName == "car-blocked-recursive")
+				heuristic = "AStarCarBlockedRecursive";
+			else
+				throw new HTTPException(400, { message: `Unknown heuristic for IDA-Star algorithm: ${heuristicName}` });
+		}
+		if(algorithmName == "ida-star-approx") {
+			solverName = "StackSolverApprox";
+			if(heuristicName == "car-distance")
+				heuristic = "AStarCarDistance";
+			else if(heuristicName == "car-blocked")
+				heuristic = "AStarCarBlocked";
+			else if(heuristicName == "car-blocked-recursive")
+				heuristic = "AStarCarBlockedRecursive";
+			else
+				throw new HTTPException(400, { message: `Unknown heuristic for IDA-Star algorithm: ${heuristicName}` });
 		}
 		let parsedBoard;
 		try {
@@ -81,28 +145,25 @@ app.post(
 			throw new HTTPException(400, { message: `Error while parsing board input: ${e.message ?? e}` });
 		}
 		try {
-			const state = logic.State.new_root(
-				parsedBoard.width, 
-				parsedBoard.height, 
-				parsedBoard.cars, 
-				parsedBoard.carPositions, 
-				parsedBoard.walls, 
-				parsedBoard.exitPosition
-			);
-			const solver = new logic.Solver(heuristicCalculator, state);
-			const start = performance.now();
-			let currentTick = 0;
-			while(solver.tick()) {
-				currentTick++;
-				if(currentTick % 500 == 0 && performance.now() - start >= 5000)
-					throw new HTTPException(400, { message: `Timed out` });
+			const worker = await getWorker();
+			worker.postMessage({
+				solverName: solverName,
+				heuristicName: heuristic,
+				board: parsedBoard
+			});
+			const data = await Promise.race([
+				worker.receiveMessage(),
+				new Promise(r => setTimeout(() => r({ timeout: true }), 7000))
+			]);
+			if(data.timeout) {
+				await worker.terminate();
+				throw new Error("Timed out");
 			}
-			const end = performance.now();
+			if(data.error != null)
+				throw new Error(data.error);
 			return c.json({
-				duration: end - start,
-				board: parsedBoard,
-				visitedNodes: solver.getVisitedNodes(),
-				solutionSteps: solver.getSolution()?.getStepDescription() ?? null
+				...data.result,
+				board: parsedBoard
 			});
 		} catch(e) {
 			throw new HTTPException(400, { message: `Error while running algorithm: ${e.message ?? e}\n${JSON.stringify(parsedBoard, null, 4)}` });

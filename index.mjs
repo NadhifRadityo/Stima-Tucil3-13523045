@@ -110,59 +110,73 @@ const solvePuzzleSchema = z.object({
  */
 const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 	let solverName;
-	let heuristic;
+	let heuristicGName;
+	let heuristicHName;
 	if(algorithmName == "ucs") {
 		solverName = "QueueSolverUniform";
-		if(heuristicName == "none")
-			heuristic = "UCS";
-		else
+		if(heuristicName == "none") {
+			heuristicGName = "Uniform";
+			heuristicHName = "None";
+		} else
 			throw `Unknown heuristic for UCS algorithm: ${heuristicName}`;
 	}
 	if(algorithmName == "gbfs") {
 		solverName = "QueueSolver";
-		if(heuristicName == "car-distance")
-			heuristic = "GBFSCarDistance";
-		else if(heuristicName == "car-blocked")
-			heuristic = "GBFSCarBlocked";
-		else if(heuristicName == "car-blocked-recursive")
-			heuristic = "GBFSCarBlockedRecursive";
-		else
+		if(heuristicName == "car-distance") {
+			heuristicGName = "None";
+			heuristicHName = "CarDistance";	
+		} else if(heuristicName == "car-blocked") {
+			heuristicGName = "None";
+			heuristicHName = "CarBlocked";	
+		} else if(heuristicName == "car-blocked-recursive") {
+			heuristicGName = "None";
+			heuristicHName = "CarBlockedRecursive";	
+		} else
 			throw `Unknown heuristic for GBFS algorithm: ${heuristicName}`;
 	}
 	if(algorithmName == "a-star") {
 		solverName = "QueueSolver";
-		if(heuristicName == "car-distance")
-			heuristic = "AStarCarDistance";
-		else if(heuristicName == "car-blocked")
-			heuristic = "AStarCarBlocked";
-		else if(heuristicName == "car-blocked-recursive")
-			heuristic = "AStarCarBlockedRecursive";
-		else
+		if(heuristicName == "car-distance") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarDistance";	
+		} else if(heuristicName == "car-blocked") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlocked";	
+		} else if(heuristicName == "car-blocked-recursive") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlockedRecursive";	
+		} else
 			throw `Unknown heuristic for A-Star algorithm: ${heuristicName}`;
 	}
 	if(algorithmName == "ida-star") {
 		solverName = "StackSolver";
-		if(heuristicName == "car-distance")
-			heuristic = "AStarCarDistance";
-		else if(heuristicName == "car-blocked")
-			heuristic = "AStarCarBlocked";
-		else if(heuristicName == "car-blocked-recursive")
-			heuristic = "AStarCarBlockedRecursive";
-		else
+		if(heuristicName == "car-distance") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarDistance";	
+		} else if(heuristicName == "car-blocked") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlocked";	
+		} else if(heuristicName == "car-blocked-recursive") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlockedRecursive";	
+		} else
 			throw `Unknown heuristic for IDA-Star algorithm: ${heuristicName}`;
 	}
 	if(algorithmName == "ida-star-approx") {
 		solverName = "StackSolverApprox";
-		if(heuristicName == "car-distance")
-			heuristic = "AStarCarDistance";
-		else if(heuristicName == "car-blocked")
-			heuristic = "AStarCarBlocked";
-		else if(heuristicName == "car-blocked-recursive")
-			heuristic = "AStarCarBlockedRecursive";
-		else
-			throw `Unknown heuristic for IDA-Star algorithm: ${heuristicName}`;
+		if(heuristicName == "car-distance") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarDistance";	
+		} else if(heuristicName == "car-blocked") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlocked";	
+		} else if(heuristicName == "car-blocked-recursive") {
+			heuristicGName = "PathCost";
+			heuristicHName = "CarBlockedRecursive";	
+		} else
+			throw `Unknown heuristic for IDA-Star Approx algorithm: ${heuristicName}`;
 	}
-	return [solverName, heuristic];
+	return [solverName, heuristicGName, heuristicHName];
 };
 app.post(
 	"/api/solve-puzzle",
@@ -170,7 +184,7 @@ app.post(
 	async c => {
 		try {
 			const { boardString, algorithmName, heuristicName } = c.req.valid("form");
-			const [solverName, heuristic] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
+			const [solverName, heuristicGName, heuristicHName] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
 			const board = parseBoardInput(boardString);
 			try {
 				for(let i = 0; i < 3; i++) {
@@ -182,7 +196,8 @@ app.post(
 							requestResponseMessage({
 								command: "solvePuzzle",
 								solverName: solverName,
-								heuristicName: heuristic,
+								heuristicGName: heuristicGName,
+								heuristicHName: heuristicHName,
 								board: board
 							})
 						]);
@@ -237,7 +252,7 @@ app.get(
 									algorithmName: e.algorithmName,
 									heuristicName: e.heuristicName
 								});
-								const [solverName, heuristic] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
+								const [solverName, heuristicGName, heuristicHName] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
 								const board = parseBoardInput(boardString);
 								try {
 									for(let i = 0; i < 3; i++) {
@@ -249,7 +264,8 @@ app.get(
 												requestResponseMessage({
 													command: "solvePuzzle",
 													solverName: solverName,
-													heuristicName: heuristic,
+													heuristicGName: heuristicGName,
+													heuristicHName: heuristicHName,
 													board: board
 												})
 											]);

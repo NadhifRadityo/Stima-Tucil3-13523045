@@ -29,22 +29,22 @@ process.stderr.write = (chunk, encoding, callback) => {
 };
 
 const combinations = [
-	["QueueSolverUniform", "UCS"],
-	["QueueSolver", "GBFSCarDistance"],
-	["QueueSolver", "GBFSCarBlocked"],
-	["QueueSolver", "GBFSCarBlockedRecursive"],
-	["QueueSolver", "AStarCarDistance"],
-	["QueueSolver", "AStarCarBlocked"],
-	["QueueSolver", "AStarCarBlockedRecursive"],
-	["StackSolver", "AStarCarDistance"],
-	["StackSolver", "AStarCarBlocked"],
-	["StackSolver", "AStarCarBlockedRecursive"],
-	["StackSolverApprox", "AStarCarDistance"],
-	["StackSolverApprox", "AStarCarBlocked"],
-	["StackSolverApprox", "AStarCarBlockedRecursive"],
+	["UCS", "QueueSolverUniform", "Uniform", "None"],
+	["GBFS CarDistance", "QueueSolver", "None", "CarDistance"],
+	["GBFS CarBlocked", "QueueSolver", "None", "CarBlocked"],
+	["GBFS CarBlockedRecursive", "QueueSolver", "None", "CarBlockedRecursive"],
+	["A* CarDistance", "QueueSolver", "PathCost", "CarDistance"],
+	["A* CarBlocked", "QueueSolver", "PathCost", "CarBlocked"],
+	["A* CarBlockedRecursive", "QueueSolver", "PathCost", "CarBlockedRecursive"],
+	["IDA* CarDistance", "StackSolver", "PathCost", "CarDistance"],
+	["IDA* CarBlocked", "StackSolver", "PathCost", "CarBlocked"],
+	["IDA* CarBlockedRecursive", "StackSolver", "PathCost", "CarBlockedRecursive"],
+	["IDA* Approx CarDistance", "StackSolverApprox", "PathCost", "CarDistance"],
+	["IDA* Approx CarBlocked", "StackSolverApprox", "PathCost", "CarBlocked"],
+	["IDA* Approx CarBlockedRecursive", "StackSolverApprox", "PathCost", "CarBlockedRecursive"]
 ];
-const combinationNamesPadCount = Math.max(...combinations.map(c => `${c[0]}-${c[1]}`.length));
-const combinationNamesPad = combinations.map(c => `${c[0]}-${c[1]}`.padStart(combinationNamesPadCount, ' '));
+const combinationNamesPadCount = Math.max(...combinations.map(c => c[0].length));
+const combinationNamesPad = combinations.map(c => c[0].padStart(combinationNamesPadCount, ' '));
 
 const maxWorkers = 4;
 /** @type {(ReturnType<typeof setupMessagingHandler> & { worker: Worker })[]} */
@@ -101,8 +101,8 @@ for(const caseFile of (await fs.readdir(casesDirectory)).sort((a, b) => a.locale
 	console.log(boardString);
 	console.log();
 	for(let i = 0; i < combinations.length; i++) {
-		const [solverName, heuristicName] = combinations[i];
-		const heuristicNamePad = combinationNamesPad[i];
+		const [combinationName, solverName, heuristicGName, heuristicHName] = combinations[i];
+		const combinationNamePad = combinationNamesPad[i];
 		const board = parseBoardInput(boardString)
 		const { requestResponseMessage, worker } = pickWorker();
 		const data = await Promise.race([
@@ -110,17 +110,18 @@ for(const caseFile of (await fs.readdir(casesDirectory)).sort((a, b) => a.locale
 			requestResponseMessage({
 				command: "testSolvePuzzle",
 				solverName: solverName,
-				heuristicName: heuristicName,
+				heuristicGName: heuristicGName,
+				heuristicHName: heuristicHName,
 				board: board
 			})
 		]);
 		if(data.timeout) {
-			console.table({ [heuristicNamePad]: {
+			console.table({ [combinationNamePad]: {
 				status: "Timed out"
 			} });
 			await worker.terminate();
 		} else {
-			console.table({ [heuristicNamePad]: {
+			console.table({ [combinationNamePad]: {
 				...data
 			} });
 		}

@@ -1,6 +1,6 @@
 import { parentPort } from "worker_threads";
 import { setupMessagingHandler, Sia, DeSia } from "./protocols.mjs";
-import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicUCS, heuristicGBFSCarDistance, heuristicGBFSCarBlocked, heuristicGBFSCarBlockedRecursive, heuristicAStarCarDistance, heuristicAStarCarBlocked, heuristicAStarCarBlockedRecursive } from "./logic.mjs";
+import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicNone, heuristicUniform, heuristicPathCost, heuristicCarDistance, heuristicCarBlocked, heuristicCarBlockedRecursive } from "./logic.mjs";
 
 const solvers = {
 	"QueueSolver": QueueSolver,
@@ -9,13 +9,12 @@ const solvers = {
 	"StackSolverApprox": StackSolverApprox
 };
 const heuristics = {
-	"UCS": heuristicUCS,
-	"GBFSCarDistance": heuristicGBFSCarDistance,
-	"GBFSCarBlocked": heuristicGBFSCarBlocked,
-	"GBFSCarBlockedRecursive": heuristicGBFSCarBlockedRecursive,
-	"AStarCarDistance": heuristicAStarCarDistance,
-	"AStarCarBlocked": heuristicAStarCarBlocked,
-	"AStarCarBlockedRecursive": heuristicAStarCarBlockedRecursive
+	"None": heuristicNone,
+	"Uniform": heuristicUniform,
+	"PathCost": heuristicPathCost,
+	"CarDistance": heuristicCarDistance,
+	"CarBlocked": heuristicCarBlocked,
+	"CarBlockedRecursive": heuristicCarBlockedRecursive
 };
 
 const workerSia = new Sia();
@@ -28,12 +27,13 @@ const { onMessage, answerMessage } = setupMessagingHandler(workerChannel.port2);
 onMessage(e => {
 	if(e.command == "solvePuzzle") {
 		answerMessage(e.handle, () => {
-			const { solverName, heuristicName, board } = e;
+			const { solverName, heuristicGName, heuristicHName, board } = e;
 			/** @type {typeof QueueSolver | typeof QueueSolverUniform | typeof StackSolver | typeof StackSolverApprox} */
 			const Solver = solvers[solverName];
-			const heuristic = heuristics[heuristicName];
+			const heuristicG = heuristics[heuristicGName];
+			const heuristicH = heuristics[heuristicHName];
 			const state = State.new_root(board.width, board.height, board.cars, board.carPositions, board.walls, board.exitPosition);
-			const solver = new Solver(heuristic, state);
+			const solver = new Solver(heuristicG, heuristicH, state);
 			const isStackSolver = solver instanceof StackSolver || solver instanceof StackSolverApprox;
 			const start = performance.now();
 			let tickCount = 0;

@@ -1,4 +1,4 @@
-import { QueueSolver, State, HORIZONTAL, VERTICAL, heuristicAStarCarBlocked, heuristicDepth, heuristicAStarCarBlockedRecursive, computeBranchingFactor, heuristicGBFSCarBlockedRecursive, StackSolver, StackSolverApprox } from "../logic.mjs";
+import { QueueSolver, State, HORIZONTAL, VERTICAL, heuristicAStarCarBlocked, heuristicDepth, heuristicAStarCarBlockedRecursive, computeBranchingFactor, heuristicGBFSCarBlockedRecursive, StackSolver, StackSolverApprox, QueueSolverUniform } from "../logic.mjs";
 
 globalThis.run = () => {
 	global.stepDecoder = s => {
@@ -74,7 +74,7 @@ globalThis.run = () => {
 	);
 	// const stateStep = State.new_fromSteps(state, stepEncoder("∅ F+1 K+1 M-1 C+3 H+2 J-1 E+1 G+3 B-1 I-1 A-3 I+1 L+1 B+3 I-1 A+2 G-3 E-1 H-3 A-1 J+1 C-3 M+1 B+1 K-4 A+1 C+2 D-1 F-1 H+3 A-1 K+1 B-1 M-1 C+1 J-1 E+1 G+3 A-1 I+1 B-3 I-1 A+1 G-1 E-1 J+1 C-1 K-1 L-1"));
 	const stateStep = state;
-	const solver = new StackSolverApprox(heuristicAStarCarBlocked, stateStep);
+	const solver = new QueueSolver(heuristicAStarCarBlocked, stateStep);
 	const start = performance.now();
 	let tickCount = 0;
 	while(solver.tick())
@@ -95,7 +95,7 @@ globalThis.run = () => {
 	}
 };
 
-// for(let i = 0; i < 100; i++)
+for(let i = 0; i < 100; i++)
 globalThis.run();
 
 import http from "http";

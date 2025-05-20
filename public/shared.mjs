@@ -20,17 +20,17 @@ export const workerMessagingHandler = setupMessagingHandler(worker.port);
 worker.start?.();
 worker.port.start?.();
 
-export const solvePuzzle = async (board, algorithmName, heuristicName) => {
+export const solvePuzzle = async (boardString, algorithmName, heuristicName) => {
 	if(navigator.onLine) {
 		return await workerMessagingHandler.requestResponseMessage({
 			command: "solvePuzzle",
-			board: board,
+			boardString: boardString,
 			algorithmName: algorithmName,
 			heuristicName: heuristicName
 		});
 	}
 	const payload = new FormData();
-	payload.set("board", board);
+	payload.set("boardString", boardString);
 	payload.set("algorithmName", algorithmName);
 	payload.set("heuristicName", heuristicName);
 	const response = await fetch("/api/solve-puzzle", {

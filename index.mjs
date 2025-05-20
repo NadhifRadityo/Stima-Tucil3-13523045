@@ -81,6 +81,7 @@ const pickWorker = () => {
 		const workerSia = new Sia();
 		const workerDeSia = new DeSia();
 		const workerChannel = new MessageChannel();
+		worker.addListener("exit", () => workerChannel.port1.close());
 		worker.addListener("error", () => workerChannel.port1.close());
 		worker.addListener("message", data => { if(!(data instanceof Uint8Array)) return; workerChannel.port1.postMessage(workerDeSia.deserialize(data)); });
 		workerChannel.port1.addEventListener("message", e => worker.postMessage(workerSia.serialize(e.data)));
@@ -99,7 +100,7 @@ const pickWorker = () => {
 	return pickedWorkerHandler;
 };
 const solvePuzzleSchema = z.object({
-	board: z.string(),
+	boardString: z.string(),
 	algorithmName: z.enum(["ucs", "gbfs", "a-star", "ida-star", "ida-star-approx"]),
 	heuristicName: z.enum(["none", "car-distance", "car-blocked", "car-blocked-recursive"])
 });
@@ -111,7 +112,7 @@ const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 	let solverName;
 	let heuristic;
 	if(algorithmName == "ucs") {
-		solverName = "QueueSolver";
+		solverName = "QueueSolverUniform";
 		if(heuristicName == "none")
 			heuristic = "UCS";
 		else
@@ -168,9 +169,9 @@ app.post(
 	zValidator("form", solvePuzzleSchema),
 	async c => {
 		try {
-			const { board, algorithmName, heuristicName } = c.req.valid("form");
+			const { boardString, algorithmName, heuristicName } = c.req.valid("form");
 			const [solverName, heuristic] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
-			const parsedBoard = parseBoardInput(board);
+			const board = parseBoardInput(boardString);
 			try {
 				for(let i = 0; i < 3; i++) {
 					const { requestResponseMessage, worker } = pickWorker();
@@ -182,7 +183,7 @@ app.post(
 								command: "solvePuzzle",
 								solverName: solverName,
 								heuristicName: heuristic,
-								board: parsedBoard
+								board: board
 							})
 						]);
 					} catch(e) {
@@ -196,11 +197,11 @@ app.post(
 					}
 					return c.json({
 						...data,
-						board: parsedBoard
+						board: board
 					});
 				}
 			} catch(e) {
-				throw new HTTPException(400, { message: `${e.message ?? e}\n${JSON.stringify(parsedBoard, null, 4)}` });
+				throw new HTTPException(400, { message: `${e.message ?? e}\n${JSON.stringify(board, null, 4)}` });
 			}
 		} catch(e) {
 			throw new HTTPException(400, { message: `${e.message ?? e}` });
@@ -231,9 +232,13 @@ app.get(
 					if(e.command == "solvePuzzle") {
 						answerMessage(e.handle, async () => {
 							try {
-								const { board, algorithmName, heuristicName } = solvePuzzleSchema.parse({ board: e.board, algorithmName: e.algorithmName, heuristicName: e.heuristicName });
+								const { boardString, algorithmName, heuristicName } = solvePuzzleSchema.parse({
+									boardString: e.boardString,
+									algorithmName: e.algorithmName,
+									heuristicName: e.heuristicName
+								});
 								const [solverName, heuristic] = getSolverNameAndHeuristicName(algorithmName, heuristicName);
-								const parsedBoard = parseBoardInput(board);
+								const board = parseBoardInput(boardString);
 								try {
 									for(let i = 0; i < 3; i++) {
 										const { requestResponseMessage, worker } = pickWorker();
@@ -245,7 +250,7 @@ app.get(
 													command: "solvePuzzle",
 													solverName: solverName,
 													heuristicName: heuristic,
-													board: parsedBoard
+													board: board
 												})
 											]);
 										} catch(e) {
@@ -259,11 +264,11 @@ app.get(
 										}
 										return {
 											...data,
-											board: parsedBoard
+											board: board
 										};
 									}
 								} catch(e) {
-									throw `${e.message ?? e}\n${JSON.stringify(parsedBoard, null, 4)}`;
+									throw `${e.message ?? e}\n${JSON.stringify(board, null, 4)}`;
 								}
 							} catch(e) {
 								throw `${e.message ?? e}`;

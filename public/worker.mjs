@@ -97,7 +97,12 @@ const handleConnect = messagePort => {
 	messagePort.start();
 	onMessage(e => {
 		if(e.command == "solvePuzzle") {
-			answerMessage(e.handle, () => wsRequestResponseMessage({ command: "solvePuzzle", board: e.board, algorithmName: e.algorithmName, heuristicName: e.heuristicName }));
+			answerMessage(e.handle, () => wsRequestResponseMessage({
+				command: "solvePuzzle",
+				boardString: e.boardString,
+				algorithmName: e.algorithmName,
+				heuristicName: e.heuristicName
+			}));
 			return true;
 		}
 		if(e.command == "ping") {

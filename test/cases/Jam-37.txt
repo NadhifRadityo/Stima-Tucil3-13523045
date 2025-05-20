@@ -1,0 +1,8 @@
+6 6
+12
+BBG.HH 
+EEG.FL 
+CPP.FLK
+CMMMFL 
+C..IDD 
+JJ.INN 

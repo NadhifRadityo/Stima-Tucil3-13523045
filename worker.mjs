@@ -1,9 +1,10 @@
 import { parentPort } from "worker_threads";
 import { setupMessagingHandler, Sia, DeSia } from "./protocols.mjs";
-import { State, heuristicUCS, heuristicGBFSCarDistance, heuristicGBFSCarBlocked, heuristicGBFSCarBlockedRecursive, heuristicAStarCarDistance, heuristicAStarCarBlocked, heuristicAStarCarBlockedRecursive, QueueSolver, computeBranchingFactor, StackSolver, StackSolverApprox } from "./logic.mjs";
+import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicUCS, heuristicGBFSCarDistance, heuristicGBFSCarBlocked, heuristicGBFSCarBlockedRecursive, heuristicAStarCarDistance, heuristicAStarCarBlocked, heuristicAStarCarBlockedRecursive } from "./logic.mjs";
 
 const solvers = {
 	"QueueSolver": QueueSolver,
+	"QueueSolverUniform": QueueSolverUniform,
 	"StackSolver": StackSolver,
 	"StackSolverApprox": StackSolverApprox
 };
@@ -28,7 +29,7 @@ onMessage(e => {
 	if(e.command == "solvePuzzle") {
 		answerMessage(e.handle, () => {
 			const { solverName, heuristicName, board } = e;
-			/** @type {typeof QueueSolver | typeof StackSolver | typeof StackSolverApprox} */
+			/** @type {typeof QueueSolver | typeof QueueSolverUniform | typeof StackSolver | typeof StackSolverApprox} */
 			const Solver = solvers[solverName];
 			const heuristic = heuristics[heuristicName];
 			const state = State.new_root(board.width, board.height, board.cars, board.carPositions, board.walls, board.exitPosition);

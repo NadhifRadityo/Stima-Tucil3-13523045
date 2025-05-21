@@ -41,7 +41,7 @@ Enable `showRecorder = true` in the browser console to activate automatic record
 
 ## 🔍 Heuristic Analysis
 
-- **Car Distance**: An admissible heuristic based on the minimal moves for the primary car to reach the goal.
+- **Car Distance**: Heuristic based on the minimal moves for the primary car to reach the goal. This heuristic is not admissable, because a distance of > 1, would be over-counted since it still only requires 1 cost.
 - **Blocking Cars**: Admissible and generally stronger than Car Distance by considering immediate blockers.
 - **Recursive Blocking**: More accurate than basic blocking analysis, though more computationally expensive per tick.
 
@@ -53,6 +53,13 @@ This project successfully implements a Rush Hour puzzle solver according to spec
 
 Simply install the dependency and run the project. Node version v24.0.2 is recommended.
 ```sh
+git clone https://github.com/NadhifRadityo/Stima-Tucil3-13523045
 npm install
 npm run dev
+```
+
+To run test run these commands. The script will automatically output its results to [`test/README.md`](./test/README.md) and [`test/test_output.log`](./test/test_output.log).
+```sh
+cd test
+node test.mjs
 ```

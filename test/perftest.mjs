@@ -1,4 +1,4 @@
-import { QueueSolver, State, computeBranchingFactor, heuristicCarDistance, parseBoardInput, heuristicPathCost } from "../logic.mjs";
+import { QueueSolver, State, computeBranchingFactor, heuristicCarDistance, heuristicUniform, parseBoardInput } from "../logic.mjs";
 
 globalThis.run = () => {
 	const board = parseBoardInput(`6 6
@@ -18,7 +18,7 @@ F.EEE.`);
 		return "∅ " + s.split(" ").slice(1).map(s => [...s.matchAll(/^([A-Z]+)([\+-][0-9]+)$/g)][0]).map(r => `${mappingB[r[1]]}${r[2]}`).join(" ");
 	};
 	const state = State.new_root(board.width, board.height, board.cars, board.carPositions, board.walls, board.exitPosition);
-	const solver = new QueueSolver(heuristicPathCost, heuristicCarDistance, state);
+	const solver = new QueueSolver(heuristicUniform, heuristicCarDistance, state);
 	const start = performance.now();
 	let tickCount = 0;
 	while(solver.tick())

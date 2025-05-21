@@ -1,0 +1,15342 @@
+
+
+## **Jam-1**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-1.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+7
+CC...H 
+B..D.H 
+BPPD.HK
+B..D.. 
+F...GG 
+F.EEE. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+7 (3 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>8.12ms ± 5.15ms</td>
+<td>1057</td>
+<td>1079</td>
+<td>11570</td>
+
+<td>3.065</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQ0MuLi5IIFxuQi4uRC5IIFxuQlBQRC5IS1xuQi4uRC4uIFxuRi4uLkdHIFxuRi5FRUUuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDUsNiw5LDAsMjQsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOC4xMm1zIMKxIDUuMTVtcyIsInRpY2tDb3VudCI6MTA1NywidmlzaXRlZE5vZGVzIjoxMDc5LCJzZWFyY2hDb3VudCI6MTE1NzAsImJyYW5jaGluZ0ZhY3RvciI6IjMuMDY1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0KzEgMi0xIDUtMSA2LTMgMSszIDctMiAzKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.42ms ± 1.67ms</td>
+<td>187</td>
+<td>188</td>
+<td>1928</td>
+
+<td>1.139</td>
+<td>
+
+[42 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkNDLi4uSCBcbkIuLkQuSCBcbkJQUEQuSEtcbkIuLkQuLiBcbkYuLi5HRyBcbkYuRUVFLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMyw1LDYsOSwwLDI0LDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjIuNDJtcyDCsSAxLjY3bXMiLCJ0aWNrQ291bnQiOjE4NywidmlzaXRlZE5vZGVzIjoxODgsInNlYXJjaENvdW50IjoxOTI4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjEzOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNy0xIDYtMyA3KzIgNisyIDMtMSA3LTIgNi0xIDcrMSA2LTEgMSszIDctMSAxLTIgNysyIDYrMyA3LTEgNi0xIDErMSAzKzEgNy0xIDYtMSA3KzIgMS0xIDctMSA2LTEgMysxIDErMSA3LTEgNCs0IDcrMiAxLTEgNC0yIDctMiAxLTEgNysxIDItMSA3KzEgNS0xIDctMyAzKzEgMCsyIDErMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.22ms ± 0.11ms</td>
+<td>19</td>
+<td>20</td>
+<td>190</td>
+
+<td>1.201</td>
+<td>
+
+[19 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQ0MuLi5IIFxuQi4uRC5IIFxuQlBQRC5IS1xuQi4uRC4uIFxuRi4uLkdHIFxuRi5FRUUuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDUsNiw5LDAsMjQsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC4yMm1zIMKxIDAuMTFtcyIsInRpY2tDb3VudCI6MTksInZpc2l0ZWROb2RlcyI6MjAsInNlYXJjaENvdW50IjoxOTAsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjAxIiwic29sdXRpb25TdGVwcyI6IuKIhSA3LTEgNi0zIDErMyA3KzEgNisyIDMtMSA3LTEgNi0xIDQrMSA3KzEgNi0xIDItMSA3LTEgNisyIDUtMSA3LTEgNi0yIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>1.36ms ± 1.43ms</td>
+<td>16</td>
+<td>17</td>
+<td>169</td>
+
+<td>1.247</td>
+<td>
+
+[16 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQ0MuLi5IIFxuQi4uRC5IIFxuQlBQRC5IS1xuQi4uRC4uIFxuRi4uLkdHIFxuRi5FRUUuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDUsNiw5LDAsMjQsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4zNm1zIMKxIDEuNDNtcyIsInRpY2tDb3VudCI6MTYsInZpc2l0ZWROb2RlcyI6MTcsInNlYXJjaENvdW50IjoxNjksImJyYW5jaGluZ0ZhY3RvciI6IjEuMjQ3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTMgMSszIDctMSA0KzQgMy0xIDcrMSAzKzIgNC0zIDctMSA0KzIgMi0xIDcrMSA1LTEgNy0yIDMrMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>5.67ms ± 1.58ms</td>
+<td>792</td>
+<td>793</td>
+<td>8817</td>
+
+<td>2.600</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG5DQy4uLkggXG5CLi5ELkggXG5CUFBELkhLXG5CLi5ELi4gXG5GLi4uR0cgXG5GLkVFRS4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsNSw2LDksMCwyNCwyOCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI1LjY3bXMgwrEgMS41OG1zIiwidGlja0NvdW50Ijo3OTIsInZpc2l0ZWROb2RlcyI6NzkzLCJzZWFyY2hDb3VudCI6ODgxNywiYnJhbmNoaW5nRmFjdG9yIjoiMi42MDAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQrMSAyLTEgNi0zIDUtMSA3LTIgMysyIDArMiAxKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>8.43ms ± 4.22ms</td>
+<td>783</td>
+<td>784</td>
+<td>8694</td>
+
+<td>2.951</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkNDLi4uSCBcbkIuLkQuSCBcbkJQUEQuSEtcbkIuLkQuLiBcbkYuLi5HRyBcbkYuRUVFLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMyw1LDYsOSwwLDI0LDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjguNDNtcyDCsSA0LjIybXMiLCJ0aWNrQ291bnQiOjc4MywidmlzaXRlZE5vZGVzIjo3ODQsInNlYXJjaENvdW50Ijo4Njk0LCJicmFuY2hpbmdGYWN0b3IiOiIyLjk1MSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNi0zIDErMyA0KzQgMi0xIDUtMSA3LTIgMysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>3.89ms ± 2.14ms</td>
+<td>159</td>
+<td>160</td>
+<td>1820</td>
+
+<td>2.388</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkNDLi4uSCBcbkIuLkQuSCBcbkJQUEQuSEtcbkIuLkQuLiBcbkYuLi5HRyBcbkYuRUVFLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMyw1LDYsOSwwLDI0LDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuODltcyDCsSAyLjE0bXMiLCJ0aWNrQ291bnQiOjE1OSwidmlzaXRlZE5vZGVzIjoxNjAsInNlYXJjaENvdW50IjoxODIwLCJicmFuY2hpbmdGYWN0b3IiOiIyLjM4OCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNCsxIDItMSA1LTEgNy0yIDYtMyAzKzIgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>267.78ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>320218</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>5</td>
+<td>42.53ms ± 12.61ms</td>
+<td>3</td>
+<td>8</td>
+<td>27810</td>
+
+<td>3.443</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQ0MuLi5IIFxuQi4uRC5IIFxuQlBQRC5IS1xuQi4uRC4uIFxuRi4uLkdHIFxuRi5FRUUuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDUsNiw5LDAsMjQsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NSwiZHVyYXRpb24iOiI0Mi41M21zIMKxIDEyLjYxbXMiLCJ0aWNrQ291bnQiOjMsInZpc2l0ZWROb2RlcyI6OCwic2VhcmNoQ291bnQiOjI3ODEwLCJicmFuY2hpbmdGYWN0b3IiOiIzLjQ0MyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNCsxIDItMSA1LTEgNi0zIDErMyA3LTIgMysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>5</td>
+<td>37.13ms ± 10.30ms</td>
+<td>6</td>
+<td>1075</td>
+<td>53746</td>
+
+<td>3.218</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG5DQy4uLkggXG5CLi5ELkggXG5CUFBELkhLXG5CLi5ELi4gXG5GLi4uR0cgXG5GLkVFRS4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsNSw2LDksMCwyNCwyOCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo1LCJkdXJhdGlvbiI6IjM3LjEzbXMgwrEgMTAuMzBtcyIsInRpY2tDb3VudCI6NiwidmlzaXRlZE5vZGVzIjoxMDc1LCJzZWFyY2hDb3VudCI6NTM3NDYsImJyYW5jaGluZ0ZhY3RvciI6IjMuMjE4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0KzEgMi0xIDUtMSA2LTMgNy0yIDMrMiAwKzIgMSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>5</td>
+<td>37.76ms ± 6.48ms</td>
+<td>6</td>
+<td>1079</td>
+<td>59403</td>
+
+<td>3.803</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkNDLi4uSCBcbkIuLkQuSCBcbkJQUEQuSEtcbkIuLkQuLiBcbkYuLi5HRyBcbkYuRUVFLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMyw1LDYsOSwwLDI0LDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzcuNzZtcyDCsSA2LjQ4bXMiLCJ0aWNrQ291bnQiOjYsInZpc2l0ZWROb2RlcyI6MTA3OSwic2VhcmNoQ291bnQiOjU5NDAzLCJicmFuY2hpbmdGYWN0b3IiOiIzLjgwMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNCsxIDItMSA1LTEgNi0zIDErMyA3LTIgMysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>15</td>
+<td>13.24ms ± 3.22ms</td>
+<td>3</td>
+<td>683</td>
+<td>7987</td>
+
+<td>2.918</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkNDLi4uSCBcbkIuLkQuSCBcbkJQUEQuSEtcbkIuLkQuLiBcbkYuLi5HRyBcbkYuRUVFLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMyw1LDYsOSwwLDI0LDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE1LCJkdXJhdGlvbiI6IjEzLjI0bXMgwrEgMy4yMm1zIiwidGlja0NvdW50IjozLCJ2aXNpdGVkTm9kZXMiOjY4Mywic2VhcmNoQ291bnQiOjc5ODcsImJyYW5jaGluZ0ZhY3RvciI6IjIuOTE4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0KzEgMi0xIDUtMSA2LTMgMSszIDctMiAzKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-2**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-2.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+B..FFF 
+B..G.L 
+PP.GHLK
+CCC.HL 
+..E.II 
+DDEJJ. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (5 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>9</td>
+<td>22.11ms ± 1.31ms</td>
+<td>2949</td>
+<td>4390</td>
+<td>32515</td>
+
+<td>3.514</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQy5ITCBcbi4uRS5JSSBcbkRERUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDExLDAsMTYsMTgsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OSwiZHVyYXRpb24iOiIyMi4xMW1zIMKxIDEuMzFtcyIsInRpY2tDb3VudCI6Mjk0OSwidmlzaXRlZE5vZGVzIjo0MzkwLCJzZWFyY2hDb3VudCI6MzI1MTUsImJyYW5jaGluZ0ZhY3RvciI6IjMuNTE0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNCsxIDEtMyAyLTEgNS0yIDgtMSAzKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>8.61ms ± 5.60ms</td>
+<td>676</td>
+<td>677</td>
+<td>6329</td>
+
+<td>1.048</td>
+<td>
+
+[122 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0MuSEwgXG4uLkUuSUkgXG5EREVKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjguNjFtcyDCsSA1LjYwbXMiLCJ0aWNrQ291bnQiOjY3NiwidmlzaXRlZE5vZGVzIjo2NzcsInNlYXJjaENvdW50Ijo2MzI5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA0OCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMCsxIDEwKzEgOC0xIDYrMSAxMC0xIDUtMSA4KzEgMTArMSA2KzEgOC0xIDMrMSAxMC0xIDYtMiAzKzEgNSsxIDIrMSAzLTIgNS0xIDEwKzEgOCsxIDIrMiAwKzEgMi0xIDEwLTEgNSsxIDEtMiAxMCsxIDIrMSAxKzEgMC0xIDItMiAxMC0xIDUtMSAyLTEgMTArMSA4LTEgNisxIDMtMSAxMC0xIDgrMSA2KzIgMTArMSA3LTEgMTAtMiA4LTEgMTArMSA5KzEgMTArMSA5KzEgMS0xIDktMiA3KzEgMTAtMSA2LTMgOCsxIDEwKzEgNisyIDUtMSAxMC0xIDgtMSA2LTEgMTArMSA2LTEgMisxIDEwLTEgOCsxIDMrMSAxMCsxIDItMSA2KzEgMTAtMSA1KzIgMy0xIDEwKzEgMSsxIDYtMSAxMC0xIDgtMSAyKzEgMTArMSA1LTEgOCsxIDQrMSAxMC0xIDgtMSAyLTEgMTArMSA2KzMgNy0xIDQrMiAxLTIgMTAtMiA4KzEgMTArMSA5KzEgMTArMSA5KzEgNC0yIDktMiA3KzEgMTAtMSA4LTEgNy0xIDkrMSAxMCsxIDUtMSA5LTEgMTAtMiA4KzEgMTArMSA5KzEgMi0xIDArMiAxMCsxIDktMSAxMC0yIDgtMSAxMCsxIDctMiA2LTMgMyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.34ms ± 0.09ms</td>
+<td>49</td>
+<td>50</td>
+<td>445</td>
+
+<td>1.121</td>
+<td>
+
+[34 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQy5ITCBcbi4uRS5JSSBcbkRERUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDExLDAsMTYsMTgsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC4zNG1zIMKxIDAuMDltcyIsInRpY2tDb3VudCI6NDksInZpc2l0ZWROb2RlcyI6NTAsInNlYXJjaENvdW50Ijo0NDUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTIxIiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzIgMTArMSAyKzEgNisxIDUtMSA2KzEgMCsyIDYtMiAyLTEgMTAtMSAwLTEgMS0yIDUtMSAxMCsxIDIrMSA2KzIgMC0xIDYtMSAwKzMgMy0xIDYtMSAyLTEgNCsxIDMrMSAxMC0xIDEtMSAwLTIgMTArMSAyLTMgOC0xIDEwLTEgMysyIDYrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.71ms ± 0.35ms</td>
+<td>20</td>
+<td>21</td>
+<td>181</td>
+
+<td>1.197</td>
+<td>
+
+[19 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQy5ITCBcbi4uRS5JSSBcbkRERUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDExLDAsMTYsMTgsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC43MW1zIMKxIDAuMzVtcyIsInRpY2tDb3VudCI6MjAsInZpc2l0ZWROb2RlcyI6MjEsInNlYXJjaENvdW50IjoxODEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTk3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA4LTEgMysyIDYrMSA1LTEgNisxIDEtMiA1LTEgNi0yIDIrMSAwKzEgNCsxIDItMSA2KzIgNCsyIDYtMSA0LTEgMS0xIDItMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>8.56ms ± 1.26ms</td>
+<td>1277</td>
+<td>1278</td>
+<td>13226</td>
+
+<td>2.728</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQi4uRkZGIFxuQi4uRy5MIFxuUFAuR0hMS1xuQ0NDLkhMIFxuLi5FLklJIFxuRERFSkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMTEsMCwxNiwxOCwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI4LjU2bXMgwrEgMS4yNm1zIiwidGlja0NvdW50IjoxMjc3LCJ2aXNpdGVkTm9kZXMiOjEyNzgsInNlYXJjaENvdW50IjoxMzIyNiwiYnJhbmNoaW5nRmFjdG9yIjoiMi43MjgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA0KzEgMS0zIDUtMiAyLTEgMCsyIDgtMSAzKzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.46ms ± 0.48ms</td>
+<td>868</td>
+<td>869</td>
+<td>8755</td>
+
+<td>2.954</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0MuSEwgXG4uLkUuSUkgXG5EREVKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuNDZtcyDCsSAwLjQ4bXMiLCJ0aWNrQ291bnQiOjg2OCwidmlzaXRlZE5vZGVzIjo4NjksInNlYXJjaENvdW50Ijo4NzU1LCJicmFuY2hpbmdGYWN0b3IiOiIyLjk1NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMCsxIDQrMSAxLTMgMi0xIDgtMSAzKzIgNS0yIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.93ms ± 0.98ms</td>
+<td>300</td>
+<td>301</td>
+<td>2941</td>
+
+<td>2.550</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0MuSEwgXG4uLkUuSUkgXG5EREVKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuOTNtcyDCsSAwLjk4bXMiLCJ0aWNrQ291bnQiOjMwMCwidmlzaXRlZE5vZGVzIjozMDEsInNlYXJjaENvdW50IjoyOTQxLCJicmFuY2hpbmdGYWN0b3IiOiIyLjU1MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOC0xIDArMSA0KzEgMS0zIDUtMiAzKzIgMi0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>300.21ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>585589</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>201.62ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>383484</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>9</td>
+<td>22.70ms ± 0.80ms</td>
+<td>3</td>
+<td>8</td>
+<td>14896</td>
+
+<td>3.170</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQy5ITCBcbi4uRS5JSSBcbkRERUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDExLDAsMTYsMTgsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OSwiZHVyYXRpb24iOiIyMi43MG1zIMKxIDAuODBtcyIsInRpY2tDb3VudCI6MywidmlzaXRlZE5vZGVzIjo4LCJzZWFyY2hDb3VudCI6MTQ4OTYsImJyYW5jaGluZ0ZhY3RvciI6IjMuMTcwIiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNCsxIDEtMyAyLTEgNS0yIDgtMSAzKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>7</td>
+<td>28.45ms ± 5.73ms</td>
+<td>5</td>
+<td>2172</td>
+<td>41898</td>
+
+<td>3.126</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQi4uRkZGIFxuQi4uRy5MIFxuUFAuR0hMS1xuQ0NDLkhMIFxuLi5FLklJIFxuRERFSkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMTEsMCwxNiwxOCwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo3LCJkdXJhdGlvbiI6IjI4LjQ1bXMgwrEgNS43M21zIiwidGlja0NvdW50Ijo1LCJ2aXNpdGVkTm9kZXMiOjIxNzIsInNlYXJjaENvdW50Ijo0MTg5OCwiYnJhbmNoaW5nRmFjdG9yIjoiMy4xMjYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA0KzEgMS0zIDItMSA1LTIgMCsyIDgtMSAzKzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>12</td>
+<td>16.58ms ± 0.55ms</td>
+<td>5</td>
+<td>1886</td>
+<td>33628</td>
+
+<td>3.530</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0MuSEwgXG4uLkUuSUkgXG5EREVKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE2LjU4bXMgwrEgMC41NW1zIiwidGlja0NvdW50Ijo1LCJ2aXNpdGVkTm9kZXMiOjE4ODYsInNlYXJjaENvdW50IjozMzYyOCwiYnJhbmNoaW5nRmFjdG9yIjoiMy41MzAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA0KzEgMS0zIDItMSA1LTIgOC0xIDMrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>12</td>
+<td>16.36ms ± 3.02ms</td>
+<td>3</td>
+<td>877</td>
+<td>6999</td>
+
+<td>2.866</td>
+<td>
+
+[8 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0MuSEwgXG4uLkUuSUkgXG5EREVKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE2LjM2bXMgwrEgMy4wMm1zIiwidGlja0NvdW50IjozLCJ2aXNpdGVkTm9kZXMiOjg3Nywic2VhcmNoQ291bnQiOjY5OTksImJyYW5jaGluZ0ZhY3RvciI6IjIuODY2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNCsxIDEtMyAyLTEgNS0yIDgtMSAzKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-3**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-3.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+5
+...... 
+...... 
+.PPC..K
+.BBC.F 
+.D.C.F 
+.DEE.F 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+5 (2 Horizontal, 3 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>5.44ms ± 5.22ms</td>
+<td>772</td>
+<td>816</td>
+<td>7778</td>
+
+<td>1.789</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuNVxuLi4uLi4uIFxuLi4uLi4uIFxuLlBQQy4uS1xuLkJCQy5GIFxuLkQuQy5GIFxuLkRFRS5GICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDE1LDE5LDIzLDI1LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuNDRtcyDCsSA1LjIybXMiLCJ0aWNrQ291bnQiOjc3MiwidmlzaXRlZE5vZGVzIjo4MTYsInNlYXJjaENvdW50Ijo3Nzc4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjc4OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMS0yIDMtMyAyKzMgNC0xIDUtMSAxKzMgMCsxIDQtMyAwLTEgMS0zIDItMyAxKzMgMyszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>1.03ms ± 0.25ms</td>
+<td>160</td>
+<td>161</td>
+<td>1425</td>
+
+<td>1.118</td>
+<td>
+
+[45 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjVcbi4uLi4uLiBcbi4uLi4uLiBcbi5QUEMuLktcbi5CQkMuRiBcbi5ELkMuRiBcbi5ERUUuRiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywxNSwxOSwyMywyNSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIxLjAzbXMgwrEgMC4yNW1zIiwidGlja0NvdW50IjoxNjAsInZpc2l0ZWROb2RlcyI6MTYxLCJzZWFyY2hDb3VudCI6MTQyNSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMTgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSAzLTMgNSsxIDItMSA1LTIgMS0yIDUrMSAyKzQgMSsyIDUtMSA0LTEgNS0xIDErMSAwKzIgNC0zIDAtMiAxLTMgNS0xIDItNCA1KzQgMiszIDUtMiAyLTIgNSsxIDIrMSAzKzMgNS0zIDMtMiA1KzQgMi0xIDUtMyAyLTEgNSsyIDIrMyAzKzEgNS0zIDItMiAxKzMgMCsyIDUrMSAyLTEgMy0yIDUtMSAzKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.76ms ± 0.06ms</td>
+<td>143</td>
+<td>144</td>
+<td>1147</td>
+
+<td>1.174</td>
+<td>
+
+[32 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuNVxuLi4uLi4uIFxuLi4uLi4uIFxuLlBQQy4uS1xuLkJCQy5GIFxuLkQuQy5GIFxuLkRFRS5GICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDE1LDE5LDIzLDI1LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuNzZtcyDCsSAwLjA2bXMiLCJ0aWNrQ291bnQiOjE0MywidmlzaXRlZE5vZGVzIjoxNDQsInNlYXJjaENvdW50IjoxMTQ3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE3NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsxIDItMSAxLTIgNS0xIDIrMyA0LTEgNS0yIDItMSA1KzMgMC0xIDUtMSAzLTMgNSsyIDIrMiAxKzMgMCsxIDEtMiA1LTQgMSsyIDUrMSAwKzIgNC0zIDAtMyAxLTMgNSsyIDItNCAzKzMgNS0zIDErMyA1KzEgMisxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>1.26ms ± 0.42ms</td>
+<td>134</td>
+<td>135</td>
+<td>1127</td>
+
+<td>1.254</td>
+<td>
+
+[24 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuNVxuLi4uLi4uIFxuLi4uLi4uIFxuLlBQQy4uS1xuLkJCQy5GIFxuLkQuQy5GIFxuLkRFRS5GICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDE1LDE5LDIzLDI1LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjEuMjZtcyDCsSAwLjQybXMiLCJ0aWNrQ291bnQiOjEzNCwidmlzaXRlZE5vZGVzIjoxMzUsInNlYXJjaENvdW50IjoxMTI3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjI1NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMS0yIDMtMyA1KzIgMSszIDMrMiAwLTEgMS0zIDIrMiA0LTEgNS00IDMrMSAwKzEgMy0zIDIrMSAxKzMgNSsxIDArMiA0LTMgMC0yIDEtMyAyLTQgMyszIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.36ms ± 0.19ms</td>
+<td>528</td>
+<td>529</td>
+<td>4999</td>
+
+<td>1.659</td>
+<td>
+
+[15 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG41XG4uLi4uLi4gXG4uLi4uLi4gXG4uUFBDLi5LXG4uQkJDLkYgXG4uRC5DLkYgXG4uREVFLkYgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMTUsMTksMjMsMjUsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4zNm1zIMKxIDAuMTltcyIsInRpY2tDb3VudCI6NTI4LCJ2aXNpdGVkTm9kZXMiOjUyOSwic2VhcmNoQ291bnQiOjQ5OTksImJyYW5jaGluZ0ZhY3RvciI6IjEuNjU5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAzLTMgNSsyIDEtMiAyKzMgMSszIDArMiA0LTQgMC0yIDEtMyAyLTQgNS00IDErMyAwKzIgMyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.92ms ± 0.21ms</td>
+<td>609</td>
+<td>610</td>
+<td>5947</td>
+
+<td>1.751</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjVcbi4uLi4uLiBcbi4uLi4uLiBcbi5QUEMuLktcbi5CQkMuRiBcbi5ELkMuRiBcbi5ERUUuRiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywxNSwxOSwyMywyNSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIyLjkybXMgwrEgMC4yMW1zIiwidGlja0NvdW50Ijo2MDksInZpc2l0ZWROb2RlcyI6NjEwLCJzZWFyY2hDb3VudCI6NTk0NywiYnJhbmNoaW5nRmFjdG9yIjoiMS43NTEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMiAzLTMgNSsyIDIrMyAxKzMgMCsyIDQtNCAwLTIgMS0zIDItNCA1LTMgMyszIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>3.66ms ± 0.51ms</td>
+<td>369</td>
+<td>370</td>
+<td>3320</td>
+
+<td>1.672</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjVcbi4uLi4uLiBcbi4uLi4uLiBcbi5QUEMuLktcbi5CQkMuRiBcbi5ELkMuRiBcbi5ERUUuRiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywxNSwxOSwyMywyNSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjY2bXMgwrEgMC41MW1zIiwidGlja0NvdW50IjozNjksInZpc2l0ZWROb2RlcyI6MzcwLCJzZWFyY2hDb3VudCI6MzMyMCwiYnJhbmNoaW5nRmFjdG9yIjoiMS42NzIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMiAzLTMgNSsyIDIrMyAxKzMgMCsyIDQtNCAwLTIgMS0zIDItNCA1LTQgMyszIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>4</td>
+<td>51.56ms ± 9.98ms</td>
+<td>12</td>
+<td>774</td>
+<td>124679</td>
+
+<td>2.094</td>
+<td>
+
+[15 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG41XG4uLi4uLi4gXG4uLi4uLi4gXG4uUFBDLi5LXG4uQkJDLkYgXG4uRC5DLkYgXG4uREVFLkYgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMTUsMTksMjMsMjUsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI1MS41Nm1zIMKxIDkuOThtcyIsInRpY2tDb3VudCI6MTIsInZpc2l0ZWROb2RlcyI6Nzc0LCJzZWFyY2hDb3VudCI6MTI0Njc5LCJicmFuY2hpbmdGYWN0b3IiOiIyLjA5NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMS0yIDMtMyAyKzMgNC0xIDUtMSAxKzMgMCsxIDQtMyAwLTEgMS0zIDItMyAxKzMgMCsyIDMrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>3</td>
+<td>62.79ms ± 5.79ms</td>
+<td>13</td>
+<td>818</td>
+<td>144182</td>
+
+<td>2.239</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjVcbi4uLi4uLiBcbi4uLi4uLiBcbi5QUEMuLktcbi5CQkMuRiBcbi5ELkMuRiBcbi5ERUUuRiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywxNSwxOSwyMywyNSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjozLCJkdXJhdGlvbiI6IjYyLjc5bXMgwrEgNS43OW1zIiwidGlja0NvdW50IjoxMywidmlzaXRlZE5vZGVzIjo4MTgsInNlYXJjaENvdW50IjoxNDQxODIsImJyYW5jaGluZ0ZhY3RvciI6IjIuMjM5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxLTIgMy0zIDIrMyA0LTEgNS0xIDErMyAwKzEgNC0zIDAtMSAxLTMgMi0zIDErMyAzKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>2</td>
+<td>87.55ms ± 9.03ms</td>
+<td>11</td>
+<td>582</td>
+<td>79087</td>
+
+<td>2.140</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjVcbi4uLi4uLiBcbi4uLi4uLiBcbi5QUEMuLktcbi5CQkMuRiBcbi5ELkMuRiBcbi5ERUUuRiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywxNSwxOSwyMywyNSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyLCJkdXJhdGlvbiI6Ijg3LjU1bXMgwrEgOS4wM21zIiwidGlja0NvdW50IjoxMSwidmlzaXRlZE5vZGVzIjo1ODIsInNlYXJjaENvdW50Ijo3OTA4NywiYnJhbmNoaW5nRmFjdG9yIjoiMi4xNDAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMiAzLTMgMiszIDQtMSA1LTEgMSszIDArMSA0LTMgMC0xIDEtMyAyLTMgMSszIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-4**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-4.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+6
+D..F.. 
+D..F.. 
+DPPF..K
+..BCCC 
+..B..E 
+..GGGE 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+6 (2 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>2.10ms ± 1.05ms</td>
+<td>366</td>
+<td>410</td>
+<td>3476</td>
+
+<td>2.324</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuRC4uRi4uIFxuRC4uRi4uIFxuRFBQRi4uS1xuLi5CQ0NDIFxuLi5CLi5FIFxuLi5HR0dFICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIyLjEwbXMgwrEgMS4wNW1zIiwidGlja0NvdW50IjozNjYsInZpc2l0ZWROb2RlcyI6NDEwLCJzZWFyY2hDb3VudCI6MzQ3NiwiYnJhbmNoaW5nRmFjdG9yIjoiMi4zMjQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMyAwLTEgMy0zIDArMSAyLTMgNC0zIDYtMiAxKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>0.63ms ± 0.86ms</td>
+<td>59</td>
+<td>60</td>
+<td>558</td>
+
+<td>1.237</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC42M21zIMKxIDAuODZtcyIsInRpY2tDb3VudCI6NTksInZpc2l0ZWROb2RlcyI6NjAsInNlYXJjaENvdW50Ijo1NTgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTIgMisyIDYrMSAyKzEgMC0xIDMtMyAwKzEgNisxIDQtMiA1LTQgNi0xIDQrMiA2KzIgNC0xIDItMyA2LTMgNC0yIDUrMSAxKzMgMCsyIDUtMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.22ms ± 0.09ms</td>
+<td>23</td>
+<td>24</td>
+<td>186</td>
+
+<td>1.161</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuRC4uRi4uIFxuRC4uRi4uIFxuRFBQRi4uS1xuLi5CQ0NDIFxuLi5CLi5FIFxuLi5HR0dFICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIwLjIybXMgwrEgMC4wOW1zIiwidGlja0NvdW50IjoyMywidmlzaXRlZE5vZGVzIjoyNCwic2VhcmNoQ291bnQiOjE4NiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMiAyKzIgNisxIDIrMSAwLTEgNisxIDMtMyA0LTIgNi0xIDUtNCA2KzIgNCsyIDYtMSA0LTEgMCsxIDYtMSA0KzEgMi0zIDYtMSA0LTMgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.58ms ± 0.15ms</td>
+<td>20</td>
+<td>21</td>
+<td>152</td>
+
+<td>1.183</td>
+<td>
+
+[19 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuRC4uRi4uIFxuRC4uRi4uIFxuRFBQRi4uS1xuLi5CQ0NDIFxuLi5CLi5FIFxuLi5HR0dFICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIwLjU4bXMgwrEgMC4xNW1zIiwidGlja0NvdW50IjoyMCwidmlzaXRlZE5vZGVzIjoyMSwic2VhcmNoQ291bnQiOjE1MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xODMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMiAyKzIgNisxIDIrMSAwLTEgNisxIDMtMyA0LTIgNi0xIDUtNCA2KzIgNSszIDQrMSAwKzEgMi0zIDYtMyA0LTIgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>1.14ms ± 0.37ms</td>
+<td>176</td>
+<td>177</td>
+<td>1649</td>
+
+<td>2.122</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG42XG5ELi5GLi4gXG5ELi5GLi4gXG5EUFBGLi5LXG4uLkJDQ0MgXG4uLkIuLkUgXG4uLkdHR0UgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMywwLDIwLDIxLDI5LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjEuMTRtcyDCsSAwLjM3bXMiLCJ0aWNrQ291bnQiOjE3NiwidmlzaXRlZE5vZGVzIjoxNzcsInNlYXJjaENvdW50IjoxNjQ5LCJicmFuY2hpbmdGYWN0b3IiOiIyLjEyMiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMiszIDAtMSAzLTMgMCsxIDItMyA2LTIgNC0zIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.41ms ± 0.47ms</td>
+<td>186</td>
+<td>187</td>
+<td>1758</td>
+
+<td>2.139</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi40MW1zIMKxIDAuNDdtcyIsInRpY2tDb3VudCI6MTg2LCJ2aXNpdGVkTm9kZXMiOjE4Nywic2VhcmNoQ291bnQiOjE3NTgsImJyYW5jaGluZ0ZhY3RvciI6IjIuMTM5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzMgMC0xIDMtMyAwKzEgMi0zIDYtMiA0LTMgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.59ms ± 0.33ms</td>
+<td>40</td>
+<td>41</td>
+<td>274</td>
+
+<td>1.690</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC41OW1zIMKxIDAuMzNtcyIsInRpY2tDb3VudCI6NDAsInZpc2l0ZWROb2RlcyI6NDEsInNlYXJjaENvdW50IjoyNzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuNjkwIiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzMgMC0xIDMtMyAwKzEgMi0zIDYtMiA0LTMgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>2</td>
+<td>96.87ms ± 0.64ms</td>
+<td>8</td>
+<td>11</td>
+<td>185281</td>
+
+<td>2.899</td>
+<td>
+
+[11 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MiwiZHVyYXRpb24iOiI5Ni44N21zIMKxIDAuNjRtcyIsInRpY2tDb3VudCI6OCwidmlzaXRlZE5vZGVzIjoxMSwic2VhcmNoQ291bnQiOjE4NTI4MSwiYnJhbmNoaW5nRmFjdG9yIjoiMi44OTkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMyAwLTEgMy0zIDArMSAyLTMgNC0zIDYtMiAxKzMgMCsxIDArMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>166.09ms ± 0.00ms</td>
+<td>8</td>
+<td>9</td>
+<td>232496</td>
+
+<td>3.816</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuRC4uRi4uIFxuRC4uRi4uIFxuRFBQRi4uS1xuLi5CQ0NDIFxuLi5CLi5FIFxuLi5HR0dFICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxLCJkdXJhdGlvbiI6IjE2Ni4wOW1zIMKxIDAuMDBtcyIsInRpY2tDb3VudCI6OCwidmlzaXRlZE5vZGVzIjo5LCJzZWFyY2hDb3VudCI6MjMyNDk2LCJicmFuY2hpbmdGYWN0b3IiOiIzLjgxNiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMiszIDAtMSAzLTMgMCsxIDItMyA0LTMgNi0yIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>3.33ms ± 0.21ms</td>
+<td>5</td>
+<td>9</td>
+<td>3758</td>
+
+<td>2.347</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuRC4uRi4uIFxuRC4uRi4uIFxuRFBQRi4uS1xuLi5CQ0NDIFxuLi5CLi5FIFxuLi5HR0dFICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjMzbXMgwrEgMC4yMW1zIiwidGlja0NvdW50Ijo1LCJ2aXNpdGVkTm9kZXMiOjksInNlYXJjaENvdW50IjozNzU4LCJicmFuY2hpbmdGYWN0b3IiOiIyLjM0NyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMiszIDAtMSAzLTMgMCsxIDItMyA0LTMgNi0yIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>20</td>
+<td>5.28ms ± 1.54ms</td>
+<td>8</td>
+<td>377</td>
+<td>9357</td>
+
+<td>2.618</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG42XG5ELi5GLi4gXG5ELi5GLi4gXG5EUFBGLi5LXG4uLkJDQ0MgXG4uLkIuLkUgXG4uLkdHR0UgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMywwLDIwLDIxLDI5LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjhtcyDCsSAxLjU0bXMiLCJ0aWNrQ291bnQiOjgsInZpc2l0ZWROb2RlcyI6Mzc3LCJzZWFyY2hDb3VudCI6OTM1NywiYnJhbmNoaW5nRmFjdG9yIjoiMi42MTgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMyAwLTEgMy0zIDArMSAyLTMgNC0zIDYtMiAxKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>4.86ms ± 1.49ms</td>
+<td>8</td>
+<td>357</td>
+<td>8604</td>
+
+<td>2.592</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNC44Nm1zIMKxIDEuNDltcyIsInRpY2tDb3VudCI6OCwidmlzaXRlZE5vZGVzIjozNTcsInNlYXJjaENvdW50Ijo4NjA0LCJicmFuY2hpbmdGYWN0b3IiOiIyLjU5MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMiszIDAtMSAzLTMgMCsxIDItMyA0LTMgNi0yIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.93ms ± 0.07ms</td>
+<td>5</td>
+<td>122</td>
+<td>915</td>
+
+<td>1.972</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkQuLkYuLiBcbkQuLkYuLiBcbkRQUEYuLktcbi4uQkNDQyBcbi4uQi4uRSBcbi4uR0dHRSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC45M21zIMKxIDAuMDdtcyIsInRpY2tDb3VudCI6NSwidmlzaXRlZE5vZGVzIjoxMjIsInNlYXJjaENvdW50Ijo5MTUsImJyYW5jaGluZ0ZhY3RvciI6IjEuOTcyIiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzMgMC0xIDMtMyAwKzEgMi0zIDQtMyA2LTIgMSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-5**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-5.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+BB.F.G 
+L..FCG 
+LPPFCJK
+LHHHCJ 
+E...II 
+E...DD 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (4 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>14</td>
+<td>13.85ms ± 0.87ms</td>
+<td>2237</td>
+<td>2504</td>
+<td>24622</td>
+
+<td>2.937</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkYuRyBcbkwuLkZDRyBcbkxQUEZDSktcbkxISEhDSiBcbkUuLi5JSSBcbkUuLi5ERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw1LDYsMTAsMCwxNywxOSwyNCwyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNCwiZHVyYXRpb24iOiIxMy44NW1zIMKxIDAuODdtcyIsInRpY2tDb3VudCI6MjIzNywidmlzaXRlZE5vZGVzIjoyNTA0LCJzZWFyY2hDb3VudCI6MjQ2MjIsImJyYW5jaGluZ0ZhY3RvciI6IjIuOTM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA1KzEgMy0xIDctMSA5LTMgNisxIDEwLTMgMSszIDQrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>3.39ms ± 0.61ms</td>
+<td>466</td>
+<td>467</td>
+<td>5036</td>
+
+<td>1.027</td>
+<td>
+
+[184 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GLkcgXG5MLi5GQ0cgXG5MUFBGQ0pLXG5MSEhIQ0ogXG5FLi4uSUkgXG5FLi4uREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNSw2LDEwLDAsMTcsMTksMjQsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMy4zOW1zIMKxIDAuNjFtcyIsInRpY2tDb3VudCI6NDY2LCJ2aXNpdGVkTm9kZXMiOjQ2Nywic2VhcmNoQ291bnQiOjUwMzYsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDI3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0zIDktMyAxMCsyIDkrMiAxMC0xIDktMSA2KzIgMTAtMSA2LTEgMTArMyA5LTEgMTAtMiA0LTEgMTAtMSA5KzIgMTArMyA2LTEgOS0yIDcrMSAxMC0zIDkrMyAxMCsyIDktMiAxMC0xIDkrMSA2KzIgMTAtMSA5LTEgNi0xIDEwKzMgMisxIDEwLTIgOS0xIDEwLTEgOSsyIDEwKzIgNisxIDktMiA3LTEgMTAtMiA5KzIgMTArMSA2LTEgNCsxIDEwLTEgOS0yIDEwKzIgOSsxIDYrMSA5KzEgMisxIDEwLTIgOS0yIDEwKzEgMi0xIDQrMiA2LTEgOSsxIDEwLTEgNisxIDQtMSAxMCsxIDIrMSAxMCsxIDktMSAyLTIgMTAtMiA0KzEgNSsxIDEwKzEgNi0yIDkrMSAxMC0xIDQtMyAxMCszIDkrMiAxMC0yIDktMSAxMCsxIDktMiA3KzEgMTAtMSA2KzIgMTAtMSA2LTEgMTArMyA5KzIgMTAtMiA5LTEgMTArMSA2KzEgOSsxIDcrMSAxMC0yIDktMSAxMCsxIDctMiAzLTEgMTAtMSA2LTEgMTArMyA5LTEgMTAtMiA5KzIgMTArMSA4LTEgMTAtMyA5LTIgMTArMSA2LTEgMTArMyA5KzMgMTAtNCA5LTIgMTArMyA3KzEgMTAtMiA5KzIgMTArMSA5LTMgMTAtMiA5KzIgMTArNCA4KzEgMTAtMyA5LTIgNy0yIDEwKzMgOSszIDEwLTIgOS0yIDEwKzEgOSsxIDYrMiAxMC0yIDYtMSAxMCszIDIrMSAxMC0yIDktMiAxMC0xIDkrMSAxMCsyIDYrMSAxMC0xIDcrMyAxMC0xIDktMSAxMCsyIDkrMiA4LTEgMTAtMyA5LTIgMTArMiA3LTIgMTAtMSA5KzIgNi0xIDEwKzMgOS0yIDEwLTEgOSsxIDEwLTMgNisxIDcrMSAxMCszIDktMSAyLTEgMTAtMiA5KzIgMTArMSA3KzEgOCsxIDktMiA3LTMgMSsyIDEwLTEgMSsxIDArMSA2LTIgNCszIDArMSA2KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.18ms ± 0.02ms</td>
+<td>29</td>
+<td>30</td>
+<td>311</td>
+
+<td>1.140</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkYuRyBcbkwuLkZDRyBcbkxQUEZDSktcbkxISEhDSiBcbkUuLi5JSSBcbkUuLi5ERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw1LDYsMTAsMCwxNywxOSwyNCwyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIwLjE4bXMgwrEgMC4wMm1zIiwidGlja0NvdW50IjoyOSwidmlzaXRlZE5vZGVzIjozMCwic2VhcmNoQ291bnQiOjMxMSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNDAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwLTMgOS0zIDYrMiA0KzIgMTArMSA2LTEgOSsxIDEwLTEgNSsxIDktMSAzLTEgMTArMSA5KzEgOC0xIDEwLTIgOS0xIDYrMSAxMCsxIDkrMSA4KzEgNy0xIDEwKzEgOS0xIDErMiAxMC0xIDErMSA2LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.39ms ± 0.28ms</td>
+<td>10</td>
+<td>11</td>
+<td>106</td>
+
+<td>1.413</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkYuRyBcbkwuLkZDRyBcbkxQUEZDSktcbkxISEhDSiBcbkUuLi5JSSBcbkUuLi5ERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw1LDYsMTAsMCwxNywxOSwyNCwyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIwLjM5bXMgwrEgMC4yOG1zIiwidGlja0NvdW50IjoxMCwidmlzaXRlZE5vZGVzIjoxMSwic2VhcmNoQ291bnQiOjEwNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS40MTMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwLTMgOS0zIDYrMiA0KzIgNi0xIDUrMSAzLTEgNy0xIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>6.43ms ± 0.29ms</td>
+<td>1099</td>
+<td>1100</td>
+<td>11911</td>
+
+<td>2.424</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkIuRi5HIFxuTC4uRkNHIFxuTFBQRkNKS1xuTEhISENKIFxuRS4uLklJIFxuRS4uLkREICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDUsNiwxMCwwLDE3LDE5LDI0LDI4LDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjYuNDNtcyDCsSAwLjI5bXMiLCJ0aWNrQ291bnQiOjEwOTksInZpc2l0ZWROb2RlcyI6MTEwMCwic2VhcmNoQ291bnQiOjExOTExLCJicmFuY2hpbmdGYWN0b3IiOiIyLjQyNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTAtMyA1KzEgMy0xIDktMyA3LTEgNCsyIDErMyAwKzIgNisyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>6.81ms ± 0.45ms</td>
+<td>1019</td>
+<td>1020</td>
+<td>11161</td>
+
+<td>2.674</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GLkcgXG5MLi5GQ0cgXG5MUFBGQ0pLXG5MSEhIQ0ogXG5FLi4uSUkgXG5FLi4uREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNSw2LDEwLDAsMTcsMTksMjQsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi44MW1zIMKxIDAuNDVtcyIsInRpY2tDb3VudCI6MTAxOSwidmlzaXRlZE5vZGVzIjoxMDIwLCJzZWFyY2hDb3VudCI6MTExNjEsImJyYW5jaGluZ0ZhY3RvciI6IjIuNjc0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0zIDktMyA0KzIgNSsxIDMtMSA3LTEgMSszIDYrMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>2.73ms ± 0.16ms</td>
+<td>118</td>
+<td>119</td>
+<td>1231</td>
+
+<td>2.047</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GLkcgXG5MLi5GQ0cgXG5MUFBGQ0pLXG5MSEhIQ0ogXG5FLi4uSUkgXG5FLi4uREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNSw2LDEwLDAsMTcsMTksMjQsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi43M21zIMKxIDAuMTZtcyIsInRpY2tDb3VudCI6MTE4LCJ2aXNpdGVkTm9kZXMiOjExOSwic2VhcmNoQ291bnQiOjEyMzEsImJyYW5jaGluZ0ZhY3RvciI6IjIuMDQ3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA1KzEgMy0xIDktMyA3LTEgMTAtMyA2KzIgNCsyIDErMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>422.82ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>671645</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>3</td>
+<td>68.77ms ± 14.59ms</td>
+<td>4</td>
+<td>9</td>
+<td>21699</td>
+
+<td>2.893</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkYuRyBcbkwuLkZDRyBcbkxQUEZDSktcbkxISEhDSiBcbkUuLi5JSSBcbkUuLi5ERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw1LDYsMTAsMCwxNywxOSwyNCwyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjozLCJkdXJhdGlvbiI6IjY4Ljc3bXMgwrEgMTQuNTltcyIsInRpY2tDb3VudCI6NCwidmlzaXRlZE5vZGVzIjo5LCJzZWFyY2hDb3VudCI6MjE2OTksImJyYW5jaGluZ0ZhY3RvciI6IjIuODkzIiwic29sdXRpb25TdGVwcyI6IuKIhSA1KzEgMy0xIDctMSA5LTMgNisxIDEwLTMgMSszIDQrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>4</td>
+<td>46.02ms ± 9.39ms</td>
+<td>7</td>
+<td>1897</td>
+<td>72295</td>
+
+<td>2.936</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkIuRi5HIFxuTC4uRkNHIFxuTFBQRkNKS1xuTEhISENKIFxuRS4uLklJIFxuRS4uLkREICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDUsNiwxMCwwLDE3LDE5LDI0LDI4LDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDYuMDJtcyDCsSA5LjM5bXMiLCJ0aWNrQ291bnQiOjcsInZpc2l0ZWROb2RlcyI6MTg5Nywic2VhcmNoQ291bnQiOjcyMjk1LCJicmFuY2hpbmdGYWN0b3IiOiIyLjkzNiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsxIDMtMSA3LTEgOS0zIDEwLTMgMSszIDQrMiAwKzIgNisxIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>6</td>
+<td>34.82ms ± 1.76ms</td>
+<td>6</td>
+<td>1946</td>
+<td>53566</td>
+
+<td>3.217</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GLkcgXG5MLi5GQ0cgXG5MUFBGQ0pLXG5MSEhIQ0ogXG5FLi4uSUkgXG5FLi4uREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNSw2LDEwLDAsMTcsMTksMjQsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NiwiZHVyYXRpb24iOiIzNC44Mm1zIMKxIDEuNzZtcyIsInRpY2tDb3VudCI6NiwidmlzaXRlZE5vZGVzIjoxOTQ2LCJzZWFyY2hDb3VudCI6NTM1NjYsImJyYW5jaGluZ0ZhY3RvciI6IjMuMjE3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA1KzEgMy0xIDctMSA5LTMgNisxIDEwLTMgMSszIDQrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>11</td>
+<td>18.84ms ± 2.49ms</td>
+<td>4</td>
+<td>722</td>
+<td>6121</td>
+
+<td>2.489</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GLkcgXG5MLi5GQ0cgXG5MUFBGQ0pLXG5MSEhIQ0ogXG5FLi4uSUkgXG5FLi4uREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNSw2LDEwLDAsMTcsMTksMjQsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTEsImR1cmF0aW9uIjoiMTguODRtcyDCsSAyLjQ5bXMiLCJ0aWNrQ291bnQiOjQsInZpc2l0ZWROb2RlcyI6NzIyLCJzZWFyY2hDb3VudCI6NjEyMSwiYnJhbmNoaW5nRmFjdG9yIjoiMi40ODkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSAzLTEgNy0xIDktMyA2KzEgMTAtMyAxKzMgNCsyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-6**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-6.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+BB.G.. 
+HH.GFL 
+.PPCFLK
+EEICFL 
+D.IC.. 
+D..JJJ 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (4 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>15</td>
+<td>13.28ms ± 2.94ms</td>
+<td>1649</td>
+<td>1864</td>
+<td>16965</td>
+
+<td>2.810</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkcuLiBcbkhILkdGTCBcbi5QUENGTEtcbkVFSUNGTCBcbkQuSUMuLiBcbkQuLkpKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDEwLDExLDAsMTUsMTgsMjAsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTUsImR1cmF0aW9uIjoiMTMuMjhtcyDCsSAyLjk0bXMiLCJ0aWNrQ291bnQiOjE2NDksInZpc2l0ZWROb2RlcyI6MTg2NCwic2VhcmNoQ291bnQiOjE2OTY1LCJicmFuY2hpbmdGYWN0b3IiOiIyLjgxMCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMC0xIDgtMyA3KzEgOS0xIDEwLTMgMysyIDQrMiA2KzEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>0.40ms ± 0.25ms</td>
+<td>18</td>
+<td>19</td>
+<td>170</td>
+
+<td>1.208</td>
+<td>
+
+[18 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5HLi4gXG5ISC5HRkwgXG4uUFBDRkxLXG5FRUlDRkwgXG5ELklDLi4gXG5ELi5KSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiwxMCwxMSwwLDE1LDE4LDIwLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuNDBtcyDCsSAwLjI1bXMiLCJ0aWNrQ291bnQiOjE4LCJ2aXNpdGVkTm9kZXMiOjE5LCJzZWFyY2hDb3VudCI6MTcwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjIwOCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTAtMiA0LTEgMTArMSAzLTEgMTArMSA4KzEgNysxIDktMiAyKzEgOS0xIDctMSA4LTEgMTAtMyA2KzEgMCsxIDQrMyAzKzMgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.20ms ± 0.04ms</td>
+<td>10</td>
+<td>11</td>
+<td>106</td>
+
+<td>1.413</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkcuLiBcbkhILkdGTCBcbi5QUENGTEtcbkVFSUNGTCBcbkQuSUMuLiBcbkQuLkpKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDEwLDExLDAsMTUsMTgsMjAsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC4yMG1zIMKxIDAuMDRtcyIsInRpY2tDb3VudCI6MTAsInZpc2l0ZWROb2RlcyI6MTEsInNlYXJjaENvdW50IjoxMDYsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDEzIiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0yIDQrMiAzKzIgMC0xIDgtMyA3KzEgOS0xIDEwLTEgNisxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.47ms ± 0.25ms</td>
+<td>14</td>
+<td>15</td>
+<td>144</td>
+
+<td>1.468</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkcuLiBcbkhILkdGTCBcbi5QUENGTEtcbkVFSUNGTCBcbkQuSUMuLiBcbkQuLkpKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDEwLDExLDAsMTUsMTgsMjAsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC40N21zIMKxIDAuMjVtcyIsInRpY2tDb3VudCI6MTQsInZpc2l0ZWROb2RlcyI6MTUsInNlYXJjaENvdW50IjoxNDQsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDY4Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0yIDQrMiAzKzIgMC0xIDgtMyA3KzEgOS0xIDEwLTEgNisxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>14</td>
+<td>13.67ms ± 7.46ms</td>
+<td>1276</td>
+<td>1277</td>
+<td>13299</td>
+
+<td>2.247</td>
+<td>
+
+[11 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkIuRy4uIFxuSEguR0ZMIFxuLlBQQ0ZMS1xuRUVJQ0ZMIFxuRC5JQy4uIFxuRC4uSkpKICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsMTAsMTEsMCwxNSwxOCwyMCwyNCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNCwiZHVyYXRpb24iOiIxMy42N21zIMKxIDcuNDZtcyIsInRpY2tDb3VudCI6MTI3NiwidmlzaXRlZE5vZGVzIjoxMjc3LCJzZWFyY2hDb3VudCI6MTMyOTksImJyYW5jaGluZ0ZhY3RvciI6IjIuMjQ3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwLTEgOC0zIDArMSA3KzEgOS0yIDEwLTMgMysyIDYrMSAwKzIgNCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.21ms ± 0.95ms</td>
+<td>756</td>
+<td>757</td>
+<td>7960</td>
+
+<td>2.568</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5HLi4gXG5ISC5HRkwgXG4uUFBDRkxLXG5FRUlDRkwgXG5ELklDLi4gXG5ELi5KSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiwxMCwxMSwwLDE1LDE4LDIwLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjFtcyDCsSAwLjk1bXMiLCJ0aWNrQ291bnQiOjc1NiwidmlzaXRlZE5vZGVzIjo3NTcsInNlYXJjaENvdW50Ijo3OTYwLCJicmFuY2hpbmdGYWN0b3IiOiIyLjU2OCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMC0xIDgtMyA3KzEgOS0xIDEwLTMgNisxIDQrMiAzKzIgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>6.33ms ± 0.71ms</td>
+<td>246</td>
+<td>247</td>
+<td>2629</td>
+
+<td>2.247</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5HLi4gXG5ISC5HRkwgXG4uUFBDRkxLXG5FRUlDRkwgXG5ELklDLi4gXG5ELi5KSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiwxMCwxMSwwLDE1LDE4LDIwLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjYuMzNtcyDCsSAwLjcxbXMiLCJ0aWNrQ291bnQiOjI0NiwidmlzaXRlZE5vZGVzIjoyNDcsInNlYXJjaENvdW50IjoyNjI5LCJicmFuY2hpbmdGYWN0b3IiOiIyLjI0NyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMC0xIDgtMyA3KzEgOS0xIDEwLTMgNisxIDQrMiAzKzIgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>357.22ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>549848</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>221.48ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>300495</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>2</td>
+<td>82.19ms ± 11.85ms</td>
+<td>4</td>
+<td>9</td>
+<td>46673</td>
+
+<td>3.166</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkcuLiBcbkhILkdGTCBcbi5QUENGTEtcbkVFSUNGTCBcbkQuSUMuLiBcbkQuLkpKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDEwLDExLDAsMTUsMTgsMjAsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MiwiZHVyYXRpb24iOiI4Mi4xOW1zIMKxIDExLjg1bXMiLCJ0aWNrQ291bnQiOjQsInZpc2l0ZWROb2RlcyI6OSwic2VhcmNoQ291bnQiOjQ2NjczLCJicmFuY2hpbmdGYWN0b3IiOiIzLjE2NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMC0xIDgtMyA3KzEgOS0xIDEwLTMgMysyIDQrMiA2KzEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>3</td>
+<td>64.37ms ± 3.94ms</td>
+<td>8</td>
+<td>1626</td>
+<td>102661</td>
+
+<td>3.047</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkIuRy4uIFxuSEguR0ZMIFxuLlBQQ0ZMS1xuRUVJQ0ZMIFxuRC5JQy4uIFxuRC4uSkpKICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsMTAsMTEsMCwxNSwxOCwyMCwyNCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjozLCJkdXJhdGlvbiI6IjY0LjM3bXMgwrEgMy45NG1zIiwidGlja0NvdW50Ijo4LCJ2aXNpdGVkTm9kZXMiOjE2MjYsInNlYXJjaENvdW50IjoxMDI2NjEsImJyYW5jaGluZ0ZhY3RvciI6IjMuMDQ3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwLTEgOC0zIDcrMSA5LTEgMTAtMyAzKzIgNisxIDArMiA0KzIgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>7</td>
+<td>30.14ms ± 0.91ms</td>
+<td>6</td>
+<td>1339</td>
+<td>47490</td>
+
+<td>3.172</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5HLi4gXG5ISC5HRkwgXG4uUFBDRkxLXG5FRUlDRkwgXG5ELklDLi4gXG5ELi5KSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiwxMCwxMSwwLDE1LDE4LDIwLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMzAuMTRtcyDCsSAwLjkxbXMiLCJ0aWNrQ291bnQiOjYsInZpc2l0ZWROb2RlcyI6MTMzOSwic2VhcmNoQ291bnQiOjQ3NDkwLCJicmFuY2hpbmdGYWN0b3IiOiIzLjE3MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMC0xIDgtMyA3KzEgOS0xIDEwLTMgMysyIDQrMiA2KzEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>8</td>
+<td>24.88ms ± 0.69ms</td>
+<td>4</td>
+<td>818</td>
+<td>10727</td>
+
+<td>2.661</td>
+<td>
+
+[9 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5HLi4gXG5ISC5HRkwgXG4uUFBDRkxLXG5FRUlDRkwgXG5ELklDLi4gXG5ELi5KSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiwxMCwxMSwwLDE1LDE4LDIwLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjgsImR1cmF0aW9uIjoiMjQuODhtcyDCsSAwLjY5bXMiLCJ0aWNrQ291bnQiOjQsInZpc2l0ZWROb2RlcyI6ODE4LCJzZWFyY2hDb3VudCI6MTA3MjcsImJyYW5jaGluZ0ZhY3RvciI6IjIuNjYxIiwic29sdXRpb25TdGVwcyI6IuKIhSAwLTEgOC0zIDcrMSA5LTEgMTAtMyAzKzIgNCsyIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-7**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-7.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+8
+.BFFGE 
+.B.HGE 
+.PPH.DK
+..II.D 
+...C.. 
+...C.. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+8 (2 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>5</td>
+<td>38.90ms ± 3.46ms</td>
+<td>4943</td>
+<td>6011</td>
+<td>60951</td>
+
+<td>2.229</td>
+<td>
+
+[13 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuLkJGRkdFIFxuLkIuSEdFIFxuLlBQSC5ES1xuLi5JSS5EIFxuLi4uQy4uIFxuLi4uQy4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw1LDksMSwxNywyMCwyN10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo1LCJkdXJhdGlvbiI6IjM4LjkwbXMgwrEgMy40Nm1zIiwidGlja0NvdW50Ijo0OTQzLCJ2aXNpdGVkTm9kZXMiOjYwMTEsInNlYXJjaENvdW50Ijo2MDk1MSwiYnJhbmNoaW5nRmFjdG9yIjoiMi4yMjkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMyA2KzEgMysxIDErMiA0LTEgMCsxIDUrMyAwLTEgNCsxIDEtMyA0LTEgMy0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>6.09ms ± 2.76ms</td>
+<td>522</td>
+<td>523</td>
+<td>5276</td>
+
+<td>1.035</td>
+<td>
+
+[150 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbi5CRkZHRSBcbi5CLkhHRSBcbi5QUEguREtcbi4uSUkuRCBcbi4uLkMuLiBcbi4uLkMuLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNSw5LDEsMTcsMjAsMjddLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi4wOW1zIMKxIDIuNzZtcyIsInRpY2tDb3VudCI6NTIyLCJ2aXNpdGVkTm9kZXMiOjUyMywic2VhcmNoQ291bnQiOjUyNzYsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDM1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA3LTIgOC0xIDcrMSA2KzIgOCsxIDYtMSA3KzIgMysxIDYrMSA3LTMgOC0xIDYtMSA3KzEgMis0IDYrMSAyLTMgOCsxIDYtMSA3LTEgMy0xIDgtMSA2KzEgMiszIDgrMSAyLTIgNysyIDYtMSAyKzIgNysxIDYtMSA3LTIgMi0zIDcrMiA2KzIgNysxIDgtMSAzKzEgMSsyIDgrMSA3LTQgOC0xIDYtMSA3KzEgMisyIDYrMSAyLTEgOCsxIDYtMSA3LTEgMisyIDcrMyA2KzEgNy0xIDItMSA2LTEgMi0yIDcrMSA0LTEgMCsxIDYrMSA3LTMgOC0xIDYtMSA3KzEgMiszIDArMSAyLTEgNisxIDgrMSAyKzEgNy0xIDYtMSAyLTEgNysyIDUrNCA2KzEgNS0zIDIrMSA2LTEgNysxIDUrMyA2KzEgNS0yIDMrMSA3LTEgMi0xIDUtMiA3LTIgOC0xIDIrMSA3KzEgNSsxIDItMSA4KzEgMC0xIDItMSA3KzEgMy0xIDUtMSA2LTEgNSs0IDctMiAyLTEgMC0xIDQrMiA2KzEgNysxIDQtMSA2LTEgOC0xIDctMSA2KzEgMiszIDgrMSA2LTEgMi0yIDcrMiA1LTEgNisxIDItMSA3KzIgOC0xIDUrMSAxLTQgOCsxIDctNCA2LTEgNyszIDUtMSA2KzEgMy0xIDYtMiA3LTEgNSsxIDctMiA4LTEgNysxIDYrMiA4KzEgNi0xIDItMSA4LTEgNy0xIDYrMSA4KzEgNys0IDgtMSA1LTEgNC0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.25ms ± 1.45ms</td>
+<td>610</td>
+<td>611</td>
+<td>6544</td>
+
+<td>1.202</td>
+<td>
+
+[38 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuLkJGRkdFIFxuLkIuSEdFIFxuLlBQSC5ES1xuLi5JSS5EIFxuLi4uQy4uIFxuLi4uQy4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw1LDksMSwxNywyMCwyN10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI1LjI1bXMgwrEgMS40NW1zIiwidGlja0NvdW50Ijo2MTAsInZpc2l0ZWROb2RlcyI6NjExLCJzZWFyY2hDb3VudCI6NjU0NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yMDIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYrMiA3LTIgNi0xIDIrMyAzKzEgMSsyIDQtMSA4LTEgNisxIDIrMSA4KzEgNys0IDgtMSAwKzIgNSs0IDAtMiA0KzEgMS00IDMtMSA0LTEgNS0xIDgrMSA3LTIgNi0xIDItNCA3KzEgNisxIDcrMSA4LTEgNSsxIDAtMSA4KzEgNy00IDYtMSA4LTEgNysxIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>17</td>
+<td>11.65ms ± 1.32ms</td>
+<td>622</td>
+<td>623</td>
+<td>6567</td>
+
+<td>1.045</td>
+<td>
+
+[128 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuLkJGRkdFIFxuLkIuSEdFIFxuLlBQSC5ES1xuLi5JSS5EIFxuLi4uQy4uIFxuLi4uQy4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw1LDksMSwxNywyMCwyN10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNywiZHVyYXRpb24iOiIxMS42NW1zIMKxIDEuMzJtcyIsInRpY2tDb3VudCI6NjIyLCJ2aXNpdGVkTm9kZXMiOjYyMywic2VhcmNoQ291bnQiOjY1NjcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDQ1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzIgNy0yIDgtMSA3KzEgNi0xIDgrMSA3KzIgMC0xIDctMyA4LTEgMis0IDcrMSA4KzEgNysyIDYrMSA3LTMgNCsxIDcrMSAyLTQgNi0xIDIrMyA3LTEgMSsxIDYrMSA3KzEgNC0xIDgtMSA3LTEgNi0xIDArMSA4KzEgNysyIDYrMSAyKzEgNy0yIDgtMSA3KzEgNi0xIDMrMSAxKzEgNC0xIDgrMSA3LTEgNisxIDgtMSAzKzEgNysxIDgrMSA3KzIgMC0xIDctMyAyLTEgOC0xIDcrMSAzLTEgOCsxIDcrMSA2LTEgNy0yIDgtMSAyKzEgMCszIDUrMSA4KzEgNyszIDYrMSA3LTIgOC0xIDUtMSAwLTEgOCsxIDcrMyA4LTEgNSs0IDAtMiA4KzEgNy00IDgtMSA3KzEgNi0xIDgrMSA3KzIgNS0xIDctMSA2KzEgMysxIDcrMSA1KzEgNy0yIDItMSA4LTEgNy0xIDArMyA4KzEgNysyIDUtNCA3LTEgNSsxIDgtMSA3LTEgMy0xIDgrMSA3KzIgNi0xIDctMSA4LTEgMC0xIDIrMSA4KzEgNysxIDYrMSA3LTIgOC0xIDMrMSA3KzEgOCsxIDcrMiA1KzEgNy0xIDUrMiAwLTEgMy0xIDcrMSA0KzEgMS00IDQtMSAzLTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>13</td>
+<td>14.68ms ± 1.75ms</td>
+<td>2146</td>
+<td>2147</td>
+<td>23523</td>
+
+<td>1.950</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG44XG4uQkZGR0UgXG4uQi5IR0UgXG4uUFBILkRLXG4uLklJLkQgXG4uLi5DLi4gXG4uLi5DLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDUsOSwxLDE3LDIwLDI3XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEzLCJkdXJhdGlvbiI6IjE0LjY4bXMgwrEgMS43NW1zIiwidGlja0NvdW50IjoyMTQ2LCJ2aXNpdGVkTm9kZXMiOjIxNDcsInNlYXJjaENvdW50IjoyMzUyMywiYnJhbmNoaW5nRmFjdG9yIjoiMS45NTAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYrMiAzKzIgMiszIDErMiA0LTEgMCsyIDUrMyAwLTIgNCsxIDEtMyA0LTEgMCsyIDMtMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>9</td>
+<td>20.29ms ± 3.49ms</td>
+<td>2264</td>
+<td>2265</td>
+<td>25268</td>
+
+<td>2.073</td>
+<td>
+
+[13 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbi5CRkZHRSBcbi5CLkhHRSBcbi5QUEguREtcbi4uSUkuRCBcbi4uLkMuLiBcbi4uLkMuLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNSw5LDEsMTcsMjAsMjddLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OSwiZHVyYXRpb24iOiIyMC4yOW1zIMKxIDMuNDltcyIsInRpY2tDb3VudCI6MjI2NCwidmlzaXRlZE5vZGVzIjoyMjY1LCJzZWFyY2hDb3VudCI6MjUyNjgsImJyYW5jaGluZ0ZhY3RvciI6IjIuMDczIiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzIgMis0IDMrMiAxKzIgNC0xIDArMiA1KzMgMC0yIDQrMSAxLTMgMy0yIDQtMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>41.48ms ± 1.77ms</td>
+<td>1824</td>
+<td>1825</td>
+<td>19392</td>
+
+<td>2.028</td>
+<td>
+
+[13 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbi5CRkZHRSBcbi5CLkhHRSBcbi5QUEguREtcbi4uSUkuRCBcbi4uLkMuLiBcbi4uLkMuLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNSw5LDEsMTcsMjAsMjddLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI0MS40OG1zIMKxIDEuNzdtcyIsInRpY2tDb3VudCI6MTgyNCwidmlzaXRlZE5vZGVzIjoxODI1LCJzZWFyY2hDb3VudCI6MTkzOTIsImJyYW5jaGluZ0ZhY3RvciI6IjIuMDI4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzIgMiszIDMrMSAxKzIgNC0xIDArMSA1KzQgMC0xIDQrMSAxLTQgNC0xIDMtMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>362.77ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>523872</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>216.14ms ± 0.00ms</td>
+<td>11</td>
+<td>4171</td>
+<td>430979</td>
+
+<td>2.432</td>
+<td>
+
+[14 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG44XG4uQkZGR0UgXG4uQi5IR0UgXG4uUFBILkRLXG4uLklJLkQgXG4uLi5DLi4gXG4uLi5DLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDUsOSwxLDE3LDIwLDI3XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiMjE2LjE0bXMgwrEgMC4wMG1zIiwidGlja0NvdW50IjoxMSwidmlzaXRlZE5vZGVzIjo0MTcxLCJzZWFyY2hDb3VudCI6NDMwOTc5LCJicmFuY2hpbmdGYWN0b3IiOiIyLjQzMiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMiszIDYrMSAzKzEgMSsyIDQtMSAwKzEgNSszIDAtMSA0KzEgMS0zIDQtMSAwKzIgMy0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>219.33ms ± 0.00ms</td>
+<td>11</td>
+<td>5233</td>
+<td>474275</td>
+
+<td>2.634</td>
+<td>
+
+[13 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbi5CRkZHRSBcbi5CLkhHRSBcbi5QUEguREtcbi4uSUkuRCBcbi4uLkMuLiBcbi4uLkMuLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNSw5LDEsMTcsMjAsMjddLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIyMTkuMzNtcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjExLCJ2aXNpdGVkTm9kZXMiOjUyMzMsInNlYXJjaENvdW50Ijo0NzQyNzUsImJyYW5jaGluZ0ZhY3RvciI6IjIuNjM0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzMgNisxIDMrMSAxKzIgNC0xIDArMSA1KzMgMC0xIDQrMSAxLTMgNC0xIDMtMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>228.20ms ± 0.00ms</td>
+<td>9</td>
+<td>1941</td>
+<td>155052</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-8**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-8.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+13
+...BBF 
+..GGHF 
+PPEIHFK
+DDEIJJ 
+MMNLLL 
+OONCCC 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+13 (8 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>3.82ms ± 1.22ms</td>
+<td>950</td>
+<td>951</td>
+<td>6465</td>
+
+<td>1.957</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi4uLkJCRiBcbi4uR0dIRiBcblBQRUlIRktcbkRERUlKSiBcbk1NTkxMTCBcbk9PTkNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsNSw4LDEwLDMsMTQsMTUsMTgsMjIsMjQsMjYsMjcsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMy44Mm1zIMKxIDEuMjJtcyIsInRpY2tDb3VudCI6OTUwLCJ2aXNpdGVkTm9kZXMiOjk1MSwic2VhcmNoQ291bnQiOjY0NjUsImJyYW5jaGluZ0ZhY3RvciI6IjEuOTU3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTMgMi0yIDMtMSA1LTIgNi0yIDArMyA4LTEgMTAtMiAxMS0xIDEzLTEgMSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>1.61ms ± 0.35ms</td>
+<td>138</td>
+<td>139</td>
+<td>812</td>
+
+<td>1.065</td>
+<td>
+
+[62 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uLi5CQkYgXG4uLkdHSEYgXG5QUEVJSEZLXG5EREVJSkogXG5NTU5MTEwgXG5PT05DQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJPIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDUsOCwxMCwzLDE0LDE1LDE4LDIyLDI0LDI2LDI3LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjEuNjFtcyDCsSAwLjM1bXMiLCJ0aWNrQ291bnQiOjEzOCwidmlzaXRlZE5vZGVzIjoxMzksInNlYXJjaENvdW50Ijo4MTIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDY1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTIgNC0yIDYtMiA4LTEgNS0xIDEwLTEgMTMtMSA4KzEgMy0xIDEzKzEgMTIrMSA4LTEgMSsxIDEyLTEgMTMtMSA2KzEgMS0xIDEzKzEgMTArMSA4LTEgNi0xIDErMSAzKzIgNisxIDMtMSA4KzEgMTAtMSAxMisxIDEtMSA4KzEgMTItMSAxMCsxIDcrMiAzLTEgNy0xIDYtMSA4LTEgMSsxIDMrMSA0LTEgNy0xIDEwLTEgMTMtMSA1LTEgMCsyIDEzKzEgMTIrMSAxLTEgOCsxIDEyLTEgMTMtMSAzLTEgMCsxIDEzKzEgMTIrMSA4LTEgMTAtMSAxMi0xIDEzLTEgMTEtMSAxKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.28ms ± 0.39ms</td>
+<td>132</td>
+<td>133</td>
+<td>721</td>
+
+<td>1.168</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi4uLkJCRiBcbi4uR0dIRiBcblBQRUlIRktcbkRERUlKSiBcbk1NTkxMTCBcbk9PTkNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsNSw4LDEwLDMsMTQsMTUsMTgsMjIsMjQsMjYsMjcsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4yOG1zIMKxIDAuMzltcyIsInRpY2tDb3VudCI6MTMyLCJ2aXNpdGVkTm9kZXMiOjEzMywic2VhcmNoQ291bnQiOjcyMSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNjgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMiA1LTIgMTAtMSAxMy0xIDYtMSA4LTEgMTMrMSAxMCsxIDUrMiAyKzEgOCsxIDQtMyAzLTEgNi0xIDgtMSAyLTEgNS0yIDEwLTEgMTMtMSA4KzEgMCszIDEzKzEgMTIrMSA4LTEgMTAtMSAxMi0xIDEzLTEgMTEtMSAxKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>0.64ms ± 0.32ms</td>
+<td>18</td>
+<td>19</td>
+<td>120</td>
+
+<td>1.178</td>
+<td>
+
+[18 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi4uLkJCRiBcbi4uR0dIRiBcblBQRUlIRktcbkRERUlKSiBcbk1NTkxMTCBcbk9PTkNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsNSw4LDEwLDMsMTQsMTUsMTgsMjIsMjQsMjYsMjcsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC42NG1zIMKxIDAuMzJtcyIsInRpY2tDb3VudCI6MTgsInZpc2l0ZWROb2RlcyI6MTksInNlYXJjaENvdW50IjoxMjAsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTc4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTMgMy0xIDQrMiAyLTIgNi0xIDgtMSA1LTEgMTAtMSAxMy0xIDQtMiA2LTEgNS0xIDErMSAwKzMgMTAtMSAxMS0xIDErMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>4.55ms ± 1.27ms</td>
+<td>907</td>
+<td>908</td>
+<td>6243</td>
+
+<td>1.844</td>
+<td>
+
+[13 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xM1xuLi4uQkJGIFxuLi5HR0hGIFxuUFBFSUhGS1xuRERFSUpKIFxuTU1OTExMIFxuT09OQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiTyIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTMsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiw1LDgsMTAsMywxNCwxNSwxOCwyMiwyNCwyNiwyNywzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI0LjU1bXMgwrEgMS4yN21zIiwidGlja0NvdW50Ijo5MDcsInZpc2l0ZWROb2RlcyI6OTA4LCJzZWFyY2hDb3VudCI6NjI0MywiYnJhbmNoaW5nRmFjdG9yIjoiMS44NDQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMiA0LTMgNi0yIDgtMSA1LTIgMCsyIDMtMSAwKzEgMTAtMiAxMS0xIDEzLTEgMSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>4.16ms ± 0.28ms</td>
+<td>890</td>
+<td>891</td>
+<td>6163</td>
+
+<td>1.949</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uLi5CQkYgXG4uLkdHSEYgXG5QUEVJSEZLXG5EREVJSkogXG5NTU5MTEwgXG5PT05DQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJPIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDUsOCwxMCwzLDE0LDE1LDE4LDIyLDI0LDI2LDI3LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjQuMTZtcyDCsSAwLjI4bXMiLCJ0aWNrQ291bnQiOjg5MCwidmlzaXRlZE5vZGVzIjo4OTEsInNlYXJjaENvdW50Ijo2MTYzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjk0OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0yIDQtMyA2LTIgNS0yIDMtMSAwKzMgMTAtMiAxMy0xIDgtMSAxMS0xIDErMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>6.50ms ± 1.75ms</td>
+<td>205</td>
+<td>206</td>
+<td>1592</td>
+
+<td>1.719</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uLi5CQkYgXG4uLkdHSEYgXG5QUEVJSEZLXG5EREVJSkogXG5NTU5MTEwgXG5PT05DQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJPIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDUsOCwxMCwzLDE0LDE1LDE4LDIyLDI0LDI2LDI3LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjYuNTBtcyDCsSAxLjc1bXMiLCJ0aWNrQ291bnQiOjIwNSwidmlzaXRlZE5vZGVzIjoyMDYsInNlYXJjaENvdW50IjoxNTkyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjcxOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0zIDItMiA2LTIgNS0yIDMtMSAwKzMgMTAtMiAxMy0xIDExLTEgOC0xIDErMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>525.82ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>857311</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>295.33ms ± 0.00ms</td>
+<td>4</td>
+<td>12</td>
+<td>144932</td>
+
+<td>2.585</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi4uLkJCRiBcbi4uR0dIRiBcblBQRUlIRktcbkRERUlKSiBcbk1NTkxMTCBcbk9PTkNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsNSw4LDEwLDMsMTQsMTUsMTgsMjIsMjQsMjYsMjcsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIyOTUuMzNtcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjQsInZpc2l0ZWROb2RlcyI6MTIsInNlYXJjaENvdW50IjoxNDQ5MzIsImJyYW5jaGluZ0ZhY3RvciI6IjIuNTg1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTIgNC0zIDMtMSA1LTIgNi0yIDArMyA4LTEgMTAtMiAxMS0xIDEzLTEgMSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>8</td>
+<td>24.43ms ± 5.96ms</td>
+<td>8</td>
+<td>930</td>
+<td>43637</td>
+
+<td>2.324</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xM1xuLi4uQkJGIFxuLi5HR0hGIFxuUFBFSUhGS1xuRERFSUpKIFxuTU1OTExMIFxuT09OQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiTyIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTMsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiw1LDgsMTAsMywxNCwxNSwxOCwyMiwyNCwyNiwyNywzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo4LCJkdXJhdGlvbiI6IjI0LjQzbXMgwrEgNS45Nm1zIiwidGlja0NvdW50Ijo4LCJ2aXNpdGVkTm9kZXMiOjkzMCwic2VhcmNoQ291bnQiOjQzNjM3LCJicmFuY2hpbmdGYWN0b3IiOiIyLjMyNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0zIDItMiAzLTEgNS0yIDYtMiAwKzMgOC0xIDEwLTIgMTEtMSAxMy0xIDErMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>4</td>
+<td>48.97ms ± 4.91ms</td>
+<td>8</td>
+<td>951</td>
+<td>63050</td>
+
+<td>2.402</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uLi5CQkYgXG4uLkdHSEYgXG5QUEVJSEZLXG5EREVJSkogXG5NTU5MTEwgXG5PT05DQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJPIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDUsOCwxMCwzLDE0LDE1LDE4LDIyLDI0LDI2LDI3LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDguOTdtcyDCsSA0LjkxbXMiLCJ0aWNrQ291bnQiOjgsInZpc2l0ZWROb2RlcyI6OTUxLCJzZWFyY2hDb3VudCI6NjMwNTAsImJyYW5jaGluZ0ZhY3RvciI6IjIuNDAyIiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTMgMi0yIDMtMSA1LTIgNi0yIDArMyA4LTEgMTAtMiAxMS0xIDEzLTEgMSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>7</td>
+<td>28.50ms ± 2.85ms</td>
+<td>4</td>
+<td>731</td>
+<td>7316</td>
+
+<td>1.980</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uLi5CQkYgXG4uLkdHSEYgXG5QUEVJSEZLXG5EREVJSkogXG5NTU5MTEwgXG5PT05DQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJPIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDUsOCwxMCwzLDE0LDE1LDE4LDIyLDI0LDI2LDI3LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMjguNTBtcyDCsSAyLjg1bXMiLCJ0aWNrQ291bnQiOjQsInZpc2l0ZWROb2RlcyI6NzMxLCJzZWFyY2hDb3VudCI6NzMxNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS45ODAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMiA0LTMgMy0xIDUtMiA2LTIgMCszIDgtMSAxMC0yIDExLTEgMTMtMSAxKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-9**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-9.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+.BGGHH 
+.B.EII 
+PP.EFDK
+LCCCFD 
+L.J.FM 
+L.J..M 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (4 Horizontal, 7 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>3.60ms ± 1.14ms</td>
+<td>680</td>
+<td>875</td>
+<td>5897</td>
+
+<td>1.941</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CR0dISCBcbi5CLkVJSSBcblBQLkVGREtcbkxDQ0NGRCBcbkwuSi5GTSBcbkwuSi4uTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCw5LDEwLDEsMTYsMTcsMTgsMTksMjYsMjldLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMy42MG1zIMKxIDEuMTRtcyIsInRpY2tDb3VudCI6NjgwLCJ2aXNpdGVkTm9kZXMiOjg3NSwic2VhcmNoQ291bnQiOjU4OTcsImJyYW5jaGluZ0ZhY3RvciI6IjEuOTQxIiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNisxIDgtMyA5LTEgMysyIDQtMSAwKzEgNSsxIDEtMSAyLTEgNy0yIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>0.67ms ± 0.45ms</td>
+<td>32</td>
+<td>33</td>
+<td>233</td>
+
+<td>1.102</td>
+<td>
+
+[32 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkdHSEggXG4uQi5FSUkgXG5QUC5FRkRLXG5MQ0NDRkQgXG5MLkouRk0gXG5MLkouLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsOSwxMCwxLDE2LDE3LDE4LDE5LDI2LDI5XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuNjdtcyDCsSAwLjQ1bXMiLCJ0aWNrQ291bnQiOjMyLCJ2aXNpdGVkTm9kZXMiOjMzLCJzZWFyY2hDb3VudCI6MjMzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjEwMiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMCsxIDgtMyA5LTEgNisxIDMrMyAwKzIgMy0xIDQtMiA3LTEgMTEtMSAzKzEgOSsxIDExKzEgNysxIDQrMSA1KzEgOS0xIDMtMSA3LTEgMTEtMSAzKzEgOSsxIDEtMSAxMSsxIDktMSA0LTEgMTEtMSAzLTEgMi0xIDExKzEgNy0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.64ms ± 0.54ms</td>
+<td>61</td>
+<td>62</td>
+<td>500</td>
+
+<td>1.056</td>
+<td>
+
+[61 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CR0dISCBcbi5CLkVJSSBcblBQLkVGREtcbkxDQ0NGRCBcbkwuSi5GTSBcbkwuSi4uTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCw5LDEwLDEsMTYsMTcsMTgsMTksMjYsMjldLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS42NG1zIMKxIDAuNTRtcyIsInRpY2tDb3VudCI6NjEsInZpc2l0ZWROb2RlcyI6NjIsInNlYXJjaENvdW50Ijo1MDAsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDU2Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzEgMCsxIDgtMyA5LTEgMyszIDkrMSAwKzIgNC0yIDktMSAzLTEgNy0xIDExLTEgMysxIDkrMSAwLTIgMTErMSA5LTEgMCsxIDQrMSAxMS0xIDMtMSAwLTEgMTErMSA3KzEgMCsxIDQrMSA1KzEgMysxIDkrMSA0LTIgNy0xIDExLTEgOS0xIDMtMSAxMSsxIDQrMSAwKzEgMTEtMSAzKzEgOSsxIDExKzEgNysxIDktMSAxLTEgMy0xIDAtMSA0LTEgMysxIDctMSAwKzEgMTEtMSAzLTEgMi0xIDctMSAxMSsxIDMrMSA5KzEgMTEtMSAwLTEgOS0xIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>1.13ms ± 0.41ms</td>
+<td>51</td>
+<td>52</td>
+<td>443</td>
+
+<td>1.068</td>
+<td>
+
+[51 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CR0dISCBcbi5CLkVJSSBcblBQLkVGREtcbkxDQ0NGRCBcbkwuSi5GTSBcbkwuSi4uTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCw5LDEwLDEsMTYsMTcsMTgsMTksMjYsMjldLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4xM21zIMKxIDAuNDFtcyIsInRpY2tDb3VudCI6NTEsInZpc2l0ZWROb2RlcyI6NTIsInNlYXJjaENvdW50Ijo0NDMsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDY4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzEgMCsxIDgtMyA5LTEgMyszIDkrMSA4KzMgNC0yIDgtMiA3LTEgMTEtMSA4LTEgOS0xIDExKzEgNCsxIDkrMSA4KzMgMTEtMSA4LTEgMCsyIDExKzEgOC0xIDcrMSA4LTEgOS0xIDUrMSA3LTEgMTEtMSA5KzEgOCszIDExKzEgNysxIDgtMSA0LTEgOC0yIDctMSA4KzEgMTEtMSA4KzEgMS0yIDExKzEgOCsxIDcrMSA4LTIgNCsyIDgrMSAyLTIgOCsxIDQtMSA3LTIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>3.62ms ± 0.64ms</td>
+<td>419</td>
+<td>420</td>
+<td>3516</td>
+
+<td>1.851</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLkJHR0hIIFxuLkIuRUlJIFxuUFAuRUZES1xuTENDQ0ZEIFxuTC5KLkZNIFxuTC5KLi5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiw0LDksMTAsMSwxNiwxNywxOCwxOSwyNiwyOV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjYybXMgwrEgMC42NG1zIiwidGlja0NvdW50Ijo0MTksInZpc2l0ZWROb2RlcyI6NDIwLCJzZWFyY2hDb3VudCI6MzUxNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS44NTEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA4LTMgOS0xIDYrMSAzKzMgMCsyIDUrMSAxLTEgNC0xIDItMSA3LTIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>3.94ms ± 0.47ms</td>
+<td>521</td>
+<td>522</td>
+<td>4423</td>
+
+<td>1.890</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkdHSEggXG4uQi5FSUkgXG5QUC5FRkRLXG5MQ0NDRkQgXG5MLkouRk0gXG5MLkouLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsOSwxMCwxLDE2LDE3LDE4LDE5LDI2LDI5XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuOTRtcyDCsSAwLjQ3bXMiLCJ0aWNrQ291bnQiOjUyMSwidmlzaXRlZE5vZGVzIjo1MjIsInNlYXJjaENvdW50Ijo0NDIzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjg5MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNisxIDArMSA4LTMgOS0xIDMrMiAwKzEgNSsxIDEtMSA0LTEgMi0xIDctMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.29ms ± 0.32ms</td>
+<td>292</td>
+<td>293</td>
+<td>2382</td>
+
+<td>1.785</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkdHSEggXG4uQi5FSUkgXG5QUC5FRkRLXG5MQ0NDRkQgXG5MLkouRk0gXG5MLkouLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsOSwxMCwxLDE2LDE3LDE4LDE5LDI2LDI5XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjltcyDCsSAwLjMybXMiLCJ0aWNrQ291bnQiOjI5MiwidmlzaXRlZE5vZGVzIjoyOTMsInNlYXJjaENvdW50IjoyMzgyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjc4NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNisxIDArMSA4LTMgOS0xIDMrMiAwKzIgNSsxIDEtMSA0LTIgMi0xIDctMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>12</td>
+<td>16.81ms ± 9.53ms</td>
+<td>8</td>
+<td>736</td>
+<td>20413</td>
+
+<td>2.172</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLkJHR0hIIFxuLkIuRUlJIFxuUFAuRUZES1xuTENDQ0ZEIFxuTC5KLkZNIFxuTC5KLi5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiw0LDksMTAsMSwxNiwxNywxOCwxOSwyNiwyOV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMiwiZHVyYXRpb24iOiIxNi44MW1zIMKxIDkuNTNtcyIsInRpY2tDb3VudCI6OCwidmlzaXRlZE5vZGVzIjo3MzYsInNlYXJjaENvdW50IjoyMDQxMywiYnJhbmNoaW5nRmFjdG9yIjoiMi4xNzIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA2KzEgOC0zIDktMSAzKzIgNC0xIDArMiA1KzEgMS0xIDItMSA3LTIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>10</td>
+<td>20.58ms ± 2.72ms</td>
+<td>9</td>
+<td>832</td>
+<td>28946</td>
+
+<td>2.241</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkdHSEggXG4uQi5FSUkgXG5QUC5FRkRLXG5MQ0NDRkQgXG5MLkouRk0gXG5MLkouLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsOSwxMCwxLDE2LDE3LDE4LDE5LDI2LDI5XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEwLCJkdXJhdGlvbiI6IjIwLjU4bXMgwrEgMi43Mm1zIiwidGlja0NvdW50Ijo5LCJ2aXNpdGVkTm9kZXMiOjgzMiwic2VhcmNoQ291bnQiOjI4OTQ2LCJicmFuY2hpbmdGYWN0b3IiOiIyLjI0MSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMCsxIDYrMSA4LTMgOS0xIDMrMiA0LTEgMCsxIDUrMSAxLTEgMi0xIDctMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>5</td>
+<td>37.83ms ± 6.50ms</td>
+<td>8</td>
+<td>639</td>
+<td>15812</td>
+
+<td>2.123</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkdHSEggXG4uQi5FSUkgXG5QUC5FRkRLXG5MQ0NDRkQgXG5MLkouRk0gXG5MLkouLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsOSwxMCwxLDE2LDE3LDE4LDE5LDI2LDI5XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzcuODNtcyDCsSA2LjUwbXMiLCJ0aWNrQ291bnQiOjgsInZpc2l0ZWROb2RlcyI6NjM5LCJzZWFyY2hDb3VudCI6MTU4MTIsImJyYW5jaGluZ0ZhY3RvciI6IjIuMTIzIiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNisxIDgtMyA5LTEgMysyIDArMSA0LTEgNSsxIDEtMSAyLTEgNy0yIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-10**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-10.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+BBG.HH 
+EEG..F 
+LPP..FK
+LCCC.F 
+L..IDD 
+JJ.IMM 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (7 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>9.95ms ± 2.70ms</td>
+<td>1899</td>
+<td>2145</td>
+<td>16183</td>
+
+<td>1.677</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC4uRktcbkxDQ0MuRiBcbkwuLklERCBcbkpKLklNTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw2LDExLDEyLDAsMTksMjcsMjgsMzAsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS45NW1zIMKxIDIuNzBtcyIsInRpY2tDb3VudCI6MTg5OSwidmlzaXRlZE5vZGVzIjoyMTQ1LCJzZWFyY2hDb3VudCI6MTYxODMsImJyYW5jaGluZ0ZhY3RvciI6IjEuNjc3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTEgNC0xIDArMiA3KzIgMSs0IDYrMSAzKzEgNS0yIDAtMiA3LTMgNCsxIDIrMSA4LTQgOS0xIDExLTEgNCsyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>9.01ms ± 5.31ms</td>
+<td>1031</td>
+<td>1032</td>
+<td>8850</td>
+
+<td>1.057</td>
+<td>
+
+[112 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuLkZLXG5MQ0NDLkYgXG5MLi5JREQgXG5KSi5JTU0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjkuMDFtcyDCsSA1LjMxbXMiLCJ0aWNrQ291bnQiOjEwMzEsInZpc2l0ZWROb2RlcyI6MTAzMiwic2VhcmNoQ291bnQiOjg4NTAsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDU3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzIgMTArMSA3KzEgNSsxIDItMSA3LTEgNC0xIDcrMiA1LTEgMTAtMSA3LTIgMSsxIDEwKzEgNysxIDQrMSA2KzEgMTAtMSA0LTEgNysxIDErMiAzKzIgMTArMSAxLTEgNS0yIDEwLTEgMSsyIDctMyAzLTEgMC0yIDgtMyAxMS0xIDktMSA3KzMgMTErMSAxLTEgMTEtMiA5KzEgMTErMSAxMCsxIDExKzEgMTArMSA1KzMgOS0xIDEwLTEgMTEtMSA1LTIgMTAtMSA1KzEgMy0xIDExLTEgOSsxIDExKzIgMTArMiA5LTEgMTAtMSA2LTEgMTEtMSA5KzEgMTAtMSAxKzEgMTErMSA5LTEgNy0yIDExLTEgNysxIDMrMSAxMSsxIDkrMSA3LTEgMTEtMSA1LTEgOS0xIDExKzEgNysyIDkrMSAxLTEgMTEtMiA5LTEgNSsxIDExKzIgMTArMiA5KzEgMTAtMSA1KzEgMTEtMSA1LTIgMi0xIDExKzEgMTArMSA5LTEgMTAtMiAxMS0xIDErMSA5KzEgNy0xIDExKzEgOS0xIDQrMiAxMS0xIDctMSA0LTEgMTErMSA5KzEgNSsxIDMtMSAyKzIgMTEtMSA5LTEgNysxIDQrMiA4LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.71ms ± 0.24ms</td>
+<td>219</td>
+<td>220</td>
+<td>1741</td>
+
+<td>1.038</td>
+<td>
+
+[111 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC4uRktcbkxDQ0MuRiBcbkwuLklERCBcbkpKLklNTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw2LDExLDEyLDAsMTksMjcsMjgsMzAsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS43MW1zIMKxIDAuMjRtcyIsInRpY2tDb3VudCI6MjE5LCJ2aXNpdGVkTm9kZXMiOjIyMCwic2VhcmNoQ291bnQiOjE3NDEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDM4Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCsxIDcrMSAwKzIgMTAtMSAwLTEgMi0xIDEwKzEgNy0xIDArMSAxMC0xIDQtMSA3KzIgMTArMSA3LTEgMC0yIDctMSA1KzEgNysyIDAtMSA3LTEgNCsxIDctMSAyKzEgMCszIDErMSA3KzEgMi0yIDUtMSAxMC0xIDctMSA0LTEgMTArMSA3KzIgNSsxIDErMiAwLTMgMyszIDArMiA1LTIgMTAtMSAxKzEgNy0yIDAtMSA3KzEgMCsyIDMtMiA3LTEgMysxIDcrMiAxLTIgMTArMSAxKzEgMC0yIDEwLTEgMy0xIDErMSA1KzEgNy0yIDArMSA3KzEgMy0xIDcrMSAxLTEgMC0xIDIrMSAxKzEgNisxIDctMiAwKzIgNysxIDAtMSAzKzMgNy0xIDUtMiA3LTEgOC0xIDExLTEgMC0xIDMtMiAxMSsxIDgrMSA3KzMgMCsxIDctMSAwKzEgNy0xIDMrMSA3LTEgOC0xIDExLTEgNCsxIDAtMiAxMSsxIDgrMSA3KzIgMCsyIDMrMSA3LTIgOC0xIDMtMiAwLTEgMTEtMSAyKzEgMC0xIDExKzEgOC0zIDktMSAxMS0xIDQrMiA3KzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>9.04ms ± 3.48ms</td>
+<td>435</td>
+<td>436</td>
+<td>3097</td>
+
+<td>1.054</td>
+<td>
+
+[96 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC4uRktcbkxDQ0MuRiBcbkwuLklERCBcbkpKLklNTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw2LDExLDEyLDAsMTksMjcsMjgsMzAsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4wNG1zIMKxIDMuNDhtcyIsInRpY2tDb3VudCI6NDM1LCJ2aXNpdGVkTm9kZXMiOjQzNiwic2VhcmNoQ291bnQiOjMwOTcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDU0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCsxIDcrMSA1KzEgMi0xIDctMSA0LTEgNS0xIDEwLTEgNysxIDQrMSAwKzIgMTArMSA3LTEgMSsxIDEwLTEgNisxIDcrMSAxMCsxIDUrMSA3LTEgNC0xIDYtMSA3KzEgMi0xIDcrMSAxKzIgNS0xIDEwLTEgMyszIDUtMSAxMCsxIDMtMiAyKzEgMTAtMSA2KzEgNS0xIDEwKzEgNSszIDMtMSA1LTEgMTAtMSAzKzMgMS0yIDctMiAxMCsxIDcrMSA2LTEgMS0xIDcrMSAxKzMgNSsxIDMtMSAxLTEgNisxIDUtMyAxMC0xIDUrMiA2LTEgNS0xIDMrMSAxMCsxIDYrMSA1KzEgMy0yIDYtMSAyLTEgMTAtMSA1LTEgMSsyIDctMiA1KzEgNysxIDQrMSA1LTEgMysyIDctMSA1KzEgMy0zIDIrMiA3KzEgNisyIDMrMyA3LTEgNi0xIDUtMiA3LTEgOC0xIDExLTEgNisxIDMtMiAwLTIgNi0xIDgtMyA5LTEgNCsyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>19</td>
+<td>10.47ms ± 2.37ms</td>
+<td>1575</td>
+<td>1576</td>
+<td>13434</td>
+
+<td>1.606</td>
+<td>
+
+[18 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuQkJHLkhIIFxuRUVHLi5GIFxuTFBQLi5GS1xuTENDQy5GIFxuTC4uSUREIFxuSkouSU1NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTEsMTIsMCwxOSwyNywyOCwzMCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxOSwiZHVyYXRpb24iOiIxMC40N21zIMKxIDIuMzdtcyIsInRpY2tDb3VudCI6MTU3NSwidmlzaXRlZE5vZGVzIjoxNTc2LCJzZWFyY2hDb3VudCI6MTM0MzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuNjA2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzIgMi0xIDQtMSA3KzIgMSs0IDMrMSA2KzEgNS0yIDctMyA0KzEgMisxIDAtMiA4LTQgMCsyIDExLTEgOS0xIDQrMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>18</td>
+<td>10.90ms ± 2.12ms</td>
+<td>1633</td>
+<td>1634</td>
+<td>13950</td>
+
+<td>1.661</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuLkZLXG5MQ0NDLkYgXG5MLi5JREQgXG5KSi5JTU0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE4LCJkdXJhdGlvbiI6IjEwLjkwbXMgwrEgMi4xMm1zIiwidGlja0NvdW50IjoxNjMzLCJ2aXNpdGVkTm9kZXMiOjE2MzQsInNlYXJjaENvdW50IjoxMzk1MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS42NjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMSA0LTEgNysyIDArMiAxKzQgMysxIDYrMSA1LTIgMC0yIDctMyA4LTMgMTEtMSA5LTEgNCszIDIrMSA4LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>43.72ms ± 13.06ms</td>
+<td>1283</td>
+<td>1284</td>
+<td>11172</td>
+
+<td>1.637</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuLkZLXG5MQ0NDLkYgXG5MLi5JREQgXG5KSi5JTU0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDMuNzJtcyDCsSAxMy4wNm1zIiwidGlja0NvdW50IjoxMjgzLCJ2aXNpdGVkTm9kZXMiOjEyODQsInNlYXJjaENvdW50IjoxMTE3MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS42MzciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMSA0LTEgMCsyIDcrMiAxKzQgNisxIDMrMSA1LTIgNy0zIDAtMiA4LTIgMTEtMSA5LTEgNCszIDIrMSA4LTIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>424.76ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>565750</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>285.82ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>175656</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>211.54ms ± 0.00ms</td>
+<td>14</td>
+<td>1487</td>
+<td>255367</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>232.43ms ± 0.00ms</td>
+<td>16</td>
+<td>1907</td>
+<td>407238</td>
+
+<td>2.056</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuLkZLXG5MQ0NDLkYgXG5MLi5JREQgXG5KSi5JTU0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiMjMyLjQzbXMgwrEgMC4wMG1zIiwidGlja0NvdW50IjoxNiwidmlzaXRlZE5vZGVzIjoxOTA3LCJzZWFyY2hDb3VudCI6NDA3MjM4LCJicmFuY2hpbmdGYWN0b3IiOiIyLjA1NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDQtMSAwKzIgNysyIDErNCA2KzEgMysxIDUtMiAwLTIgNy0zIDQrMSAyKzEgOC00IDktMSAxMS0xIDQrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>269.03ms ± 0.00ms</td>
+<td>13</td>
+<td>1382</td>
+<td>105036</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-11**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-11.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+7
+EBBH.. 
+E..H.. 
+EPPH..K
+..FCCC 
+..F..G 
+..DDDG 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+7 (3 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>4.30ms ± 0.99ms</td>
+<td>828</td>
+<td>847</td>
+<td>6879</td>
+
+<td>1.349</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuRUJCSC4uIFxuRS4uSC4uIFxuRVBQSC4uS1xuLi5GQ0NDIFxuLi5GLi5HIFxuLi5ERERHICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDEsMywwLDIwLDIxLDI5LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjQuMzBtcyDCsSAwLjk5bXMiLCJ0aWNrQ291bnQiOjgyOCwidmlzaXRlZE5vZGVzIjo4NDcsInNlYXJjaENvdW50Ijo2ODc5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjM0OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMyszIDAtMSA0LTIgNS0xIDYtMyA1KzEgNysxIDQrMyAwKzEgMy0zIDUtMyAyKzEgMSszIDItMSA1KzMgMyszIDAtMSA0LTQgMCsxIDMtMyA1LTMgNisyIDctMyAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>3.65ms ± 0.66ms</td>
+<td>570</td>
+<td>571</td>
+<td>4756</td>
+
+<td>1.101</td>
+<td>
+
+[63 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkVCQkguLiBcbkUuLkguLiBcbkVQUEguLktcbi4uRkNDQyBcbi4uRi4uRyBcbi4uRERERyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywxLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjY1bXMgwrEgMC42Nm1zIiwidGlja0NvdW50Ijo1NzAsInZpc2l0ZWROb2RlcyI6NTcxLCJzZWFyY2hDb3VudCI6NDc1NiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMDEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMyAwLTEgNC0yIDctMSA1LTIgNi00IDcrMiA1KzIgNy0xIDQrMiAwKzEgNy0xIDMtMyA3LTEgNisxIDcrMyA0KzEgNS0zIDIrMSA2KzIgMisxIDYtMSAxKzMgNi0xIDItMiA1KzMgNC0xIDctMyAzKzIgNysyIDMtMSA3LTEgMysyIDAtMSA0LTMgMCsxIDcrMiA1LTIgNy0xIDUrMSAzLTMgNS0yIDIrMiA3LTEgMi0xIDYrMyA3LTEgNi0yIDcrMyAyKzEgMS0xIDctMyA2LTIgNysyIDItMSA3LTEgNiszIDctMSA2LTIgMisyIDArMiA2LTEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>3.74ms ± 2.64ms</td>
+<td>270</td>
+<td>271</td>
+<td>2173</td>
+
+<td>1.095</td>
+<td>
+
+[58 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuRUJCSC4uIFxuRS4uSC4uIFxuRVBQSC4uS1xuLi5GQ0NDIFxuLi5GLi5HIFxuLi5ERERHICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDEsMywwLDIwLDIxLDI5LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuNzRtcyDCsSAyLjY0bXMiLCJ0aWNrQ291bnQiOjI3MCwidmlzaXRlZE5vZGVzIjoyNzEsInNlYXJjaENvdW50IjoyMTczLCJicmFuY2hpbmdGYWN0b3IiOiIxLjA5NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDEtMSAzKzEgMC0xIDctMSA0LTMgNS0yIDcrMSA2LTQgNysxIDUrMiA3LTIgNCszIDcrMSAwKzEgNysxIDQrMSA1LTIgMy0yIDUrMSAzKzEgNiszIDUtMSAxKzEgNi0zIDUrMiAzLTIgNS0zIDYrMyAyKzIgMSszIDItMiA1KzIgMyszIDUtMSAwLTEgNi0yIDUrMiA0LTQgNy0yIDUtMiA2KzMgNysxIDYtMSA3KzEgNSsxIDctMiAwKzEgNysxIDYrMSA1KzEgNy0xIDMtMyA3LTEgNS0zIDIrMyA2LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.21ms ± 0.90ms</td>
+<td>447</td>
+<td>448</td>
+<td>3604</td>
+
+<td>1.098</td>
+<td>
+
+[62 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuRUJCSC4uIFxuRS4uSC4uIFxuRVBQSC4uS1xuLi5GQ0NDIFxuLi5GLi5HIFxuLi5ERERHICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDEsMywwLDIwLDIxLDI5LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjFtcyDCsSAwLjkwbXMiLCJ0aWNrQ291bnQiOjQ0NywidmlzaXRlZE5vZGVzIjo0NDgsInNlYXJjaENvdW50IjozNjA0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA5OCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDEtMSAzKzEgMC0xIDctMSA0LTMgNS0yIDcrMSA2LTQgNysxIDYrMyA1KzEgMCsxIDMtMiA3LTMgNisxIDcrMiAzKzIgNy0xIDYtNCA1KzEgMC0xIDQrMyA3KzEgMSsxIDArMSA3KzEgNCsxIDUtMiA2KzMgNSsxIDMtMyA1LTIgNi0zIDIrMiAxKzIgNiszIDItMSAxKzEgMi0xIDUrMiAzKzIgNi0yIDUrMSA0LTEgNy0zIDMtMiA3KzIgMyszIDctMSAwLTEgNC0zIDcrMiA1LTIgNisyIDUrMSAwKzEgMy0zIDctMyA1LTIgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>4.38ms ± 0.56ms</td>
+<td>688</td>
+<td>689</td>
+<td>5672</td>
+
+<td>1.320</td>
+<td>
+
+[26 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG5FQkJILi4gXG5FLi5ILi4gXG5FUFBILi5LXG4uLkZDQ0MgXG4uLkYuLkcgXG4uLkREREcgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMSwzLDAsMjAsMjEsMjksMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNC4zOG1zIMKxIDAuNTZtcyIsInRpY2tDb3VudCI6Njg4LCJ2aXNpdGVkTm9kZXMiOjY4OSwic2VhcmNoQ291bnQiOjU2NzIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzIwIiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzMgMC0xIDQtMiA1LTEgNi0zIDcrMSA1KzEgNCszIDArMSAzLTMgNS0zIDIrMSAxKzMgMi0xIDUrMyAzKzMgMC0xIDQtNCAwKzEgMy0zIDctMyA1LTMgMiszIDArMiA2KzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>6.03ms ± 3.33ms</td>
+<td>743</td>
+<td>744</td>
+<td>6173</td>
+
+<td>1.342</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkVCQkguLiBcbkUuLkguLiBcbkVQUEguLktcbi4uRkNDQyBcbi4uRi4uRyBcbi4uRERERyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywxLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI2LjAzbXMgwrEgMy4zM21zIiwidGlja0NvdW50Ijo3NDMsInZpc2l0ZWROb2RlcyI6NzQ0LCJzZWFyY2hDb3VudCI6NjE3MywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zNDIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMyAwLTEgNC0yIDUtMiA2LTMgNysxIDUrMiA0KzMgMCsxIDMtMyA1LTMgMisyIDErMyAyLTIgNSszIDMrMyAwLTEgNC00IDArMSAzLTMgNS0zIDYrMiA3LTMgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>8.66ms ± 0.56ms</td>
+<td>550</td>
+<td>551</td>
+<td>4427</td>
+
+<td>1.322</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkVCQkguLiBcbkUuLkguLiBcbkVQUEguLktcbi4uRkNDQyBcbi4uRi4uRyBcbi4uRERERyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywxLDMsMCwyMCwyMSwyOSwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI4LjY2bXMgwrEgMC41Nm1zIiwidGlja0NvdW50Ijo1NTAsInZpc2l0ZWROb2RlcyI6NTUxLCJzZWFyY2hDb3VudCI6NDQyNywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zMjIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMyAwLTEgNC0yIDUtMiA2LTMgNysxIDUrMiA0KzMgMCsxIDMtMyA1LTMgMisxIDErMyAyLTEgNSszIDMrMyAwLTEgNC00IDArMSAzLTMgNy0zIDUtMyA2KzMgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>297.60ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>478223</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>396.32ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>584018</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>242.44ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>156852</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>211.41ms ± 0.00ms</td>
+<td>23</td>
+<td>741</td>
+<td>412965</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>206.46ms ± 0.00ms</td>
+<td>22</td>
+<td>622</td>
+<td>341753</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>249.35ms ± 0.00ms</td>
+<td>17</td>
+<td>499</td>
+<td>138921</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-12**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-12.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+7
+BFF..E 
+B.H..E 
+PPH..EK
+..HCCC 
+....G. 
+DDD.G. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+7 (3 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>6.82ms ± 0.47ms</td>
+<td>1267</td>
+<td>1330</td>
+<td>11649</td>
+
+<td>1.641</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQkZGLi5FIFxuQi5ILi5FIFxuUFBILi5FS1xuLi5IQ0NDIFxuLi4uLkcuIFxuRERELkcuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsNSw4LDAsMjEsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi44Mm1zIMKxIDAuNDdtcyIsInRpY2tDb3VudCI6MTI2NywidmlzaXRlZE5vZGVzIjoxMzMwLCJzZWFyY2hDb3VudCI6MTE2NDksImJyYW5jaGluZ0ZhY3RvciI6IjEuNjQxIiwic29sdXRpb25TdGVwcyI6IuKIhSAxKzIgMy0xIDUtMiA2LTMgNSsyIDcrMyAzKzMgMS0xIDYtMSAwKzMgNCsxIDEtMiAzLTMgNS0xIDctMSAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>0.71ms ± 0.11ms</td>
+<td>132</td>
+<td>133</td>
+<td>1204</td>
+
+<td>1.093</td>
+<td>
+
+[52 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkJGRi4uRSBcbkIuSC4uRSBcblBQSC4uRUtcbi4uSENDQyBcbi4uLi5HLiBcbkRERC5HLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDUsOCwwLDIxLDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuNzFtcyDCsSAwLjExbXMiLCJ0aWNrQ291bnQiOjEzMiwidmlzaXRlZE5vZGVzIjoxMzMsInNlYXJjaENvdW50IjoxMjA0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA5MyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNysxIDMrMSAxKzIgNy0xIDMtMiA1LTMgNysxIDYtMyA1KzMgMysyIDcrMSAzLTEgMS0yIDctMiA2LTEgNyszIDMrMiAwKzMgMy0yIDctMyAzKzEgNysyIDErMSA3LTEgMy0xIDQrNCA3KzIgNC0zIDctMyAzKzEgNCsyIDcrMyA0LTEgMysxIDEtMiAzLTMgNy0zIDUtMiA3KzIgNSsxIDctMSA0LTEgNy0xIDUtMiA3KzMgNSsxIDQrMyA3LTIgNS0xIDcrMSAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.15ms ± 0.09ms</td>
+<td>197</td>
+<td>198</td>
+<td>1757</td>
+
+<td>1.088</td>
+<td>
+
+[59 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQkZGLi5FIFxuQi5ILi5FIFxuUFBILi5FS1xuLi5IQ0NDIFxuLi4uLkcuIFxuRERELkcuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsNSw4LDAsMjEsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4xNW1zIMKxIDAuMDltcyIsInRpY2tDb3VudCI6MTk3LCJ2aXNpdGVkTm9kZXMiOjE5OCwic2VhcmNoQ291bnQiOjE3NTcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDg4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA3KzEgMysxIDErMiA3LTEgMy0yIDUtMyAyKzMgNysxIDYtMSA3KzEgNSsxIDctMiAxKzEgNysxIDYtMiA1KzEgNysxIDItMiA3KzEgMisxIDEtMSAyLTIgNSsxIDMrMyAwKzIgMS0yIDYtMSAwLTIgMSsxIDArMyAzLTIgNy0zIDMrMSA3KzIgMS0xIDctMSAzLTEgNCs0IDcrMiA0LTMgNy0zIDMrMSA0KzIgNyszIDQtMSAzKzEgMC0yIDQtMSAxLTEgMCsyIDMtMyA3LTMgNS0zIDIrMyA3KzIgNSsyIDctMSA1LTEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>1.63ms ± 0.46ms</td>
+<td>91</td>
+<td>92</td>
+<td>803</td>
+
+<td>1.146</td>
+<td>
+
+[34 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuQkZGLi5FIFxuQi5ILi5FIFxuUFBILi5FS1xuLi5IQ0NDIFxuLi4uLkcuIFxuRERELkcuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsNSw4LDAsMjEsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS42M21zIMKxIDAuNDZtcyIsInRpY2tDb3VudCI6OTEsInZpc2l0ZWROb2RlcyI6OTIsInNlYXJjaENvdW50Ijo4MDMsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTQ2Iiwic29sdXRpb25TdGVwcyI6IuKIhSA3KzEgMysxIDErMiA3LTEgMy0yIDUtMyA2LTMgNSszIDMrMiA3KzMgMysxIDEtMiA2LTEgMSsxIDArMyA0KzQgMy0yIDctMiA0LTQgNy0xIDQrMyA3KzIgNC0yIDMrMSA3LTIgNCsxIDcrMSA0KzEgMS0yIDctMSAzLTIgNS0yIDIrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>3.25ms ± 0.46ms</td>
+<td>600</td>
+<td>601</td>
+<td>5511</td>
+
+<td>1.563</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG5CRkYuLkUgXG5CLkguLkUgXG5QUEguLkVLXG4uLkhDQ0MgXG4uLi4uRy4gXG5EREQuRy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMSw1LDgsMCwyMSwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjI1bXMgwrEgMC40Nm1zIiwidGlja0NvdW50Ijo2MDAsInZpc2l0ZWROb2RlcyI6NjAxLCJzZWFyY2hDb3VudCI6NTUxMSwiYnJhbmNoaW5nRmFjdG9yIjoiMS41NjMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMiAzLTEgNS0zIDYtMyA3KzMgNSszIDMrMyAwKzIgNCsxIDEtMyA2LTEgMCsxIDMtMyA3LTMgNS0zIDIrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.63ms ± 0.65ms</td>
+<td>798</td>
+<td>799</td>
+<td>7281</td>
+
+<td>1.592</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkJGRi4uRSBcbkIuSC4uRSBcblBQSC4uRUtcbi4uSENDQyBcbi4uLi5HLiBcbkRERC5HLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDUsOCwwLDIxLDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuNjNtcyDCsSAwLjY1bXMiLCJ0aWNrQ291bnQiOjc5OCwidmlzaXRlZE5vZGVzIjo3OTksInNlYXJjaENvdW50Ijo3MjgxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjU5MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMSsyIDMtMSA1LTIgNi0zIDUrMiA3KzMgMyszIDArMiA0KzQgMS0zIDYtMSAwKzEgMy0zIDUtMSA3LTEgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.97ms ± 0.79ms</td>
+<td>480</td>
+<td>481</td>
+<td>4363</td>
+
+<td>1.539</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkJGRi4uRSBcbkIuSC4uRSBcblBQSC4uRUtcbi4uSENDQyBcbi4uLi5HLiBcbkRERC5HLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDUsOCwwLDIxLDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuOTdtcyDCsSAwLjc5bXMiLCJ0aWNrQ291bnQiOjQ4MCwidmlzaXRlZE5vZGVzIjo0ODEsInNlYXJjaENvdW50Ijo0MzYzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjUzOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMSsyIDMtMSA1LTMgNi0zIDcrMyA1KzMgMyszIDArMSA0KzEgMS0zIDYtMSAwKzIgMy0zIDctMyA1LTMgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>264.01ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>385815</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>265.11ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>576471</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>3</td>
+<td>60.78ms ± 18.44ms</td>
+<td>13</td>
+<td>933</td>
+<td>120330</td>
+
+<td>1.905</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG5CRkYuLkUgXG5CLkguLkUgXG5QUEguLkVLXG4uLkhDQ0MgXG4uLi4uRy4gXG5EREQuRy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMSw1LDgsMCwyMSwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjozLCJkdXJhdGlvbiI6IjYwLjc4bXMgwrEgMTguNDRtcyIsInRpY2tDb3VudCI6MTMsInZpc2l0ZWROb2RlcyI6OTMzLCJzZWFyY2hDb3VudCI6MTIwMzMwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjkwNSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMSsyIDMtMSA1LTIgNi0zIDUrMiA3KzMgMyszIDEtMSA2LTEgMCszIDQrMSAxLTIgMy0zIDUtMSA3LTEgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>2</td>
+<td>80.02ms ± 4.45ms</td>
+<td>15</td>
+<td>1272</td>
+<td>169902</td>
+
+<td>1.946</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkJGRi4uRSBcbkIuSC4uRSBcblBQSC4uRUtcbi4uSENDQyBcbi4uLi5HLiBcbkRERC5HLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDUsOCwwLDIxLDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIsImR1cmF0aW9uIjoiODAuMDJtcyDCsSA0LjQ1bXMiLCJ0aWNrQ291bnQiOjE1LCJ2aXNpdGVkTm9kZXMiOjEyNzIsInNlYXJjaENvdW50IjoxNjk5MDIsImJyYW5jaGluZ0ZhY3RvciI6IjEuOTQ2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxKzIgMy0xIDUtMiA2LTMgNSsyIDcrMyAzKzMgMS0xIDYtMSAwKzMgNCsxIDEtMiAzLTMgNS0xIDctMSAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>2</td>
+<td>87.94ms ± 7.25ms</td>
+<td>11</td>
+<td>721</td>
+<td>61449</td>
+
+<td>1.826</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbkJGRi4uRSBcbkIuSC4uRSBcblBQSC4uRUtcbi4uSENDQyBcbi4uLi5HLiBcbkRERC5HLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDUsOCwwLDIxLDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIsImR1cmF0aW9uIjoiODcuOTRtcyDCsSA3LjI1bXMiLCJ0aWNrQ291bnQiOjExLCJ2aXNpdGVkTm9kZXMiOjcyMSwic2VhcmNoQ291bnQiOjYxNDQ5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjgyNiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMSsyIDMtMSA1LTIgNi0zIDUrMiA3KzMgMyszIDArMSA0KzEgMS0zIDYtMSAwKzIgMy0zIDUtMSA3LTEgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-13**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-13.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+12
+BBGGH. 
+..E.HF 
+.IEPPFK
+LI.DDF 
+L..JCC 
+LMMJNN 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+12 (6 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>4</td>
+<td>46.84ms ± 3.53ms</td>
+<td>8209</td>
+<td>9344</td>
+<td>75359</td>
+
+<td>1.927</td>
+<td>
+
+[16 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCR0dILiBcbi4uRS5IRiBcbi5JRVBQRktcbkxJLkRERiBcbkwuLkpDQyBcbkxNTUpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwyLDQsOCwxMSwxMywwLDE4LDIxLDI3LDI4LDMxLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDYuODRtcyDCsSAzLjUzbXMiLCJ0aWNrQ291bnQiOjgyMDksInZpc2l0ZWROb2RlcyI6OTM0NCwic2VhcmNoQ291bnQiOjc1MzU5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjkyNyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDQtMSA1KzEgMC0zIDMtMiA4KzEgOS0zIDgtMiAxMC0yIDIrMyAxMi0xIDQrMyAxKzIgMy0xIDktMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>4</td>
+<td>45.67ms ± 15.33ms</td>
+<td>4952</td>
+<td>4953</td>
+<td>44304</td>
+
+<td>1.015</td>
+<td>
+
+[438 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkdHSC4gXG4uLkUuSEYgXG4uSUVQUEZLXG5MSS5EREYgXG5MLi5KQ0MgXG5MTU1KTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDgsMTEsMTMsMCwxOCwyMSwyNywyOCwzMSwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjQ1LjY3bXMgwrEgMTUuMzNtcyIsInRpY2tDb3VudCI6NDk1MiwidmlzaXRlZE5vZGVzIjo0OTUzLCJzZWFyY2hDb3VudCI6NDQzMDQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDE1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA4LTEgNy0yIDExLTEgOCsxIDUtMSAxMSsxIDgtMiA5LTEgMTItMSAxMS0xIDEyLTEgNC0xIDEyKzIgMTErMiA3KzIgMTEtMSA5KzEgOCszIDktMSAxMi0xIDctMiAxMS0xIDEyLTEgMysyIDEyKzIgMTErMiAzLTIgNSszIDMrMSA1LTIgMTEtMiAxMi0yIDUrMSAxMisxIDMrMiAwLTEgMisxIDAtMSA5LTIgMTIrMSAxMC0xIDMtMSAxMi0yIDEwKzEgOC0xIDEyKzIgMTErMiAxMC0xIDExLTEgMTItMSAxMS0xIDMrMSA4LTEgMi0xIDEyKzEgMTArMSA4KzEgMTItMSAzLTEgMTErMSAxMisxIDgrMSAxMS0xIDkrMSAxMi0yIDEwLTEgMTIrMSAxMSsxIDEyKzEgMTErMSA1KzEgMTArMSA5LTEgOC0xIDEwLTEgNysyIDUtMSAxMS0xIDEyLTEgOCsxIDEwKzEgNy0xIDExLTEgMTItMSAxMC0xIDEyKzIgMTErMiAxMCsxIDgtMSAxMS0yIDQrMSAxMi0yIDEwLTEgMTIrMSAxMSsxIDEyKzEgMTErMSA1KzEgMTArMSA3KzEgNS0xIDExLTEgMTItMSAyKzEgMTAtMSAxMisxIDExKzEgNSsxIDctMiAxMCsxIDErMiA1LTEgMTEtMiAxMi0yIDEwLTEgMTIrMSAxMSsxIDEyKzEgNCsxIDExLTEgMysxIDEyLTEgOC0xIDQtMSAxMisxIDEwKzEgMisxIDEyLTEgOS0xIDArMSAxMisxIDEwLTEgNS0yIDEyLTEgOC0xIDEwKzEgMTIrMSAyLTEgMTAtMSA4KzIgMTItMSAxMCsxIDMtMSAxMi0xIDEwLTEgNCsyIDEyKzEgMTErMSA1KzIgNysyIDQtMSAxMisxIDExKzEgNy0yIDUrMSA2KzEgNS0zIDExLTIgMTItMiA3KzEgNSsyIDEyKzIgMysxIDEyLTEgMC0xIDkrMSAxMisxIDMtMSAxMi0yIDQtMSAxMisxIDExKzEgMTIrMSA3KzEgMC0xIDMtMiAxMi0xIDEwLTEgOC0xIDEyKzEgMTErMSAxMCsyIDgrMSA1KzEgMTAtMiA4LTIgMTArMSA4KzEgNCsxIDEwLTEgMisyIDUtMSAxMS0xIDEyLTEgMi0xIDEwKzEgMTIrMSAxMSsxIDQtMSA5LTEgMTEtMSAxMi0xIDEwLTEgMisxIDEyKzEgMTErMSA1KzEgMi0yIDEwKzIgOC0xIDIrMSAxMC0yIDQrMSAxMCsxIDgrMSA2LTEgMTAtMSA1LTEgMTEtMSAxMi0xIDEwKzEgNCsxIDItMSAxMC0xIDQtMiAxMisxIDExKzEgMTArMiA4KzEgMTEtMSAxMi0xIDEwLTEgNCsxIDEyKzEgMTErMSAxMC0xIDUrMSA4LTIgMTArMSA0LTEgOCsyIDMtMSAwKzIgMTAtMSA1LTMgMTEtMSAxMi0xIDEwLTEgOC0yIDEyKzEgMTErMSAxMCszIDgrMSAxMS0xIDEyLTEgMTAtMSA3LTIgMTIrMSAxMS0xIDEyLTIgMTAtMyAxMisxIDEwKzQgOC0xIDEyLTEgMTAtMyAxMisyIDEwLTEgMTErMiAxMCszIDgrMiAxMC0yIDExLTEgMTAtMSAxMi0xIDEwKzQgNSsyIDEyKzEgMTEtMSAxMi0yIDEwLTIgMTIrMSAxMCsxIDgtMSA1LTEgMTAtMiAxMi0xIDEwKzMgMTIrMiAxMSsyIDEwLTQgMTEtMSAxMi0xIDEwKzQgMisxIDEyKzEgMTAtMyAxMS0xIDEwLTEgMTItMiAxMCszIDUrMSAxMisyIDExKzIgMTAtMSAxMS0xIDEyLTEgMTEtMSAxMCsyIDcrMSAxMi0xIDEwLTIgMTIrMiA1LTIgMTItMSAxMSsxIDEwLTEgMTIrMSAxMSsxIDEwKzMgOC0xIDExLTIgMTItMiAxMC0zIDEyKzEgMTArMiAxMSsxIDEyKzEgMTAtMSAyLTEgMTItMSAxMS0xIDEyLTEgMTArMSAxMisyIDgrMiAxMi0xIDExKzEgNCsyIDEwLTIgMTEtMSAxMi0xIDEwKzIgNC0xIDEwLTEgMTIrMiAxMSsyIDEwLTEgMTEtMSAxMCsyIDgtMiAxMi0xIDExLTEgMTAtMiAxMi0xIDgrMSAxMisyIDEwKzIgMTErMiA0LTEgMTAtMSA3LTEgNCsxIDExLTIgMTItMiA4LTEgMTIrMSAxMSsxIDEyKzEgMTAtMiA4KzEgMTItMSAxMCsxIDExLTEgMTArMiA4KzEgMTIrMSAxMC0zIDEyLTIgMTArMSA1KzEgMTIrMiAxMSsyIDEwLTEgMTEtMSAxMi0xIDExLTEgMTArMiA4LTEgMTErMSAxMisxIDEwLTEgMisyIDArMSAxMi0xIDExLTEgMTItMSAxMC0xIDEyKzIgMTErMiAxMCsyIDQtMSAxMS0yIDEyLTIgMisxIDEwLTIgOCsxIDEwKzEgNS0xIDEwKzEgOC0yIDItMSAxMisyIDExKzIgMTAtMiAxMS0xIDEyLTEgMTEtMSAxMCsxIDgrMSAxMi0xIDEwLTEgMTIrMiAzKzEgMTItMSAxMSsxIDEwKzIgMTIrMSAxMSsxIDEwLTEgOC0xIDExLTIgMTItMiAxMC0xIDIrMSA4KzIgNCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>19</td>
+<td>10.12ms ± 1.25ms</td>
+<td>1655</td>
+<td>1656</td>
+<td>13753</td>
+
+<td>1.049</td>
+<td>
+
+[135 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCR0dILiBcbi4uRS5IRiBcbi5JRVBQRktcbkxJLkRERiBcbkwuLkpDQyBcbkxNTUpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwyLDQsOCwxMSwxMywwLDE4LDIxLDI3LDI4LDMxLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE5LCJkdXJhdGlvbiI6IjEwLjEybXMgwrEgMS4yNW1zIiwidGlja0NvdW50IjoxNjU1LCJ2aXNpdGVkTm9kZXMiOjE2NTYsInNlYXJjaENvdW50IjoxMzc1MywiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNDkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgtMSA3LTIgMTEtMSA4KzEgNS0xIDExKzEgOC0yIDktMSAxMi0xIDExLTEgMTItMSA0LTEgMTIrMiAxMSsyIDcrMiAxMS0xIDkrMSA4KzMgOS0xIDEyLTEgNy0yIDExLTEgMTItMSAzKzIgMTIrMiAxMSsyIDMtMiA1KzMgMysxIDUtMiAxMS0yIDEyLTIgNSsxIDEyKzEgMTErMSAxMisxIDkrMSAxMS0xIDgtMSA1LTIgMTErMSAzKzEgOCsxIDAtMSAxMS0xIDgtMSAzKzEgOC0yIDktMSAxMi0xIDArMSA3KzEgMTIrMSA5KzEgOCszIDktMSAxMi0xIDMtMiAxMSsxIDEyKzEgMTErMSA3KzEgNSsyIDMtMSA1LTEgNy0xIDExLTIgMTItMiA1KzEgMTIrMSAxMSsxIDEyKzEgOSsxIDExLTEgOC0yIDUtMiAxMSsxIDgrMSA1KzEgMTEtMSAzKzMgOC0xIDAtMSA4KzIgOS0xIDEyLTEgMy0xIDEyLTEgNS0xIDEyKzIgMTErMiA3KzEgMTEtMSAxMi0xIDctMiAxMS0xIDMrMSAxMisxIDUrMiAzLTEgMTItMiAwLTEgMTIrMSAxMSsxIDEyKzEgMTErMSA1KzEgNysxIDktMiAxMC0xIDUtMSAxMS0yIDEyLTIgOC0xIDQrMyAxMisxIDMrMSA3LTEgMisxIDErMiA5LTEgMy0xIDEyLTEgMCsxIDUtMiAxMisxIDExKzEgNSsyIDcrMiAwLTIgMy0zIDEwLTEgOC0xIDIrMiAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>10</td>
+<td>18.73ms ± 1.71ms</td>
+<td>719</td>
+<td>720</td>
+<td>5606</td>
+
+<td>1.053</td>
+<td>
+
+[109 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCR0dILiBcbi4uRS5IRiBcbi5JRVBQRktcbkxJLkRERiBcbkwuLkpDQyBcbkxNTUpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwyLDQsOCwxMSwxMywwLDE4LDIxLDI3LDI4LDMxLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEwLCJkdXJhdGlvbiI6IjE4LjczbXMgwrEgMS43MW1zIiwidGlja0NvdW50Ijo3MTksInZpc2l0ZWROb2RlcyI6NzIwLCJzZWFyY2hDb3VudCI6NTYwNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNTMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgtMSA3LTIgMTEtMSA4KzEgNysxIDUtMSAxMSsxIDMrMiA3LTEgMTEtMSA1KzIgNysxIDQtMSAxMSsxIDctMSA1LTEgMTEtMSAzLTEgNysxIDUtMSAzKzIgOC0yIDktMSAxMi0xIDctMSA0KzEgMC0xIDcrMSAyKzIgNC0xIDErMSAxMisxIDkrMSA4KzEgNy0xIDYrMSA4LTEgNy0xIDgtMSA0KzEgOCsyIDcrMiA4LTEgMi0xIDgrMiA3LTIgNSsyIDcrMSA2LTEgNysxIDAtMSA2KzEgMy0xIDQtMSA4KzEgMTErMSA5LTEgMTItMSA2LTEgOS0yIDEwLTEgMTEtMSAxMi0xIDkrMSA3LTEgMTIrMSAxMSsxIDcrMiA2KzEgOS0xIDgtMSA0KzMgNy0zIDExLTEgMTItMSA3KzIgNi0xIDEyKzEgMSsxIDktMSAxMi0xIDctMSA2KzEgMTIrMSAxMSsxIDctMSAwKzEgMTEtMSAxMi0xIDcrMiA1LTIgMTIrMSAxMSsxIDctMSA2LTEgMTEtMSAxMi0xIDUrMSA3KzEgMTIrMSAxMSsxIDcrMSA1KzEgMC0yIDMtMyAxMC0xIDgtMSAyKzIgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>5</td>
+<td>35.82ms ± 5.38ms</td>
+<td>6236</td>
+<td>6237</td>
+<td>56260</td>
+
+<td>1.752</td>
+<td>
+
+[18 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMlxuQkJHR0guIFxuLi5FLkhGIFxuLklFUFBGS1xuTEkuRERGIFxuTC4uSkNDIFxuTE1NSk5OICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE1LDIsNCw4LDExLDEzLDAsMTgsMjEsMjcsMjgsMzEsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NSwiZHVyYXRpb24iOiIzNS44Mm1zIMKxIDUuMzhtcyIsInRpY2tDb3VudCI6NjIzNiwidmlzaXRlZE5vZGVzIjo2MjM3LCJzZWFyY2hDb3VudCI6NTYyNjAsImJyYW5jaGluZ0ZhY3RvciI6IjEuNzUyIiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTEgOCsxIDUrMSAzKzIgMC0zIDktMyAzLTIgMTAtMiA4LTIgNCsxIDIrMyAxKzIgOS0xIDMtMSAwKzMgMTItMSA0KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>7</td>
+<td>27.91ms ± 1.42ms</td>
+<td>5001</td>
+<td>5002</td>
+<td>44264</td>
+
+<td>1.860</td>
+<td>
+
+[16 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkdHSC4gXG4uLkUuSEYgXG4uSUVQUEZLXG5MSS5EREYgXG5MLi5KQ0MgXG5MTU1KTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDgsMTEsMTMsMCwxOCwyMSwyNywyOCwzMSwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo3LCJkdXJhdGlvbiI6IjI3LjkxbXMgwrEgMS40Mm1zIiwidGlja0NvdW50Ijo1MDAxLCJ2aXNpdGVkTm9kZXMiOjUwMDIsInNlYXJjaENvdW50Ijo0NDI2NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS44NjAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQtMSA4KzEgNSsxIDMrMiAwLTMgMy0yIDktMyAxMC0yIDEyLTEgOC0yIDQrMyAyKzMgMSsyIDktMSAzLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>61.02ms ± 1.81ms</td>
+<td>2839</td>
+<td>2840</td>
+<td>24510</td>
+
+<td>1.787</td>
+<td>
+
+[16 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkdHSC4gXG4uLkUuSEYgXG4uSUVQUEZLXG5MSS5EREYgXG5MLi5KQ0MgXG5MTU1KTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDgsMTEsMTMsMCwxOCwyMSwyNywyOCwzMSwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjYxLjAybXMgwrEgMS44MW1zIiwidGlja0NvdW50IjoyODM5LCJ2aXNpdGVkTm9kZXMiOjI4NDAsInNlYXJjaENvdW50IjoyNDUxMCwiYnJhbmNoaW5nRmFjdG9yIjoiMS43ODciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQtMSA1KzEgMysyIDAtMyA4KzEgOS0zIDEyLTEgMy0yIDEwLTIgOC0yIDQrMyAyKzMgMSsyIDktMSAzLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>230.37ms ± 0.00ms</td>
+<td>15</td>
+<td>4546</td>
+<td>466764</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>217.01ms ± 0.00ms</td>
+<td>13</td>
+<td>3319</td>
+<td>274251</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>208.95ms ± 0.00ms</td>
+<td>10</td>
+<td>2184</td>
+<td>100549</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-14**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-14.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+BBG... 
+..G.HH 
+EIPPDJK
+EIMMDJ 
+..L.CC 
+FFL... 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>4</td>
+<td>62.86ms ± 4.17ms</td>
+<td>9656</td>
+<td>13452</td>
+<td>113143</td>
+
+<td>1.897</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy4uLiBcbi4uRy5ISCBcbkVJUFBESktcbkVJTU1ESiBcbi4uTC5DQyBcbkZGTC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDIsMTAsMTIsMTMsMCwxNiwxNywyMCwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjYyLjg2bXMgwrEgNC4xN21zIiwidGlja0NvdW50Ijo5NjU2LCJ2aXNpdGVkTm9kZXMiOjEzNDUyLCJzZWFyY2hDb3VudCI6MTEzMTQzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjg5NyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDQrMSAwLTIgMSsxIDUrMyAxLTEgMCsyIDMtMyA0LTMgMC0yIDgtMiA5LTIgMTAtNCA5KzEgNisxIDcrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>4</td>
+<td>51.23ms ± 4.17ms</td>
+<td>7013</td>
+<td>7014</td>
+<td>81455</td>
+
+<td>1.041</td>
+<td>
+
+[203 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuLi4gXG4uLkcuSEggXG5FSVBQREpLXG5FSU1NREogXG4uLkwuQ0MgXG5GRkwuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwyLDEwLDEyLDEzLDAsMTYsMTcsMjAsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI1MS4yM21zIMKxIDQuMTdtcyIsInRpY2tDb3VudCI6NzAxMywidmlzaXRlZE5vZGVzIjo3MDE0LCJzZWFyY2hDb3VudCI6ODE0NTUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDQxIiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0xIDcrMiA0LTEgNy0xIDgtMSA3LTEgMTArMSAzLTEgOC0xIDEwLTEgOS0xIDExKzQgMTArMSAxMS0zIDItMSAxMS0xIDctMiAxMSs0IDEwLTEgMTEtMyA3KzQgMTErMiA5KzEgNy00IDEwKzEgOCsyIDExKzEgMTAtMSA4LTEgMyszIDExLTEgMTArMSAzLTIgMTErMSAzKzEgNysyIDExLTEgMTAtMSA4KzEgMTErMSAzLTEgMTArMSAxMS0xIDctMSAxMC0xIDgtMSAxMSsxIDMrMSA3KzIgMisxIDExLTEgNysxIDgrMSAzLTIgNy0yIDMrMyAxMCsxIDMtMSA0KzIgMTErMSAxMC0xIDQrMSAzKzEgOC0yIDExLTEgOS0xIDExLTEgMTArMSAxMSsyIDItMSA3LTEgMC0yIDErMSAxMS0xIDEwLTEgMTEtMSA3LTEgMTErMiA5KzEgMTEtMSAxMCsxIDgrMiAxMSsxIDQtMSAxMC0xIDExLTEgMy0xIDEwKzEgNysyIDExKzEgMTAtMSA0KzEgMTEtMSA4LTEgMTArMSAxMSsxIDMrMSAxMC0xIDctMSAxMS0xIDEwKzEgNSs0IDExKzEgMy0xIDEwLTEgMTEtMSA4KzEgMTArMSA0LTEgMTErMSAxMC0xIDMrMSAxMS0xIDcrMyAzLTEgNy0yIDIrMSAxMSsxIDEwKzEgNCsxIDExLTEgOC0xIDEwLTEgMTErMSAzKzEgMTArMSA4LTEgMTEtMSAxMC0xIDktMSAxMS0xIDEwKzEgMi0xIDExKzIgMTAtMSA5KzEgOCsyIDExLTEgMTArMSA0LTEgMTErMSAxLTEgMCsyIDExLTEgMTAtMSAzLTQgMTErMSA0LTMgMTArMSAxMS0xIDgtMiAxMC0xIDktMSAxMS0zIDEwKzEgMTErNCA3LTEgMTEtMyAxMC0xIDExKzEgNyszIDIrMSAxMS0yIDctMSAxMSs0IDAtMiA5LTEgMTEtNCAxMC0zIDExKzMgMTArMiAxMS0yIDEwLTEgMTErMSA3LTEgMTEtMiAxMCszIDExKzQgMTAtNCAxMS0zIDEwKzMgMTErMiA3KzIgMTEtMSAxMC0zIDYrMiAxMS0yIDctMiA2LTEgMTErMyAxMCsyIDExLTIgMTAtMSAxMSszIDcrMSAxMS00IDEwKzEgMTErMiAxMC0yIDExLTEgNysxIDkrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>5</td>
+<td>36.58ms ± 5.10ms</td>
+<td>4161</td>
+<td>4162</td>
+<td>45911</td>
+
+<td>1.034</td>
+<td>
+
+[218 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy4uLiBcbi4uRy5ISCBcbkVJUFBESktcbkVJTU1ESiBcbi4uTC5DQyBcbkZGTC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDIsMTAsMTIsMTMsMCwxNiwxNywyMCwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo1LCJkdXJhdGlvbiI6IjM2LjU4bXMgwrEgNS4xMG1zIiwidGlja0NvdW50Ijo0MTYxLCJ2aXNpdGVkTm9kZXMiOjQxNjIsInNlYXJjaENvdW50Ijo0NTkxMSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwLTEgNysyIDQtMSA3LTEgOC0xIDMtMSA3KzEgOC0xIDktMSAxMSszIDctMSAxMS0yIDItMSAxMS0xIDctMyAxMSszIDkrMSAxMCsxIDgrMiAxMSsxIDEwLTEgOC0xIDMrMyAxMS0xIDMtMSA4KzEgMy0xIDQrMyAxMSsxIDEwKzEgNC0yIDExLTEgNCsxIDAtMSAxMSsxIDEwLTEgMy0xIDExLTEgNCsxIDEwKzEgMyszIDgtMiAxMSsxIDEwLTEgOS0xIDExLTIgMTArMSAwLTEgMTErMiAwKzIgMTEtMSAxMC0xIDkrMSA4KzEgMTErMSAxMCsxIDMtMyAxMS0xIDMrMiA4KzEgMC0yIDExKzEgMTAtMSA0LTEgMTEtMSA3KzQgMSsxIDUrNCAxLTEgNy0xIDExKzEgNCsxIDgtMSAxMS0xIDcrMSAzKzEgOC0xIDctMSAxMSsxIDktMSAxMS0yIDArMSA1LTEgNy0zIDExKzIgMTArMSAxMS0xIDkrMSAxMC0xIDgrMiAxMSsxIDEwKzEgNC0xIDExLTEgMy00IDEwLTEgMTErMSAwLTEgMTArMSA0KzEgMTEtMSAxMC0xIDgtMiAxMSsxIDktMSAxMS0yIDEwKzEgMTErMSAwKzIgMTErMSA5KzEgOCsxIDExLTEgMTAtMSAwLTEgMTErMSA3KzMgOC0xIDExLTEgOS0xIDExLTEgNysxIDArMSAxMSsxIDkrMSA4KzIgNy0xIDExKzEgNC00IDctMyAxMS0xIDEwKzEgOC0yIDExKzEgOS0xIDExLTQgMTAtMSAxMSszIDAtMiAxMS0yIDEwKzEgMTErMSAwKzEgMTErMSAzKzEgMTEtMyAxMC0xIDExKzQgOSsxIDExLTEgOCsyIDEwKzEgMTErMSA4LTEgMCsxIDExLTEgMTAtMSAzKzMgMTErMSAzLTIgMC0xIDExLTEgMTArMSAzLTIgMC0xIDExKzEgMTAtMSA4LTEgNyszIDExLTEgNysxIDgrMiAwKzEgNy0xIDgtMSAxMSsxIDIrMSA4LTEgMTEtMSA5LTEgMTEtMyA3KzEgMTErMiAwLTEgMTEtMSA3LTEgMTErMyAwKzIgMTEtMiAyLTEgMTEtMSA3KzEgMC0xIDExKzIgNSsxIDExLTMgNy0xIDExKzQgOSsxIDExLTEgMCsxIDktMSAwLTIgMTEtMSA5LTEgMTAtMyA2KzIgOSsxIDExLTIgNi0xIDExKzQgOSsxIDExLTEgNysxIDktMSAxMS0yIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>97.48ms ± 15.45ms</td>
+<td>3890</td>
+<td>3891</td>
+<td>43424</td>
+
+<td>1.177</td>
+<td>
+
+[54 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJCRy4uLiBcbi4uRy5ISCBcbkVJUFBESktcbkVJTU1ESiBcbi4uTC5DQyBcbkZGTC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDIsMTAsMTIsMTMsMCwxNiwxNywyMCwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6Ijk3LjQ4bXMgwrEgMTUuNDVtcyIsInRpY2tDb3VudCI6Mzg5MCwidmlzaXRlZE5vZGVzIjozODkxLCJzZWFyY2hDb3VudCI6NDM0MjQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTc3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMC0xIDcrMiA0LTEgOC0xIDctMSAzLTEgOC0xIDktMSAxMSs0IDkrMSAxMS0xIDgrMiA3KzEgOC0xIDMrMyA4LTEgOS0xIDExLTIgNy0xIDExKzMgOSsxIDgrMiA0KzMgMTEtMSA4LTIgOS0xIDExLTEgNysxIDItMSAxMSsxIDkrMSA4KzIgNy00IDExKzEgMTArMSA4LTIgMC0yIDErMiA1KzIgMTAtMSAxMS0xIDcrNCA1LTEgNy0xIDExKzEgMi0zIDYtMiAxMS0xIDctMyAxMCsxIDExKzEgNS0xIDEtMiAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>4</td>
+<td>43.05ms ± 4.54ms</td>
+<td>6062</td>
+<td>6063</td>
+<td>68568</td>
+
+<td>1.716</td>
+<td>
+
+[19 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuQkJHLi4uIFxuLi5HLkhIIFxuRUlQUERKS1xuRUlNTURKIFxuLi5MLkNDIFxuRkZMLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMiwxMCwxMiwxMywwLDE2LDE3LDIwLDI2LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDMuMDVtcyDCsSA0LjU0bXMiLCJ0aWNrQ291bnQiOjYwNjIsInZpc2l0ZWROb2RlcyI6NjA2Mywic2VhcmNoQ291bnQiOjY4NTY4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjcxNiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0xIDMtMSA4LTIgOS0xIDExKzQgOSsxIDgrMiA0KzMgMyszIDgtMiAwLTIgMSsyIDItNCAxLTIgMCsyIDYtMiAwKzEgNy0yIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>4</td>
+<td>44.27ms ± 17.08ms</td>
+<td>4376</td>
+<td>4377</td>
+<td>46637</td>
+
+<td>1.794</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuLi4gXG4uLkcuSEggXG5FSVBQREpLXG5FSU1NREogXG4uLkwuQ0MgXG5GRkwuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwyLDEwLDEyLDEzLDAsMTYsMTcsMjAsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI0NC4yN21zIMKxIDE3LjA4bXMiLCJ0aWNrQ291bnQiOjQzNzYsInZpc2l0ZWROb2RlcyI6NDM3Nywic2VhcmNoQ291bnQiOjQ2NjM3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjc5NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0xIDMtMSA4LTIgOS0xIDExKzMgOSsxIDgrMiA0KzMgMyszIDgtMiAwLTIgMSsyIDItNCA3LTIgNi0yIDEtMiAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>56.83ms ± 2.18ms</td>
+<td>3140</td>
+<td>3141</td>
+<td>32406</td>
+
+<td>1.753</td>
+<td>
+
+[17 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CQkcuLi4gXG4uLkcuSEggXG5FSVBQREpLXG5FSU1NREogXG4uLkwuQ0MgXG5GRkwuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwyLDEwLDEyLDEzLDAsMTYsMTcsMjAsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI1Ni44M21zIMKxIDIuMThtcyIsInRpY2tDb3VudCI6MzE0MCwidmlzaXRlZE5vZGVzIjozMTQxLCJzZWFyY2hDb3VudCI6MzI0MDYsImJyYW5jaGluZ0ZhY3RvciI6IjEuNzUzIiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTEgMy0xIDgtMiA5LTEgMTErMyA5KzEgOCsyIDQrMyAzKzMgMC0yIDgtMiAxKzIgMi00IDctMiA2LTIgMS0yIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>237.30ms ± 0.00ms</td>
+<td>16</td>
+<td>5519</td>
+<td>481389</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>235.95ms ± 0.00ms</td>
+<td>15</td>
+<td>6280</td>
+<td>450637</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>222.80ms ± 0.00ms</td>
+<td>12</td>
+<td>2553</td>
+<td>126060</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-15**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-15.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+13
+.BBGG. 
+HHEEFL 
+CMPPFLK
+CMIDFL 
+CMIDJJ 
+.NNOO. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+13 (7 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>2.46ms ± 1.25ms</td>
+<td>524</td>
+<td>530</td>
+<td>3187</td>
+
+<td>1.338</td>
+<td>
+
+[23 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi5CQkdHLiBcbkhIRUVGTCBcbkNNUFBGTEtcbkNNSURGTCBcbkNNSURKSiBcbi5OTk9PLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJPIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMyw2LDgsMTAsMTEsMTIsMTMsMSwyMCwyMSwyOCwzMSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIyLjQ2bXMgwrEgMS4yNW1zIiwidGlja0NvdW50Ijo1MjQsInZpc2l0ZWROb2RlcyI6NTMwLCJzZWFyY2hDb3VudCI6MzE4NywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zMzgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgtMSAxKzEgNisxIDEzKzEgMTIrMSA3KzEgMC0yIDktMSAxMC0xIDExLTIgNCsxIDUrMSAzKzIgOS0yIDEwLTIgMCsyIDYtMSA3LTEgMTItMiAxMy0yIDQrMSA1KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.26ms ± 1.37ms</td>
+<td>321</td>
+<td>322</td>
+<td>1941</td>
+
+<td>1.058</td>
+<td>
+
+[83 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uQkJHRy4gXG5ISEVFRkwgXG5DTVBQRkxLXG5DTUlERkwgXG5DTUlESkogXG4uTk5PTy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNiw4LDEwLDExLDEyLDEzLDEsMjAsMjEsMjgsMzEsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4yNm1zIMKxIDEuMzdtcyIsInRpY2tDb3VudCI6MzIxLCJ2aXNpdGVkTm9kZXMiOjMyMiwic2VhcmNoQ291bnQiOjE5NDEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDU4Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMysxIDEyLTEgMTMtMiA1LTEgMTMrMSA5KzEgMTMrMSAxMCsxIDktMSAxMisxIDYrMSAxMC0xIDEzLTEgOC0xIDYtMSAxMysxIDEyLTEgMS0xIDEzLTIgNC0xIDEzKzEgMTIrMSAxMysxIDEyKzEgNysxIDUrMSAwLTEgMTAtMSAxMS0xIDYrMSA0KzEgMC0xIDktMSAxMS0xIDUtMSAxMSsyIDEwKzEgNSsxIDErMiAxMC0xIDEtMSA4KzEgMTEtMiA1LTEgMTErMSA1KzIgMSsxIDExLTEgNCsxIDUtMSAzKzEgOS0xIDUrMSAzKzEgMTAtMiA5KzEgMisxIDEwKzIgMy0xIDEtMSA1LTIgMi0xIDktMSA4LTEgOS0xIDArMSA2LTEgNSsyIDMrMSAxMC0xIDYrMSAxKzEgMTAtMSAwKzEgNy0xIDEyLTEgMTMtMSA2LTEgMTItMSAxMy0xIDUrMSA0KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>3.14ms ± 2.57ms</td>
+<td>347</td>
+<td>348</td>
+<td>2115</td>
+
+<td>1.071</td>
+<td>
+
+[72 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi5CQkdHLiBcbkhIRUVGTCBcbkNNUFBGTEtcbkNNSURGTCBcbkNNSURKSiBcbi5OTk9PLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJPIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMyw2LDgsMTAsMTEsMTIsMTMsMSwyMCwyMSwyOCwzMSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjE0bXMgwrEgMi41N21zIiwidGlja0NvdW50IjozNDcsInZpc2l0ZWROb2RlcyI6MzQ4LCJzZWFyY2hDb3VudCI6MjExNSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNzEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEzKzEgMTItMSAxMy0yIDUtMSAxMysxIDkrMSAxMysxIDEwKzEgOS0xIDEyKzEgNisxIDEwLTEgMTMtMSA4LTEgNi0xIDEzKzEgMTItMSAxLTEgMTMtMiA0LTEgMTMrMSAxMisxIDEzKzEgMTIrMSA3KzEgMC0xIDQrMSAxMC0xIDExLTEgNisxIDAtMSA1KzIgMSsyIDUtMSAwKzEgNi0xIDUrMSAxLTEgNisxIDgrMSA1LTIgMC0xIDktMSAxMS0xIDQrMSAzKzEgOS0xIDUrMiAzKzEgMTAtMSA5KzEgMisxIDEwKzEgMy0xIDUtMSAxKzEgMi0xIDktMSA4LTEgOS0xIDArMSA2LTEgNSsxIDMrMSAxMC0yIDArMSA3LTEgMTItMiAxMy0yIDUrMSA0KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>6.84ms ± 3.02ms</td>
+<td>270</td>
+<td>271</td>
+<td>1642</td>
+
+<td>1.086</td>
+<td>
+
+[59 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTNcbi5CQkdHLiBcbkhIRUVGTCBcbkNNUFBGTEtcbkNNSURGTCBcbkNNSURKSiBcbi5OTk9PLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJPIiwiaWQiOjEzLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMyw2LDgsMTAsMTEsMTIsMTMsMSwyMCwyMSwyOCwzMSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI2Ljg0bXMgwrEgMy4wMm1zIiwidGlja0NvdW50IjoyNzAsInZpc2l0ZWROb2RlcyI6MjcxLCJzZWFyY2hDb3VudCI6MTY0MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wODYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEyLTEgMTMtMSA4LTEgNS0xIDEtMSA0LTEgNSsxIDEzKzEgMTIrMSA2KzEgMTMrMSAxMisxIDcrMSA2LTEgNS0xIDQrMSA2KzEgNy0xIDEyLTEgMTMtMSAxKzEgOCsxIDEzKzEgMTIrMSA3KzEgNi0xIDUrMSA4LTEgMC0xIDEwLTEgMTEtMSA1KzEgOCsxIDYrMSAxKzEgOC0xIDAtMSA5LTEgMTEtMSA1LTEgOCsyIDQrMSA4LTEgNSsxIDMrMiAxMC0yIDktMSA4LTEgOS0xIDArMiA3LTEgMTItMSAxMy0xIDUrMSA2LTEgMTItMSAxMy0xIDQrMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.91ms ± 0.81ms</td>
+<td>521</td>
+<td>522</td>
+<td>3174</td>
+
+<td>1.319</td>
+<td>
+
+[24 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xM1xuLkJCR0cuIFxuSEhFRUZMIFxuQ01QUEZMS1xuQ01JREZMIFxuQ01JREpKIFxuLk5OT08uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6Ik0iLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDYsOCwxMCwxMSwxMiwxMywxLDIwLDIxLDI4LDMxLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjIuOTFtcyDCsSAwLjgxbXMiLCJ0aWNrQ291bnQiOjUyMSwidmlzaXRlZE5vZGVzIjo1MjIsInNlYXJjaENvdW50IjozMTc0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjMxOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTMrMSAxMisxIDcrMSAxKzEgNisxIDAtMiA5LTEgMTAtMSAxMS0yIDUrMSA0KzEgMysyIDEwLTIgOC0xIDktMiAwKzIgNy0xIDYtMSAxMi0yIDEzLTIgNCsxIDArMSA1KzEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.70ms ± 0.19ms</td>
+<td>521</td>
+<td>522</td>
+<td>3174</td>
+
+<td>1.337</td>
+<td>
+
+[23 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uQkJHRy4gXG5ISEVFRkwgXG5DTVBQRkxLXG5DTUlERkwgXG5DTUlESkogXG4uTk5PTy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNiw4LDEwLDExLDEyLDEzLDEsMjAsMjEsMjgsMzEsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi43MG1zIMKxIDAuMTltcyIsInRpY2tDb3VudCI6NTIxLCJ2aXNpdGVkTm9kZXMiOjUyMiwic2VhcmNoQ291bnQiOjMxNzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMysxIDEyKzEgNysxIDYrMSAwLTIgOS0xIDEwLTEgMTEtMiA1KzEgNCsxIDgtMSAzKzIgOS0yIDErMSAxMC0yIDArMiA2LTEgNy0xIDEyLTIgMTMtMiA1KzEgNCsxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>8.91ms ± 0.49ms</td>
+<td>511</td>
+<td>512</td>
+<td>3139</td>
+
+<td>1.337</td>
+<td>
+
+[23 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uQkJHRy4gXG5ISEVFRkwgXG5DTVBQRkxLXG5DTUlERkwgXG5DTUlESkogXG4uTk5PTy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNiw4LDEwLDExLDEyLDEzLDEsMjAsMjEsMjgsMzEsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOC45MW1zIMKxIDAuNDltcyIsInRpY2tDb3VudCI6NTExLCJ2aXNpdGVkTm9kZXMiOjUxMiwic2VhcmNoQ291bnQiOjMxMzksImJyYW5jaGluZ0ZhY3RvciI6IjEuMzM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMysxIDEyKzEgNisxIDcrMSAwLTIgOS0xIDEwLTEgMTEtMiA1KzEgNCsxIDMrMiA4LTEgOS0yIDErMSAxMC0yIDArMiA2LTEgNy0xIDEyLTIgMTMtMiA1KzEgNCsxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>170.91ms ± 0.00ms</td>
+<td>22</td>
+<td>530</td>
+<td>285134</td>
+
+<td>1.659</td>
+<td>
+
+[23 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xM1xuLkJCR0cuIFxuSEhFRUZMIFxuQ01QUEZMS1xuQ01JREZMIFxuQ01JREpKIFxuLk5OT08uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6Ik0iLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik8iLCJpZCI6MTMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDYsOCwxMCwxMSwxMiwxMywxLDIwLDIxLDI4LDMxLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiMTcwLjkxbXMgwrEgMC4wMG1zIiwidGlja0NvdW50IjoyMiwidmlzaXRlZE5vZGVzIjo1MzAsInNlYXJjaENvdW50IjoyODUxMzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuNjU5Iiwic29sdXRpb25TdGVwcyI6IuKIhSA4LTEgMSsxIDYrMSAxMysxIDEyKzEgNysxIDAtMiA5LTEgMTAtMSAxMS0yIDQrMSA1KzEgMysyIDktMiAxMC0yIDArMiA2LTEgNy0xIDEyLTIgMTMtMiA0KzEgNSsxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>170.77ms ± 0.00ms</td>
+<td>21</td>
+<td>527</td>
+<td>257412</td>
+
+<td>1.651</td>
+<td>
+
+[23 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEzXG4uQkJHRy4gXG5ISEVFRkwgXG5DTVBQRkxLXG5DTUlERkwgXG5DTUlESkogXG4uTk5PTy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTyIsImlkIjoxMywiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNiw4LDEwLDExLDEyLDEzLDEsMjAsMjEsMjgsMzEsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIxNzAuNzdtcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjIxLCJ2aXNpdGVkTm9kZXMiOjUyNywic2VhcmNoQ291bnQiOjI1NzQxMiwiYnJhbmNoaW5nRmFjdG9yIjoiMS42NTEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgtMSAxKzEgNisxIDEzKzEgMTIrMSA3KzEgMC0yIDktMSAxMC0xIDExLTIgNCsxIDUrMSAzKzIgOS0yIDEwLTIgMCsyIDYtMSA3LTEgMTItMiAxMy0yIDQrMSA1KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>218.04ms ± 0.00ms</td>
+<td>15</td>
+<td>492</td>
+<td>86685</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-16**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-16.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+BBGGHF 
+E.IIHF 
+EDLPPFK
+.DLCCC 
+..L... 
+JJ.... 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (5 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>16</td>
+<td>12.42ms ± 2.97ms</td>
+<td>2518</td>
+<td>2898</td>
+<td>23220</td>
+
+<td>1.535</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCR0dIRiBcbkUuSUlIRiBcbkVETFBQRktcbi5ETENDQyBcbi4uTC4uLiBcbkpKLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDUsNiw4LDEzLDE0LDAsMjEsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTYsImR1cmF0aW9uIjoiMTIuNDJtcyDCsSAyLjk3bXMiLCJ0aWNrQ291bnQiOjI1MTgsInZpc2l0ZWROb2RlcyI6Mjg5OCwic2VhcmNoQ291bnQiOjIzMjIwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjUzNSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNCsyIDUtMiA2KzEgNysxIDAtMyAyKzEgMSsxIDctMyAxMCsyIDYrMSA5LTIgMiszIDkrMiA2LTEgMTAtMiA3KzMgMCszIDctMyA5LTEgMyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>19</td>
+<td>10.40ms ± 5.77ms</td>
+<td>1348</td>
+<td>1349</td>
+<td>12774</td>
+
+<td>1.029</td>
+<td>
+
+[205 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkdHSEYgXG5FLklJSEYgXG5FRExQUEZLXG4uRExDQ0MgXG4uLkwuLi4gXG5KSi4uLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE1LDIsNCw1LDYsOCwxMywxNCwwLDIxLDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE5LCJkdXJhdGlvbiI6IjEwLjQwbXMgwrEgNS43N21zIiwidGlja0NvdW50IjoxMzQ4LCJ2aXNpdGVkTm9kZXMiOjEzNDksInNlYXJjaENvdW50IjoxMjc3NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMjkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwKzQgNysxIDQrMSAwLTEgMisxIDEwLTEgNi0xIDQtMSAxMCsxIDYrMyA1LTEgMTAtMSA2LTIgNCszIDEwKzEgNC0xIDYrMSAxMC0xIDQtMSA1LTEgMTArMSA2KzEgNCsyIDEwLTEgMC0yIDctMiAxMC0xIDYtMSAxMC0xIDQtMSAxMC0xIDItMSAxMCs0IDYrMSAxMC0yIDcrMSAxMCsxIDYtMSAxMC0yIDQrMSAxMCszIDYrMSA1KzIgMTAtMiA2LTEgMTArMSA1LTEgNisxIDIrMSAxMC0xIDYtMSAxMC0xIDQtMSAxMC0xIDItMSAxMCs0IDYrMSAyKzEgNS0xIDYtMSAxMC0yIDUrMiAxMCsxIDYrMSAxKzEgMTAtMSA0KzEgMTArMiA2LTEgMTAtMyA0LTEgMTAtMSA1LTIgMTArMyA0KzEgMTAtMSA3LTIgMTAtMSA0LTEgMTArMyA5LTEgMTAtNCAzKzMgMTArMyAzLTIgMTAtMiA0KzEgMTArMyA2KzEgMTAtMiA0LTEgOS0xIDEwKzIgMy0xIDEwLTEgMisxIDEwLTEgNCsxIDEwKzIgOS0xIDEwLTEgMi0xIDEwLTEgMiszIDkrMyA2LTEgMTAtMSA0LTEgMTAtMSA3KzEgMTArMiA2KzEgNysxIDUrMyA2LTEgMTAtMiA3LTIgMTArMSA5LTEgMTArMSA2KzEgOS0xIDItMiAxMCsyIDQrMSAxMC0xIDktMSAxMC0xIDIrMiA5KzMgNi0xIDcrMSAxMC0xIDcrMSA1LTIgMTArMSA2KzEgNSsxIDEtMSA2LTEgMTAtMSA0LTEgMTAtMSA3KzEgMCszIDctMSAxMCsyIDYtMiAxMC0xIDQtMiAxMC0xIDcrMSA1KzEgNy0yIDEwKzIgNysxIDYrMyA1LTIgNi0yIDEwLTIgNysxIDYrMSA0KzEgNy0xIDEwKzIgNCsyIDEwLTEgNC0zIDUrMiAxMC0xIDErMSAxMCsyIDYtMSAxMC0xIDctMiAxMC0xIDktMSAxMCsyIDYtMSAxMC0xIDktMiAxMC0xIDItMSAxMCs0IDkrMSAxMC0zIDQrMyAxMCsyIDQtMiAxMC0zIDIrMSAxMCsyIDkrMiAxMC0xIDQrMiA5LTMgMTArMSAyLTEgMTArMiAzKzIgMTAtMyAzLTEgMTArMiAzKzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>7.45ms ± 1.06ms</td>
+<td>1132</td>
+<td>1133</td>
+<td>10977</td>
+
+<td>1.106</td>
+<td>
+
+[69 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCR0dIRiBcbkUuSUlIRiBcbkVETFBQRktcbi5ETENDQyBcbi4uTC4uLiBcbkpKLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDUsNiw4LDEzLDE0LDAsMjEsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNy40NW1zIMKxIDEuMDZtcyIsInRpY2tDb3VudCI6MTEzMiwidmlzaXRlZE5vZGVzIjoxMTMzLCJzZWFyY2hDb3VudCI6MTA5NzcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTA2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCs0IDcrMSAxMC0xIDAtMSA2LTEgMTArMSA2KzMgMC0xIDEwLTEgNCsyIDIrMSAxKzEgMTArMSA2LTEgNC0yIDEwLTEgMCsxIDYtMiAxMCsxIDYrMyA1LTEgMTAtMSA2LTIgNCszIDEwKzEgNC0yIDYrMSAxMC0xIDAtMSA2KzEgMTArMSA0KzIgMC0xIDctMSAxMC0yIDYtMSAxMC0xIDQtMSA1LTEgMTArMSA2KzEgNy0yIDktMiAyKzMgMyszIDItMSAxMCsxIDQrMSA5LTEgMTAtMSAyKzEgOSsyIDYtMSA0LTEgMy0zIDkrMSAxMC0yIDcrMyAwKzMgNy0zIDEwKzIgOS0xIDMrMyAxMC0yIDYtMSAxMCsxIDQtMSAxMCsxIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>53.13ms ± 12.69ms</td>
+<td>1468</td>
+<td>1469</td>
+<td>13915</td>
+
+<td>1.109</td>
+<td>
+
+[70 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCR0dIRiBcbkUuSUlIRiBcbkVETFBQRktcbi5ETENDQyBcbi4uTC4uLiBcbkpKLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMiw0LDUsNiw4LDEzLDE0LDAsMjEsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI1My4xM21zIMKxIDEyLjY5bXMiLCJ0aWNrQ291bnQiOjE0NjgsInZpc2l0ZWROb2RlcyI6MTQ2OSwic2VhcmNoQ291bnQiOjEzOTE1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjEwOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTArMyA3KzEgNi0xIDQrMyA3LTEgMTAtMiA2KzIgMTArMSA1LTIgNy0xIDYrMSA0LTIgMTArMSA2LTEgMTAtMyA3KzIgNi0xIDUrMiA2LTEgNy0xIDEwKzIgNiszIDEwKzEgNi0xIDQrMSAxMC0zIDcrMSAwLTMgNS0yIDIrMSAxKzEgNy0zIDktMSAzKzMgMTArMyA2KzEgNCsxIDErMSAzLTEgOS0yIDIrMiAzKzEgOSsxIDEtMSAzLTEgMTAtMSAyKzEgOS0xIDMtMiA5KzMgNysyIDgrMSA3LTEgNi0xIDEwLTEgOC0xIDctMSA5LTEgNC0xIDEwLTEgOSsxIDcrMyA4KzEgNSszIDArMyA4LTEgNy0zIDktMSAzKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>15</td>
+<td>12.73ms ± 3.19ms</td>
+<td>1943</td>
+<td>1944</td>
+<td>18178</td>
+
+<td>1.515</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkJHR0hGIFxuRS5JSUhGIFxuRURMUFBGS1xuLkRMQ0NDIFxuLi5MLi4uIFxuSkouLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwyLDQsNSw2LDgsMTMsMTQsMCwyMSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNSwiZHVyYXRpb24iOiIxMi43M21zIMKxIDMuMTltcyIsInRpY2tDb3VudCI6MTk0MywidmlzaXRlZE5vZGVzIjoxOTQ0LCJzZWFyY2hDb3VudCI6MTgxNzgsImJyYW5jaGluZ0ZhY3RvciI6IjEuNTE1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCszIDcrMSA0KzIgNS0yIDYrMiAwLTMgMisxIDErMSA3LTMgMTAtMSA5LTIgMiszIDkrMiA2LTEgMTAtMiA3KzMgMCszIDctMyA5LTEgMyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>10</td>
+<td>19.84ms ± 6.53ms</td>
+<td>2129</td>
+<td>2130</td>
+<td>19592</td>
+
+<td>1.521</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkdHSEYgXG5FLklJSEYgXG5FRExQUEZLXG4uRExDQ0MgXG4uLkwuLi4gXG5KSi4uLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE1LDIsNCw1LDYsOCwxMywxNCwwLDIxLDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEwLCJkdXJhdGlvbiI6IjE5Ljg0bXMgwrEgNi41M21zIiwidGlja0NvdW50IjoyMTI5LCJ2aXNpdGVkTm9kZXMiOjIxMzAsInNlYXJjaENvdW50IjoxOTU5MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS41MjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwKzMgNisyIDQrMiA3KzEgMC0zIDIrMSAxKzEgNS0yIDctMyA5LTIgMTAtMSAyKzMgOSsyIDYtMSAxMC0yIDcrMyAwKzMgNy0zIDktMSAzKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>5</td>
+<td>37.41ms ± 1.86ms</td>
+<td>1707</td>
+<td>1708</td>
+<td>15894</td>
+
+<td>1.505</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkdHSEYgXG5FLklJSEYgXG5FRExQUEZLXG4uRExDQ0MgXG4uLkwuLi4gXG5KSi4uLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE1LDIsNCw1LDYsOCwxMywxNCwwLDIxLDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzcuNDFtcyDCsSAxLjg2bXMiLCJ0aWNrQ291bnQiOjE3MDcsInZpc2l0ZWROb2RlcyI6MTcwOCwic2VhcmNoQ291bnQiOjE1ODk0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjUwNSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTArMyA0KzIgNysxIDYrMiAwLTMgMisxIDErMSA1LTIgNy0zIDktMiAxMC0xIDIrMyA5KzIgNi0xIDEwLTIgNyszIDArMyA3LTMgOS0xIDMrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>428.75ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>933473</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>456.96ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>962257</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>202.49ms ± 0.00ms</td>
+<td>14</td>
+<td>1366</td>
+<td>322771</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>226.64ms ± 0.00ms</td>
+<td>14</td>
+<td>1526</td>
+<td>374857</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>222.14ms ± 0.00ms</td>
+<td>10</td>
+<td>1221</td>
+<td>111705</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-17**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-17.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+BFFF.. 
+B.GGHH 
+PPE...K
+IIEL.. 
+CCCLDJ 
+MMMLDJ 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (6 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>15</td>
+<td>13.26ms ± 1.53ms</td>
+<td>2107</td>
+<td>2152</td>
+<td>19664</td>
+
+<td>1.437</td>
+<td>
+
+[24 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJGRkYuLiBcbkIuR0dISCBcblBQRS4uLktcbklJRUwuLiBcbkNDQ0xESiBcbk1NTUxESiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsOCwxMCwwLDE0LDE4LDIxLDI0LDI4LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE1LCJkdXJhdGlvbiI6IjEzLjI2bXMgwrEgMS41M21zIiwidGlja0NvdW50IjoyMTA3LCJ2aXNpdGVkTm9kZXMiOjIxNTIsInNlYXJjaENvdW50IjoxOTY2NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS40MzciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMiAyLTEgNy0yIDktMiAxMC0yIDgrMyAxMSszIDUrMiAwKzEgNisxIDQrNCAyLTEgMC0xIDYtMSA1LTQgMCsxIDYrMSA0LTIgOC0zIDkrMSAxMCsxIDExLTMgNysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>4.91ms ± 3.36ms</td>
+<td>318</td>
+<td>319</td>
+<td>2690</td>
+
+<td>1.021</td>
+<td>
+
+[195 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CRkZGLi4gXG5CLkdHSEggXG5QUEUuLi5LXG5JSUVMLi4gXG5DQ0NMREogXG5NTU1MREogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDgsMTAsMCwxNCwxOCwyMSwyNCwyOCwyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI0LjkxbXMgwrEgMy4zNm1zIiwidGlja0NvdW50IjozMTgsInZpc2l0ZWROb2RlcyI6MzE5LCJzZWFyY2hDb3VudCI6MjY5MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwLTIgOS0yIDctMSAxMSszIDEwKzEgMTEtMiAxMCsxIDExKzEgOSsxIDExLTIgMTAtMSA5KzEgMi0xIDExKzEgOS0xIDExKzIgMTAtMSAxMS0zIDctMSAxMSsyIDgrMSAxMS0xIDktMSAxMS0xIDgrMiAxMSszIDgtMyAxMCsxIDExLTMgOCsyIDExKzIgOC0xIDEwKzEgOC0xIDExLTEgOCsyIDErMiAxMS0xIDEwLTIgMTErMyA4LTEgMTEtMSA4LTEgMTEtMSA4KzMgNSsxIDArMSAxMS0xIDEtMiAxMSszIDUrMSA2KzEgMSsyIDQrNCA2LTEgNS0xIDExLTIgMi0xIDExKzEgMS0zIDctMSAwLTEgNS0yIDExLTEgOC0yIDExKzIgOCsxIDYrMiAxMS0yIDQtMSAxMS0xIDgtMSAxMSszIDgrMiAxMS0xIDYtMSAxMS0yIDcrMSAxMSszIDgtMiAxMS0yIDgrMSAxMSsxIDQrMSAxMSsxIDEwKzEgMTEtMiA4LTEgMTErMSA0LTEgMTEtMiA4KzEgMTArMSA3LTEgMTErMiAxMC0xIDExLTEgOC0xIDExKzIgNCsxIDYrMSAxMS0yIDEwKzEgMTErMSAxMC0yIDYtMSA5KzEgMTEtMSA0LTEgMTEtMSA5KzEgNisyIDExKzEgNi0xIDEwKzIgMTEtMSAxMC0xIDktMSAxMSsyIDEwKzEgNi0xIDcrMSAxMS0yIDkrMSAxMSsxIDEwLTEgOS0xIDExKzIgNCsxIDEwLTEgNi0xIDExLTIgOSsxIDYrMSAxKzMgOS0yIDExKzIgOCsyIDExLTEgNC0xIDExLTEgNS0xIDArMSAxMS0xIDgtMiAxMSszIDgrMSAxMS0xIDQtMSAxMS0yIDgtMiAxMSszIDgrMyA0KzIgMTEtMSA4LTIgMTEtMSA4KzEgNi0xIDExKzIgOC0xIDEwKzEgMTEtMiAxMCsxIDExKzEgOCsxIDEwLTEgNisxIDExKzEgNC0yIDExLTIgOC0yIDExKzEgOCsxIDExLTIgMTArMSAxMSsxIDkrMiAxMC0yIDExLTEgOS0xIDExKzMgMTArMSAxMS0yIDQrMiAxMSsxIDQtMSAxMCsxIDQtMSA4LTEgMTEtMiAxMC0xIDkrMSA3KzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>4.49ms ± 0.44ms</td>
+<td>586</td>
+<td>587</td>
+<td>5596</td>
+
+<td>1.080</td>
+<td>
+
+[78 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJGRkYuLiBcbkIuR0dISCBcblBQRS4uLktcbklJRUwuLiBcbkNDQ0xESiBcbk1NTUxESiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsOCwxMCwwLDE0LDE4LDIxLDI0LDI4LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjQuNDltcyDCsSAwLjQ0bXMiLCJ0aWNrQ291bnQiOjU4NiwidmlzaXRlZE5vZGVzIjo1ODcsInNlYXJjaENvdW50Ijo1NTk2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA4MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0xIDctMSAxMSsyIDEwLTEgMTEtMSA5KzEgMTArMSAyLTEgOS0xIDctMSAxMSsxIDEwLTEgMTErMSAxKzIgMTAtMSA5LTEgOCszIDUrMiA2KzEgMCsxIDEtMiA2LTEgNS0xIDExLTMgMC0xIDExKzIgMSsyIDExLTEgMCsxIDEtMSAxMSsxIDQrMSAxMS0yIDEtMiAxMSszIDUrMSA2KzEgNy0xIDYrMSA0KzMgNi0yIDUtMSAxMS0yIDAtMSAxMSsxIDItMSAwKzEgNysxIDExLTEgMC0xIDErMyAxMSsyIDUtMyAxMS0xIDgtMiAxMCsyIDkrMSAxMS0xIDEwLTEgMTErMiA2KzEgMTEtMSA0LTEgMTEtMiAxMCsxIDExKzEgOSsxIDEwLTEgNCsxIDArMSA5LTEgNC0yIDExLTEgOC0xIDcrMiAxMCsxIDkrMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>7</td>
+<td>28.61ms ± 8.57ms</td>
+<td>746</td>
+<td>747</td>
+<td>7113</td>
+
+<td>1.102</td>
+<td>
+
+[67 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkJGRkYuLiBcbkIuR0dISCBcblBQRS4uLktcbklJRUwuLiBcbkNDQ0xESiBcbk1NTUxESiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsOCwxMCwwLDE0LDE4LDIxLDI0LDI4LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMjguNjFtcyDCsSA4LjU3bXMiLCJ0aWNrQ291bnQiOjc0NiwidmlzaXRlZE5vZGVzIjo3NDcsInNlYXJjaENvdW50Ijo3MTEzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjEwMiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0xIDctMSAxMSsyIDEwLTEgMTEtMSA5KzEgMTArMSAyLTEgOS0xIDMtMSAxMSsxIDEwLTQgMTErMSAxMCszIDMrMSA3LTEgMTAtMSA5LTEgOCszIDUrMiA2KzEgMSsyIDArMSA2LTEgNCsxIDEtMyA3LTEgNisyIDQrMSA2LTEgNysxIDQrMiA2LTEgNS0xIDExLTIgNy0xIDExKzEgMi0xIDcrMSAxKzMgMTEtMSAwLTEgNS0zIDExKzIgOC0yIDEwKzEgOSsxIDExLTEgMTArMSA2KzEgNSsxIDExLTEgMTAtMSAxMSsyIDQtMSAxMS0zIDEwKzEgNS0xIDArMSAxMSsyIDEwLTEgMTErMSA0LTEgMTEtMyA4LTEgNysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>12</td>
+<td>15.62ms ± 2.89ms</td>
+<td>1947</td>
+<td>1948</td>
+<td>18384</td>
+
+<td>1.410</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuQkZGRi4uIFxuQi5HR0hIIFxuUFBFLi4uS1xuSUlFTC4uIFxuQ0NDTERKIFxuTU1NTERKICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMSw4LDEwLDAsMTQsMTgsMjEsMjQsMjgsMjksMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTIsImR1cmF0aW9uIjoiMTUuNjJtcyDCsSAyLjg5bXMiLCJ0aWNrQ291bnQiOjE5NDcsInZpc2l0ZWROb2RlcyI6MTk0OCwic2VhcmNoQ291bnQiOjE4Mzg0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjQxMCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTAtMiA5LTIgMi0xIDctMiA4KzMgMTErMyA1KzIgMCsxIDYrMSA0KzQgNi0xIDItMSAxKzIgMC0xIDUtNCAwKzEgNisxIDQtMiAxMS0zIDgtMyA5KzIgNysyIDArMiAxMCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>11</td>
+<td>17.35ms ± 3.11ms</td>
+<td>2011</td>
+<td>2012</td>
+<td>18920</td>
+
+<td>1.434</td>
+<td>
+
+[24 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CRkZGLi4gXG5CLkdHSEggXG5QUEUuLi5LXG5JSUVMLi4gXG5DQ0NMREogXG5NTU1MREogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDgsMTAsMCwxNCwxOCwyMSwyNCwyOCwyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMSwiZHVyYXRpb24iOiIxNy4zNW1zIMKxIDMuMTFtcyIsInRpY2tDb3VudCI6MjAxMSwidmlzaXRlZE5vZGVzIjoyMDEyLCJzZWFyY2hDb3VudCI6MTg5MjAsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDM0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTEgMTAtMiA5LTIgNy0yIDExKzMgOCszIDUrMiAwKzEgNisxIDQrNCA2LTEgMi0xIDAtMSAxKzIgNS00IDYrMSAwKzEgNC0yIDExLTMgOC0zIDEwKzIgOSsxIDcrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>49.40ms ± 2.25ms</td>
+<td>1538</td>
+<td>1539</td>
+<td>14651</td>
+
+<td>1.417</td>
+<td>
+
+[24 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CRkZGLi4gXG5CLkdHSEggXG5QUEUuLi5LXG5JSUVMLi4gXG5DQ0NMREogXG5NTU1MREogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDgsMTAsMCwxNCwxOCwyMSwyNCwyOCwyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjQ5LjQwbXMgwrEgMi4yNW1zIiwidGlja0NvdW50IjoxNTM4LCJ2aXNpdGVkTm9kZXMiOjE1MzksInNlYXJjaENvdW50IjoxNDY1MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS40MTciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMSAxMC0yIDktMiA3LTIgOCszIDExKzMgNSsyIDArMSA2KzEgNCs0IDItMSAwLTEgMSsyIDYtMSA1LTQgNisxIDArMSA0LTIgMTEtMyA4LTMgMTArMiA5KzIgNysyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>261.59ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>398952</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>442.90ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>651280</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>219.35ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>89376</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>235.36ms ± 0.00ms</td>
+<td>16</td>
+<td>960</td>
+<td>401527</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>208.01ms ± 0.00ms</td>
+<td>17</td>
+<td>823</td>
+<td>346160</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>205.79ms ± 0.00ms</td>
+<td>11</td>
+<td>618</td>
+<td>68987</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-18**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-18.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+8
+BBGF.. 
+HHGF.. 
+IPPF..K
+ICCC.. 
+IEE... 
+DDD... 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+8 (5 Horizontal, 3 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>7.21ms ± 1.11ms</td>
+<td>1586</td>
+<td>1634</td>
+<td>13905</td>
+
+<td>1.392</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuQkJHRi4uIFxuSEhHRi4uIFxuSVBQRi4uS1xuSUNDQy4uIFxuSUVFLi4uIFxuRERELi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDEyLDAsMTksMjUsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNy4yMW1zIMKxIDEuMTFtcyIsInRpY2tDb3VudCI6MTU4NiwidmlzaXRlZE5vZGVzIjoxNjM0LCJzZWFyY2hDb3VudCI6MTM5MDUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzkyIiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzIgNyszIDgrMyA0KzEgMC0xIDErNCA1KzEgMysxIDArMSA0LTMgNi0zIDIrMiA1KzMgMyszIDItMiA2KzMgNCszIDAtMSAxLTQgMCsxIDQtMyA2LTMgOC0zIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>4.77ms ± 0.58ms</td>
+<td>876</td>
+<td>877</td>
+<td>7415</td>
+
+<td>1.049</td>
+<td>
+
+[122 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbkJCR0YuLiBcbkhIR0YuLiBcbklQUEYuLktcbklDQ0MuLiBcbklFRS4uLiBcbkRERC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwxMiwwLDE5LDI1LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjQuNzdtcyDCsSAwLjU4bXMiLCJ0aWNrQ291bnQiOjg3NiwidmlzaXRlZE5vZGVzIjo4NzcsInNlYXJjaENvdW50Ijo3NDE1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA0OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOCszIDcrMyA4LTIgNy0yIDgrMSA3KzEgNisyIDgtMiA3LTEgOCszIDYtMSA3KzEgNCsxIDAtMSAxKzEgOC0yIDctMiA4KzEgNyszIDYtMSA4LTEgNy0yIDgrMiA3LTEgNisyIDcrMyAxKzMgMCsxIDctMSAxLTEgOC0yIDcrMSA4KzEgNC0xIDgtMiA3LTEgMysxIDgrMyA3KzEgMSsxIDYtMiA3LTEgNisxIDQtMSA3KzEgNCsyIDUrMSA3LTEgNi0xIDQtMyA3KzEgNi0xIDIrMiAzKzMgMi0yIDctMSAyKzEgNSszIDcrMSAyLTEgNiszIDctMSAxLTEgOC0zIDcrMSA4KzIgNCszIDgtMSAwLTEgMS0zIDArMSA4KzIgNy0zIDgtMSA3KzIgNi0yIDgtMSA3LTIgNisxIDcrMSA4KzIgNysxIDQtMyA4LTMgNy0zIDgrMiA3KzQgOC0xIDYtMiA4LTEgNy0zIDgrMyA3LTEgNiszIDgtMiA3KzMgNCsyIDgtMSA3LTIgNi0yIDgrMyA3KzMgOC0yIDctMiA4KzEgNisyIDQtMiA2LTMgNysxIDIrMSA4LTIgNy0zIDgrMSA3KzIgOCsyIDcrMiAyKzEgOC0xIDMtMSA4LTIgMisxIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.28ms ± 0.49ms</td>
+<td>405</td>
+<td>406</td>
+<td>3294</td>
+
+<td>1.081</td>
+<td>
+
+[71 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuQkJHRi4uIFxuSEhHRi4uIFxuSVBQRi4uS1xuSUNDQy4uIFxuSUVFLi4uIFxuRERELi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDEyLDAsMTksMjUsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4yOG1zIMKxIDAuNDltcyIsInRpY2tDb3VudCI6NDA1LCJ2aXNpdGVkTm9kZXMiOjQwNiwic2VhcmNoQ291bnQiOjMyOTQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDgxIiwic29sdXRpb25TdGVwcyI6IuKIhSA4KzMgNyszIDgtMiA3LTIgNCsxIDgrMiA3KzEgNisyIDgtMiAwLTEgMSszIDgrMiA1KzEgOC0xIDcrMSA4LTEgMysxIDgrMiAxKzEgNy0xIDYtMSAwKzEgNysxIDQtMyA2LTIgNy0xIDIrMSA1KzMgNysxIDIrMSAzKzMgMi0yIDctMSA2KzMgMS0xIDgtMyA3KzEgOCsyIDQrMyAwLTEgOCsxIDctMSAxLTMgOC0yIDctMiA4KzEgNysxIDYtMiA4LTEgNysyIDgrMiA3LTMgNisxIDcrMSAwKzEgOC0yIDctMSA4KzEgNyszIDYtMSA3LTEgOC0xIDQtMyA4LTEgNy0zIDgrMyA3KzQgNi0xIDgtMyAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>17</td>
+<td>11.18ms ± 2.31ms</td>
+<td>781</td>
+<td>782</td>
+<td>6581</td>
+
+<td>1.128</td>
+<td>
+
+[55 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOFxuQkJHRi4uIFxuSEhHRi4uIFxuSVBQRi4uS1xuSUNDQy4uIFxuSUVFLi4uIFxuRERELi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDEyLDAsMTksMjUsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTcsImR1cmF0aW9uIjoiMTEuMThtcyDCsSAyLjMxbXMiLCJ0aWNrQ291bnQiOjc4MSwidmlzaXRlZE5vZGVzIjo3ODIsInNlYXJjaENvdW50Ijo2NTgxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjEyOCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNisxIDgrMyA0KzEgOC0yIDcrMyA4KzEgNi0xIDgrMSA2KzIgMC0xIDgtMiAxKzMgOCsxIDUrMSAzKzEgOC0xIDArMSA1LTEgOCsyIDErMSA2LTIgNSsxIDYrMSA0LTMgNi0yIDIrMiA1KzMgMyszIDItMiA2KzMgNCszIDEtMSA4LTIgMC0xIDgrMSAxLTMgOCsxIDctMyA4LTIgNi0yIDgrMSA2KzEgMSsxIDgtMSA3KzMgMS0xIDArMSA4KzIgNy0zIDYtMSA0LTMgOC0zIDYtMSAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>8.96ms ± 1.66ms</td>
+<td>1538</td>
+<td>1539</td>
+<td>13507</td>
+
+<td>1.390</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG44XG5CQkdGLi4gXG5ISEdGLi4gXG5JUFBGLi5LXG5JQ0NDLi4gXG5JRUUuLi4gXG5EREQuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiwzLDYsMTIsMCwxOSwyNSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI4Ljk2bXMgwrEgMS42Nm1zIiwidGlja0NvdW50IjoxNTM4LCJ2aXNpdGVkTm9kZXMiOjE1MzksInNlYXJjaENvdW50IjoxMzUwNywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zOTAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgrMyA2KzIgNyszIDQrMSAwLTEgMSs0IDArMSAzKzEgNSsxIDQtMyA2LTMgMisyIDUrMyAzKzMgMi0yIDYrMyA0KzMgMC0xIDEtNCAwKzEgNC0zIDYtMyA4LTMgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>9.75ms ± 1.05ms</td>
+<td>1441</td>
+<td>1442</td>
+<td>12486</td>
+
+<td>1.386</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbkJCR0YuLiBcbkhIR0YuLiBcbklQUEYuLktcbklDQ0MuLiBcbklFRS4uLiBcbkRERC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwxMiwwLDE5LDI1LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjkuNzVtcyDCsSAxLjA1bXMiLCJ0aWNrQ291bnQiOjE0NDEsInZpc2l0ZWROb2RlcyI6MTQ0Miwic2VhcmNoQ291bnQiOjEyNDg2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjM4NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOCszIDQrMSAwLTEgNyszIDYrMiAxKzQgNSsxIDArMSAzKzEgNC0zIDYtMyAyKzIgMyszIDUrMyAyLTIgNiszIDQrMyAwLTEgMS00IDArMSA0LTMgNi0zIDgtMyAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>11</td>
+<td>17.66ms ± 6.29ms</td>
+<td>925</td>
+<td>926</td>
+<td>7389</td>
+
+<td>1.353</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjhcbkJCR0YuLiBcbkhIR0YuLiBcbklQUEYuLktcbklDQ0MuLiBcbklFRS4uLiBcbkRERC4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwxMiwwLDE5LDI1LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjExLCJkdXJhdGlvbiI6IjE3LjY2bXMgwrEgNi4yOW1zIiwidGlja0NvdW50Ijo5MjUsInZpc2l0ZWROb2RlcyI6OTI2LCJzZWFyY2hDb3VudCI6NzM4OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zNTMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgrMyA0KzEgNyszIDAtMSA2KzIgMSs0IDUrMSAwKzEgMysxIDQtMyA2LTMgMisyIDUrMyAzKzMgMi0yIDYrMyA0KzMgMC0xIDEtNCAwKzEgNC0zIDgtMyA2LTMgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>210.43ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>288316</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>411.69ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>262968</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>220.53ms ± 0.00ms</td>
+<td>19</td>
+<td>734</td>
+<td>289287</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>205.31ms ± 0.00ms</td>
+<td>20</td>
+<td>824</td>
+<td>349517</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>206.71ms ± 0.00ms</td>
+<td>16</td>
+<td>476</td>
+<td>130055</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-19**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-19.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+7
+..BFF. 
+..B.G. 
+.DPPG.K
+.DHHC. 
+.EEEC. 
+...... 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+7 (3 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>2.96ms ± 1.13ms</td>
+<td>484</td>
+<td>527</td>
+<td>3572</td>
+
+<td>1.366</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuLi5CRkYuIFxuLi5CLkcuIFxuLkRQUEcuS1xuLkRISEMuIFxuLkVFRUMuIFxuLi4uLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsMTAsMTMsMiwyMCwyMiwyNV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIyLjk2bXMgwrEgMS4xM21zIiwidGlja0NvdW50Ijo0ODQsInZpc2l0ZWROb2RlcyI6NTI3LCJzZWFyY2hDb3VudCI6MzU3MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zNjYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMtMiAwLTIgNCsxIDEtMSAyLTEgNS0yIDYtMSA3KzIgNCszIDArMiA1KzIgMys0IDEtMiAwLTIgNS0yIDQtNCAwKzIgNSsyIDMtMiA3LTIgNisxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.34ms ± 0.61ms</td>
+<td>372</td>
+<td>373</td>
+<td>2799</td>
+
+<td>1.081</td>
+<td>
+
+[69 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbi4uQkZGLiBcbi4uQi5HLiBcbi5EUFBHLktcbi5ESEhDLiBcbi5FRUVDLiBcbi4uLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDEwLDEzLDIsMjAsMjIsMjVdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4zNG1zIMKxIDAuNjFtcyIsInRpY2tDb3VudCI6MzcyLCJ2aXNpdGVkTm9kZXMiOjM3Mywic2VhcmNoQ291bnQiOjI3OTksImJyYW5jaGluZ0ZhY3RvciI6IjEuMDgxIiwic29sdXRpb25TdGVwcyI6IuKIhSA3LTEgNisxIDUrMiA3KzEgNS0xIDMtMiA3LTEgNS0zIDYtMSA3KzEgNSsxIDErMSA3LTEgNisxIDUrMyA3KzEgNS00IDAtMiA0KzIgNi0xIDctMSA0LTEgNisxIDUrNCA3KzEgNS0zIDYtMSA1KzEgMS0yIDctMSA2KzEgNS0xIDItMSA2LTIgNyszIDUtMSA0KzMgMCsyIDQtMSAzKzEgMS0yIDQrMSA1KzIgMyszIDUtMiA0LTEgMSsyIDAtMiA0LTIgNy0xIDUrMiAzLTEgNysxIDEtMiAzKzEgNS0xIDctMSA0LTEgMCsyIDcrMSA1KzEgMy0zIDctMyA1LTIgNysyIDUrMSA3LTEgNisyIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.48ms ± 0.33ms</td>
+<td>264</td>
+<td>265</td>
+<td>2083</td>
+
+<td>1.110</td>
+<td>
+
+[51 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuLi5CRkYuIFxuLi5CLkcuIFxuLkRQUEcuS1xuLkRISEMuIFxuLkVFRUMuIFxuLi4uLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsMTAsMTMsMiwyMCwyMiwyNV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIxLjQ4bXMgwrEgMC4zM21zIiwidGlja0NvdW50IjoyNjQsInZpc2l0ZWROb2RlcyI6MjY1LCJzZWFyY2hDb3VudCI6MjA4MywiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMTAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDctMSA2KzEgNSsyIDcrMSA1LTEgMy0yIDctMSA1LTMgNi0xIDcrMSAwLTIgNCsyIDEtMSAyLTEgNy0xIDYrMSA0LTEgNysxIDUrMiA2LTEgNS0xIDYtMSA3KzIgNS0xIDQrMyA1KzIgMCsyIDUtMSAzKzEgNS0xIDEtMiA1KzIgMyszIDUtMiA0LTEgMC0yIDQtMyA3LTEgNSsyIDMtMSA3KzEgMCsyIDMtMiA3LTMgNisyIDcrMSA2LTEgNS0yIDctMSA1KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>3.64ms ± 0.60ms</td>
+<td>310</td>
+<td>311</td>
+<td>2370</td>
+
+<td>1.117</td>
+<td>
+
+[50 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuN1xuLi5CRkYuIFxuLi5CLkcuIFxuLkRQUEcuS1xuLkRISEMuIFxuLkVFRUMuIFxuLi4uLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsMTAsMTMsMiwyMCwyMiwyNV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIzLjY0bXMgwrEgMC42MG1zIiwidGlja0NvdW50IjozMTAsInZpc2l0ZWROb2RlcyI6MzExLCJzZWFyY2hDb3VudCI6MjM3MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMTciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDctMSA2KzEgNSsyIDcrMSA1LTEgMy0yIDctMSA1LTMgNi0xIDcrMSA1KzEgMysxIDctMSA2KzEgMisxIDcrMSA1LTEgMy0xIDUrMiAwLTIgNCsxIDEtMSAyLTIgNy0xIDYtMSA1LTEgNi0xIDcrMyA1LTEgNCszIDUrMiAwKzIgNS0xIDMrMSA1LTEgMS0yIDUrMiAzKzMgNS0yIDAtMiA0LTQgNy0xIDUrMiAzLTEgNysxIDArMiAzLTIgNy0zIDYrMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.15ms ± 0.41ms</td>
+<td>465</td>
+<td>466</td>
+<td>3442</td>
+
+<td>1.364</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG4uLkJGRi4gXG4uLkIuRy4gXG4uRFBQRy5LXG4uREhIQy4gXG4uRUVFQy4gXG4uLi4uLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTQsMywxMCwxMywyLDIwLDIyLDI1XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjIuMTVtcyDCsSAwLjQxbXMiLCJ0aWNrQ291bnQiOjQ2NSwidmlzaXRlZE5vZGVzIjo0NjYsInNlYXJjaENvdW50IjozNDQyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjM2NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMy0yIDAtMiA0KzEgMS0xIDItMSA2LTEgNysyIDUtMiA0KzMgMCsyIDUrMiAzKzQgNS0yIDEtMiAwLTIgNC00IDArMiA1KzIgMy0zIDctMyA2KzIgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.24ms ± 0.32ms</td>
+<td>480</td>
+<td>481</td>
+<td>3558</td>
+
+<td>1.366</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbi4uQkZGLiBcbi4uQi5HLiBcbi5EUFBHLktcbi5ESEhDLiBcbi5FRUVDLiBcbi4uLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDEwLDEzLDIsMjAsMjIsMjVdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4yNG1zIMKxIDAuMzJtcyIsInRpY2tDb3VudCI6NDgwLCJ2aXNpdGVkTm9kZXMiOjQ4MSwic2VhcmNoQ291bnQiOjM1NTgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzY2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAzLTIgNS0yIDAtMiA0KzIgMS0xIDItMSA2LTEgNysyIDQrMiA1KzIgMCsyIDMrNCA1LTIgMC0yIDEtMiA0LTQgNSsyIDArMiAzLTIgNy0yIDYrMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.42ms ± 0.74ms</td>
+<td>458</td>
+<td>459</td>
+<td>3397</td>
+
+<td>1.363</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbi4uQkZGLiBcbi4uQi5HLiBcbi5EUFBHLktcbi5ESEhDLiBcbi5FRUVDLiBcbi4uLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDEwLDEzLDIsMjAsMjIsMjVdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNS40Mm1zIMKxIDAuNzRtcyIsInRpY2tDb3VudCI6NDU4LCJ2aXNpdGVkTm9kZXMiOjQ1OSwic2VhcmNoQ291bnQiOjMzOTcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzYzIiwic29sdXRpb25TdGVwcyI6IuKIhSAzLTIgMC0yIDQrMSAxLTEgMi0xIDUtMiA2LTEgNysyIDQrMyA1KzIgMCsyIDMrNCAxLTIgMC0yIDUtMiA0LTQgMCsyIDUrMiAzLTMgNy0zIDYrMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>380.69ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>526092</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>218.67ms ± 0.00ms</td>
+<td>21</td>
+<td>550</td>
+<td>332598</td>
+
+<td>1.713</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG43XG4uLkJGRi4gXG4uLkIuRy4gXG4uRFBQRy5LXG4uREhIQy4gXG4uRUVFQy4gXG4uLi4uLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTQsMywxMCwxMywyLDIwLDIyLDI1XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiMjE4LjY3bXMgwrEgMC4wMG1zIiwidGlja0NvdW50IjoyMSwidmlzaXRlZE5vZGVzIjo1NTAsInNlYXJjaENvdW50IjozMzI1OTgsImJyYW5jaGluZ0ZhY3RvciI6IjEuNzEzIiwic29sdXRpb25TdGVwcyI6IuKIhSAzLTIgMC0yIDQrMSAxLTEgMi0xIDUtMiA2LTEgNysyIDQrMyAwKzIgNSsyIDMrNCAxLTIgMC0yIDUtMiA0LTQgMCsyIDUrMiAzLTIgNy0yIDYrMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>165.86ms ± 0.00ms</td>
+<td>21</td>
+<td>586</td>
+<td>369189</td>
+
+<td>1.721</td>
+<td>
+
+[22 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjdcbi4uQkZGLiBcbi4uQi5HLiBcbi5EUFBHLktcbi5ESEhDLiBcbi5FRUVDLiBcbi4uLi4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDEwLDEzLDIsMjAsMjIsMjVdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIxNjUuODZtcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjIxLCJ2aXNpdGVkTm9kZXMiOjU4Niwic2VhcmNoQ291bnQiOjM2OTE4OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS43MjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMtMiAwLTIgNCsxIDEtMSAyLTEgNS0yIDYtMSA3KzIgNCszIDArMiA1KzIgMys0IDEtMiAwLTIgNS0yIDQtNCAwKzIgNSsyIDMtMiA3LTIgNisxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>216.80ms ± 0.00ms</td>
+<td>17</td>
+<td>420</td>
+<td>179931</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-20**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-20.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+9
+B..FFF 
+BGGH.. 
+PPEH.JK
+..E..J 
+..IDDJ 
+..ICCC 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+9 (4 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>9.30ms ± 2.48ms</td>
+<td>1660</td>
+<td>2376</td>
+<td>14939</td>
+
+<td>2.483</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQi4uRkZGIFxuQkdHSC4uIFxuUFBFSC5KS1xuLi5FLi5KIFxuLi5JRERKIFxuLi5JQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4zMG1zIMKxIDIuNDhtcyIsInRpY2tDb3VudCI6MTY2MCwidmlzaXRlZE5vZGVzIjoyMzc2LCJzZWFyY2hDb3VudCI6MTQ5MzksImJyYW5jaGluZ0ZhY3RvciI6IjIuNDgzIiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzEgMisyIDUtMiA3LTIgOC0zIDcrMSAzKzEgOS0xIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>17</td>
+<td>11.71ms ± 6.00ms</td>
+<td>1292</td>
+<td>1293</td>
+<td>11744</td>
+
+<td>1.074</td>
+<td>
+
+[94 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE3LCJkdXJhdGlvbiI6IjExLjcxbXMgwrEgNi4wMG1zIiwidGlja0NvdW50IjoxMjkyLCJ2aXNpdGVkTm9kZXMiOjEyOTMsInNlYXJjaENvdW50IjoxMTc0NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNzQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMSA4KzEgMysyIDIrMiAzLTEgOC0xIDUtMiAwKzEgOCsxIDctMSA5LTMgOC0xIDkrMiA0KzQgOS0xIDgrMSA0LTMgOSsxIDMrMSAwKzIgOS0yIDMrMSA3LTEgNC0xIDMtMSA5KzMgNysxIDAtMyA3LTEgOS0zIDMtMSA5KzIgOC00IDktMSA4KzMgNisyIDktMSA4LTMgNi0xIDkrMyA4KzMgOS0xIDgtMiA5LTEgOCsxIDIrMSA5LTEgOC0xIDkrMyAzLTEgOS0yIDgtMSA5LTEgOCszIDkrMiA4LTEgNisxIDktMiA4LTEgMyszIDgtMSAzLTEgOSsyIDgrMSA5LTEgMy0xIDgtMSA3KzEgMCsxIDktMSA2LTEgOSszIDcrMSAzLTEgNCsyIDctMSA5LTMgNisxIDkrMiA0LTIgNi0xIDktMSAzKzIgMCsyIDktMSAzKzEgNy0xIDgrMSAzLTEgOSszIDgtMSA5LTEgNisxIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>8.57ms ± 1.46ms</td>
+<td>1140</td>
+<td>1141</td>
+<td>9899</td>
+
+<td>1.176</td>
+<td>
+
+[45 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQi4uRkZGIFxuQkdHSC4uIFxuUFBFSC5KS1xuLi5FLi5KIFxuLi5JRERKIFxuLi5JQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOC41N21zIMKxIDEuNDZtcyIsInRpY2tDb3VudCI6MTE0MCwidmlzaXRlZE5vZGVzIjoxMTQxLCJzZWFyY2hDb3VudCI6OTg5OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNzYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMSA4KzEgMysyIDIrMiA1LTIgNy0xIDktMyAzKzEgMCszIDctMSAzLTEgOSszIDQrNCA5LTIgNC0zIDkrMSA3KzEgOS0yIDAtMiA5KzMgNysxIDArMiA0KzIgNy0xIDktMiA0LTMgMC0yIDQrNCAzLTEgOC0xIDYrMiA5KzEgNC00IDktMiAwLTEgOSsxIDIrMSA5KzEgMy0xIDktMiA3LTEgOC0zIDcrMSAzKzMgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>2.42ms ± 0.90ms</td>
+<td>76</td>
+<td>77</td>
+<td>644</td>
+
+<td>1.577</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQi4uRkZGIFxuQkdHSC4uIFxuUFBFSC5KS1xuLi5FLi5KIFxuLi5JRERKIFxuLi5JQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi40Mm1zIMKxIDAuOTBtcyIsInRpY2tDb3VudCI6NzYsInZpc2l0ZWROb2RlcyI6NzcsInNlYXJjaENvdW50Ijo2NDQsImJyYW5jaGluZ0ZhY3RvciI6IjEuNTc3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzEgMiszIDUtMiA3LTEgOS0zIDYrMSA5KzEgNy0xIDgtMyA3KzEgMysxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>7.66ms ± 1.29ms</td>
+<td>1018</td>
+<td>1019</td>
+<td>9149</td>
+
+<td>2.020</td>
+<td>
+
+[12 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG5CLi5GRkYgXG5CR0dILi4gXG5QUEVILkpLXG4uLkUuLkogXG4uLklEREogXG4uLklDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw3LDksMCwxNCwxNywyNiwyNywzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI3LjY2bXMgwrEgMS4yOW1zIiwidGlja0NvdW50IjoxMDE4LCJ2aXNpdGVkTm9kZXMiOjEwMTksInNlYXJjaENvdW50Ijo5MTQ5LCJicmFuY2hpbmdGYWN0b3IiOiIyLjAyMCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDIrMyA1LTIgNy0yIDgtMyAzKzEgNysyIDArMyA3LTEgOS0yIDYrMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>3.93ms ± 0.63ms</td>
+<td>569</td>
+<td>570</td>
+<td>4925</td>
+
+<td>2.203</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuOTNtcyDCsSAwLjYzbXMiLCJ0aWNrQ291bnQiOjU2OSwidmlzaXRlZE5vZGVzIjo1NzAsInNlYXJjaENvdW50Ijo0OTI1LCJicmFuY2hpbmdGYWN0b3IiOiIyLjIwMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDIrMyA1LTIgNy0yIDgtMyAzKzEgNysxIDktMSA2KzEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>3.47ms ± 0.28ms</td>
+<td>229</td>
+<td>230</td>
+<td>1863</td>
+
+<td>1.979</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuNDdtcyDCsSAwLjI4bXMiLCJ0aWNrQ291bnQiOjIyOSwidmlzaXRlZE5vZGVzIjoyMzAsInNlYXJjaENvdW50IjoxODYzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjk3OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDIrMiA1LTIgNy0yIDktMSA4LTMgNysxIDYrMSAzKzEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>440.99ms ± 0.00ms</td>
+<td>7</td>
+<td>11</td>
+<td>911904</td>
+
+<td>3.372</td>
+<td>
+
+[11 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiNDQwLjk5bXMgwrEgMC4wMG1zIiwidGlja0NvdW50Ijo3LCJ2aXNpdGVkTm9kZXMiOjExLCJzZWFyY2hDb3VudCI6OTExOTA0LCJicmFuY2hpbmdGYWN0b3IiOiIzLjM3MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDIrMiA1LTIgNy0yIDgtMyA3KzEgMysxIDArMyA5LTEgNisxIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>205.44ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>357576</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>168.79ms ± 0.00ms</td>
+<td>6</td>
+<td>10</td>
+<td>98853</td>
+
+<td>3.035</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQi4uRkZGIFxuQkdHSC4uIFxuUFBFSC5KS1xuLi5FLi5KIFxuLi5JRERKIFxuLi5JQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIxNjguNzltcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjYsInZpc2l0ZWROb2RlcyI6MTAsInNlYXJjaENvdW50Ijo5ODg1MywiYnJhbmNoaW5nRmFjdG9yIjoiMy4wMzUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMSAyKzIgNS0yIDctMiA4LTMgMysxIDcrMSA5LTEgNisxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>16</td>
+<td>12.28ms ± 1.20ms</td>
+<td>7</td>
+<td>1613</td>
+<td>26256</td>
+
+<td>2.402</td>
+<td>
+
+[11 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG5CLi5GRkYgXG5CR0dILi4gXG5QUEVILkpLXG4uLkUuLkogXG4uLklEREogXG4uLklDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw3LDksMCwxNCwxNywyNiwyNywzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNiwiZHVyYXRpb24iOiIxMi4yOG1zIMKxIDEuMjBtcyIsInRpY2tDb3VudCI6NywidmlzaXRlZE5vZGVzIjoxNjEzLCJzZWFyY2hDb3VudCI6MjYyNTYsImJyYW5jaGluZ0ZhY3RvciI6IjIuNDAyIiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzEgMisyIDUtMiA3LTIgOC0zIDcrMSAzKzEgMCszIDktMSA2KzEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>14</td>
+<td>14.08ms ± 0.37ms</td>
+<td>7</td>
+<td>1553</td>
+<td>29510</td>
+
+<td>2.671</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE0LCJkdXJhdGlvbiI6IjE0LjA4bXMgwrEgMC4zN21zIiwidGlja0NvdW50Ijo3LCJ2aXNpdGVkTm9kZXMiOjE1NTMsInNlYXJjaENvdW50IjoyOTUxMCwiYnJhbmNoaW5nRmFjdG9yIjoiMi42NzEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMSAyKzIgNS0yIDctMiA4LTMgNysxIDMrMSA5LTEgNisxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>13</td>
+<td>15.90ms ± 0.41ms</td>
+<td>6</td>
+<td>796</td>
+<td>8769</td>
+
+<td>2.345</td>
+<td>
+
+[10 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguSktcbi4uRS4uSiBcbi4uSURESiBcbi4uSUNDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEzLCJkdXJhdGlvbiI6IjE1LjkwbXMgwrEgMC40MW1zIiwidGlja0NvdW50Ijo2LCJ2aXNpdGVkTm9kZXMiOjc5Niwic2VhcmNoQ291bnQiOjg3NjksImJyYW5jaGluZ0ZhY3RvciI6IjIuMzQ1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzEgMisyIDUtMiA3LTIgOC0zIDMrMSA3KzEgOS0xIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-21**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-21.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+6
+BBFE.. 
+G.FE.. 
+GPPE..K
+GCCC.. 
+...... 
+...DDD 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+6 (3 Horizontal, 3 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>1.10ms ± 0.24ms</td>
+<td>258</td>
+<td>263</td>
+<td>1683</td>
+
+<td>1.334</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuQkJGRS4uIFxuRy5GRS4uIFxuR1BQRS4uS1xuR0NDQy4uIFxuLi4uLi4uIFxuLi4uREREICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDAsMTksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4xMG1zIMKxIDAuMjRtcyIsInRpY2tDb3VudCI6MjU4LCJ2aXNpdGVkTm9kZXMiOjI2Mywic2VhcmNoQ291bnQiOjE2ODMsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzM0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAzKzIgMC0xIDUrMiAxKzQgNCsxIDArMSAzLTMgNS0zIDIrMSA0KzMgMi0xIDUrMyAzKzMgMC0xIDEtNCAwKzEgMy0zIDUtMyA2LTMgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>0.74ms ± 0.05ms</td>
+<td>186</td>
+<td>187</td>
+<td>1192</td>
+
+<td>1.101</td>
+<td>
+
+[49 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkJCRkUuLiBcbkcuRkUuLiBcbkdQUEUuLktcbkdDQ0MuLiBcbi4uLi4uLiBcbi4uLkRERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwwLDE5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuNzRtcyDCsSAwLjA1bXMiLCJ0aWNrQ291bnQiOjE4NiwidmlzaXRlZE5vZGVzIjoxODcsInNlYXJjaENvdW50IjoxMTkyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjEwMSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDAtMSAxKzEgNCsxIDUrMiAxKzMgMCsxIDEtMSA2LTIgMy0zIDYtMSAzKzIgNisyIDMtMSA0LTEgNi0xIDMrMSA2KzIgMSsxIDUtMiAzLTEgNSsxIDQrMSAzLTEgNS0yIDIrMiA0KzMgMi0yIDUrMyAzKzMgMC0xIDEtNCAwKzEgNi0yIDUtMiA2KzEgNSsxIDMtMyA2LTIgNS0yIDYrMyAyKzIgNi0yIDItMSA2KzEgNC0xIDYtMiAyKzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.69ms ± 0.10ms</td>
+<td>62</td>
+<td>63</td>
+<td>407</td>
+
+<td>1.051</td>
+<td>
+
+[61 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuQkJGRS4uIFxuRy5GRS4uIFxuR1BQRS4uS1xuR0NDQy4uIFxuLi4uLi4uIFxuLi4uREREICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDAsMTksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMC42OW1zIMKxIDAuMTBtcyIsInRpY2tDb3VudCI6NjIsInZpc2l0ZWROb2RlcyI6NjMsInNlYXJjaENvdW50Ijo0MDcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDUxIiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTMgNSsyIDYrMiA1LTEgNi0xIDMrMiA2KzIgNSsxIDMtMSA2LTIgNS0yIDYrMSAzKzEgMC0xIDYtMSA1KzIgMSszIDYrMiAxKzEgNS0yIDArMSA1KzEgMy0yIDUrMSAxLTEgNi0zIDMrMSA2KzIgMysxIDQrMSA2LTEgMy0zIDYrMiAxKzEgNS0zIDIrMiA0KzMgMi0yIDUrMyAxLTEgNi0zIDMrMiA2KzIgMy0xIDYtMSAzKzIgMC0xIDYrMiAxLTMgNi0xIDUtMiA2LTEgNSsxIDArMSA2KzIgNS0xIDMtMyA2LTMgNS0xIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>2.25ms ± 0.60ms</td>
+<td>145</td>
+<td>146</td>
+<td>905</td>
+
+<td>1.111</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuNlxuQkJGRS4uIFxuRy5GRS4uIFxuR1BQRS4uS1xuR0NDQy4uIFxuLi4uLi4uIFxuLi4uREREICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw2LDAsMTksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4yNW1zIMKxIDAuNjBtcyIsInRpY2tDb3VudCI6MTQ1LCJ2aXNpdGVkTm9kZXMiOjE0Niwic2VhcmNoQ291bnQiOjkwNSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMTEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMyAzKzEgNisyIDMrMSA2LTEgNSsyIDYrMiAwLTEgNi0xIDErMyA2LTEgNCsxIDArMSA2KzIgMSsxIDUtMiAzLTMgNS0xIDIrMiA0KzMgMi0yIDUrMyAxLTEgNi0zIDMrMiA2KzIgMy0xIDYtMSAzKzIgMC0xIDYrMSAxLTMgNisxIDUtMiA2LTIgNSsxIDArMSA2KzIgMy0zIDYtMyA1LTIgMiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>1.05ms ± 0.24ms</td>
+<td>244</td>
+<td>245</td>
+<td>1605</td>
+
+<td>1.330</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG42XG5CQkZFLi4gXG5HLkZFLi4gXG5HUFBFLi5LXG5HQ0NDLi4gXG4uLi4uLi4gXG4uLi5EREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiwzLDYsMCwxOSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIxLjA1bXMgwrEgMC4yNG1zIiwidGlja0NvdW50IjoyNDQsInZpc2l0ZWROb2RlcyI6MjQ1LCJzZWFyY2hDb3VudCI6MTYwNSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zMzAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMiA1KzIgMC0xIDErNCAwKzEgNCsxIDMtMyA1LTMgMisyIDQrMyAyLTIgNSszIDMrMyAwLTEgMS00IDArMSAzLTMgNi0zIDUtMyAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.85ms ± 0.17ms</td>
+<td>242</td>
+<td>243</td>
+<td>1594</td>
+
+<td>1.329</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkJCRkUuLiBcbkcuRkUuLiBcbkdQUEUuLktcbkdDQ0MuLiBcbi4uLi4uLiBcbi4uLkRERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwwLDE5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuODVtcyDCsSAwLjE3bXMiLCJ0aWNrQ291bnQiOjI0MiwidmlzaXRlZE5vZGVzIjoyNDMsInNlYXJjaENvdW50IjoxNTk0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjMyOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDUrMiAwLTEgMSs0IDArMSA0KzEgMy0zIDUtMyAyKzEgNCszIDItMSA1KzMgMyszIDAtMSAxLTQgMCsxIDMtMyA1LTMgNi0zIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>1.70ms ± 0.47ms</td>
+<td>202</td>
+<td>203</td>
+<td>1276</td>
+
+<td>1.313</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkJCRkUuLiBcbkcuRkUuLiBcbkdQUEUuLktcbkdDQ0MuLiBcbi4uLi4uLiBcbi4uLkRERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwwLDE5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjEuNzBtcyDCsSAwLjQ3bXMiLCJ0aWNrQ291bnQiOjIwMiwidmlzaXRlZE5vZGVzIjoyMDMsInNlYXJjaENvdW50IjoxMjc2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjMxMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsyIDMrMiAwLTEgMSs0IDQrMSAwKzEgMy0zIDUtMyAyKzEgNCszIDItMSA1KzMgMyszIDAtMSAxLTQgMCsxIDMtMyA2LTMgNS0zIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>206.38ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>343419</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>551.13ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>521017</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>2</td>
+<td>79.81ms ± 23.41ms</td>
+<td>20</td>
+<td>267</td>
+<td>106407</td>
+
+<td>1.661</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG42XG5CQkZFLi4gXG5HLkZFLi4gXG5HUFBFLi5LXG5HQ0NDLi4gXG4uLi4uLi4gXG4uLi5EREQgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiwzLDYsMCwxOSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyLCJkdXJhdGlvbiI6Ijc5LjgxbXMgwrEgMjMuNDFtcyIsInRpY2tDb3VudCI6MjAsInZpc2l0ZWROb2RlcyI6MjY3LCJzZWFyY2hDb3VudCI6MTA2NDA3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjY2MSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDAtMSA1KzIgMSs0IDQrMSAwKzEgMy0zIDUtMyAyKzEgNCszIDItMSA1KzMgMyszIDAtMSAxLTQgMCsxIDMtMyA1LTMgNi0zIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>3</td>
+<td>55.45ms ± 1.94ms</td>
+<td>20</td>
+<td>263</td>
+<td>108791</td>
+
+<td>1.663</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkJCRkUuLiBcbkcuRkUuLiBcbkdQUEUuLktcbkdDQ0MuLiBcbi4uLi4uLiBcbi4uLkRERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwwLDE5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjMsImR1cmF0aW9uIjoiNTUuNDVtcyDCsSAxLjk0bXMiLCJ0aWNrQ291bnQiOjIwLCJ2aXNpdGVkTm9kZXMiOjI2Mywic2VhcmNoQ291bnQiOjEwODc5MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS42NjMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMrMiAwLTEgNSsyIDErNCA0KzEgMCsxIDMtMyA1LTMgMisxIDQrMyAyLTEgNSszIDMrMyAwLTEgMS00IDArMSAzLTMgNS0zIDYtMyAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>2</td>
+<td>76.94ms ± 2.60ms</td>
+<td>17</td>
+<td>235</td>
+<td>67499</td>
+
+<td>1.622</td>
+<td>
+
+[21 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjZcbkJCRkUuLiBcbkcuRkUuLiBcbkdQUEUuLktcbkdDQ0MuLiBcbi4uLi4uLiBcbi4uLkRERCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsNiwwLDE5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIsImR1cmF0aW9uIjoiNzYuOTRtcyDCsSAyLjYwbXMiLCJ0aWNrQ291bnQiOjE3LCJ2aXNpdGVkTm9kZXMiOjIzNSwic2VhcmNoQ291bnQiOjY3NDk5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjYyMiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysyIDAtMSA1KzIgMSs0IDArMSA0KzEgMy0zIDUtMyAyKzEgNCszIDItMSA1KzMgMyszIDAtMSAxLTQgMCsxIDMtMyA1LTMgNi0zIDIrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-22**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-22.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+..BFFF 
+G.BLHH 
+GPPL..K
+.E.LII 
+DEJJ.M 
+DCCC.M 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>10</td>
+<td>19.84ms ± 3.63ms</td>
+<td>3602</td>
+<td>4139</td>
+<td>32717</td>
+
+<td>1.424</td>
+<td>
+
+[26 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbkcuQkxISCBcbkdQUEwuLktcbi5FLkxJSSBcbkRFSkouTSBcbkRDQ0MuTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDIsMTksMjIsMjQsMjYsMjksMzFdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTAsImR1cmF0aW9uIjoiMTkuODRtcyDCsSAzLjYzbXMiLCJ0aWNrQ291bnQiOjM2MDIsInZpc2l0ZWROb2RlcyI6NDEzOSwic2VhcmNoQ291bnQiOjMyNzE3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjQyNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDAtMSA4LTEgOSsxIDUrMyAwKzEgMisxIDEtMyAzLTEgNy0xIDEwLTIgOSsxIDExKzIgNisxIDUrMSA3LTIgMysyIDQtMyAzLTIgMTAtMiA3KzMgNi0xIDUtMSAxMS0zIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>3.49ms ± 2.07ms</td>
+<td>247</td>
+<td>248</td>
+<td>1966</td>
+
+<td>1.017</td>
+<td>
+
+[210 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG5HLkJMSEggXG5HUFBMLi5LXG4uRS5MSUkgXG5ERUpKLk0gXG5EQ0NDLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwyLDE5LDIyLDI0LDI2LDI5LDMxXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjMuNDltcyDCsSAyLjA3bXMiLCJ0aWNrQ291bnQiOjI0NywidmlzaXRlZE5vZGVzIjoyNDgsInNlYXJjaENvdW50IjoxOTY2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAxNyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSA5KzEgOC0xIDExLTIgMi0xIDAtMSA1KzMgMCsxIDExKzIgNisxIDgtMSAxLTIgNi0xIDExLTIgMSsxIDExKzEgOCsyIDExKzEgNisxIDIrMiAxLTIgNi0xIDExLTEgMi0xIDgtMSAxMS0xIDMtMSAxMSsyIDctMSAxMS0xIDEwLTIgMTEtMSA5KzEgMTErMyA1KzEgOS0xIDctMSA2KzEgOSsxIDctMSA4KzEgOS0xIDctMSA1LTEgMTEtMSA5KzEgMysyIDExKzEgNSsxIDMtMSAxKzMgOS0xIDUtMSAxMS0xIDkrMSAyLTEgMTErMSAzKzEgNSsxIDcrMSA4LTIgMy0xIDktMSAxMCsxIDgrMiA3LTEgNS0xIDExLTEgMTArMSAxLTIgMTAtMiAxMSsxIDUrMSA5KzEgNysxIDgtMSA5LTEgMTArMSAxKzEgMisxIDEwLTEgOSsxIDgrMSAzKzEgNC0zIDgtMSAxMC0yIDMtMSA5LTEgOCsxIDctMSA5KzEgNS0xIDExLTEgOS0xIDItMSAxMSsxIDEwKzMgNSsxIDEwLTIgOSsxIDUtMSAxMS0xIDEwKzEgMysxIDExKzEgNSsxIDEwLTIgNysxIDgtMiAzLTEgOS0xIDEwKzMgOCsxIDEwLTIgOSsxIDEwKzEgOCsxIDktMSAxLTEgOC0yIDkrMSAxMC0xIDgrMiAxMC0xIDgtMSAzKzEgNCsyIDgtMSA0LTEgOCsyIDctMSA1LTEgMTEtMSA0LTEgMy0xIDExKzEgMTArMiA5LTEgMTEtMSAxMC0xIDErMiAxMSsxIDIrMSA5KzEgMTEtMSAxMCsxIDktMSAxMCsyIDEtMyAxMC0zIDMtMSAxMSsxIDkrMSA1KzEgNys0IDktMSA1LTEgMTEtMSA5KzEgNi0xIDExLTEgOS0xIDgtMSAxMS0xIDkrMSAxMSszIDctMSAxMS0yIDEwLTEgMTEtMSA5LTEgMTErMyA3KzEgMTEtMSA5KzEgNisxIDExKzEgNy0xIDUrMSA5LTEgNy0yIDgrMSA5KzEgNysxIDYtMSA5LTEgOC0xIDEwKzMgNysxIDEwLTIgNysxIDMrMSA5KzEgNisxIDUtMSAxMS0xIDktMSA2LTEgOCsxIDExKzEgOSsxIDEwLTEgMTEtMiA5LTEgOC0xIDExLTEgOSsxIDMrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>2.51ms ± 0.41ms</td>
+<td>483</td>
+<td>484</td>
+<td>3429</td>
+
+<td>1.079</td>
+<td>
+
+[73 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbkcuQkxISCBcbkdQUEwuLktcbi5FLkxJSSBcbkRFSkouTSBcbkRDQ0MuTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDIsMTksMjIsMjQsMjYsMjksMzFdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi41MW1zIMKxIDAuNDFtcyIsInRpY2tDb3VudCI6NDgzLCJ2aXNpdGVkTm9kZXMiOjQ4NCwic2VhcmNoQ291bnQiOjM0MjksImJyYW5jaGluZ0ZhY3RvciI6IjEuMDc5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMSsxIDkrMSA4LTEgMTEtMiAyLTEgMC0xIDUrMyAxMSsyIDYrMSA4KzEgMCsxIDYtMSAxMS0xIDgtMiAxMS0xIDEtMiAxMSsyIDYrMSA4KzEgMSsxIDYtMSAxMS0yIDIrMSAxMSsxIDgrMSAxMSsxIDYrMSAyKzEgMS0yIDYtMSAxMS0xIDMtMSA3LTEgMTErMSAxMC0xIDExKzEgNSsxIDctMSA2KzEgNy0xIDMrMSAxKzMgMi0xIDEwLTEgOSsxIDgtMSAzKzEgNC0zIDgrMSA3LTEgNS0xIDExLTEgMTAtMSAzLTEgMTErMSA5LTEgMTArMiAxLTMgMy0xIDUrMSAxMC0zIDcrNCA5KzEgNS0xIDExLTEgOS0xIDYtMSAxMS0xIDkrMSA4LTEgMTEtMSAzKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>9.31ms ± 1.52ms</td>
+<td>578</td>
+<td>579</td>
+<td>4173</td>
+
+<td>1.056</td>
+<td>
+
+[99 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbkcuQkxISCBcbkdQUEwuLktcbi5FLkxJSSBcbkRFSkouTSBcbkRDQ0MuTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDIsMTksMjIsMjQsMjYsMjksMzFdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4zMW1zIMKxIDEuNTJtcyIsInRpY2tDb3VudCI6NTc4LCJ2aXNpdGVkTm9kZXMiOjU3OSwic2VhcmNoQ291bnQiOjQxNzMsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDU2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMSsxIDkrMSA4LTEgMTEtMiA5LTEgMi0xIDAtMSA5KzEgNSszIDEtMiAwKzEgMisxIDEtMSAzLTEgNy0xIDEwLTEgMTErMyA4KzEgNisxIDUrMSA3LTMgNS0xIDMrMSAxKzMgNSsxIDcrMSA4LTEgMi0xIDgtMSAxLTIgOCsyIDctMSA1LTEgMSsxIDAtMSA1KzEgMSsxIDUtNCAwKzEgMTAtMSA5KzEgMTEtMSA3KzEgOC0yIDExKzEgOCsxIDMrMSAxMS0xIDQtMSAxMC0xIDExKzEgOC0xIDEwKzEgOCsyIDctMSAxMS0xIDEwLTEgMC0xIDExKzEgNSszIDEwKzEgMTEtMSA0LTIgMTAtMSA0KzEgMS0yIDEwLTEgMTErMSA0LTEgMy0xIDExLTEgMSsxIDMrMSA0KzIgMTErMSAwKzEgMS0xIDUrMSA3KzEgOC0yIDQtMiA4KzEgNCsxIDIrMSA4KzEgNC0xIDMtMSA4LTEgMS0xIDMtMSA4KzEgNyszIDUtMSAxMS0xIDgtMSA2LTEgMTEtMiAzKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>11</td>
+<td>17.25ms ± 2.78ms</td>
+<td>3029</td>
+<td>3030</td>
+<td>26991</td>
+
+<td>1.412</td>
+<td>
+
+[26 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLi5CRkZGIFxuRy5CTEhIIFxuR1BQTC4uS1xuLkUuTElJIFxuREVKSi5NIFxuRENDQy5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDksMTAsMiwxOSwyMiwyNCwyNiwyOSwzMV0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMSwiZHVyYXRpb24iOiIxNy4yNW1zIMKxIDIuNzhtcyIsInRpY2tDb3VudCI6MzAyOSwidmlzaXRlZE5vZGVzIjozMDMwLCJzZWFyY2hDb3VudCI6MjY5OTEsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDEyIiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTEgOSsxIDAtMSA1KzMgMCsxIDIrMSAxLTMgMy0xIDctMSAxMC0yIDExKzIgNSsxIDYrMSA3LTIgOSsxIDMrMiA4LTEgNC0zIDEwLTIgMy0yIDcrMyA1LTEgNi0xIDExLTMgMyszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>9</td>
+<td>21.80ms ± 1.30ms</td>
+<td>2794</td>
+<td>2795</td>
+<td>24607</td>
+
+<td>1.407</td>
+<td>
+
+[26 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG5HLkJMSEggXG5HUFBMLi5LXG4uRS5MSUkgXG5ERUpKLk0gXG5EQ0NDLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwyLDE5LDIyLDI0LDI2LDI5LDMxXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjksImR1cmF0aW9uIjoiMjEuODBtcyDCsSAxLjMwbXMiLCJ0aWNrQ291bnQiOjI3OTQsInZpc2l0ZWROb2RlcyI6Mjc5NSwic2VhcmNoQ291bnQiOjI0NjA3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjQwNyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDkrMSAwLTEgNSszIDArMSAyKzEgMS0zIDMtMSA3LTEgMTAtMiAxMSsyIDUrMSA5KzEgNisxIDctMiAzKzIgNC0zIDEwLTIgOC0xIDMtMiA3KzMgNi0xIDUtMSAxMS0zIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>47.29ms ± 6.27ms</td>
+<td>1640</td>
+<td>1641</td>
+<td>14028</td>
+
+<td>1.373</td>
+<td>
+
+[26 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG5HLkJMSEggXG5HUFBMLi5LXG4uRS5MSUkgXG5ERUpKLk0gXG5EQ0NDLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwyLDE5LDIyLDI0LDI2LDI5LDMxXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDcuMjltcyDCsSA2LjI3bXMiLCJ0aWNrQ291bnQiOjE2NDAsInZpc2l0ZWROb2RlcyI6MTY0MSwic2VhcmNoQ291bnQiOjE0MDI4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjM3MyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDkrMSAwLTEgNSszIDArMSAyKzEgMS0zIDMtMSA3LTEgMTAtMiAxMSsyIDkrMSA2KzEgNSsxIDctMyAzKzIgNC0zIDEwLTIgMy0yIDcrNCA1LTEgNi0xIDgtMSAxMS0zIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>278.58ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>350545</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>388.18ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>483034</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>283.86ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>144998</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>218.39ms ± 0.00ms</td>
+<td>23</td>
+<td>2361</td>
+<td>326387</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>202.57ms ± 0.00ms</td>
+<td>23</td>
+<td>2106</td>
+<td>303798</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>230.39ms ± 0.00ms</td>
+<td>17</td>
+<td>436</td>
+<td>99740</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-23**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-23.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+9
+..FFFJ 
+..BGGJ 
+..BPPJK
+..HEII 
+..HEDD 
+..CCC. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+9 (5 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>9.36ms ± 2.08ms</td>
+<td>2306</td>
+<td>2747</td>
+<td>19552</td>
+
+<td>1.341</td>
+<td>
+
+[29 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5GRkZKIFxuLi5CR0dKIFxuLi5CUFBKS1xuLi5IRUlJIFxuLi5IRUREIFxuLi5DQ0MuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE1LDUsOCw5LDIsMjAsMjEsMjIsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4zNm1zIMKxIDIuMDhtcyIsInRpY2tDb3VudCI6MjMwNiwidmlzaXRlZE5vZGVzIjoyNzQ3LCJzZWFyY2hDb3VudCI6MTk1NTIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzQxIiwic29sdXRpb25TdGVwcyI6IuKIhSA5LTIgNisxIDctMSAxKzEgNCsxIDItMSAwLTMgMisxIDQtMSAxLTEgNysxIDYtMSA5KzMgNSsxIDIrMSAzLTMgMi0xIDYtMiA3LTQgMSsxIDQrMSAyLTEgNS0yIDgtNCA2KzIgNSsxIDktMSAxKzIgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>1.73ms ± 0.03ms</td>
+<td>511</td>
+<td>512</td>
+<td>3353</td>
+
+<td>1.029</td>
+<td>
+
+[159 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uRkZGSiBcbi4uQkdHSiBcbi4uQlBQSktcbi4uSEVJSSBcbi4uSEVERCBcbi4uQ0NDLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNSw1LDgsOSwyLDIwLDIxLDIyLDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjEuNzNtcyDCsSAwLjAzbXMiLCJ0aWNrQ291bnQiOjUxMSwidmlzaXRlZE5vZGVzIjo1MTIsInNlYXJjaENvdW50IjozMzUzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0yIDYrMSA3LTEgMSsxIDQrMSAyLTEgMC0zIDIrMSA0LTMgMS0xIDcrMSA2LTIgOSszIDgtMSA5LTIgNCsyIDktMSA0LTEgOSsyIDgrMSA5LTEgNisxIDktMSA0KzEgOSszIDUrMSA2LTEgOC0xIDIrMSAzLTMgOCsxIDYtMSA3LTEgOC0xIDItMSA1LTEgOS0zIDgrMSA5KzIgNysxIDktMSA4LTEgNisxIDktMSA4KzEgOSszIDYrMSA1KzEgNC0yIDYtMyA4LTEgNS0xIDktMyA4KzEgOSsyIDctMSA5LTEgOC0xIDErMyA5LTEgMS0yIDkrMyA4KzEgNSsxIDctMyA4LTEgNS0xIDktMyA4KzEgOSsyIDEtMSA5LTEgOC0xIDErMyA5KzEgMS0xIDYrMiA5LTIgMS0yIDkrMyA4KzEgNSsxIDcrMSA4LTEgNi0xIDctMSAyKzEgOCsxIDYtMSAzKzEgOC0xIDErMiAzLTEgNisyIDEtMSA4KzEgNisxIDMrMyAyLTEgNS0xIDktMyA2LTEgOSsyIDgtMSA5LTEgMS0xIDktMSAxKzMgMysxIDkrMiAxLTEgOS0xIDYtMiA5LTEgNisxIDkrMyA1KzEgNysxIDYrMSAzLTEgNy0xIDUtMSA0KzMgOS0zIDEtMSAyLTEgMCsxIDkrMyA4KzEgNSsxIDcrMSA4LTEgMSsxIDctMSAzKzEgNS0xIDktMyAxKzEgOSsyIDYtMSAwLTEgNS0xIDktMiA4LTMgOSsxIDgrMiAxLTEgOS0xIDgtMSA5KzMgOC0xIDktMSA1KzEgMCsxIDktMiAxKzEgOSsxIDYrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>3.72ms ± 2.28ms</td>
+<td>515</td>
+<td>516</td>
+<td>3380</td>
+
+<td>1.083</td>
+<td>
+
+[70 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5GRkZKIFxuLi5CR0dKIFxuLi5CUFBKS1xuLi5IRUlJIFxuLi5IRUREIFxuLi5DQ0MuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE1LDUsOCw5LDIsMjAsMjEsMjIsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMy43Mm1zIMKxIDIuMjhtcyIsInRpY2tDb3VudCI6NTE1LCJ2aXNpdGVkTm9kZXMiOjUxNiwic2VhcmNoQ291bnQiOjMzODAsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDgzIiwic29sdXRpb25TdGVwcyI6IuKIhSA5LTIgNisxIDctMSAxKzEgNCsxIDItMSAwLTMgMisxIDQtMyAxLTEgNysxIDYtMSA5KzMgNSsxIDIrMSAzLTMgNi0zIDgtMSA3LTEgMi0xIDgrMSA3LTIgMSsxIDYrMyA0KzMgMi0xIDctMSA1LTEgOS0zIDYrMSAwKzMgNS0xIDYtMSA5KzIgNSsxIDktMSAyKzEgOS0xIDQtMyA5KzMgNSsxIDEtMSAyKzEgMyszIDItMSA1LTEgOS0zIDYrMSAxKzEgNCszIDYtMSA5KzMgNSsxIDcrMSAyLTEgMC0zIDctMSA1LTEgOS0yIDYtMSA4LTEgMSsyIDkrMSA1LTEgOC0zIDYrMSA1KzEgOS0yIDYrMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>2.17ms ± 0.55ms</td>
+<td>207</td>
+<td>208</td>
+<td>1261</td>
+
+<td>1.092</td>
+<td>
+
+[53 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5GRkZKIFxuLi5CR0dKIFxuLi5CUFBKS1xuLi5IRUlJIFxuLi5IRUREIFxuLi5DQ0MuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzE1LDUsOCw5LDIsMjAsMjEsMjIsMjgsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi4xN21zIMKxIDAuNTVtcyIsInRpY2tDb3VudCI6MjA3LCJ2aXNpdGVkTm9kZXMiOjIwOCwic2VhcmNoQ291bnQiOjEyNjEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDkyIiwic29sdXRpb25TdGVwcyI6IuKIhSA5KzEgNSsxIDQtMiAyKzEgNCsxIDMtMyA0KzEgMi0xIDUtMSA5LTMgNisxIDctMSA0LTIgMSsxIDQrMyAyLTEgMC0zIDIrMSA0LTMgMS0xIDQrMSA3KzEgNi0xIDkrMiA0LTEgOS0xIDYtMyA4LTEgNy0xIDErMyA5KzEgNisxIDQrMyAyLTEgOS0yIDUtMSA4LTMgNSsxIDkrMSAyKzEgNC0zIDYtMSA5KzEgMS0zIDcrMSA2KzMgOS0yIDYrMSA3LTEgMSszIDQrMyAyLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>8.35ms ± 1.15ms</td>
+<td>1614</td>
+<td>1615</td>
+<td>13289</td>
+
+<td>1.295</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG4uLkZGRkogXG4uLkJHR0ogXG4uLkJQUEpLXG4uLkhFSUkgXG4uLkhFREQgXG4uLkNDQy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTUsNSw4LDksMiwyMCwyMSwyMiwyOCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI4LjM1bXMgwrEgMS4xNW1zIiwidGlja0NvdW50IjoxNjE0LCJ2aXNpdGVkTm9kZXMiOjE2MTUsInNlYXJjaENvdW50IjoxMzI4OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yOTUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDktMiA2KzEgNy0xIDErMSA0KzEgMi0xIDAtMyAyKzEgNC0xIDEtMSA3KzEgNi0yIDkrMyA1KzEgMisxIDMtMyAyLTEgNi0xIDctNCAxKzEgNCsxIDItMSA1LTIgOC00IDUrMiA2KzIgMCszIDUtMSA5LTIgMSsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>8.01ms ± 1.05ms</td>
+<td>1463</td>
+<td>1464</td>
+<td>12085</td>
+
+<td>1.317</td>
+<td>
+
+[29 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uRkZGSiBcbi4uQkdHSiBcbi4uQlBQSktcbi4uSEVJSSBcbi4uSEVERCBcbi4uQ0NDLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNSw1LDgsOSwyLDIwLDIxLDIyLDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjguMDFtcyDCsSAxLjA1bXMiLCJ0aWNrQ291bnQiOjE0NjMsInZpc2l0ZWROb2RlcyI6MTQ2NCwic2VhcmNoQ291bnQiOjEyMDg1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjMxNyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0yIDYrMSA3LTEgMSsxIDQrMSAyLTEgMC0zIDIrMSA0LTMgMS0xIDcrMSA2LTEgOSszIDUrMSAyKzEgMy0zIDYtMiA3LTEgMSsxIDQrMyAyLTIgNy0zIDUtMiA4LTQgNisyIDktMSAxKzIgNSsxIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>12</td>
+<td>15.74ms ± 0.80ms</td>
+<td>1033</td>
+<td>1034</td>
+<td>8567</td>
+
+<td>1.299</td>
+<td>
+
+[29 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uRkZGSiBcbi4uQkdHSiBcbi4uQlBQSktcbi4uSEVJSSBcbi4uSEVERCBcbi4uQ0NDLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNSw1LDgsOSwyLDIwLDIxLDIyLDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE1Ljc0bXMgwrEgMC44MG1zIiwidGlja0NvdW50IjoxMDMzLCJ2aXNpdGVkTm9kZXMiOjEwMzQsInNlYXJjaENvdW50Ijo4NTY3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjI5OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0yIDYrMSA3LTEgMSsxIDQrMSAyLTEgMC0zIDIrMSA0LTEgMS0xIDcrMSA2LTEgOSszIDUrMSAyKzEgMy0zIDYtMiA3LTEgMSsxIDQrMSAyLTIgNy0zIDUtMiA5LTMgOC00IDYrMyA1KzEgMSsyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>202.10ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>403501</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>360.91ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>339346</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>138.20ms ± 0.00ms</td>
+<td>29</td>
+<td>2020</td>
+<td>280419</td>
+
+<td>1.462</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG4uLkZGRkogXG4uLkJHR0ogXG4uLkJQUEpLXG4uLkhFSUkgXG4uLkhFREQgXG4uLkNDQy4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTUsNSw4LDksMiwyMCwyMSwyMiwyOCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxLCJkdXJhdGlvbiI6IjEzOC4yMG1zIMKxIDAuMDBtcyIsInRpY2tDb3VudCI6MjksInZpc2l0ZWROb2RlcyI6MjAyMCwic2VhcmNoQ291bnQiOjI4MDQxOSwiYnJhbmNoaW5nRmFjdG9yIjoiMS40NjIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDktMiA2KzEgNy0xIDErMSA0KzEgMi0xIDAtMyAyKzEgNC0xIDEtMSA3KzEgNi0xIDkrMyA1KzEgMisxIDMtMyAyLTEgNi0yIDctNCAxKzEgNCsxIDItMSA1LTIgOC00IDYrMiA1KzEgMCszIDktMSAxKzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>179.22ms ± 0.00ms</td>
+<td>28</td>
+<td>2066</td>
+<td>298551</td>
+
+<td>1.486</td>
+<td>
+
+[29 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uRkZGSiBcbi4uQkdHSiBcbi4uQlBQSktcbi4uSEVJSSBcbi4uSEVERCBcbi4uQ0NDLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxNSw1LDgsOSwyLDIwLDIxLDIyLDI4LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEsImR1cmF0aW9uIjoiMTc5LjIybXMgwrEgMC4wMG1zIiwidGlja0NvdW50IjoyOCwidmlzaXRlZE5vZGVzIjoyMDY2LCJzZWFyY2hDb3VudCI6Mjk4NTUxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjQ4NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOS0yIDYrMSA3LTEgMSsxIDQrMSAyLTEgMC0zIDIrMSA0LTEgMS0xIDcrMSA2LTEgOSszIDUrMSAyKzEgMy0zIDItMSA2LTIgNy00IDErMSA0KzEgMi0xIDUtMiA4LTQgNisyIDUrMSA5LTEgMSsyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>233.31ms ± 0.00ms</td>
+<td>25</td>
+<td>1208</td>
+<td>118995</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-24**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-24.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+9
+..BGG. 
+.HB... 
+EHPPI.K
+EDD.I. 
+FFF.J. 
+CC..J. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+9 (4 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>7</td>
+<td>27.43ms ± 4.80ms</td>
+<td>4326</td>
+<td>4512</td>
+<td>46154</td>
+
+<td>1.468</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5CR0cuIFxuLkhCLi4uIFxuRUhQUEkuS1xuRURELkkuIFxuRkZGLkouIFxuQ0MuLkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNywxMiwyLDE2LDE5LDI0LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMjcuNDNtcyDCsSA0LjgwbXMiLCJ0aWNrQ291bnQiOjQzMjYsInZpc2l0ZWROb2RlcyI6NDUxMiwic2VhcmNoQ291bnQiOjQ2MTU0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjQ2OCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDMtMiAwLTIgNCsxIDEtMSA1LTIgNi0xIDgtMiA3KzMgOSszIDQrMyAwKzIgNisyIDMrNCAyKzQgMS0yIDAtMiA2LTIgNC00IDArMiA2KzIgMi0yIDctMiA4KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>9</td>
+<td>20.19ms ± 2.97ms</td>
+<td>2895</td>
+<td>2896</td>
+<td>32082</td>
+
+<td>1.031</td>
+<td>
+
+[227 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uQkdHLiBcbi5IQi4uLiBcbkVIUFBJLktcbkVERC5JLiBcbkZGRi5KLiBcbkNDLi5KLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDcsMTIsMiwxNiwxOSwyNCwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo5LCJkdXJhdGlvbiI6IjIwLjE5bXMgwrEgMi45N21zIiwidGlja0NvdW50IjoyODk1LCJ2aXNpdGVkTm9kZXMiOjI4OTYsInNlYXJjaENvdW50IjozMjA4MiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDkrMiA3KzEgOS0xIDYrMSA5LTEgNS0xIDkrMiA4LTEgOS0xIDctMSA5LTEgNi0xIDkrNCA3KzEgOS0xIDMtMiA5LTMgOCsxIDkrMiA3LTEgOS0xIDgtMSA2LTEgOS0xIDgrMSA2KzQgMi0xIDkrMiA3KzEgOS0xIDYtNCA5LTEgOC0xIDkrNCA3LTEgOS0yIDYrMiA5LTIgNi0xIDkrMyAxKzEgOS0yIDcrMSA5LTEgOCsxIDkrMiA3LTEgNi0xIDktMiA4LTEgMysxIDkrNCA3KzEgOS0zIDgrMSA5LTEgNis0IDkrMiA3LTEgOS0xIDYtMyA5LTEgNisyIDMrMSA5KzIgNysxIDktMSA2LTIgMysyIDYtMSA5KzEgOC0xIDkrMiA2KzIgOS0zIDMtMiA5LTEgNy0xIDkrNCA2LTEgOS0yIDcrMSA5KzEgMy0xIDYrMSA5LTEgNy0xIDktMSAxLTEgOSszIDcrMSA5LTQgOCsxIDkrMiA3LTEgNi0yIDktMiA1KzEgMy0xIDAtMiA0KzIgMSsxIDkrMSAxLTIgNysxIDkrMSA1LTIgOC0yIDktMSA3KzEgOS0xIDcrMSA5KzQgNCsyIDArMiA5LTEgNC0xIDktMyA0KzEgNisyIDIrMyAxLTEgMi0yIDYtMiA0LTEgOSs0IDQrMSA5LTEgNisyIDIrMyA5KzEgMi0yIDErMSA5LTEgMisxIDMrNCA5KzEgMy0zIDItMyA5LTEgNi0xIDMrMyA5KzEgMy0yIDIrMSA5LTEgNisxIDMrMSA5KzEgMiszIDYtMSA5LTEgMy0zIDYtMSA5KzEgNC0xIDktMiAxLTEgOSsxIDMrMSA5KzEgNCsxIDYrMSA5LTEgMyszIDYtMSA5KzEgMC0yIDQtMyA5LTIgNy0xIDkrMSA2KzIgOSsxIDItMSA5LTMgNysxIDkrMiAzLTEgOS0zIDctMSA5KzIgMisxIDcrMSA5KzIgNi0xIDktMSA3LTEgMS0xIDktMSA3KzEgMysxIDkrMiA3LTEgNi0xIDQtMSAwKzIgOS0yIDcrMSA5KzEgNisyIDkrMSAyLTMgOS0zIDctMiA5KzIgNysxIDktMSAzLTMgOS0yIDctMiA5KzQgNysxIDYtMiA5LTQgNysyIDkrMyA3LTMgOS0yIDcrMiA2KzEgOSszIDcrMSA5LTIgNy0zIDgrMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>9</td>
+<td>21.14ms ± 9.47ms</td>
+<td>2487</td>
+<td>2488</td>
+<td>28962</td>
+
+<td>1.023</td>
+<td>
+
+[290 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5CR0cuIFxuLkhCLi4uIFxuRUhQUEkuS1xuRURELkkuIFxuRkZGLkouIFxuQ0MuLkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNywxMiwyLDE2LDE5LDI0LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjksImR1cmF0aW9uIjoiMjEuMTRtcyDCsSA5LjQ3bXMiLCJ0aWNrQ291bnQiOjI0ODcsInZpc2l0ZWROb2RlcyI6MjQ4OCwic2VhcmNoQ291bnQiOjI4OTYyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOSsyIDcrMSA5LTEgNisxIDktMSA1LTEgOSsyIDgtMSA5LTEgNy0xIDktMSA2LTEgOSs0IDcrMSA5LTEgMy0yIDktMyA4KzEgOSsyIDctMSA5LTEgOC0xIDYtMSA5LTEgOCsxIDYrNCAyLTEgOSsyIDcrMSA5LTEgNi00IDktMSA4LTEgOSs0IDctMSA5LTIgNisyIDktMiA2LTEgOSszIDAtMiA5LTIgNysxIDktMSA4KzEgOSsyIDctMSA2LTEgOS0yIDgtMSAwKzEgOSszIDcrMSA5LTIgNisyIDktMSA4KzEgOSsyIDctMSA5LTEgNi0yIDUrMSA5LTEgNysxIDkrMiA2KzEgOS0xIDYrMSAwLTEgOS0xIDctMSA5KzIgMCsyIDktMSA2LTEgOS0xIDcrMSAxKzEgOSsyIDctMSA2LTEgOS0yIDYrMiA1LTEgOSsyIDcrMSA5LTEgOC0xIDktMSA2LTEgOSs0IDctMSA5LTMgOCsxIDYtMSAwLTIgOC0xIDcrMSA0KzIgMS0yIDUtMSA5LTEgNy0xIDkrNCA0LTEgOS0zIDgrMSA5KzEgOC0yIDcrMyA0KzIgOS0yIDQrMSA2KzIgMCsyIDYtMSAwLTEgMyszIDYrMSAzLTIgNi0yIDQtMSA5KzQgNCsxIDktMSA2KzIgMCsxIDkrMSA2LTEgMy0xIDktMSA2LTEgNC0xIDktMiAyKzEgOS0xIDQrMSAxLTEgNisyIDIrMiAwLTIgMSsxIDArMSAzKzMgMC0xIDEtMiAwKzIgMi0yIDYtMSAzLTIgNi0xIDQtMSA5KzQgNCsxIDktMSA2KzIgMiszIDkrMSAyLTIgMyszIDktMSAzLTIgMisxIDkrMSAyLTIgNi0xIDktMSAzKzIgNi0xIDkrMSAxKzIgNisyIDktMSAzLTQgMiszIDkrMSAyLTIgMS0xIDktMSAyKzEgMC0yIDkrMSAyKzEgNi0yIDktMSA0LTEgOS0xIDArMiA5KzIgMC0xIDErMSA5LTIgMysxIDkrMSA0KzEgOSsxIDYrMiAyLTEgOS0xIDMrMyAyKzEgMy0yIDYtMSA5KzEgMCsxIDMtMSA5LTEgMyszIDYtMSA5KzEgNC0xIDktMiAwLTIgOSsxIDArMSAxLTIgOS0xIDErMSA5KzIgNCsxIDktMSA2KzEgMy00IDkrMSAwKzEgMys0IDYrMSA5LTEgMy0yIDItMyAzKzEgOSsxIDIrMiAwLTIgOS0xIDIrMSA2LTEgOSsxIDEtMSA2KzEgMysxIDktMSA2LTIgNC00IDktMSA3LTEgOSsyIDYrMiA5LTEgMi0xIDktMiA3KzEgOSszIDMtMSA5LTQgNy0xIDkrMiAyKzEgNysxIDkrMSA2LTEgOSsxIDctMSAwKzIgOS0yIDcrMSAzLTIgOSsyIDYtMSA5LTEgNy0xIDktMSA2KzIgOSsyIDItMyA5LTQgNy0yIDgrMiA5KzIgOC0xIDktMSA3KzEgOS0xIDYtMiA5KzQgNy0xIDktMSA2KzEgOS0zIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>5</td>
+<td>37.63ms ± 1.43ms</td>
+<td>2625</td>
+<td>2626</td>
+<td>30049</td>
+
+<td>1.026</td>
+<td>
+
+[257 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuLi5CR0cuIFxuLkhCLi4uIFxuRUhQUEkuS1xuRURELkkuIFxuRkZGLkouIFxuQ0MuLkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDMsNywxMiwyLDE2LDE5LDI0LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzcuNjNtcyDCsSAxLjQzbXMiLCJ0aWNrQ291bnQiOjI2MjUsInZpc2l0ZWROb2RlcyI6MjYyNiwic2VhcmNoQ291bnQiOjMwMDQ5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyNiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOSsyIDcrMSA5LTEgNisxIDktMSA1LTEgOSsyIDgtMSA5LTEgNy0xIDktMSA2LTEgOSs0IDcrMSA5LTEgMy0yIDktMyA4KzEgOSsyIDctMSA5LTEgOC0xIDYtMSA5LTEgOCsxIDYrNCAzKzIgOSsyIDYtMSA5LTEgNysxIDYrMSAzLTIgNi00IDUrMSA5LTEgMysxIDkrMiA3LTEgOS0xIDYrMiA5LTEgNS0xIDkrMiA4LTEgOSsyIDcrMSAyLTEgMC0xIDktNCA4KzEgOSsyIDctMSA5LTEgOC0xIDkrMiA2LTIgOS0zIDgrMSA2KzQgMy0xIDYtMyA5KzIgOC0xIDktMSA3KzEgOS0xIDMrMiA5KzQgNy0xIDktMSAxKzEgOS0yIDYrMSA5LTEgOCsxIDkrMiA2LTEgNSsxIDktMiAzLTIgOSsxIDcrMSA5KzEgNi0xIDktMiA2KzIgNS0xIDkrMiA4LTEgOS0xIDYtMiA5LTEgMC0xIDkrNCA3LTEgOS0yIDYrMiA5LTIgOCsxIDYtMSA5KzIgNCsxIDEtMiA1LTEgOS0yIDYrMSA4LTIgNyszIDkrNCA3LTEgOS0zIDYtMiA0KzEgOSszIDcrMSA0KzIgOS0xIDYrMiAwKzIgOSsxIDYtMSAzKzQgOS0xIDYtMSA0LTEgOS0yIDIrMSA5KzMgNCsxIDYrMiA5LTEgMy0zIDYtMiA5KzEgNisxIDMrMiA5LTEgMy0zIDEtMSA5KzEgNisxIDMrMyA5LTEgMy0xIDIrMyA5KzEgNi0xIDMtMiA5LTEgNi0xIDQtMSA5LTEgMysxIDkrMiA0KzEgMS0xIDktMSA2KzIgMyszIDkrMSA2LTIgNC0xIDktMiAxKzIgOSsxIDQrMSA2KzEgOSsxIDMtMyA2KzEgMysyIDktMSAyLTIgMy0xIDkrMSAyKzEgMS0yIDktMSAzKzEgMC0yIDkrMSAzKzEgMSsyIDktMSAyKzEgMS0xIDkrMSA2LTIgNC0xIDktMiAwKzEgOSsxIDQrMSA2KzEgOSsxIDMtMyA2KzEgOS0xIDYtMiA0LTEgMS0xIDktMSAxKzIgOSsyIDQrMSAzLTEgOS0xIDYrMiAzKzIgOSsxIDYtMSAzKzEgOS0xIDMtMiAxLTIgMysxIDArMSAzKzEgOSsxIDAtMiAzKzEgOS0xIDYtMSA0LTQgOS0xIDctMSA5KzIgNisyIDktMSA2LTEgMy0xIDktMSA3KzEgOSsyIDYrMSA5LTEgMi0xIDktMyA3LTEgOSs0IDArMiA5LTMgNysxIDkrMSAzLTIgOS0yIDctMSA5KzMgMyszIDktMSAzLTIgMi0yIDktMiA3LTIgOCsyIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>5</td>
+<td>37.64ms ± 4.62ms</td>
+<td>3961</td>
+<td>3962</td>
+<td>42385</td>
+
+<td>1.462</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG4uLkJHRy4gXG4uSEIuLi4gXG5FSFBQSS5LXG5FREQuSS4gXG5GRkYuSi4gXG5DQy4uSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMyw3LDEyLDIsMTYsMTksMjQsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NSwiZHVyYXRpb24iOiIzNy42NG1zIMKxIDQuNjJtcyIsInRpY2tDb3VudCI6Mzk2MSwidmlzaXRlZE5vZGVzIjozOTYyLCJzZWFyY2hDb3VudCI6NDIzODUsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDYyIiwic29sdXRpb25TdGVwcyI6IuKIhSAzLTIgMi0xIDYtMSAwLTIgNCsyIDEtMSA1LTIgOC0yIDkrNCA3KzMgNCsyIDArMiA2KzIgMys0IDIrNCA2LTIgMS0yIDAtMiA0LTQgMCsyIDYrMiAyLTMgNy0yIDgrMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>5</td>
+<td>35.85ms ± 1.10ms</td>
+<td>4136</td>
+<td>4137</td>
+<td>44067</td>
+
+<td>1.465</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uQkdHLiBcbi5IQi4uLiBcbkVIUFBJLktcbkVERC5JLiBcbkZGRi5KLiBcbkNDLi5KLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDcsMTIsMiwxNiwxOSwyNCwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo1LCJkdXJhdGlvbiI6IjM1Ljg1bXMgwrEgMS4xMG1zIiwidGlja0NvdW50Ijo0MTM2LCJ2aXNpdGVkTm9kZXMiOjQxMzcsInNlYXJjaENvdW50Ijo0NDA2NywiYnJhbmNoaW5nRmFjdG9yIjoiMS40NjUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMtMiAyLTEgMC0yIDQrMSAxLTEgNS0yIDgtMiA5KzQgNi0xIDcrMyA0KzMgMCsyIDYrMiAzKzQgMis0IDYtMiAwLTIgMS0yIDQtNCAwKzIgNisyIDItMyA3LTIgOCsxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>63.41ms ± 5.07ms</td>
+<td>3929</td>
+<td>3930</td>
+<td>41981</td>
+
+<td>1.462</td>
+<td>
+
+[25 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbi4uQkdHLiBcbi5IQi4uLiBcbkVIUFBJLktcbkVERC5JLiBcbkZGRi5KLiBcbkNDLi5KLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwzLDcsMTIsMiwxNiwxOSwyNCwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjYzLjQxbXMgwrEgNS4wN21zIiwidGlja0NvdW50IjozOTI5LCJ2aXNpdGVkTm9kZXMiOjM5MzAsInNlYXJjaENvdW50Ijo0MTk4MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS40NjIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDMtMiAyLTEgMC0yIDQrMSAxLTEgNS0yIDgtMiA5KzQgNyszIDYtMSA0KzMgMCsyIDYrMiAzKzQgMis0IDAtMiA2LTIgMS0yIDQtNCA2KzIgMCsyIDItMiA3LTIgOCsxIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>200.46ms ± 0.00ms</td>
+<td>5</td>
+<td>0</td>
+<td>112418</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>218.07ms ± 0.00ms</td>
+<td>11</td>
+<td>2800</td>
+<td>382583</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>265.91ms ± 0.00ms</td>
+<td>11</td>
+<td>2972</td>
+<td>445745</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>239.65ms ± 0.00ms</td>
+<td>8</td>
+<td>2429</td>
+<td>116090</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-25**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-25.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+12
+BBG.HH 
+EEG..F 
+LPP.IFK
+LCCCIF 
+LD.JMM 
+.D.JNN 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+12 (6 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>4</td>
+<td>63.55ms ± 16.62ms</td>
+<td>8621</td>
+<td>8824</td>
+<td>82834</td>
+
+<td>1.457</td>
+<td>
+
+[27 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC5JRktcbkxDQ0NJRiBcbkxELkpNTSBcbi5ELkpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE2LDE5LDI1LDI3LDI4LDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNjMuNTVtcyDCsSAxNi42Mm1zIiwidGlja0NvdW50Ijo4NjIxLCJ2aXNpdGVkTm9kZXMiOjg4MjQsInNlYXJjaENvdW50Ijo4MjgzNCwiYnJhbmNoaW5nRmFjdG9yIjoiMS40NTciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMSA0LTEgNSsxIDAtMSA3LTEgOCsyIDErNCA2KzEgMysxIDArMSA1LTMgOC0zIDEwLTMgOCszIDUrMyA2LTEgMy0xIDAtMSAxLTQgOC0yIDExLTIgNysyIDEyLTEgNCszIDIrMSAxMC0xIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>4</td>
+<td>56.57ms ± 20.69ms</td>
+<td>5220</td>
+<td>5221</td>
+<td>49534</td>
+
+<td>1.027</td>
+<td>
+
+[271 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuSUZLXG5MQ0NDSUYgXG5MRC5KTU0gXG4uRC5KTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTEsMTIsMCwxNiwxOSwyNSwyNywyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjU2LjU3bXMgwrEgMjAuNjltcyIsInRpY2tDb3VudCI6NTIyMCwidmlzaXRlZE5vZGVzIjo1MjIxLCJzZWFyY2hDb3VudCI6NDk1MzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDI3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgNy0xIDgrMSA5LTIgNSsxIDkrMSAyLTEgOSsxIDgtMSA0LTEgOCsyIDAtMiAxKzQgMCsyIDEtMSA5LTIgNS0xIDErMSA4LTEgOSsyIDgtMSAzKzEgNisxIDgrMiAxLTEgOS0yIDUtMiAxKzEgOC0xIDkrMiA4LTIgMTAtMSAxMi0xIDcrMSAwLTEgMTAtMiAxMisxIDExLTEgOCsxIDEyLTEgNy0xIDExKzEgMTIrMSA4KzIgMTEtMSAxLTEgMTItMiAxMSsxIDEyKzEgOS0xIDEyLTMgMTEtMSAxMisxIDUrMyAxMiszIDExKzEgMTItMiA1LTIgMTItMSA1KzEgMy0xIDEyLTEgMTEtMSAxMis0IDErMSAxMi0xIDExKzEgNSsxIDAtMSAxLTMgMTItMiAxMS0yIDEyKzMgMTErMSAxMi0yIDgtMSAxMi0xIDQrMyAxMisyIDExLTEgMTItMSA0LTIgMTItMSAxMSsyIDEyKzMgMTEtMSA5KzEgMTItMiAxMSsxIDEyKzEgMTEtMiA4LTEgMTItMSA0LTEgMTIrMiAxMSsyIDEyLTEgMTEtMSA4KzIgMTEtMSAxKzEgMTItMSAxMSsyIDEyKzIgMTEtMSAzKzEgMTItMiA5LTEgMTItMSAxMS0xIDEyKzMgMTErMiAxMi0xIDkrMSA2LTEgMTItMSAxMS0yIDEyKzIgMy0xIDktMSAxMi0zIDExKzIgMTIrMiAxMS0xIDEyLTEgOSsxIDEtMiAwKzEgMTIrMiAxMS0xIDEyLTEgMTErMiA5LTEgMTItMiAxMS0yIDEyKzEgOC0xIDEyKzIgMTErMiA5KzEgMTItMiA4LTEgMTEtMiA1LTEgMTIrMiAxMSsyIDEyLTEgMTEtMSA4KzIgOS0xIDEyLTMgMTEtMSAxMis0IDExKzIgMTItMiA4LTEgMTItMiA0KzEgMTIrNCAxMS0yIDEyLTMgMTErMSAxMisyIDkrMSAxMi0xIDExLTEgNSsxIDEyKzIgMTErMSA5LTEgMTItMiAxMSsxIDEyLTEgMisxIDEyKzMgMTEtMiAxMi0yIDUtMSAxMi0yIDExKzEgMTIrNCA5KzEgMTEtMSAxMi0xIDExKzIgMTItMSA4LTEgMTIrMiA1KzEgMTItMSAxMS0yIDEyLTEgMTErMSA4KzEgMTIrMSA5LTEgNCsyIDEyLTIgMTEtMSA0LTEgMTIrMiA5KzEgMTItMSA1LTEgMTErMSAxMisxIDktMSAxMi0yIDEwLTEgMCsxIDEyLTEgMTEtMSAxMis0IDktMSAxMi0zIDExLTEgMTItMSA0LTEgMTIrNCAxMSszIDEyLTMgMTEtMSAxMisyIDExLTEgMTItMSA5KzIgMTIrMiAxMSsxIDktMSAxMi0yIDExKzEgMTIrMSA5KzEgOC0xIDEyLTEgMTEtMSA1KzEgMTIrMiAxMS0xIDEyLTEgOCsxIDExKzEgOS0xIDEyLTIgMTEtMSAxMiszIDExKzIgOSsxIDEyLTIgOS0yIDEyKzEgMTEtMyAxMi0yIDQrMiAxMisxIDExKzIgMTIrMSAxMS0xIDQtMSAxMi0xIDkrMiAxMSsxIDUtMSAxMisxIDExLTEgOC0xIDEyLTEgNCsxIDUrMSA3KzMgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>5</td>
+<td>38.31ms ± 16.88ms</td>
+<td>3779</td>
+<td>3780</td>
+<td>34795</td>
+
+<td>1.034</td>
+<td>
+
+[213 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC5JRktcbkxDQ0NJRiBcbkxELkpNTSBcbi5ELkpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE2LDE5LDI1LDI3LDI4LDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzguMzFtcyDCsSAxNi44OG1zIiwidGlja0NvdW50IjozNzc5LCJ2aXNpdGVkTm9kZXMiOjM3ODAsInNlYXJjaENvdW50IjozNDc5NSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDctMSA4KzEgOS0xIDArMSA5LTEgNSsxIDkrMiA4LTEgMC0yIDcrMSAyLTEgMCsyIDUtMSA3LTEgOCsxIDQtMSA5LTIgOCsxIDkrMSAwLTEgOC0xIDUrMSA5KzEgOC0xIDAtMSA4KzIgOS0xIDErNCA4LTEgOSsxIDgtMSAwKzIgOCsyIDEtMSA5LTIgNS0xIDErMSA4LTEgOSsyIDAtMSA5LTEgOCsxIDEtMSA5KzEgMysyIDErMSA4LTIgMCsxIDUtMSA4KzIgMS0xIDktMyA1KzIgMSsxIDgtMiA1LTIgOCsxIDkrMiAwLTEgOCsxIDEtMSAzLTEgOSsxIDErMSA4LTIgNysxIDArMSAzKzIgNSsyIDAtMiAzLTIgNCsxIDctMSA4KzEgOS0xIDArMiA5LTEgNS0yIDkrMiA4LTEgNSsxIDAtMSA2KzEgMisxIDgrMSA5LTEgMCsxIDktMSA1LTEgOSsyIDgtMSA3KzEgMC0xIDMrMiA1LTEgOC0xIDEwLTEgMTItMSAwKzEgMy0yIDEyKzEgMTArMSA3LTEgMC0xIDEwLTQgMTItMSAxMS0xIDQrMiA4KzIgOS0xIDArMSA5LTEgNSszIDkrMiA4LTEgMC0yIDEwKzEgMi0xIDgrMSA5LTEgMy0xIDArMSA5KzEgOC0xIDUtMSA3KzEgNi0xIDUrMSAwLTEgNy0xIDgrMSAyLTEgNy0xIDktMSAwKzEgMysxIDcrMSAyKzEgOSsxIDUtMSA0LTIgMTIrMSAxMSsxIDktMSAxMi0xIDUtMSA5KzEgOC0xIDEyKzEgMTEtMSA0LTEgOCsyIDEyLTEgMTErMSAxLTEgMTItMSAxMS0xIDktMSAxMi0yIDExKzEgMTIrNCAxKzEgOC0xIDExLTEgNSsyIDgrMSAxMi0xIDExKzEgMS0xIDEyLTIgMTEtMSA1LTEgMTIrMyA5KzEgMTItMSA1KzEgMC0xIDEyLTEgMTErMSAxMisyIDktMSAxMS0xIDMtMSAxMi0zIDExKzEgMTIrMiAxLTMgMTItMSAxMS0yIDEyLTEgOC0xIDQrMyAxMisyIDExKzEgMTItMSA5KzEgMTEtMSA4LTEgNyszIDgrMSA5LTEgMTItMSAwKzEgNS0xIDEyLTEgMisxIDEwLTEgMTIrMiA5KzEgOC0xIDctMSAxMisxIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>86.61ms ± 2.82ms</td>
+<td>3221</td>
+<td>3222</td>
+<td>29609</td>
+
+<td>1.054</td>
+<td>
+
+[140 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy4uRiBcbkxQUC5JRktcbkxDQ0NJRiBcbkxELkpNTSBcbi5ELkpOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMSwxMiwwLDE2LDE5LDI1LDI3LDI4LDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiODYuNjFtcyDCsSAyLjgybXMiLCJ0aWNrQ291bnQiOjMyMjEsInZpc2l0ZWROb2RlcyI6MzIyMiwic2VhcmNoQ291bnQiOjI5NjA5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA1NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNy0xIDgrMSA5LTEgNSsxIDItMSA5KzEgOC0xIDcrMSA0LTEgMC0xIDErMSA2KzEgNCsxIDctMSA4KzEgOS0xIDYtMSAyLTEgNy0xIDQtMSA4KzEgMSszIDgtMSA5KzEgOC0xIDQrMSAzKzIgOCsxIDktMSAzLTEgMCszIDktMSA1LTIgOSsyIDgtMSA1KzIgNC0xIDgrMSA1LTEgOS0yIDMtMSA5KzEgNCsxIDkrMSA4LTEgNC0xIDMrMiA1LTEgOCsxIDktMyA4LTEgNSsyIDQrMSA4KzEgNS0xIDkrMSAwLTEgOSsyIDgtMSA1LTEgMC0xIDgrMSA5LTEgNSsxIDQtMSA5KzEgNSsxIDArMSA5LTIgNS0yIDkrMSAzLTEgMC0xIDcrMSAyKzEgOSsxIDgtMSA3KzEgNisxIDUtMSA4LTEgMTAtMSAxMi0xIDctMSA0KzEgMysxIDcrMSAzKzEgMisxIDMtMiAxMC0zIDExLTEgNCsyIDgrMSA3LTEgOCsxIDktMSA1KzMgNi0xIDkrMSA4LTEgNysxIDUtMiAxMCsxIDItMiA3LTIgOCsxIDQtMyA4KzEgMS0xIDEyLTEgOS0xIDEyLTIgNSsxIDEyKzMgNSsxIDEyLTIgMy0xIDAtMSAxLTIgOC0xIDQrMyAxMisyIDExLTEgMTItMSA5KzEgMTErMSA4LTEgMTIrMSAxMS0xIDcrMyAxMi0xIDcrMSA4KzEgOS0xIDEyLTEgMisyIDEwLTEgMS0xIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>4</td>
+<td>73.02ms ± 24.77ms</td>
+<td>7917</td>
+<td>7918</td>
+<td>76183</td>
+
+<td>1.431</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMlxuQkJHLkhIIFxuRUVHLi5GIFxuTFBQLklGS1xuTENDQ0lGIFxuTEQuSk1NIFxuLkQuSk5OICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw2LDExLDEyLDAsMTYsMTksMjUsMjcsMjgsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI3My4wMm1zIMKxIDI0Ljc3bXMiLCJ0aWNrQ291bnQiOjc5MTcsInZpc2l0ZWROb2RlcyI6NzkxOCwic2VhcmNoQ291bnQiOjc2MTgzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjQzMSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDctMSA0LTEgOCsyIDUrMSAwLTEgMSs0IDArMSAzKzEgNisxIDUtMyA4LTMgMTAtMyA4KzMgNSszIDMtMSA2LTEgMC0xIDEtNCAxMS0yIDEyLTEgOC0yIDQrMyAyKzEgMTAtMSAwKzIgNysyIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>4</td>
+<td>55.40ms ± 5.13ms</td>
+<td>6945</td>
+<td>6946</td>
+<td>66333</td>
+
+<td>1.444</td>
+<td>
+
+[27 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkcuSEggXG5FRUcuLkYgXG5MUFAuSUZLXG5MQ0NDSUYgXG5MRC5KTU0gXG4uRC5KTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTEsMTIsMCwxNiwxOSwyNSwyNywyOCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjU1LjQwbXMgwrEgNS4xM21zIiwidGlja0NvdW50Ijo2OTQ1LCJ2aXNpdGVkTm9kZXMiOjY5NDYsInNlYXJjaENvdW50Ijo2NjMzMywiYnJhbmNoaW5nRmFjdG9yIjoiMS40NDQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSAwLTEgNy0xIDItMSA0LTEgOCsyIDErNCAzKzEgNisxIDArMSA1LTMgOC0zIDEwLTMgOCszIDUrMyA2LTEgMy0xIDAtMSAxLTQgOC0yIDEyLTIgMTEtMiA0KzMgMisxIDEwLTEgNysyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>356.51ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>605552</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>203.90ms ± 0.00ms</td>
+<td>17</td>
+<td>2565</td>
+<td>388567</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>250.39ms ± 0.00ms</td>
+<td>18</td>
+<td>2635</td>
+<td>472072</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>307.41ms ± 0.00ms</td>
+<td>15</td>
+<td>2057</td>
+<td>149785</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-26**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-26.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+.B.FFF 
+GB.HM. 
+GPPHMEK
+ILLLME 
+I.D..J 
+..DCCJ 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (3 Horizontal, 8 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>8</td>
+<td>24.17ms ± 4.64ms</td>
+<td>4699</td>
+<td>4816</td>
+<td>40081</td>
+
+<td>1.396</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CLkZGRiBcbkdCLkhNLiBcbkdQUEhNRUtcbklMTExNRSBcbkkuRC4uSiBcbi4uRENDSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDEsMTcsMTgsMTksMjYsMjksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OCwiZHVyYXRpb24iOiIyNC4xN21zIMKxIDQuNjRtcyIsInRpY2tDb3VudCI6NDY5OSwidmlzaXRlZE5vZGVzIjo0ODE2LCJzZWFyY2hDb3VudCI6NDAwODEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzk2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxLTEgNi0yIDcrMSA4LTEgMTAtMSAxMSsxIDMrMyAwKzEgNSsxIDEtMiA0LTEgOCsyIDUrMyAwLTEgOC0yIDMtNCAwKzEgMTEtMSAxMCsxIDgrMyA3LTEgNS0zIDktMSAxMS0zIDkrMSA4LTIgNCszIDArMiJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>19</td>
+<td>10.20ms ± 5.96ms</td>
+<td>1078</td>
+<td>1079</td>
+<td>8835</td>
+
+<td>1.020</td>
+<td>
+
+[265 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQi5GRkYgXG5HQi5ITS4gXG5HUFBITUVLXG5JTExMTUUgXG5JLkQuLkogXG4uLkRDQ0ogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwxLDE3LDE4LDE5LDI2LDI5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE5LCJkdXJhdGlvbiI6IjEwLjIwbXMgwrEgNS45Nm1zIiwidGlja0NvdW50IjoxMDc4LCJ2aXNpdGVkTm9kZXMiOjEwNzksInNlYXJjaENvdW50Ijo4ODM1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyMCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNysxIDgtMSA2LTEgMTAtMSAxMSsxIDgrMSA3LTEgMTEtMSA0KzEgMTArMSA3KzEgMi0xIDEwLTEgMTErMSA3LTIgNC0xIDExLTEgMTArMSA3KzEgMS0xIDEwLTEgMTErMSA3KzEgOC0xIDExLTEgMTArMSA2LTEgMTAtMiAxMSsxIDgrMSA3LTIgMTEtMSAxMCsyIDQrMSAxMC0xIDExKzEgNysyIDgtMSAxMS0xIDMrMiAwKzEgMTErMSAxMC0xIDMrMSA4KzEgNy0yIDEwKzEgNC0xIDcrMiA4LTEgNisxIDMtMSAxMS0xIDEwKzEgNi0xIDEwLTIgNSsxIDExKzEgMysxIDgrMSA3LTIgMS0xIDEwKzEgNysyIDgtMSAzLTEgMTEtMSAxMCsxIDQtMSAxMC0yIDExKzEgMysxIDgrMiA3LTIgMTArMSA3KzEgOC0xIDEwLTEgNCsyIDcrMSAyKzIgMTArMSA0LTIgOCsxIDItMSA4LTIgMy0xIDExLTEgNisxIDEwKzEgNisxIDQrMiA2LTIgMTAtMiAxMSsxIDMrMSA0LTEgOCsxIDctMSAxMCsxIDQrMSA2KzEgNysxIDgtMSAzLTEgNC0xIDEtMSAxMS0xIDEwKzEgNi0xIDEwLTIgMTErMSA0LTEgMysxIDgrMiA3LTEgOC0xIDEwKzEgNysxIDYrMSA4KzEgNy0xIDUrMyA4LTEgNysxIDgtMSAzLTEgMTEtMSAxMCsxIDYtMSAxMC0yIDExKzEgMysxIDgrMSA3LTEgNCsyIDEwKzEgNysxIDgtMSAzLTEgMTEtMSA0LTEgMSsxIDAtMSAzLTIgMTErMSAxMC0xIDgrMSAxMS0xIDctMSAxMCsyIDQtMSAxMC0xIDExKzEgMTAtMSA4KzEgMTEtMSA1LTEgNysxIDExKzEgMTArMSA3LTEgMi0xIDExLTEgMTArMSA4KzEgOS0xIDExLTMgOSsxIDgtMSAxMC0yIDctMSAxMCsxIDYrMSAxMCsxIDgrMSA5LTEgMTErMyA5KzEgOC0xIDEwLTEgMTErMSA1KzEgOC0xIDExLTEgMTArMSA3KzIgOC0xIDEwLTEgMTErMSA2LTEgMTAtMSA4KzIgMisyIDgtMSAxMS0xIDEwKzIgNisyIDgrMSA1LTEgNi0yIDEwLTEgNSsxIDItMSA2KzEgMTErMSA3LTEgMS0xIDExLTEgNS0xIDEwKzEgOCsxIDktMSAxMS0zIDkrMSA4LTEgMTAtMSA2LTEgMTAtMSAzLTEgMCsxIDUtMiA4LTEgMTArMiA4KzIgOS0xIDExKzMgOSsxIDgtMiAxMC0yIDExKzEgOCsxIDcrMSAxMS0xIDgtMiAxMCsyIDYrMiA4KzIgNy0xIDYtMSAxMC0xIDExKzEgOC0xIDcrMSAxMS0xIDEwKzEgOCsyIDktMSAxMS0yIDctMSAxMSsxIDUrMyAxMSsxIDUtMiAxMS0zIDkrMSA4LTEgMTAtMSA1LTEgOC0xIDQrMyAwKzEgMTArMSA2LTEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.25ms ± 0.69ms</td>
+<td>157</td>
+<td>158</td>
+<td>1361</td>
+
+<td>1.022</td>
+<td>
+
+[156 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CLkZGRiBcbkdCLkhNLiBcbkdQUEhNRUtcbklMTExNRSBcbkkuRC4uSiBcbi4uRENDSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDEsMTcsMTgsMTksMjYsMjksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4yNW1zIMKxIDAuNjltcyIsInRpY2tDb3VudCI6MTU3LCJ2aXNpdGVkTm9kZXMiOjE1OCwic2VhcmNoQ291bnQiOjEzNjEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDIyIiwic29sdXRpb25TdGVwcyI6IuKIhSA3KzEgOC0xIDMrMiA2LTEgMTAtMSAxMSsxIDMrMSA4KzEgNy0xIDArMSA0KzEgNysxIDgtMSAzLTEgMTEtMSAxMCsxIDYrMSAyLTEgNC0xIDYtMSAxMC0xIDExKzEgMysxIDgrMSA3LTIgMC0xIDQrMSA3KzIgOC0xIDMtMSAxMS0xIDEwKzEgMC0xIDEtMSA2LTEgMTAtMSAxMSsxIDMrMSA4KzEgNy0xIDQtMSAwKzIgNy0xIDAtMSA3KzIgOC0xIDMtMSAxMS0xIDEwKzEgMCsxIDUrMSAxMC0xIDExKzEgMysxIDgrMSA0KzEgNy0yIDEtMSA0LTIgOCsxIDcrMiA4LTIgMy0xIDExLTEgMTArMSA0KzIgMisxIDEwLTEgMTErMSAzKzEgOCsxIDctMSA0LTIgOCsxIDUrMyA4LTEgNysxIDgtMSAzLTEgMTEtMSAxMCsxIDAtMSAyLTEgMTAtMSAxMSsxIDMrMSA4KzIgNS0xIDctMSAwLTEgNSsxIDgtMSA3KzEgNCsyIDgtMSAzLTEgMTEtMSAxMCsxIDQtMSAwKzIgMTAtMSAxMSsxIDMrMSA4KzEgNy0yIDAtMSA3KzEgNCsxIDArMSAxKzEgNy0xIDAtMSA3KzIgOC0xIDMtMSAxMS0xIDEwKzEgNC0xIDIrMSAxMC0xIDExKzEgMysxIDgrMSA3LTEgMCsxIDEtMiA3KzEgOC0xIDMtMSAxMS0xIDEwKzEgNCsxIDAtMSAxMC0xIDExKzEgMy0zIDgrMSAxMS0xIDctMSAxMCsxIDQtMiA4KzIgOS0xIDExLTEgNS0xIDExLTIgOSsxIDgtMSAxMC0xIDArMSA1LTIgMTArMSA4LTEgNCszIDEwLTEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>8</td>
+<td>23.29ms ± 4.95ms</td>
+<td>950</td>
+<td>951</td>
+<td>8282</td>
+
+<td>1.030</td>
+<td>
+
+[185 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CLkZGRiBcbkdCLkhNLiBcbkdQUEhNRUtcbklMTExNRSBcbkkuRC4uSiBcbi4uRENDSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsNiw5LDEwLDEsMTcsMTgsMTksMjYsMjksMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OCwiZHVyYXRpb24iOiIyMy4yOW1zIMKxIDQuOTVtcyIsInRpY2tDb3VudCI6OTUwLCJ2aXNpdGVkTm9kZXMiOjk1MSwic2VhcmNoQ291bnQiOjgyODIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDMwIiwic29sdXRpb25TdGVwcyI6IuKIhSA3KzEgNi0xIDEwLTEgMTErMSA3LTEgNCsxIDExLTEgMTArMSAyLTEgNy0xIDEwLTEgMTErMSA3KzIgMisyIDExLTEgMTArMSA2KzEgMi0yIDEtMSA2LTIgMisxIDgtMSAzKzIgMTAtMSAxMSsxIDQtMSAzKzEgOCsxIDctMSA0KzEgMi0xIDctMSA0LTEgMCsxIDcrMiA4LTEgNSsxIDQrMSA4KzEgNy0yIDEtMSA3KzEgNC0yIDgrMSA3LTEgNSszIDgtMSA3KzIgOC0xIDQrMiAzLTEgMTEtMSAxMCsxIDQtMiAyKzEgMTAtMSAxMSsxIDQrMSAzKzEgOCsxIDctMSA0LTEgOCsxIDcrMSA1LTMgOC0yIDQrMiA4KzEgNC0xIDctMSAxLTEgNC0xIDgrMSA1KzIgNysxIDUtMSAyKzEgNSsyIDgtMSA0KzIgMi0xIDgtMSA0LTIgMC0xIDMtMSAxMS0xIDEwKzEgMy0zIDgrMSAxMC0xIDExKzEgOCsxIDctMSA1LTEgMysxIDcrMSAyKzEgNSsxIDgtMSA0KzIgMTEtMSAxMCsxIDQtMSAzLTEgMTAtMSAxMSsxIDArMSA0LTEgMTEtMSAxMCsxIDQrMiAyLTEgMTAtMSAxMSsxIDctMSA0LTIgMTEtMSAxMCsxIDQrMSAwLTEgMTAtMSAxMSsxIDMrMSA3KzEgMTEtMSAxKzIgMTArMSA3LTEgNCsxIDEwLTEgMTErMSA3KzEgMi0xIDExLTEgMTArMSA3LTIgNC0xIDEwLTEgMTErMSA3KzEgMS0xIDExLTEgMTArMSA3KzEgMC0xIDEwLTEgMTErMSA0LTEgNy0xIDQrMiAxMS0xIDEwKzEgNC0yIDgrMiA5LTEgMTEtMSA3KzEgNS0xIDExLTEgNy0xIDExLTEgOSsxIDgtMSAxMC0xIDArMSA3LTEgMTArMSA4KzEgOS0xIDExKzIgNysxIDIrMSAxMS0yIDkrMSA4LTEgMS0xIDEwLTEgMy0xIDArMSAxMCsxIDgrMSA1LTIgOC0yIDQrMyAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>8</td>
+<td>23.55ms ± 4.21ms</td>
+<td>4082</td>
+<td>4083</td>
+<td>35067</td>
+
+<td>1.389</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLkIuRkZGIFxuR0IuSE0uIFxuR1BQSE1FS1xuSUxMTE1FIFxuSS5ELi5KIFxuLi5EQ0NKICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw2LDksMTAsMSwxNywxOCwxOSwyNiwyOSwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo4LCJkdXJhdGlvbiI6IjIzLjU1bXMgwrEgNC4yMW1zIiwidGlja0NvdW50Ijo0MDgyLCJ2aXNpdGVkTm9kZXMiOjQwODMsInNlYXJjaENvdW50IjozNTA2NywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zODkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDcrMSA2LTEgMTAtMSAxMSsxIDgtMSAzKzMgMCsxIDUrMSAxLTMgNC0xIDgrMiA1KzMgOC0yIDAtMSAzLTQgMCsxIDExLTEgMTArMSA2LTEgOCszIDUtMyA5LTEgNy0xIDExLTMgOSsxIDgtMiA0KzMgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>6</td>
+<td>31.38ms ± 15.89ms</td>
+<td>4030</td>
+<td>4031</td>
+<td>34651</td>
+
+<td>1.388</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQi5GRkYgXG5HQi5ITS4gXG5HUFBITUVLXG5JTExMTUUgXG5JLkQuLkogXG4uLkRDQ0ogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwxLDE3LDE4LDE5LDI2LDI5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjYsImR1cmF0aW9uIjoiMzEuMzhtcyDCsSAxNS44OW1zIiwidGlja0NvdW50Ijo0MDMwLCJ2aXNpdGVkTm9kZXMiOjQwMzEsInNlYXJjaENvdW50IjozNDY1MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zODgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMSA2LTIgMTAtMSA3KzEgOC0xIDExKzEgMyszIDArMSA1KzEgMS0yIDQtMSA4KzIgNSszIDAtMSA4LTIgMy00IDArMSAxMS0xIDEwKzEgOCszIDktMSA3LTEgNS0zIDExLTMgOSsxIDgtMiA0KzMgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>95.06ms ± 3.83ms</td>
+<td>3802</td>
+<td>3803</td>
+<td>32671</td>
+
+<td>1.385</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQi5GRkYgXG5HQi5ITS4gXG5HUFBITUVLXG5JTExMTUUgXG5JLkQuLkogXG4uLkRDQ0ogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDYsOSwxMCwxLDE3LDE4LDE5LDI2LDI5LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiOTUuMDZtcyDCsSAzLjgzbXMiLCJ0aWNrQ291bnQiOjM4MDIsInZpc2l0ZWROb2RlcyI6MzgwMywic2VhcmNoQ291bnQiOjMyNjcxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjM4NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNysxIDYtMSAxMC0xIDExKzEgOC0xIDMrMyAwKzEgNSsxIDEtMyA0LTEgOCsyIDUrMyAwLTEgOC0yIDMtNCAxMS0xIDEwKzEgOCszIDctMSAwKzEgOS0xIDUtMyAxMS0zIDkrMSA4LTIgNi0xIDQrMyAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>273.59ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>431707</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>282.62ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>121452</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>225.43ms ± 0.00ms</td>
+<td>17</td>
+<td>1889</td>
+<td>353049</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>199.89ms ± 0.00ms</td>
+<td>17</td>
+<td>2089</td>
+<td>407133</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>259.60ms ± 0.00ms</td>
+<td>13</td>
+<td>1036</td>
+<td>121776</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-27**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-27.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+9
+BGGF.. 
+BHHF.. 
+PPEF.JK
+..EIIJ 
+..D..J 
+..DCCC 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+9 (4 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>10</td>
+<td>19.17ms ± 6.81ms</td>
+<td>2743</td>
+<td>2936</td>
+<td>21347</td>
+
+<td>1.362</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQkdHRi4uIFxuQkhIRi4uIFxuUFBFRi5KS1xuLi5FSUlKIFxuLi5ELi5KIFxuLi5EQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsMyw3LDAsMTQsMTcsMjEsMjYsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTAsImR1cmF0aW9uIjoiMTkuMTdtcyDCsSA2LjgxbXMiLCJ0aWNrQ291bnQiOjI3NDMsInZpc2l0ZWROb2RlcyI6MjkzNiwic2VhcmNoQ291bnQiOjIxMzQ3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjM2MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNi0yIDcrMSAyKzIgMSsyIDMrMiA1LTIgMCsxIDQrNCAwLTEgNSsyIDEtMyAzLTMgNS0xIDItMiA3LTQgMisyIDUrMSAzKzMgNS0yIDArMSA3KzEgNC0zIDctMSA4LTEgOS0zIDYrMyAyKzEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>5.25ms ± 3.28ms</td>
+<td>649</td>
+<td>650</td>
+<td>4743</td>
+
+<td>1.046</td>
+<td>
+
+[119 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkJHR0YuLiBcbkJISEYuLiBcblBQRUYuSktcbi4uRUlJSiBcbi4uRC4uSiBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDMsNywwLDE0LDE3LDIxLDI2LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjVtcyDCsSAzLjI4bXMiLCJ0aWNrQ291bnQiOjY0OSwidmlzaXRlZE5vZGVzIjo2NTAsInNlYXJjaENvdW50Ijo0NzQzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjA0NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNi0yIDcrMSAyKzIgMysyIDUtMSA4LTEgOS0zIDIrMSAxKzIgNS0xIDArMyA1KzEgMS0yIDQrMyAxLTEgNC0yIDUtMSAwLTIgMi0xIDkrMyA0KzMgMC0xIDUrMSA5LTIgNC0xIDkrMSAxKzIgOS0yIDEtMSA5KzMgOCsxIDQrMSA1KzEgMy0zIDQtMSAxKzEgMi0xIDQrMSA1LTEgOC0xIDktMiA0LTEgOS0xIDIrMiAxLTIgMi0xIDkrMiAyLTEgOSsxIDgrMSAyLTEgNy0zIDQrMSA3LTEgOC0xIDktMiA2KzMgOSsxIDYtMiAyKzIgOS0xIDItMSA5KzIgOCsxIDcrMSA0LTEgNisxIDIrMSA0KzEgNy0xIDgtMSAxKzQgOS0yIDYrMSA5KzEgMi0xIDYtMSAxLTQgNi0yIDErMyA5LTEgMisxIDkrMiA4KzEgNysxIDQtMSAyLTEgMS0yIDQrMSA3LTEgMSsxIDUrMSAyKzEgMyszIDUtMSA4LTEgOS0yIDYrMyA5KzEgNi0yIDEtMiA5LTEgNisxIDkrMiA4KzEgNysxIDQtMSA2LTIgNS0xIDArMSA0LTIgNy0xIDgtMSA5LTMgMisxIDArMiA4LTEgNiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>7.90ms ± 4.46ms</td>
+<td>949</td>
+<td>950</td>
+<td>7172</td>
+
+<td>1.030</td>
+<td>
+
+[179 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQkdHRi4uIFxuQkhIRi4uIFxuUFBFRi5KS1xuLi5FSUlKIFxuLi5ELi5KIFxuLi5EQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsMyw3LDAsMTQsMTcsMjEsMjYsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNy45MG1zIMKxIDQuNDZtcyIsInRpY2tDb3VudCI6OTQ5LCJ2aXNpdGVkTm9kZXMiOjk1MCwic2VhcmNoQ291bnQiOjcxNzIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDMwIiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTIgNysxIDIrMiAzKzIgNS0xIDgtMSA5LTMgMisxIDErMiA1LTEgMCszIDUrMSAxLTIgNCszIDEtMSA0LTIgNS0xIDAtMiAyLTEgOSszIDgrMSA0KzMgMC0xIDgtMSA0LTEgNSsxIDErMiA5LTIgNCsxIDkrMSAxLTEgOSsxIDgrMSA0LTEgNSsxIDMtMyA0KzEgMi0yIDctMSA0LTEgNS0xIDgtMSA5LTMgNiszIDkrMiA0KzEgOS0xIDEtMSA1LTEgMCsxIDYtMyA5KzIgNC0yIDcrMSA5LTMgMiszIDQrMSAyLTIgOSszIDgrMSA0LTEgMisxIDQrMiA4LTEgOS0yIDQtMiA5KzEgMi0xIDQrMiAwLTEgOS0xIDQtMSAyLTEgOSsyIDctMSA4KzEgNy0yIDQrMSA3LTEgOC0xIDktMiA2KzMgMisxIDUrMSAxKzQgNS0xIDEtMSA2LTMgOSsyIDgrMSA3KzEgNC0xIDArMSA0LTEgMisxIDQrMiA3LTEgOC0xIDYrMiAyLTEgOCsxIDcrMSA2LTEgMSsxIDQtMiA2KzEgNCsxIDAtMSA0KzEgNy0xIDgtMSA2LTEgMCsxIDItMSA4KzEgNyszIDgtMSA5LTIgNisyIDAtMSA2LTEgOSsyIDQtMSA4KzEgNy0xIDQrMSA2LTEgNy0xIDIrMiA1KzEgMS0zIDQtMSAyLTIgNysxIDQrMSA3LTIgOC0xIDYtMSAyKzIgOCsxIDItMSAxKzEgNSsxIDIrMSAzKzMgNS0xIDgtMSA5LTIgNiszIDkrMSAzKzEgMi0xIDktMSAxLTIgNS0xIDIrMSA2LTEgOSsyIDgrMSA3KzEgNC0xIDItMiA3KzIgOC0xIDktMyA2KzEgOSsyIDQrMSAwKzEgNi0xIDkrMSA0LTMgOCsxIDctMyA4LTEgOS0zIDYrMSAyKzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>8</td>
+<td>22.97ms ± 1.09ms</td>
+<td>1651</td>
+<td>1652</td>
+<td>12908</td>
+
+<td>1.077</td>
+<td>
+
+[92 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuQkdHRi4uIFxuQkhIRi4uIFxuUFBFRi5KS1xuLi5FSUlKIFxuLi5ELi5KIFxuLi5EQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDEsMyw3LDAsMTQsMTcsMjEsMjYsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OCwiZHVyYXRpb24iOiIyMi45N21zIMKxIDEuMDltcyIsInRpY2tDb3VudCI6MTY1MSwidmlzaXRlZE5vZGVzIjoxNjUyLCJzZWFyY2hDb3VudCI6MTI5MDgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDc3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTIgNysxIDIrMiAzKzIgNS0xIDgtMSA5LTMgMisxIDErMiA1LTEgMi0xIDArMSA0KzMgMisxIDAtMSA1KzEgMS0yIDItMSA5KzMgOCsxIDUrMSAzLTEgMSsyIDMtMiA1LTIgOC0xIDktMyAyKzEgMCszIDUrMSA0LTEgMS0zIDUtMSAwLTIgMi0zIDctMSA2KzMgNCsxIDAtMSA1KzEgMSsxIDYtMiA5KzMgOCsxIDctMSA0KzEgNy0yIDUrMSAzKzEgNi0xIDIrMiA2KzIgMyszIDUtMSA4LTEgOS0yIDYrMSA5KzEgMy0xIDEtMSA1LTEgOS0xIDMrMSAyLTEgNSsxIDErNCA1LTEgOSsxIDItMSAwKzEgOS0xIDIrMiAzLTEgOSsxIDEtMSAzKzEgMi0xIDktMSA2LTEgOSsyIDIrMSAzLTEgOCsxIDcrMSA2LTIgNC00IDctMSA4LTEgOS0zIDYrMyAyKzEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>16</td>
+<td>12.03ms ± 2.56ms</td>
+<td>2320</td>
+<td>2321</td>
+<td>18085</td>
+
+<td>1.337</td>
+<td>
+
+[29 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG5CR0dGLi4gXG5CSEhGLi4gXG5QUEVGLkpLXG4uLkVJSUogXG4uLkQuLkogXG4uLkRDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMSwzLDcsMCwxNCwxNywyMSwyNiwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNiwiZHVyYXRpb24iOiIxMi4wM21zIMKxIDIuNTZtcyIsInRpY2tDb3VudCI6MjMyMCwidmlzaXRlZE5vZGVzIjoyMzIxLCJzZWFyY2hDb3VudCI6MTgwODUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSA2LTIgNysxIDIrMiAzKzIgMSsyIDUtMiAwKzEgNCs0IDAtMSA1KzIgMS0zIDMtMyAyLTIgNS0xIDctNCAyKzIgNSsxIDMrMyA1LTIgMCsxIDcrMSA0LTMgNy0xIDgtMSA5LTMgMisxIDArMiA2KzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>12</td>
+<td>15.75ms ± 9.02ms</td>
+<td>2428</td>
+<td>2429</td>
+<td>18829</td>
+
+<td>1.355</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkJHR0YuLiBcbkJISEYuLiBcblBQRUYuSktcbi4uRUlJSiBcbi4uRC4uSiBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDMsNywwLDE0LDE3LDIxLDI2LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE1Ljc1bXMgwrEgOS4wMm1zIiwidGlja0NvdW50IjoyNDI4LCJ2aXNpdGVkTm9kZXMiOjI0MjksInNlYXJjaENvdW50IjoxODgyOSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zNTUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMiA3KzEgMisyIDMrMiAxKzIgNS0yIDArMSA0KzQgMC0xIDUrMiAzLTMgMS0zIDUtMiAyLTIgNy00IDIrMiA1KzIgMyszIDUtMiA3KzEgMCsxIDQtMyA3LTEgOC0xIDktMyAyKzEgNiszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>7</td>
+<td>27.78ms ± 1.08ms</td>
+<td>1838</td>
+<td>1839</td>
+<td>14702</td>
+
+<td>1.342</td>
+<td>
+
+[28 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkJHR0YuLiBcbkJISEYuLiBcblBQRUYuSktcbi4uRUlJSiBcbi4uRC4uSiBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwxLDMsNywwLDE0LDE3LDIxLDI2LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMjcuNzhtcyDCsSAxLjA4bXMiLCJ0aWNrQ291bnQiOjE4MzgsInZpc2l0ZWROb2RlcyI6MTgzOSwic2VhcmNoQ291bnQiOjE0NzAyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjM0MiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNi0yIDcrMSAyKzIgMysyIDErMiA1LTIgMCsxIDQrNCAwLTEgNSsyIDEtMyAzLTMgNS0yIDItMiA3LTQgMisyIDUrMiAzKzMgNS0yIDcrMSAwKzEgNC0zIDctMSA4LTEgOS0zIDYrMyAyKzEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>221.99ms ± 0.00ms</td>
+<td>11</td>
+<td>0</td>
+<td>285746</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>219.43ms ± 0.00ms</td>
+<td>23</td>
+<td>2068</td>
+<td>340239</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>232.48ms ± 0.00ms</td>
+<td>23</td>
+<td>2152</td>
+<td>360708</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>211.80ms ± 0.00ms</td>
+<td>17</td>
+<td>1186</td>
+<td>84746</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-28**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-28.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+FFFB.. 
+..LBGG 
+PPL...K
+HELIIM 
+HECCCM 
+DDJJ.M 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (6 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>17</td>
+<td>11.45ms ± 3.32ms</td>
+<td>2065</td>
+<td>2250</td>
+<td>16737</td>
+
+<td>1.319</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRkIuLiBcbi4uTEJHRyBcblBQTC4uLktcbkhFTElJTSBcbkhFQ0NDTSBcbkRESkouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOCwxMCwwLDE4LDE5LDIxLDIzLDI2LDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE3LCJkdXJhdGlvbiI6IjExLjQ1bXMgwrEgMy4zMm1zIiwidGlja0NvdW50IjoyMDY1LCJ2aXNpdGVkTm9kZXMiOjIyNTAsInNlYXJjaENvdW50IjoxNjczNywiYnJhbmNoaW5nRmFjdG9yIjoiMS4zMTkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMSA0KzMgMi0xIDgtMSAxMSsyIDEwKzIgNSsxIDYrMSA3LTMgMSsxIDMtMSA4LTEgOSsxIDIrMiAzLTMgMi0yIDEtMSA3KzMgNS0xIDYtMSAxMC0yIDIrMyA0LTMgMS0xIDArMyAyLTIgOS0xIDExLTEgOCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>5.84ms ± 4.61ms</td>
+<td>368</td>
+<td>369</td>
+<td>2964</td>
+
+<td>1.014</td>
+<td>
+
+[274 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkZCLi4gXG4uLkxCR0cgXG5QUEwuLi5LXG5IRUxJSU0gXG5IRUNDQ00gXG5EREpKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDgsMTAsMCwxOCwxOSwyMSwyMywyNiwzMCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI1Ljg0bXMgwrEgNC42MW1zIiwidGlja0NvdW50IjozNjgsInZpc2l0ZWROb2RlcyI6MzY5LCJzZWFyY2hDb3VudCI6Mjk2NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMTQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDExKzEgMTArMSA4LTEgMTErMSAxMC0xIDErMSAxMS0yIDQrMyAxMSsxIDEwKzEgMTErMSAxMCsxIDYrMSA1KzEgMi0xIDYtMSAxMC0xIDExLTEgNy0xIDUtMSAxMSsxIDEwKzEgNisxIDctMSAxKzEgNSsxIDctMSAzLTEgOC0xIDkrMSAyKzIgMy0zIDEtMSAyLTIgOS0xIDcrMyA2LTEgMTAtMSAxMS0xIDkrMSA1LTEgMTErMSAxMC0xIDExLTIgOS0xIDExKzEgNy0xIDExKzEgMTArMiA5KzEgNisxIDctMSA5LTEgOCsxIDcrMiA2LTEgMTAtMiAyKzEgMTEtMiA4KzEgMTErMSAxMCsxIDgtMiAxMSsxIDEwKzEgOSsxIDYrMSA1KzEgMisxIDYtMSAxMC0xIDItMSA0LTMgMTEtMSA5LTEgOC0xIDExKzEgMTArMSA5KzEgNS0xIDEwLTIgMTEtMiA5LTEgMTErMSA3KzEgMTErMSAxMCsyIDYrMSA5KzEgNSsxIDEtMSA5LTEgNi0xIDEwLTEgMTEtMSA5KzEgNS0xIDExKzEgMTAtMSAxMS0yIDktMSAxKzIgNCsyIDExKzIgMTArMiA5KzEgMTAtMSAxMS0xIDEwLTEgMS0xIDExLTEgMisxIDExKzIgMTArMiA3LTEgMTAtMSAxMS0xIDEwLTEgMisxIDArMSAxMSsxIDcrMSA1LTEgMTEtMSAxKzEgNSsxIDMrMyAxMSsxIDUtMyAzLTIgMTEtMSAxLTEgNy0xIDExKzEgOCsxIDQtMSAxMS0xIDQrMiA1KzMgMTErMSA1LTIgNC0zIDExLTEgOC0xIDcrMSAxMSsxIDEtMSAwKzIgMTEtMSA3LTEgMi0xIDExLTEgNysxIDYtMSAxMSsyIDEwKzIgNy0xIDEwLTEgMTEtMSA3KzEgNisxIDExKzEgNSszIDEwKzEgNS0yIDEwLTIgMTEtMSA2LTEgNy0xIDExLTEgNSsxIDExKzIgMisxIDExLTEgNysxIDMtMSAxMSsxIDItMiAxMS0yIDktMiAxMSsxIDEwKzEgMTErMSAxMCsxIDkrMSA3LTEgMTAtMiAxMS0yIDUtMSAxMSsxIDEwKzEgMTErMSA5LTIgMTAtMSA5KzMgMTArMiA5LTIgNSsyIDEwLTEgMTEtMSA5KzIgNS0xIDExKzEgNisxIDEwLTEgMTEtMiA1LTEgMTErMSAxMCsxIDcrMSAxMSsxIDEwLTEgOS0xIDExLTIgNSsxIDExKzEgMTArMSAxMSsxIDUrMSAxMCsxIDkrMSA1LTEgNisxIDctMSA1KzEgOS0xIDUtMiA2LTEgOCsyIDEwLTIgMTEtMiA4LTEgMTErMSAxMCsxIDExKzEgOSsxIDEwLTEgMisyIDExLTEgMi0xIDExLTEgNi0xIDExKzIgMTArMiA2KzIgNSsyIDYtMSAxMC0xIDExLTEgNS0xIDYtMSAxMC0xIDItMSAxMS0xIDktMiAxMSsyIDEwKzIgOSsyIDUrMSAxMC0xIDktMSAxMS0xIDUtMSA5LTEgNS0xIDExKzEgOCsxIDEwLTEgMTEtMiA5LTEgMTErMSAxMCsxIDgrMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>0.89ms ± 0.41ms</td>
+<td>135</td>
+<td>136</td>
+<td>819</td>
+
+<td>1.045</td>
+<td>
+
+[82 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRkIuLiBcbi4uTEJHRyBcblBQTC4uLktcbkhFTElJTSBcbkhFQ0NDTSBcbkRESkouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOCwxMCwwLDE4LDE5LDIxLDIzLDI2LDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjAuODltcyDCsSAwLjQxbXMiLCJ0aWNrQ291bnQiOjEzNSwidmlzaXRlZE5vZGVzIjoxMzYsInNlYXJjaENvdW50Ijo4MTksImJyYW5jaGluZ0ZhY3RvciI6IjEuMDQ1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxKzEgNCszIDExKzEgMTArMSA1KzEgNC0yIDgtMSAxMSsxIDEwKzEgNS0xIDYrMSA0KzIgNSsxIDItMSA3LTMgMSsxIDcrMSA1LTEgMy0xIDgtMSA5KzEgNSsxIDctMSA5LTEgMisxIDgrMSA0LTMgOC0yIDkrMSAyKzEgMy0zIDEtMiA4KzEgMSsxIDQrMyAyLTIgOS0xIDcrMyA2LTEgMTAtMSAxMS0xIDgrMiAyKzEgNC0zIDEtMSA1LTEgMTAtMSAxMS0xIDgtMyAxMSsyIDEwKzIgOSsxIDEwLTEgMTEtMSAxMC0xIDIrMiAxMSsxIDcrMSAwKzMgMTEtMSAyLTIgMTEtMSA5LTEgMTErMiAxMCsyIDkrMSAxMC0xIDctMSAxMS0xIDktMSA4KzMgMTAtMSAxMS0xIDYtMSA5LTEgMTErMSAxMCsxIDUtMSA5LTEgMTAtMSAxMS0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>7.84ms ± 5.30ms</td>
+<td>285</td>
+<td>286</td>
+<td>1933</td>
+
+<td>1.050</td>
+<td>
+
+[93 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRkIuLiBcbi4uTEJHRyBcblBQTC4uLktcbkhFTElJTSBcbkhFQ0NDTSBcbkRESkouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOCwxMCwwLDE4LDE5LDIxLDIzLDI2LDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjcuODRtcyDCsSA1LjMwbXMiLCJ0aWNrQ291bnQiOjI4NSwidmlzaXRlZE5vZGVzIjoyODYsInNlYXJjaENvdW50IjoxOTMzLCJicmFuY2hpbmdGYWN0b3IiOiIxLjA1MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSAxKzEgNCszIDItMSA3LTEgOC0xIDExKzEgMTArMiA2KzEgNSsxIDctMiAyKzEgNC0zIDErMSA0KzIgMy0xIDQtMSA4LTIgOSsxIDIrMSA4KzEgNC0xIDMtMyA4LTEgNCsyIDMrMiA4KzEgNCsxIDMtMSAxLTEgMy0xIDItMiA3KzIgNi0xIDktMSA4KzEgNS0xIDEwLTIgMTEtMSA4KzEgNysxIDIrMSA0LTMgMS0xIDgtMyA5KzEgMisyIDgrMSAzKzEgMSsxIDExKzEgNCszIDMtMSAxMS0xIDQtMiA4LTEgNCsxIDMrMSAwKzEgNC0yIDEtMSA1LTIgOCsxIDArMiA2LTEgOC0xIDUrMiAzLTEgOCsxIDUtMSA2KzEgOC0xIDMrMSAyLTEgMTEtMSA4KzEgNi0xIDExKzEgMTArMSA4LTEgNS0xIDYrMSA4KzEgNSszIDMtMSA4LTEgNi0xIDUtMSA4KzEgMi0xIDktMiA4KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>19</td>
+<td>10.13ms ± 3.06ms</td>
+<td>1526</td>
+<td>1527</td>
+<td>12308</td>
+
+<td>1.291</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuRkZGQi4uIFxuLi5MQkdHIFxuUFBMLi4uS1xuSEVMSUlNIFxuSEVDQ0NNIFxuRERKSi5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw4LDEwLDAsMTgsMTksMjEsMjMsMjYsMzAsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTksImR1cmF0aW9uIjoiMTAuMTNtcyDCsSAzLjA2bXMiLCJ0aWNrQ291bnQiOjE1MjYsInZpc2l0ZWROb2RlcyI6MTUyNywic2VhcmNoQ291bnQiOjEyMzA4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjI5MSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOC0xIDExKzIgMSsxIDQrMyAxMCsyIDItMSA2KzEgNSsxIDctMyAxKzEgMy0xIDgtMSA5KzEgMisyIDMtMyAyLTIgMS0xIDcrMyA1LTEgNi0xIDEwLTIgMiszIDArMSA0LTMgMS0xIDArMiAyLTIgMTEtMiA5LTEgOCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>17</td>
+<td>11.20ms ± 5.43ms</td>
+<td>1555</td>
+<td>1556</td>
+<td>12515</td>
+
+<td>1.305</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkZCLi4gXG4uLkxCR0cgXG5QUEwuLi5LXG5IRUxJSU0gXG5IRUNDQ00gXG5EREpKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDgsMTAsMCwxOCwxOSwyMSwyMywyNiwzMCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNywiZHVyYXRpb24iOiIxMS4yMG1zIMKxIDUuNDNtcyIsInRpY2tDb3VudCI6MTU1NSwidmlzaXRlZE5vZGVzIjoxNTU2LCJzZWFyY2hDb3VudCI6MTI1MTUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzA1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA4LTEgMTErMiAxMCsyIDYrMSA1KzEgMSsxIDQrMyAyLTEgNy0zIDErMSAzLTEgOC0xIDkrMSAyKzIgMy0zIDEtMSAyLTIgNyszIDYtMSA1LTEgMTAtMiAyKzMgNC0zIDEtMSAxMS0xIDArMyAyLTIgOS0xIDgrMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>6</td>
+<td>32.49ms ± 6.28ms</td>
+<td>965</td>
+<td>966</td>
+<td>7430</td>
+
+<td>1.279</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkZCLi4gXG4uLkxCR0cgXG5QUEwuLi5LXG5IRUxJSU0gXG5IRUNDQ00gXG5EREpKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDgsMTAsMCwxOCwxOSwyMSwyMywyNiwzMCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo2LCJkdXJhdGlvbiI6IjMyLjQ5bXMgwrEgNi4yOG1zIiwidGlja0NvdW50Ijo5NjUsInZpc2l0ZWROb2RlcyI6OTY2LCJzZWFyY2hDb3VudCI6NzQzMCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yNzkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMSA4LTEgMTErMiAxMCsyIDYrMSA1KzEgNCszIDItMSA3LTMgMSsxIDMtMSA4LTEgOSsxIDIrMiAzLTMgMS0xIDItMiA3KzMgNi0xIDUtMSAxMC0yIDIrMyAxMS0xIDQtMyAxLTEgMCszIDItMiA5LTEgOCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>273.71ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>335966</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>144.46ms ± 0.00ms</td>
+<td>26</td>
+<td>1856</td>
+<td>240847</td>
+
+<td>1.454</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuRkZGQi4uIFxuLi5MQkdHIFxuUFBMLi4uS1xuSEVMSUlNIFxuSEVDQ0NNIFxuRERKSi5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw4LDEwLDAsMTgsMTksMjEsMjMsMjYsMzAsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MSwiZHVyYXRpb24iOiIxNDQuNDZtcyDCsSAwLjAwbXMiLCJ0aWNrQ291bnQiOjI2LCJ2aXNpdGVkTm9kZXMiOjE4NTYsInNlYXJjaENvdW50IjoyNDA4NDcsImJyYW5jaGluZ0ZhY3RvciI6IjEuNDU0Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxKzEgNCszIDItMSA4LTEgMTErMiAxMCsyIDUrMSA2KzEgNy0zIDErMSAzLTEgOC0xIDkrMSAyKzIgMy0zIDItMiAxLTEgNyszIDUtMSA2LTEgMTAtMiAyKzMgNC0zIDEtMSAwKzMgMi0yIDktMSAxMS0xIDgrMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>172.35ms ± 0.00ms</td>
+<td>29</td>
+<td>2008</td>
+<td>306704</td>
+
+<td>1.467</td>
+<td>
+
+[30 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJJREEqIEFwcHJveCBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkZCLi4gXG4uLkxCR0cgXG5QUEwuLi5LXG5IRUxJSU0gXG5IRUNDQ00gXG5EREpKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDgsMTAsMCwxOCwxOSwyMSwyMywyNiwzMCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxLCJkdXJhdGlvbiI6IjE3Mi4zNW1zIMKxIDAuMDBtcyIsInRpY2tDb3VudCI6MjksInZpc2l0ZWROb2RlcyI6MjAwOCwic2VhcmNoQ291bnQiOjMwNjcwNCwiYnJhbmNoaW5nRmFjdG9yIjoiMS40NjciLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMSA0KzMgMi0xIDgtMSAxMSsyIDEwKzIgNSsxIDYrMSA3LTMgMSsxIDMtMSA4LTEgOSsxIDIrMiAzLTMgMi0yIDEtMSA3KzMgNS0xIDYtMSAxMC0yIDIrMyA0LTMgMS0xIDArMyAyLTIgOS0xIDExLTEgOCsyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>205.13ms ± 0.00ms</td>
+<td>22</td>
+<td>330</td>
+<td>78717</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-29**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-29.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+FFF.L. 
+..B.L. 
+PPB.LGK
+HEEIIG 
+HDDJ.M 
+CCCJ.M 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>9</td>
+<td>20.38ms ± 4.10ms</td>
+<td>4324</td>
+<td>4354</td>
+<td>38390</td>
+
+<td>1.345</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRi5MLiBcbi4uQi5MLiBcblBQQi5MR0tcbkhFRUlJRyBcbkhEREouTSBcbkNDQ0ouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDQsOCwwLDE3LDE4LDE5LDIxLDI1LDI3LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjksImR1cmF0aW9uIjoiMjAuMzhtcyDCsSA0LjEwbXMiLCJ0aWNrQ291bnQiOjQzMjQsInZpc2l0ZWROb2RlcyI6NDM1NCwic2VhcmNoQ291bnQiOjM4MzkwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjM0NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMysxIDQtMSA3KzEgOS0zIDctMSA4KzIgMTAtMSAxMSszIDUrMSA2LTEgMiszIDArMSA2KzEgNS00IDAtMSA2LTEgMi0zIDgtMiAxMS0zIDEwKzEgNysxIDkrMyA3LTIgMSszIDMrMiAyLTEgMCszIDIrMSAzLTEgNC0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>7.68ms ± 1.89ms</td>
+<td>1450</td>
+<td>1451</td>
+<td>12260</td>
+
+<td>1.014</td>
+<td>
+
+[361 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkYuTC4gXG4uLkIuTC4gXG5QUEIuTEdLXG5IRUVJSUcgXG5IRERKLk0gXG5DQ0NKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiw0LDgsMCwxNywxOCwxOSwyMSwyNSwyNywyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI3LjY4bXMgwrEgMS44OW1zIiwidGlja0NvdW50IjoxNDUwLCJ2aXNpdGVkTm9kZXMiOjE0NTEsInNlYXJjaENvdW50IjoxMjI2MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMTQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQtMiAxMC0yIDMrMSAxMCsxIDQrMSAxMCsxIDcrMSA5LTMgMTErMiA4KzIgMTEtMSA4LTEgNy0xIDExLTEgMTAtMSAxMSszIDgtMSAxMS0yIDgrMiAxMSsxIDUrMSAxMSsxIDYtMSAxMS0yIDgtMiAxMSsxIDgrMSAxMCsxIDExLTEgNy0xIDEwLTEgMTErMiA4LTEgNC0xIDExLTIgOCsyIDExKzEgOC0xIDEwLTEgMTEtMSA4KzIgMTErMiA4LTEgNysxIDExLTIgOC0yIDExKzEgOCszIDYrMSAxMS0xIDgtMiAxMSsyIDgtMSA1LTEgMTEtMyA4KzMgMy0xIDExKzMgOC0yIDExLTIgOC0xIDExKzEgOCsyIDUrMSAxMS0xIDEwKzIgOC0yIDExKzEgMTAtMSAxMSsxIDgrMiA1LTEgMTEtMyA4LTIgMTArMSA4KzEgMTErMiAxMC0xIDktMSAxMS0yIDEwLTEgOC0xIDExKzMgOCsyIDExLTIgOCsxIDExKzEgNSsxIDExKzEgOC0yIDExLTIgOC0xIDYtMSAxMSsyIDgrMiAxMS0xIDgtMSA3LTEgMTEtMSA4KzIgMTErMiAxKzEgMTEtMSA4LTMgMTEtMSA4KzIgMTArMiAxMSsxIDEwLTEgMTErMSA4LTIgMS0xIDExLTIgOCsyIDcrMSA4LTEgMTErMiAyKzEgMTEtMSA4LTEgMTEtMSAxMCsxIDgrMiAxMSsxIDcrMSA4LTIgMi0xIDExLTEgOCsyIDYrMiAxMSsxIDgtMSA1LTEgMTEtMiA4LTEgMTErMSA2LTEgMTErMSA4KzIgMTEtMiA3LTEgNCsyIDExKzIgOC0yIDExLTEgOCsxIDUrMSAxMSsxIDYtMSA4LTEgMTEtMSA4KzIgNy0xIDExKzEgNC0xIDEwLTEgMTErMSA4LTEgMTEtMiAxMCsxIDgtMSAxKzMgMTAtMSAxLTIgMTErMSA4KzEgMTArMSA0KzEgMTEtMSA4LTEgMSsxIDExKzEgNC0yIDEwLTEgOCsxIDExLTEgMTArMSAxKzEgOSsxIDEwLTIgOC0xIDEtMyAxMSsyIDgrMSA3KzEgMTEtMiA4KzIgMisyIDArMSAxMSsyIDgtMSAxMS0xIDEwKzIgMTEtMSAxMC0xIDktMSAwKzEgMTErMiA0KzEgMC0xIDkrMSAxMS0xIDMrMSA0LTEgMTErMSAyKzEgMTAtMSA4KzEgNisxIDUtNCA4LTEgNi0xIDItMSAxMS0zIDgrMSAxMSsyIDUrMSAxMS0xIDgtMSAxMCsyIDExLTEgMTAtMSAxMSszIDIrMSA3LTEgMTAtMSA4KzEgNysxIDMtMSA4LTEgMi0xIDExLTEgMTArMiA3KzEgMTEtMiA5KzEgMTErMSA0KzEgMTErMSAzKzEgMTEtMiA5LTEgNS0xIDAtMSAyLTIgMTErMiA4LTMgMTEtMSA4KzIgNy0yIDExLTEgMTAtMSAxMSszIDgtMiAxMS0yIDgrMyAxMSsxIDgtMiAxMCsxIDcrMSAxMS0yIDEwLTEgMTErMyA4KzIgNisxIDExLTMgOC0zIDExKzIgOCsyIDExLTEgOC0xIDEwKzEgOC0xIDQtMSAxMS0xIDEwLTIgMTErMyA4KzQgMTEtMiA4LTMgMTErMSA4KzIgNi0xIDExLTIgOC0yIDExKzMgOCsxIDExLTIgOC0yIDctMSAxMS0xIDgrNCAxMSszIDgtMSAxMCsxIDExLTMgOC0yIDExKzEgOCsxIDExKzEgOC0yIDEwKzEgOCszIDExLTEgNysyIDgtMiAxMS0xIDgtMSA2KzIgMTErMiA4KzMgNi0xIDkrMSAxMS0xIDgtMyAxMS0xIDgrMSA5KzIgNy0xIDEwLTIgOC0xIDYtMSA3LTEgOCsxIDEwKzIgNCsyIDgtMSA0LTEgMTAtMSAxKzMgOCsxIDEwKzEgMS0yIDMrMiAxMC0xIDgtMSAxKzEgMTArMSAxKzEgNCsxIDgrMSAxLTEgMi0xIDArMiA4LTEgNC0xIDEwLTEgOCsxIDEtMSAxMCsxIDErMiAwKzEgMTAtMSA4LTEgMisxIDEwKzEgNCsxIDgrMSAzLTIgNC0yIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>7.30ms ± 1.04ms</td>
+<td>914</td>
+<td>915</td>
+<td>7285</td>
+
+<td>1.081</td>
+<td>
+
+[81 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRi5MLiBcbi4uQi5MLiBcblBQQi5MR0tcbkhFRUlJRyBcbkhEREouTSBcbkNDQ0ouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDQsOCwwLDE3LDE4LDE5LDIxLDI1LDI3LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjcuMzBtcyDCsSAxLjA0bXMiLCJ0aWNrQ291bnQiOjkxNCwidmlzaXRlZE5vZGVzIjo5MTUsInNlYXJjaENvdW50Ijo3Mjg1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA4MSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0yIDcrMSA5LTQgMTErMiA4KzIgMTEtMSA4LTEgNy0xIDExLTEgMTAtMSAxMSszIDgtMSAxMS0yIDgrMiAxMSsxIDUrMSAxMSsxIDYtMSAyKzMgNisxIDUtMSA5KzEgMysxIDArMSA1LTMgNi0xIDItMSAxMS0zIDEwKzEgMTErMiA3KzEgMTEtMSAwLTEgNy0xIDEwLTEgMTErMSAyLTIgOC0zIDIrMiAxMS0yIDEwKzEgMTErMSA3KzEgOSsyIDExKzEgMi0yIDgrMSAxMS0yIDkrMSA3LTIgMSszIDMrMSA0KzIgMysxIDItMSA4LTEgNC0xIDEwLTEgOCsxIDArMyAxMCsxIDAtMiA1KzEgMTAtMSA4LTEgMCsyIDEwKzEgMC0xIDQrMSA4KzEgMCsxIDIrMSA4LTEgNS0xIDQtMSAxMC0xIDMtMiA0LTEgOCsxIDEwKzEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>42.99ms ± 12.38ms</td>
+<td>1312</td>
+<td>1313</td>
+<td>10770</td>
+
+<td>1.102</td>
+<td>
+
+[71 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZGRi5MLiBcbi4uQi5MLiBcblBQQi5MR0tcbkhFRUlJRyBcbkhEREouTSBcbkNDQ0ouTSAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDQsOCwwLDE3LDE4LDE5LDIxLDI1LDI3LDI5LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNDIuOTltcyDCsSAxMi4zOG1zIiwidGlja0NvdW50IjoxMzEyLCJ2aXNpdGVkTm9kZXMiOjEzMTMsInNlYXJjaENvdW50IjoxMDc3MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMDIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQtMiA3KzEgOS00IDExKzEgOSszIDUrMSA2LTEgOS0zIDctMiA4KzEgNysxIDgrMSAyKzIgMTAtMSAxMSsyIDIrMSAwKzEgNisxIDUtMyA2LTEgNy0xIDErMSA5KzEgMysyIDUtMSAzLTEgMS0xIDUrMSA3KzEgMi0xIDExLTMgMTArMSAxMSsxIDcrMSA5KzEgMTEtMSA1LTEgOS0xIDAtMSAxMSsxIDItMiA4LTMgOSsyIDIrMiAxMS0xIDkrMSA3LTEgMTAtMSAyLTIgNy0xIDErMyAzKzEgNCsxIDMrMSAyLTEgMTArMSA4KzEgNCsxIDArMyA4LTEgNSsxIDQtMSAxMC0xIDgrMSA1LTEgMisxIDEwKzEgOC0xIDMtMiA0LTEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>7</td>
+<td>26.84ms ± 4.39ms</td>
+<td>4227</td>
+<td>4228</td>
+<td>37727</td>
+
+<td>1.344</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuRkZGLkwuIFxuLi5CLkwuIFxuUFBCLkxHS1xuSEVFSUlHIFxuSERESi5NIFxuQ0NDSi5NICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsNCw4LDAsMTcsMTgsMTksMjEsMjUsMjcsMjksMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NywiZHVyYXRpb24iOiIyNi44NG1zIMKxIDQuMzltcyIsInRpY2tDb3VudCI6NDIyNywidmlzaXRlZE5vZGVzIjo0MjI4LCJzZWFyY2hDb3VudCI6Mzc3MjcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMzQ0Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0LTEgNysxIDktMyA3LTEgMTAtMSAxMSszIDgrMiA1KzEgNi0xIDIrMyAwKzEgMysxIDYrMSA1LTQgNi0xIDAtMSAyLTMgMTEtMyAxMCsxIDgtMiA3KzEgOSszIDctMiAxKzMgMysyIDItMSAwKzMgMisxIDMtMiA0LTEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>7</td>
+<td>27.38ms ± 4.17ms</td>
+<td>4289</td>
+<td>4290</td>
+<td>38161</td>
+
+<td>1.345</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkYuTC4gXG4uLkIuTC4gXG5QUEIuTEdLXG5IRUVJSUcgXG5IRERKLk0gXG5DQ0NKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiw0LDgsMCwxNywxOCwxOSwyMSwyNSwyNywyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo3LCJkdXJhdGlvbiI6IjI3LjM4bXMgwrEgNC4xN21zIiwidGlja0NvdW50Ijo0Mjg5LCJ2aXNpdGVkTm9kZXMiOjQyOTAsInNlYXJjaENvdW50IjozODE2MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4zNDUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDQtMSA3KzEgOS0zIDctMSAxMC0xIDExKzMgNSsxIDYtMSA4KzIgMiszIDArMSAzKzEgNisxIDUtNCAwLTEgNi0xIDItMyA4LTMgMTEtMyAxMCsxIDcrMSA5KzMgNy0yIDErMyAzKzIgMi0xIDArMyAyKzEgMy0yIDQtMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>101.15ms ± 11.16ms</td>
+<td>4164</td>
+<td>4165</td>
+<td>37310</td>
+
+<td>1.344</td>
+<td>
+
+[31 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GRkYuTC4gXG4uLkIuTC4gXG5QUEIuTEdLXG5IRUVJSUcgXG5IRERKLk0gXG5DQ0NKLk0gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiw0LDgsMCwxNywxOCwxOSwyMSwyNSwyNywyOSwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjEwMS4xNW1zIMKxIDExLjE2bXMiLCJ0aWNrQ291bnQiOjQxNjQsInZpc2l0ZWROb2RlcyI6NDE2NSwic2VhcmNoQ291bnQiOjM3MzEwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjM0NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNC0xIDcrMSA5LTMgNy0xIDEwLTEgMTErMyA1KzEgNi0xIDgrMiAyKzMgMCsxIDMrMSA2KzEgNS00IDYtMSAwLTEgMi0zIDgtMyAxMS0zIDEwKzEgNysxIDkrMyA3LTIgMSszIDMrMiAyLTEgMCszIDIrMSAzLTEgNC0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>410.20ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>858902</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>225.59ms ± 0.00ms</td>
+<td>15</td>
+<td>2154</td>
+<td>474584</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>234.39ms ± 0.00ms</td>
+<td>15</td>
+<td>2127</td>
+<td>447768</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>285.49ms ± 0.00ms</td>
+<td>11</td>
+<td>1902</td>
+<td>112345</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-30**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-30.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+9
+F.BJJJ 
+F.BG.. 
+FPPG..K
+HHEE.C 
+.....C 
+IIDD.C 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+9 (5 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>6.17ms ± 2.12ms</td>
+<td>1163</td>
+<td>1171</td>
+<td>8622</td>
+
+<td>1.264</td>
+<td>
+
+[32 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuRi5CSkpKIFxuRi5CRy4uIFxuRlBQRy4uS1xuSEhFRS5DIFxuLi4uLi5DIFxuSUlERC5DICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw5LDAsMTgsMjAsMjMsMzAsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi4xN21zIMKxIDIuMTJtcyIsInRpY2tDb3VudCI6MTE2MywidmlzaXRlZE5vZGVzIjoxMTcxLCJzZWFyY2hDb3VudCI6ODYyMiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yNjQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYrMSA1KzEgNy0xIDkrMiA4KzEgNCszIDAtMSAxKzEgMi0xIDctMiA2KzEgMyszIDYtMSA3KzEgMisxIDEtMSAwKzMgNC0zIDUtMSA4LTEgMSs0IDAtMiA1KzEgNCsxIDItMyA3LTEgNisxIDMtNCA2LTEgOS0xIDcrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>5.28ms ± 3.50ms</td>
+<td>700</td>
+<td>701</td>
+<td>5216</td>
+
+<td>1.046</td>
+<td>
+
+[120 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkYuQkpKSiBcbkYuQkcuLiBcbkZQUEcuLktcbkhIRUUuQyBcbi4uLi4uQyBcbklJREQuQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsOSwwLDE4LDIwLDIzLDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMjhtcyDCsSAzLjUwbXMiLCJ0aWNrQ291bnQiOjcwMCwidmlzaXRlZE5vZGVzIjo3MDEsInNlYXJjaENvdW50Ijo1MjE2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA0NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOSsxIDgrMSA3LTIgOSsxIDgtMSA2KzEgOS0yIDUrMSA5KzEgOCsxIDkrMSA0KzMgMC0xIDErMSA5LTEgNysyIDItMyA3LTMgOSsxIDgrMSA2KzEgNSsxIDgtMSA5LTEgMy0xIDUtMSA5KzEgMys0IDYtMSA3KzIgMiszIDctMSAxLTEgMCszIDQtMyA4LTEgNS0xIDYtMSA4KzEgNysxIDYrMSAxKzMgOC0xIDEtMiA2LTEgMi0yIDgrMSA2KzEgNSsxIDgtMSA3LTIgNisxIDgrMSAzLTEgOS0xIDgtMSA5LTEgNS0xIDkrMiA4KzIgMSsyIDgtMSA5LTEgOC0xIDEtMSAyKzEgOS0xIDErMSA5KzIgMysxIDgrMSA2LTEgMS0yIDgtMSAxKzMgNi0xIDcrMiAyLTEgNisxIDEtMiA3LTIgNisxIDErMiAwLTIgMy0zIDktMSAxLTEgOS0xIDYtMSA5KzIgOCsyIDYrMSA4LTEgMysxIDktMSAyKzEgOC0xIDkrMSAxKzEgNSsxIDktMSAzLTEgNCsxIDkrMSAyLTEgNi0xIDktMSA0KzEgNisxIDUrMSA5KzEgMi0xIDUtMSA2LTEgMy0xIDArMiA5LTEgNC0xIDcrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.26ms ± 0.21ms</td>
+<td>245</td>
+<td>246</td>
+<td>1719</td>
+
+<td>1.074</td>
+<td>
+
+[67 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuRi5CSkpKIFxuRi5CRy4uIFxuRlBQRy4uS1xuSEhFRS5DIFxuLi4uLi5DIFxuSUlERC5DICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw5LDAsMTgsMjAsMjMsMzAsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS4yNm1zIMKxIDAuMjFtcyIsInRpY2tDb3VudCI6MjQ1LCJ2aXNpdGVkTm9kZXMiOjI0Niwic2VhcmNoQ291bnQiOjE3MTksImJyYW5jaGluZ0ZhY3RvciI6IjEuMDc0Iiwic29sdXRpb25TdGVwcyI6IuKIhSA5KzEgOCsxIDYrMSA1KzEgNCszIDAtMSAxKzEgMi0zIDMtMSA3LTMgOSsxIDgrMSA2KzEgMyszIDgtMSAyKzEgMysxIDYtMSA3KzIgMi0xIDctMSAyKzMgMS0xIDArMyA0LTMgNS0xIDErMyAwLTIgOC0xIDErMSA2LTEgMCsyIDcrMSA2KzEgMS0zIDgrMSAxKzEgMi0yIDgtMSA3LTEgMSsyIDUrMSAwLTIgNy0xIDYrMSAzLTEgNCsyIDktMSAwKzIgNC0xIDkrMSAzKzEgNi0xIDAtMSA0KzEgNisxIDItMSAzLTEgOS0xIDQtMSAwLTEgOSsxIDMtMyA2LTEgOS0xIDcrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>9.37ms ± 4.95ms</td>
+<td>546</td>
+<td>547</td>
+<td>4061</td>
+
+<td>1.078</td>
+<td>
+
+[76 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuOVxuRi5CSkpKIFxuRi5CRy4uIFxuRlBQRy4uS1xuSEhFRS5DIFxuLi4uLi5DIFxuSUlERC5DICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsMyw5LDAsMTgsMjAsMjMsMzAsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4zN21zIMKxIDQuOTVtcyIsInRpY2tDb3VudCI6NTQ2LCJ2aXNpdGVkTm9kZXMiOjU0Nywic2VhcmNoQ291bnQiOjQwNjEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDc4Iiwic29sdXRpb25TdGVwcyI6IuKIhSA5KzEgOCsxIDYrMSA1KzEgNCszIDAtMSAxKzEgMi0zIDMtMSA3LTMgNisxIDkrMSAzKzQgNi0xIDcrMiAyKzMgNy0xIDEtMSAwKzMgNysxIDQtMyA4LTEgNy0xIDUtMSA4KzEgNi0xIDcrMSA4LTEgMSsxIDctMSAyLTIgOCsxIDctMSA2KzEgOC0xIDcrMiA1KzEgNy0xIDIrMSA1LTEgOCsxIDErMSA3LTEgOC0xIDErMiA2LTEgNysyIDItMSA3LTEgMisyIDAtMiA3KzEgNisxIDUrMSA3LTEgNCsyIDItMyA3LTEgNC0xIDcrMiAyKzIgNy0xIDItMSAwKzIgNy0xIDIrMSA2KzEgMy0xIDktMSAyLTIgNCsxIDAtMiAzLTMgNi0xIDcrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>6.82ms ± 1.81ms</td>
+<td>1066</td>
+<td>1067</td>
+<td>7877</td>
+
+<td>1.250</td>
+<td>
+
+[33 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG45XG5GLkJKSkogXG5GLkJHLi4gXG5GUFBHLi5LXG5ISEVFLkMgXG4uLi4uLkMgXG5JSURELkMgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiwzLDksMCwxOCwyMCwyMywzMCwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI2LjgybXMgwrEgMS44MW1zIiwidGlja0NvdW50IjoxMDY2LCJ2aXNpdGVkTm9kZXMiOjEwNjcsInNlYXJjaENvdW50Ijo3ODc3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjI1MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNisxIDUrMSA5KzEgOCsxIDQrMyAwLTEgMSsxIDItMiA3LTMgNisxIDkrMSAzKzMgNi0xIDcrMiAyKzIgMS0xIDArMyA0LTMgOC0xIDUtMSAxKzQgNSsxIDQrMiAyLTMgNy0yIDYrMSAwLTIgMy00IDktMSAwKzIgNi0xIDcrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.89ms ± 0.85ms</td>
+<td>1127</td>
+<td>1128</td>
+<td>8335</td>
+
+<td>1.262</td>
+<td>
+
+[32 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkYuQkpKSiBcbkYuQkcuLiBcbkZQUEcuLktcbkhIRUUuQyBcbi4uLi4uQyBcbklJREQuQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsOSwwLDE4LDIwLDIzLDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuODltcyDCsSAwLjg1bXMiLCJ0aWNrQ291bnQiOjExMjcsInZpc2l0ZWROb2RlcyI6MTEyOCwic2VhcmNoQ291bnQiOjgzMzUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjYyIiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzEgNy0yIDkrMiA4KzEgNSsxIDQrMyAwLTEgMSsxIDItMSA3LTEgNisxIDMrMyA2LTEgNysxIDIrMSAxLTEgMCszIDQtMyA4LTEgNS0xIDErNCA1KzEgNCsxIDItMyA3LTEgNisxIDAtMiAzLTQgNi0xIDktMSA3KzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>16</td>
+<td>12.39ms ± 1.91ms</td>
+<td>930</td>
+<td>931</td>
+<td>6878</td>
+
+<td>1.254</td>
+<td>
+
+[32 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjlcbkYuQkpKSiBcbkYuQkcuLiBcbkZQUEcuLktcbkhIRUUuQyBcbi4uLi4uQyBcbklJREQuQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDMsOSwwLDE4LDIwLDIzLDMwLDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE2LCJkdXJhdGlvbiI6IjEyLjM5bXMgwrEgMS45MW1zIiwidGlja0NvdW50Ijo5MzAsInZpc2l0ZWROb2RlcyI6OTMxLCJzZWFyY2hDb3VudCI6Njg3OCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yNTQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDkrMSA4KzEgNisxIDUrMSA0KzMgMC0xIDErMSAyLTMgNy0zIDYrMSA5KzEgMyszIDYtMSA3KzIgMiszIDEtMSAwKzMgNC0zIDgtMSA1LTEgMSs0IDUrMSA0KzEgMi0zIDAtMiA3LTIgNisxIDMtNCA5LTEgNi0xIDcrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>292.65ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>415962</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>499.80ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>653546</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>273.99ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>130594</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>226.20ms ± 0.00ms</td>
+<td>29</td>
+<td>1064</td>
+<td>405219</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>206.76ms ± 0.00ms</td>
+<td>29</td>
+<td>982</td>
+<td>335827</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>228.35ms ± 0.00ms</td>
+<td>21</td>
+<td>302</td>
+<td>86228</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-31**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-31.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+BB.FFF 
+...GHH 
+EPPG.LK
+E.CIIL 
+DDC..L 
+..CJJJ 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (6 Horizontal, 4 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>9</td>
+<td>20.43ms ± 3.41ms</td>
+<td>3977</td>
+<td>4132</td>
+<td>33209</td>
+
+<td>1.271</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkZGRiBcbi4uLkdISCBcbkVQUEcuTEtcbkUuQ0lJTCBcbkREQy4uTCBcbi4uQ0pKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw5LDEwLDEyLDAsMTcsMjAsMjEsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OSwiZHVyYXRpb24iOiIyMC40M21zIMKxIDMuNDFtcyIsInRpY2tDb3VudCI6Mzk3NywidmlzaXRlZE5vZGVzIjo0MTMyLCJzZWFyY2hDb3VudCI6MzMyMDksImJyYW5jaGluZ0ZhY3RvciI6IjEuMjcxIiwic29sdXRpb25TdGVwcyI6IuKIhSA1KzEgNC0yIDAtMSA3LTIgOSszIDcrMiAwKzEgNCs0IDUtMSAwLTEgNy0zIDgtMyA3KzMgMisxIDMtMSA2LTEgOSsxIDIrMSAwKzMgNy0zIDgrMSA0LTMgOC0xIDcrMyA1KzEgNC0xIDAtMyA3LTIgMi0xIDktNCA3KzIgMisxIDArMyA3LTEgMTAtMSA2KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>16</td>
+<td>11.45ms ± 3.33ms</td>
+<td>1924</td>
+<td>1925</td>
+<td>15143</td>
+
+<td>1.029</td>
+<td>
+
+[212 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GRkYgXG4uLi5HSEggXG5FUFBHLkxLXG5FLkNJSUwgXG5EREMuLkwgXG4uLkNKSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsOSwxMCwxMiwwLDE3LDIwLDIxLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE2LCJkdXJhdGlvbiI6IjExLjQ1bXMgwrEgMy4zM21zIiwidGlja0NvdW50IjoxOTI0LCJ2aXNpdGVkTm9kZXMiOjE5MjUsInNlYXJjaENvdW50IjoxNTE0MywiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMjkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSA0LTIgMC0xIDctMiA5KzMgNysyIDArMSA0KzMgMC0xIDctMiAxMC0zIDktMiAxMCsyIDkrMSAxMC0xIDQrMSAxMCsyIDktMSA1LTEgMTAtMiA5KzIgMTArMSA5LTEgNisxIDEwLTEgNC0xIDEwLTEgOS0xIDEwKzIgOSsyIDctMSAxMC0yIDYtMSAxMCszIDgtMiAyKzEgMTAtMyA2KzEgMTArMiA5LTIgMTAtMSA5KzEgNi0xIDQrMSAxMCsyIDMtMSAxMC0xIDktMSAxMC0xIDkrMiA0LTEgMTArMSA2LTEgMTAtMiA5LTIgMTArMyA5KzMgMTAtMiA5LTIgNCsxIDgtMSAxMCsyIDktMSAxMC0xIDkrMyA4KzEgMisxIDEwLTEgOC0xIDEwKzIgNyszIDArMyA3LTMgMTAtMiA4KzEgMTArMSA0LTMgMTAtMiAyKzEgOC0xIDcrMiAyLTEgMTArMyA3LTIgMTAtMiA3KzEgMTArMSAxLTEgMTAtMiAyKzEgNi0xIDcrMSAyLTEgMTArMyA3KzEgMy0yIDYrMSA3LTEgMTAtMyAzKzEgMTArMiAxKzEgMTAtMSAzLTEgNSsxIDEwLTEgMisxIDMrMSA0LTEgMi0xIDEwKzMgNysxIDAtMyA3LTEgMTAtMyAyLTEgMTArMiA5LTEgMTAtMSA2KzIgMTAtMSA2LTEgMTArMyAzLTEgMTAtMiAyLTEgMTAtMSA2LTEgMTArMyA5KzEgMTAtMiAyKzIgMTArMSAzKzIgNy0xIDEwLTIgMi0xIDEwKzMgOS00IDEwLTIgOSszIDEwKzEgOS0yIDIrMSAxMC0yIDktMSAyKzEgNisyIDItMiAxMCsyIDkrMiAxMC0xIDktMSA2LTEgMTAtMSA5KzIgMTArMyA5LTEgMysxIDEwLTMgOS0yIDEwKzIgOSszIDEwLTEgNisxIDEwLTEgOS0yIDEwKzIgMi0xIDEwLTEgOS0xIDEwLTEgMisyIDEwKzIgNysxIDEwLTEgNi0xIDEwLTEgMi0yIDEwKzMgNy0xIDkrMyAxMC0zIDktMiAyKzIgMTArMyAzLTEgOS0xIDEwLTEgNysxIDItMSAxMC0yIDYtMSAzLTIgMTArMyAyLTEgMTAtMiA2KzIgMTAtMSA2LTEgMiszIDMrMSA2LTEgMi0xIDEwKzMgNysxIDArMyA3LTEgMTAtMyAyKzEgNisyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>14</td>
+<td>13.41ms ± 1.10ms</td>
+<td>2030</td>
+<td>2031</td>
+<td>15248</td>
+
+<td>1.063</td>
+<td>
+
+[112 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkZGRiBcbi4uLkdISCBcbkVQUEcuTEtcbkUuQ0lJTCBcbkREQy4uTCBcbi4uQ0pKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw5LDEwLDEyLDAsMTcsMjAsMjEsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTQsImR1cmF0aW9uIjoiMTMuNDFtcyDCsSAxLjEwbXMiLCJ0aWNrQ291bnQiOjIwMzAsInZpc2l0ZWROb2RlcyI6MjAzMSwic2VhcmNoQ291bnQiOjE1MjQ4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA2MyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsxIDQtMiAwLTEgNy0yIDEwLTMgNisxIDEwKzIgOSszIDEwLTEgNysxIDYtMSAxMCsyIDcrMSAwKzEgNCs0IDAtMSA0LTEgNy0yIDEwLTMgNisxIDEwKzIgOS0yIDEwLTEgOSsxIDQrMSAxMCsxIDUtMSA5LTEgMS0xIDYtMSAxMCsxIDkrMSA0LTEgMSsxIDktMSA3LTEgOC0xIDkrMiA4LTEgOS0xIDQrMSA4LTEgOSsxIDcrMyAwKzEgMisxIDMtNCA2LTEgOSsxIDIrMSAwLTEgMyszIDArMyA3LTMgMTAtMiA4KzEgMTArMSA0LTMgMTAtMiAyKzEgOC0xIDcrMiAyLTEgMTArMyA3LTIgMTAtMiA3KzEgMTArMSAxLTEgMTAtMiAyKzEgNi0xIDcrMSAyLTEgMTArMyA3KzEgMC0yIDMtMiAwKzEgMysxIDYrMSAwLTEgMSsxIDArMiAzLTEgMC0xIDMrMiA1KzEgMC0xIDMtMiA0LTEgMC0xIDMrMiA3LTIgMTAtMyAyLTEgOS00IDIrMiA2KzIgMi0xIDcrMSA2LTIgMTArMyA3KzEgMCszIDctMiAxMC0zIDYrMiAxMCsyIDkrMSAxMC0xIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>6</td>
+<td>30.03ms ± 2.82ms</td>
+<td>1315</td>
+<td>1316</td>
+<td>9995</td>
+
+<td>1.053</td>
+<td>
+
+[120 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCLkZGRiBcbi4uLkdISCBcbkVQUEcuTEtcbkUuQ0lJTCBcbkREQy4uTCBcbi4uQ0pKSiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTMsMyw5LDEwLDEyLDAsMTcsMjAsMjEsMjQsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NiwiZHVyYXRpb24iOiIzMC4wM21zIMKxIDIuODJtcyIsInRpY2tDb3VudCI6MTMxNSwidmlzaXRlZE5vZGVzIjoxMzE2LCJzZWFyY2hDb3VudCI6OTk5NSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNTMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSA0LTIgMC0xIDctMiA5KzMgNysyIDArMSA0KzQgMC0xIDctMiA5LTEgNS0xIDctMSA4LTMgOSsxIDcrMyA1KzEgMisxIDMtNCA1LTEgMyszIDEtMSAzLTIgMi0xIDMtMSAwKzEgMisxIDMrMiA2LTEgOSsxIDIrMSA2LTEgMy0yIDAtMSA2KzEgMyszIDErMSA1KzEgMy0zIDArMyA3LTIgMTAtMiA3KzEgMTArMSA1LTEgNy0yIDEwLTEgOCsxIDQtMiAxMC0xIDQrMSAyKzEgOCsyIDcrMiA1KzEgNy0xIDQtMSA1LTEgMS0xIDcrMSA2LTEgNCsxIDMrMyA3LTEgNisxIDQtMiA3KzEgMy0yIDErMSA1KzEgNC0xIDMrMiA3LTEgNCsyIDUtMSA3LTEgOC0yIDQtMSA4LTEgNysyIDUrMSA3LTEgNC0xIDItMSAxMCsyIDcrMSAxMC0xIDQrMSAxMCsyIDcrMSA1LTEgMy0yIDAtMiAyLTIgOS0xIDYrMSA1KzEgNC0xIDIrMSAzKzMgMC0xIDMtMSA3LTEgMTAtMiA2KzEgNy0xIDYtMiA5LTMgMisxIDEwLTEgNysxIDEwKzMgNysxIDYrMSAzLTIgMCszIDctMSAxMC0zIDYrMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>8</td>
+<td>23.04ms ± 0.85ms</td>
+<td>3562</td>
+<td>3563</td>
+<td>29698</td>
+
+<td>1.258</td>
+<td>
+
+[38 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkIuRkZGIFxuLi4uR0hIIFxuRVBQRy5MS1xuRS5DSUlMIFxuRERDLi5MIFxuLi5DSkpKICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMywzLDksMTAsMTIsMCwxNywyMCwyMSwyNCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo4LCJkdXJhdGlvbiI6IjIzLjA0bXMgwrEgMC44NW1zIiwidGlja0NvdW50IjozNTYyLCJ2aXNpdGVkTm9kZXMiOjM1NjMsInNlYXJjaENvdW50IjoyOTY5OCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yNTgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSA0LTIgMC0xIDctMiA5KzMgNysyIDArMSA0KzQgNS0xIDAtMSA3LTMgOC0zIDIrMSA3KzMgMy0zIDYtMSA5KzEgMisxIDArMyAzKzIgNy0zIDgrMSA0LTMgOC0xIDcrMyA1KzEgNC0xIDAtMyAyLTEgNy0yIDktNCA3KzIgMisxIDArMyA3LTEgMTAtMiA2KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>12</td>
+<td>16.57ms ± 0.73ms</td>
+<td>3814</td>
+<td>3815</td>
+<td>31829</td>
+
+<td>1.269</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GRkYgXG4uLi5HSEggXG5FUFBHLkxLXG5FLkNJSUwgXG5EREMuLkwgXG4uLkNKSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsOSwxMCwxMiwwLDE3LDIwLDIxLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE2LjU3bXMgwrEgMC43M21zIiwidGlja0NvdW50IjozODE0LCJ2aXNpdGVkTm9kZXMiOjM4MTUsInNlYXJjaENvdW50IjozMTgyOSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yNjkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSA0LTIgMC0xIDctMiA5KzMgNysyIDArMSA0KzQgMC0xIDUtMSA3LTMgOC0zIDcrMyAyKzEgMy0xIDYtMSA5KzEgMisxIDArMyA3LTMgOCsxIDQtMyA4LTEgNyszIDUrMSA0LTEgMC0zIDItMSA3LTIgOS00IDIrMSA3KzIgMCszIDctMiAxMC0xIDYrMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>61.00ms ± 1.20ms</td>
+<td>3482</td>
+<td>3483</td>
+<td>29000</td>
+
+<td>1.266</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQi5GRkYgXG4uLi5HSEggXG5FUFBHLkxLXG5FLkNJSUwgXG5EREMuLkwgXG4uLkNKSkogIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEzLDMsOSwxMCwxMiwwLDE3LDIwLDIxLDI0LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNjEuMDBtcyDCsSAxLjIwbXMiLCJ0aWNrQ291bnQiOjM0ODIsInZpc2l0ZWROb2RlcyI6MzQ4Mywic2VhcmNoQ291bnQiOjI5MDAwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjI2NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsxIDQtMiAwLTEgNy0yIDkrMyA3KzIgMCsxIDQrNCAwLTEgNS0xIDctMyA4LTMgMisxIDMtMSA2LTEgOSsxIDIrMSA3KzMgMCszIDctMyA4KzEgNC0zIDgtMSA3KzMgNSsxIDQtMSAwLTMgMi0xIDctMiA5LTQgNysyIDIrMSAwKzMgNy0yIDEwLTMgNisyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>280.01ms ± 0.00ms</td>
+<td>12</td>
+<td>0</td>
+<td>629439</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>201.60ms ± 0.00ms</td>
+<td>23</td>
+<td>2337</td>
+<td>294390</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>219.61ms ± 0.00ms</td>
+<td>23</td>
+<td>2372</td>
+<td>328256</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>250.64ms ± 0.00ms</td>
+<td>20</td>
+<td>1262</td>
+<td>81958</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-32**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-32.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+BBFGHH 
+..FG.. 
+PPF...K
+EIIDDL 
+E..J.L 
+CC.J.L 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (5 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>2.29ms ± 1.32ms</td>
+<td>576</td>
+<td>601</td>
+<td>3278</td>
+
+<td>1.183</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCRkdISCBcbi4uRkcuLiBcblBQRi4uLktcbkVJSURETCBcbkUuLkouTCBcbkNDLkouTCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiwzLDQsMCwxOCwxOSwyMSwyMywyNywzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiIyLjI5bXMgwrEgMS4zMm1zIiwidGlja0NvdW50Ijo1NzYsInZpc2l0ZWROb2RlcyI6NjAxLCJzZWFyY2hDb3VudCI6MzI3OCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xODMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMSAzLTEgOC0zIDcrMSA5LTEgMTArNCA1KzEgNi0xIDErMyA5KzEgNy0xIDgrMSAzKzEgMi0xIDArMyAxLTMgNisxIDUtMyA2LTEgMSszIDQrMSA1LTEgMC0zIDIrMSAzLTEgOC0xIDEtMSA3KzEgOS0xIDEwLTQgMSsxIDkrMSA3LTEgOCszIDMrMSAyLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.69ms ± 2.37ms</td>
+<td>309</td>
+<td>310</td>
+<td>1665</td>
+
+<td>1.040</td>
+<td>
+
+[106 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkZHSEggXG4uLkZHLi4gXG5QUEYuLi5LXG5FSUlEREwgXG5FLi5KLkwgXG5DQy5KLkwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsMyw0LDAsMTgsMTksMjEsMjMsMjcsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMi42OW1zIMKxIDIuMzdtcyIsInRpY2tDb3VudCI6MzA5LCJ2aXNpdGVkTm9kZXMiOjMxMCwic2VhcmNoQ291bnQiOjE2NjUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDQwIiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCsxIDgtMiA1KzEgNi0xIDctMSA4KzIgMisxIDgtMSA3KzEgNisxIDUtMSAxMC0xIDgtMSAzLTEgMTArMSA1KzEgNi0xIDctMSA4LTEgNysyIDktMSAxMCszIDErMSAxMC0yIDErMSAzLTEgMTAtMSA5KzEgMS0xIDIrMSAzKzEgMSsxIDQrMSAyLTEgOS0xIDEwKzMgOSsxIDctMSAxLTEgOCsyIDErMiAwKzEgOC0yIDcrMSA5LTEgMTAtMSA0LTEgMy0xIDEwKzEgOSsxIDctMSA4KzIgMysyIDgtMSAyLTEgMCsyIDEtMyA2KzEgNS0zIDYtMSA4KzEgMSszIDQrMSAxLTIgOC0xIDErMSA1LTEgMSsxIDAtMiAyKzEgOCsxIDMtMSA4LTIgNysxIDktMSAxMC0xIDAtMSAxLTIgMTAtMyA5KzEgMTArMSA3LTEgMSsxIDEwLTEgMSsxIDArMSA3KzEgOS0xIDUrMSA0LTEgOSsxIDctMSA4KzMgMy0xIDgtMiAzKzIgOCsxIDItMSAwKzIgMS0zIDEwKzEgNy0xIDgtMSAxMC0xIDgrMiAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>4.03ms ± 3.65ms</td>
+<td>309</td>
+<td>310</td>
+<td>1684</td>
+
+<td>1.102</td>
+<td>
+
+[52 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCRkdISCBcbi4uRkcuLiBcblBQRi4uLktcbkVJSURETCBcbkUuLkouTCBcbkNDLkouTCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiwzLDQsMCwxOCwxOSwyMSwyMywyNywzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI0LjAzbXMgwrEgMy42NW1zIiwidGlja0NvdW50IjozMDksInZpc2l0ZWROb2RlcyI6MzEwLCJzZWFyY2hDb3VudCI6MTY4NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xMDIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEwKzEgNSsxIDYtMSAyKzEgMy0xIDYrMSA4LTMgNysxIDktMSAxMCsxIDYtMSAxMCsxIDErMyAxMCsxIDkrMSA3LTEgMCsxIDgrMiAzLTEgOC0xIDAtMSAzKzIgMi0xIDArMyAxLTMgNisxIDUtMyA2LTEgOCsxIDErMyAwLTIgOC0xIDArMSA0KzEgNS0xIDAtMiA4KzEgMisxIDMtMSA4LTIgNysxIDktMSAxLTIgMTAtNCAxKzIgOSsxIDctMSA4KzMgMCsxIDMrMSAyLTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>5.95ms ± 4.55ms</td>
+<td>287</td>
+<td>288</td>
+<td>1633</td>
+
+<td>1.086</td>
+<td>
+
+[59 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkJCRkdISCBcbi4uRkcuLiBcblBQRi4uLktcbkVJSURETCBcbkUuLkouTCBcbkNDLkouTCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiwzLDQsMCwxOCwxOSwyMSwyMywyNywzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI1Ljk1bXMgwrEgNC41NW1zIiwidGlja0NvdW50IjoyODcsInZpc2l0ZWROb2RlcyI6Mjg4LCJzZWFyY2hDb3VudCI6MTYzMywiYnJhbmNoaW5nRmFjdG9yIjoiMS4wODYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMSAzLTEgOC0zIDcrMSA5LTEgMTArMyA1KzEgNi0xIDErMyAwKzEgMTArMSA5KzEgNy0xIDgrMiA0KzEgOC0xIDMrMSA0LTEgMy0yIDAtMSA4KzEgMysyIDQrMSAyLTEgOC0xIDQtMSAwKzMgMS0zIDYrMSA1LTMgOCsxIDYtMSAxKzEgOC0xIDQrMSA1LTEgOCsxIDErMiA1KzEgMC0yIDgtMSA1LTEgMisxIDgrMSAzLTEgOC0yIDcrMSA5LTEgMTAtMSAwLTEgMS0yIDEwLTMgMSsyIDkrMSA3LTEgOCszIDMrMSAyLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>20</td>
+<td>2.41ms ± 0.56ms</td>
+<td>566</td>
+<td>567</td>
+<td>3209</td>
+
+<td>1.165</td>
+<td>
+
+[40 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQkJGR0hIIFxuLi5GRy4uIFxuUFBGLi4uS1xuRUlJRERMIFxuRS4uSi5MIFxuQ0MuSi5MICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDMsNCwwLDE4LDE5LDIxLDIzLDI3LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjIuNDFtcyDCsSAwLjU2bXMiLCJ0aWNrQ291bnQiOjU2NiwidmlzaXRlZE5vZGVzIjo1NjcsInNlYXJjaENvdW50IjozMjA5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE2NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMisxIDMtMSA4LTMgNysxIDktMSAxMCs0IDUrMSA2LTEgMSszIDArMSA5KzEgNy0xIDgrMSAzKzEgMi0xIDArMiAxLTMgNisxIDUtMyA2LTEgMSszIDQrMSA1LTEgMC0zIDIrMSAzLTEgOC0xIDcrMSA5LTEgMS0yIDEwLTQgOSsxIDErMiA3LTEgOCsyIDMrMSAyLTEgMCsyIDgrMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>1.72ms ± 0.10ms</td>
+<td>537</td>
+<td>538</td>
+<td>3045</td>
+
+<td>1.181</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkZHSEggXG4uLkZHLi4gXG5QUEYuLi5LXG5FSUlEREwgXG5FLi5KLkwgXG5DQy5KLkwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsMyw0LDAsMTgsMTksMjEsMjMsMjcsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiMS43Mm1zIMKxIDAuMTBtcyIsInRpY2tDb3VudCI6NTM3LCJ2aXNpdGVkTm9kZXMiOjUzOCwic2VhcmNoQ291bnQiOjMwNDUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTgxIiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzEgMy0xIDgtMyA3KzEgOS0xIDEwKzQgOSsxIDctMSA4KzEgMysxIDItMSA1KzEgNi0xIDErMyAwKzMgMS0zIDYrMSA1LTMgNi0xIDErMyA0KzEgNS0xIDAtMyAyKzEgMy0xIDgtMSA3KzEgOS0xIDEtMiAxMC00IDkrMSA3LTEgOCszIDMrMSAyLTEgMSsyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>20</td>
+<td>6.36ms ± 1.26ms</td>
+<td>471</td>
+<td>472</td>
+<td>2656</td>
+
+<td>1.176</td>
+<td>
+
+[37 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CQkZHSEggXG4uLkZHLi4gXG5QUEYuLi5LXG5FSUlEREwgXG5FLi5KLkwgXG5DQy5KLkwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsMyw0LDAsMTgsMTksMjEsMjMsMjcsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi4zNm1zIMKxIDEuMjZtcyIsInRpY2tDb3VudCI6NDcxLCJ2aXNpdGVkTm9kZXMiOjQ3Miwic2VhcmNoQ291bnQiOjI2NTYsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTc2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzEgMy0xIDgtMyA3KzEgOS0xIDEwKzQgOSsxIDUrMSA2LTEgNy0xIDgrMSAxKzMgMysxIDItMSAwKzMgMS0zIDYrMSA1LTMgNi0xIDErMyA0KzEgNS0xIDAtMyAyKzEgMy0xIDgtMSA3KzEgOS0xIDEtMiAxMC00IDkrMSA3LTEgOCszIDMrMSAyLTEgMSsyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>414.94ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>843231</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>367.44ms ± 0.00ms</td>
+<td>10</td>
+<td>0</td>
+<td>610315</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>200.50ms ± 0.00ms</td>
+<td>27</td>
+<td>439</td>
+<td>306559</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>210.46ms ± 0.00ms</td>
+<td>26</td>
+<td>413</td>
+<td>221020</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>204.45ms ± 0.00ms</td>
+<td>19</td>
+<td>350</td>
+<td>82319</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-33**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-33.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+.BF.GG 
+.BF... 
+PPF...K
+MEEIIL 
+MDDJHL 
+CCCJHL 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>9</td>
+<td>21.69ms ± 4.32ms</td>
+<td>4068</td>
+<td>4183</td>
+<td>37616</td>
+
+<td>1.250</td>
+<td>
+
+[40 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CRi5HRyBcbi5CRi4uLiBcblBQRi4uLktcbk1FRUlJTCBcbk1EREpITCBcbkNDQ0pITCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCwxLDE4LDE5LDIxLDIzLDI1LDI3LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjksImR1cmF0aW9uIjoiMjEuNjltcyDCsSA0LjMybXMiLCJ0aWNrQ291bnQiOjQwNjgsInZpc2l0ZWROb2RlcyI6NDE4Mywic2VhcmNoQ291bnQiOjM3NjE2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjI1MCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDctMyA2KzEgOS0zIDExKzEgNCsxIDUtMSA2LTIgMTAtMyA2KzIgOCszIDkrMiAxMSsyIDErMyAyLTEgMTAtMSAwKzMgMysxIDItMiAxLTMgNSsxIDQtMyA1LTEgMSszIDIrMiA0LTEgMy0xIDAtMyAxLTIgOS0xIDgtNCAxKzIgOSsxIDArMyAxLTEgMTEtMyA5KzEgNi0xIDcrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>8.43ms ± 5.43ms</td>
+<td>1035</td>
+<td>1036</td>
+<td>8819</td>
+
+<td>1.019</td>
+<td>
+
+[275 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkYuR0cgXG4uQkYuLi4gXG5QUEYuLi5LXG5NRUVJSUwgXG5NRERKSEwgXG5DQ0NKSEwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsMSwxOCwxOSwyMSwyMywyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI4LjQzbXMgwrEgNS40M21zIiwidGlja0NvdW50IjoxMDM1LCJ2aXNpdGVkTm9kZXMiOjEwMzYsInNlYXJjaENvdW50Ijo4ODE5LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAxOSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNy0yIDItMSA3LTEgNisxIDktMyAxMSsxIDgrMSA2LTEgMTEtMSA3KzMgOC0xIDExKzEgNy0yIDQrMSA4KzEgNS0xIDYtMSAxMC0zIDExKzIgOC0xIDExLTEgOCszIDYrMSAxMS0xIDgtMyA1KzEgMTErMiA4KzMgNC0xIDExLTMgOC0zIDExKzIgOCsyIDExLTEgOC0xIDctMSAxMS0xIDgrMSAxMSszIDgtMiA2KzEgMTEtMyA4KzMgMTErMiA4LTIgNSsxIDExLTIgOCsxIDExKzMgOCsxIDExLTIgOC0zIDQrMSAxMSsyIDgrMSA1LTIgMTEtMiA4KzIgMTErMSA4LTMgNi0xIDExKzEgOCszIDYtMSA4LTEgMTEtMiA3KzMgNisxIDExKzEgMSsyIDctMyAxMS0xIDgrMSAxLTEgMTErMSA4LTIgMTErMSA4KzEgNisxIDExLTIgOC0yIDkrMiAxMSsyIDktMSAxMS0xIDgrMyAxMS0xIDgtMiAyLTEgMTErMiA4KzIgOS0xIDExLTIgMTAtMSAxMSsxIDgtMyAxMSsxIDgrMiA2LTEgMTEtMiA4LTIgNyszIDExKzEgOCsyIDctMiA4LTEgMTEtMSA4KzIgMSsxIDExKzEgNy0xIDExKzEgNisxIDErMSAwKzEgOC0xIDYtMSA3KzIgMTArMSA3LTEgOCsxIDctMSAyKzEgOC0xIDYrMSA5KzEgOCsxIDkrMSAwKzEgMi0xIDEwLTEgMCsxIDEtMiAxMS0yIDErMSAxMSsxIDMrMSAxMSsxIDItMiAxMS0yIDEtMiAxMSsxIDUrMSAxMSsxIDQtMyAxMS0zIDkrMSA2LTEgNS0xIDcrMSAxKzIgMisyIDEtMSA3LTEgNisxIDktMSAxMSszIDErMiAwLTEgMTArMSAzLTEgMisxIDAtMSA5LTIgOC0xIDYtMSA0LTEgOCsxIDItMSAwLTEgMS0yIDExLTMgOC00IDExKzIgOCszIDExLTEgOC0yIDYrMSAxMS0xIDgrMiAxMSszIDgtMyAxMC0xIDExLTMgOCs0IDExKzIgOC0zIDYtMSAxMS0yIDgrMiAxMSszIDgtMSAxMS0yIDgtMiAxKzEgMTEtMSA3KzMgMTErMiA3LTIgMTErMSAxLTEgMTEtMyA4KzQgMTErMiA4LTIgNysyIDExLTIgNy0xIDEwKzEgMTErMyA4LTIgMTEtMiA3LTEgOCs0IDErMSAxMS0xIDgtMSAxMSszIDEtMSA4LTIgMTEtMyA3KzIgMTErMiA3LTEgMisyIDExLTIgOC0xIDctMSA4KzIgMi0xIDExKzMgNy0xIDExLTIgOC0yIDErMSAxMS0xIDcrMiAxMSszIDErMSAwKzEgNy0yIDYrMSA5KzIgMCsxIDItMSAxMC0xIDArMSAxLTIgMTEtMyA4KzEgMTErMiAzKzEgMTEtMSA4LTEgMSsxIDExLTEgOSsxIDYtMSAxLTEgOCsxIDYrMSAyLTEgOS0xIDExKzMgOC0xIDExLTEgMSsxIDQrMSAxMS0yIDkrMSA2LTEgMS0xIDgrMSA3KzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>5.11ms ± 1.38ms</td>
+<td>847</td>
+<td>848</td>
+<td>5635</td>
+
+<td>1.064</td>
+<td>
+
+[94 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CRi5HRyBcbi5CRi4uLiBcblBQRi4uLktcbk1FRUlJTCBcbk1EREpITCBcbkNDQ0pITCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCwxLDE4LDE5LDIxLDIzLDI1LDI3LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjUuMTFtcyDCsSAxLjM4bXMiLCJ0aWNrQ291bnQiOjg0NywidmlzaXRlZE5vZGVzIjo4NDgsInNlYXJjaENvdW50Ijo1NjM1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA2NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDctMyA2KzEgOS0xIDExKzEgNCsxIDUtMSAxKzEgOS0xIDgrMSA5LTEgNi0xIDcrMyA4LTEgMS0xIDYtMSAxMC0xIDExKzEgOCsxIDIrMSA5LTEgOC0xIDEwLTIgOCsyIDExLTEgNisxIDErMSA5KzEgMi0yIDEwLTEgMSsxIDctMyAxMSsyIDErMSA4KzEgNisxIDkrMiAwKzMgMS0yIDExLTIgMSsxIDExKzEgMysxIDExKzEgMi0yIDExLTIgMS0yIDExKzEgNSsxIDExKzEgNC0zIDExLTMgOSsxIDYtMSA1LTEgNysxIDErMiAyKzIgMS0xIDctMSA2KzEgOS0xIDExKzMgMSsyIDAtMSAzLTEgMC0xIDQtMSAwLTEgMS0xIDExLTMgMS0xIDExKzEgOS0xIDgtNCA5KzEgMTEtMSAxKzEgMTErMyAxKzEgMCszIDEtMiAxMS0zIDgrMSAxMSsyIDMrMSAxMS0xIDgtMSAxKzEgMTEtMSA5KzEgNi0xIDcrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>14</td>
+<td>13.72ms ± 6.86ms</td>
+<td>685</td>
+<td>686</td>
+<td>4894</td>
+
+<td>1.048</td>
+<td>
+
+[116 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi5CRi5HRyBcbi5CRi4uLiBcblBQRi4uLktcbk1FRUlJTCBcbk1EREpITCBcbkNDQ0pITCAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDIsNCwxLDE4LDE5LDIxLDIzLDI1LDI3LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE0LCJkdXJhdGlvbiI6IjEzLjcybXMgwrEgNi44Nm1zIiwidGlja0NvdW50Ijo2ODUsInZpc2l0ZWROb2RlcyI6Njg2LCJzZWFyY2hDb3VudCI6NDg5NCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNDgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDItMSA3LTMgNisxIDktMSAxMSsxIDQrMSA1LTEgMSsxIDktMSA4KzEgOS0xIDYtMSA4LTEgNyszIDItMSA4KzEgNy0yIDIrMiA5LTEgMS0xIDYtMSAxMC0xIDExKzIgOC0xIDExLTEgNysyIDgrMSAxMC0xIDgrMSA3LTEgMTAtMSA2KzEgMTEtMSA3LTEgMTErMiAxKzMgMCsxIDkrMSAyLTIgMTAtMSA3LTEgOCsxIDYrMSA5KzIgMCsyIDMrMSAyLTIgMS0zIDExLTIgNSsxIDExKzEgNC0zIDExLTIgNS0xIDExKzEgMSsyIDExKzEgMisyIDExKzEgMSsxIDQtMSAzLTEgMC0zIDktMSA4LTEgOS0xIDYtMSAwKzEgMTArMSAyKzEgNysyIDQrMSA3LTEgMisxIDktMSA3KzEgNC0xIDAtMSA3LTEgMS0zIDExLTMgOC0zIDExKzIgNysyIDExLTEgOCszIDctMSAxMSsxIDErMiAxMS0yIDcrMSAxLTEgMTErMiA3LTIgMTEtMSA4LTMgMTErMiAxKzIgMCsxIDkrMSAyLTIgMTAtMSA3LTEgMC0xIDYrMSA5KzIgMCszIDQrMSAzKzEgMi0yIDEtMyAxMS0zIDkrMSA2LTIgNyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>13</td>
+<td>14.99ms ± 2.08ms</td>
+<td>2695</td>
+<td>2696</td>
+<td>23978</td>
+
+<td>1.234</td>
+<td>
+
+[40 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLkJGLkdHIFxuLkJGLi4uIFxuUFBGLi4uS1xuTUVFSUlMIFxuTURESkhMIFxuQ0NDSkhMICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MTAsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMiw0LDEsMTgsMTksMjEsMjMsMjUsMjcsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTMsImR1cmF0aW9uIjoiMTQuOTltcyDCsSAyLjA4bXMiLCJ0aWNrQ291bnQiOjI2OTUsInZpc2l0ZWROb2RlcyI6MjY5Niwic2VhcmNoQ291bnQiOjIzOTc4LCJicmFuY2hpbmdGYWN0b3IiOiIxLjIzNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDctMyA2KzEgOS0zIDExKzEgNCsxIDUtMSA2LTIgMTAtMyA4KzMgMTErMiA2KzIgMSszIDkrMiAwKzIgMysxIDItMyAxMC0xIDArMSAxLTMgNSsxIDQtMyA1LTEgMSszIDIrMiAzLTEgNC0xIDAtMyAxLTIgOS0yIDgtNCA5KzIgMSsyIDArMyAxLTEgMTEtMyA5KzEgNi0xIDcrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>11</td>
+<td>16.81ms ± 2.22ms</td>
+<td>2866</td>
+<td>2867</td>
+<td>25668</td>
+
+<td>1.237</td>
+<td>
+
+[40 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkYuR0cgXG4uQkYuLi4gXG5QUEYuLi5LXG5NRUVJSUwgXG5NRERKSEwgXG5DQ0NKSEwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsMSwxOCwxOSwyMSwyMywyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMSwiZHVyYXRpb24iOiIxNi44MW1zIMKxIDIuMjJtcyIsInRpY2tDb3VudCI6Mjg2NiwidmlzaXRlZE5vZGVzIjoyODY3LCJzZWFyY2hDb3VudCI6MjU2NjgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjM3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTEgNy0zIDYrMSA5LTMgMTErMSA0KzEgNS0xIDYtMiAxMC0zIDYrMiA4KzMgMTErMiAxKzMgOSsyIDItMSAxMC0xIDArMyAzKzEgMi0yIDEtMyA1KzEgNC0zIDUtMSAxKzMgMisyIDMtMSA0LTEgMC0zIDEtMiA5LTIgOC00IDkrMiAxKzIgMCszIDEtMSAxMS0zIDkrMSA2LTEgNyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>58.65ms ± 12.36ms</td>
+<td>2025</td>
+<td>2026</td>
+<td>17028</td>
+
+<td>1.223</td>
+<td>
+
+[40 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uQkYuR0cgXG4uQkYuLi4gXG5QUEYuLi5LXG5NRUVJSUwgXG5NRERKSEwgXG5DQ0NKSEwgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoxMCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwyLDQsMSwxOCwxOSwyMSwyMywyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjU4LjY1bXMgwrEgMTIuMzZtcyIsInRpY2tDb3VudCI6MjAyNSwidmlzaXRlZE5vZGVzIjoyMDI2LCJzZWFyY2hDb3VudCI6MTcwMjgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjIzIiwic29sdXRpb25TdGVwcyI6IuKIhSAyLTEgNy0zIDYrMSA5LTMgMTErMSA0KzEgNS0xIDYtMiAxMC0zIDYrMiA4KzMgOSsyIDExKzIgMSszIDArMiAzKzEgMi0zIDEwLTEgMCsxIDEtMyA1KzEgNC0zIDUtMSAxKzMgMisyIDQtMSAzLTEgMC0zIDktMiAxLTIgOC00IDkrMiAxKzIgMCszIDEtMiAxMS0zIDkrMSA2LTEgNyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>237.79ms ± 0.00ms</td>
+<td>11</td>
+<td>0</td>
+<td>346766</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>204.57ms ± 0.00ms</td>
+<td>20</td>
+<td>1382</td>
+<td>329290</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>235.85ms ± 0.00ms</td>
+<td>23</td>
+<td>1382</td>
+<td>382596</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>220.26ms ± 0.00ms</td>
+<td>17</td>
+<td>1260</td>
+<td>61567</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-34**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-34.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+B..FFF 
+B..G.L 
+PP.GHLK
+CCCEHL 
+..IEDD 
+MMIJJ. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>6</td>
+<td>31.12ms ± 11.86ms</td>
+<td>4383</td>
+<td>4418</td>
+<td>37481</td>
+
+<td>1.229</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQ0VITCBcbi4uSUVERCBcbk1NSUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjYsImR1cmF0aW9uIjoiMzEuMTJtcyDCsSAxMS44Nm1zIiwidGlja0NvdW50Ijo0MzgzLCJ2aXNpdGVkTm9kZXMiOjQ0MTgsInNlYXJjaENvdW50IjozNzQ4MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yMjkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMSAzLTEgMCsxIDUtMSAxMSsxIDcrMSA2KzMgNCszIDEtMiAyLTEgMC0xIDgtMyAxMCsxIDQrMSA2LTMgMysxIDctMiA5LTMgNysyIDIrMSAxKzMgOC0xIDArMSA2KzEgNC00IDAtMSA4KzEgMS0xIDMtMSA2KzIgOS0xIDEwLTEgOCszIDArMSA0KzEgMS0yIDItMSA1LTEgNi0zIDctMSAxMS0xIDMrMyAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>17</td>
+<td>11.28ms ± 5.39ms</td>
+<td>1677</td>
+<td>1678</td>
+<td>13684</td>
+
+<td>1.013</td>
+<td>
+
+[402 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0NFSEwgXG4uLklFREQgXG5NTUlKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMTEsMCwxNiwxOCwyMSwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNywiZHVyYXRpb24iOiIxMS4yOG1zIMKxIDUuMzltcyIsInRpY2tDb3VudCI6MTY3NywidmlzaXRlZE5vZGVzIjoxNjc4LCJzZWFyY2hDb3VudCI6MTM2ODQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDEzIiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgMTErMSA3KzEgNisxIDUtMSA2KzEgMS0yIDYtMiA3LTEgMTEtMSAzLTEgNS0xIDExKzEgNysxIDYrMyA4LTEgMTArMSA1KzEgMSsxIDEwLTEgOCsxIDYtMyA3LTEgNSsxIDExLTEgNCsxIDUtMSAzKzEgMTErMSA3KzEgNisyIDMtMSA2LTEgNSsxIDYtMSAyKzEgNS0xIDEtMiAyLTIgMCsxIDctMSAxMS0xIDUtMSAwKzEgMTErMSAzKzEgMC0xIDUrMiA3KzEgNisxIDUtMSA2KzEgNCsyIDMtMSA2LTEgNC0xIDYrMiA4LTEgMTArMSA0KzEgMC0yIDgtMiAxMC0xIDYtMiA1LTEgMTArMSA2KzEgNCsxIDYtMiA3LTIgMTEtMSA5LTMgNysxIDExKzEgMTArMSA3LTEgOSsyIDMrMiAxMC0xIDExLTEgOS0xIDMtMSAxMSsxIDEwKzEgOSsyIDcrMSAxMC0xIDExLTEgNSsyIDctMSAxMSsxIDktMyAxMCsxIDkrMiA1LTEgMTAtMSAxMS0xIDktMiA3KzEgMTErMSAxMCsxIDMrMSA3LTEgMTAtMSA5KzEgMy0yIDExLTEgNSsyIDMrMyA5LTEgMy0xIDUtMSA3KzEgMTErMSA3KzEgNisxIDQtMSAxMC0xIDMtMiA1LTIgMTArMSA2KzIgNCsxIDYtMSAzKzIgNC0xIDEwLTEgMy0xIDUrMSAxMCsxIDYtMSA0KzEgMy0xIDYtMSA1KzIgMysxIDUtMyAyKzIgMy0xIDItMSA2KzEgMysyIDQtMSAxMC0xIDMtMSA1KzMgMTArMSA1LTEgNCsxIDYtMSA3LTEgMTEtMSA1LTIgMysyIDUrMyAzLTMgMTErMSAxMCsxIDUtMiAxKzIgMTAtMSAxMS0xIDUrMSAzKzMgMS0xIDMtMSAxMSsxIDEwKzEgMy0yIDUtMiAxMC0xIDMrMSA3KzEgNisyIDQtMSAxMC0xIDMtMSA2LTEgMTArMSA2KzIgNCsxIDgrMSA1KzEgNC0xIDEwLTEgOC0xIDEtMSAxMCsxIDYtMiAxKzIgMTAtMSA2KzEgMysyIDEwKzEgNCsxIDYtMiAzLTEgNisxIDErMSA0LTEgMTAtMSA2KzEgOC0xIDArMSAxMCsxIDYtMSA0LTMgMTAtMSA5LTEgNi0xIDEwKzEgNy0xIDExLTEgMTAtMSAxMS0xIDkrMSAxMSsyIDEwKzIgMysxIDEwLTEgMTEtMSAxMC0xIDMrMSA1KzIgMTEtMSA5LTEgMy0xIDExKzIgMTArMiA1LTEgMTAtMSAxMS0xIDEwLTEgMysxIDQrMSAxMS0xIDkrMSAzLTIgMTErMiAxMCsyIDktMSAxMC0xIDExLTEgOSsxIDUtMSAxMSsxIDcrMSAxMC0xIDMrMSA3LTEgMTEtMiA5LTEgMTErMSAxMCsxIDExKzEgNysxIDYrMiAxMC0xIDYtMSA1KzIgMTArMSA5KzEgNS0yIDQrMyA2LTEgNy0xIDExLTEgMy0xIDUrMiAxMSsxIDUtMSA3KzEgNisxIDQtMyAxMC0xIDktMSA2LTEgNSsxIDEwKzEgMisxIDkrMSAxMC0xIDUtMSAzKzEgMTArMSA5LTEgNC0xIDEwLTEgNS0xIDkrMSAxMCsxIDMtMSAwLTEgOCsxIDEwLTEgNSsyIDktMSAxMCsxIDUtMSAzKzEgMTAtMSA5KzEgMS0yIDEwKzEgMy0yIDktMSAxMC0xIDUtMSAxKzEgMTArMSA5KzEgNSsyIDEwLTEgNS0xIDItMSAxMCsxIDktMSA2KzEgMTAtMSA1LTEgOSsxIDEwKzEgNisyIDktMSA4KzIgMCsxIDEwLTEgOCsxIDYtMyA3LTEgMTEtMSA1KzIgMyszIDUtMSAzLTIgMTErMSA3KzEgNisxIDUtMSA2KzEgMysxIDEtMSA2LTIgNy0xIDExLTEgMy0xIDUtMSAxMSsxIDcrMSA2KzIgMy0xIDYtMSAzKzIgNSszIDMtMSAxKzIgNi0xIDctMSAxMS0xIDMrMSA1LTEgMTErMSA3KzEgNisxIDUtMSA0KzIgNisxIDMtMSA0LTEgNi0yIDctMSAxMS0xIDMrMiA1KzIgMS0zIDMtMyAxMSsxIDUtMyA3KzEgNiszIDgtMSAxMCsxIDItMSAwKzIgMTAtMSA4LTIgOSsxIDEwKzEgNi0zIDctMSAxMS0xIDEwLTEgMTEtMSA5LTEgMTErMiAxMCsyIDMrMiAxMC0xIDExLTEgMTAtMSAzKzEgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>7.74ms ± 0.75ms</td>
+<td>1497</td>
+<td>1498</td>
+<td>12332</td>
+
+<td>1.066</td>
+<td>
+
+[104 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQ0VITCBcbi4uSUVERCBcbk1NSUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjcuNzRtcyDCsSAwLjc1bXMiLCJ0aWNrQ291bnQiOjE0OTcsInZpc2l0ZWROb2RlcyI6MTQ5OCwic2VhcmNoQ291bnQiOjEyMzMyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjA2NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSA3KzEgNisxIDUtMSA2KzEgMCsxIDYtMiA3LTEgMTEtMSAxLTIgNS0xIDExKzEgNysxIDIrMSAzLTEgNCsxIDItMSA3LTEgMTEtMSAxLTEgMi0xIDArMiAzKzEgMTErMSA3KzEgNisyIDAtMiA2LTEgMCsxIDMtMSA2KzEgNCsyIDYrMSA4LTEgMC0yIDgtMiA2LTIgMTArMSA2KzEgNCsxIDYtMiA3LTEgMTEtMSAzKzEgNy0xIDktMyA3KzEgMysyIDUrMyAyKzEgMSszIDgtMSAwKzEgMy0yIDExKzEgMTArMSAwLTEgMysxIDEwLTEgNysxIDYrMSA0LTEgMTAtMSAzLTEgMCsxIDEwKzEgNC0zIDktMSAwLTEgOCsxIDEtMiAxMC0xIDkrMSA1LTMgMTArMSA2LTEgNy0xIDEwLTEgOS0xIDEwKzIgMy0xIDEwLTEgNysxIDEwLTEgOSsxIDYrMyAxMCsxIDgrMSA5LTEgOCsxIDEwLTEgOCsxIDYtMyA3LTEgMTEtMSAzKzMgMCsxIDUrMyAxKzIgNCsxIDEtMyAyLTEgNS0zIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>5</td>
+<td>35.23ms ± 11.21ms</td>
+<td>1480</td>
+<td>1481</td>
+<td>12197</td>
+
+<td>1.058</td>
+<td>
+
+[115 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkIuLkZGRiBcbkIuLkcuTCBcblBQLkdITEtcbkNDQ0VITCBcbi4uSUVERCBcbk1NSUpKLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwxMSwwLDE2LDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjUsImR1cmF0aW9uIjoiMzUuMjNtcyDCsSAxMS4yMW1zIiwidGlja0NvdW50IjoxNDgwLCJ2aXNpdGVkTm9kZXMiOjE0ODEsInNlYXJjaENvdW50IjoxMjE5NywiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNTgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUtMSAxLTIgNS0xIDMtMSAwKzEgNCsxIDMrMSAxLTEgMi0xIDArMiAxMSsxIDcrMSA2KzIgNCsyIDMtMSA2KzEgOC0zIDYtMiAxMCsxIDYrMSA0LTIgMTAtMSA2LTIgNy0xIDExLTIgMysxIDExKzEgMTArMSAxMSsxIDcrMSA2KzEgMTAtMSA0KzEgNisxIDEwKzEgNCsyIDYtMiAzLTEgNiszIDgrMiAwLTMgOC0yIDYtMyA3LTEgMTEtMSAzKzEgNy0xIDktMyA3KzEgMysyIDUrMyAzLTMgMTErMSA3KzEgNisxIDUtMyA2KzEgNC0xIDEwLTEgNi0xIDUrMyAzKzIgMTArMSA1LTMgMy0xIDIrMSAxMC0xIDYrMSAzKzEgMTArMSA0KzEgNi0xIDUrMyAzLTEgMSszIDgtMSA0LTEgMTAtMSAzKzEgMCsxIDEwKzEgNC0zIDktMSAwLTEgOCsxIDEtMiAzLTEgNi0xIDIrMSAxMC0xIDkrMSA1LTMgMTArMSAzLTEgOS0xIDEwLTEgMi0xIDkrMSA2KzMgMTArMSA4KzEgOS0xIDgrMSAwKzEgNCsxIDEwLTEgOCsxIDYtMyA3LTEgMTEtMSAzKzMgNSszIDEtMSAyLTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>9</td>
+<td>22.07ms ± 3.13ms</td>
+<td>4282</td>
+<td>4283</td>
+<td>36674</td>
+
+<td>1.221</td>
+<td>
+
+[44 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuQi4uRkZGIFxuQi4uRy5MIFxuUFAuR0hMS1xuQ0NDRUhMIFxuLi5JRUREIFxuTU1JSkouICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDExLDAsMTYsMTgsMjEsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6OSwiZHVyYXRpb24iOiIyMi4wN21zIMKxIDMuMTNtcyIsInRpY2tDb3VudCI6NDI4MiwidmlzaXRlZE5vZGVzIjo0MjgzLCJzZWFyY2hDb3VudCI6MzY2NzQsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjIxIiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgMS0xIDUtMSAxMSsxIDMtMSA3KzEgNiszIDQrMyAwLTEgOC0zIDEwKzEgNCsxIDYtMyAxLTIgMi0xIDctMiA5LTMgNysyIDMrMSAyKzEgMSszIDgtMSAwKzEgNisyIDQtNCAwLTEgOCsxIDEtMSAzLTEgNisxIDktMSAxMC0xIDgrMyAwKzEgNi0zIDUrMiA0KzEgMS0yIDItMSAwKzIgNy0xIDExLTEgMyszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>7</td>
+<td>27.04ms ± 4.58ms</td>
+<td>4244</td>
+<td>4245</td>
+<td>36396</td>
+
+<td>1.228</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0NFSEwgXG4uLklFREQgXG5NTUlKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMTEsMCwxNiwxOCwyMSwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo3LCJkdXJhdGlvbiI6IjI3LjA0bXMgwrEgNC41OG1zIiwidGlja0NvdW50Ijo0MjQ0LCJ2aXNpdGVkTm9kZXMiOjQyNDUsInNlYXJjaENvdW50IjozNjM5NiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yMjgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA0KzEgMS0zIDItMSAzLTEgNS0xIDExKzEgNysxIDYrMyA4LTEgMTArMSA0KzMgMC0xIDgtMiA2LTMgNy0yIDktMyA3KzIgMysyIDIrMSAxKzMgOC0xIDArMSA2KzEgNC00IDAtMSA4KzEgMS0yIDMtMiA2KzIgOS0xIDEwLTEgOCszIDArMSA0KzEgMS0xIDItMSA2LTMgNy0xIDExLTEgMyszIDUrMiAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>118.18ms ± 18.36ms</td>
+<td>3885</td>
+<td>3886</td>
+<td>33251</td>
+
+<td>1.225</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5CLi5GRkYgXG5CLi5HLkwgXG5QUC5HSExLXG5DQ0NFSEwgXG4uLklFREQgXG5NTUlKSi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMTEsMCwxNiwxOCwyMSwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjExOC4xOG1zIMKxIDE4LjM2bXMiLCJ0aWNrQ291bnQiOjM4ODUsInZpc2l0ZWROb2RlcyI6Mzg4Niwic2VhcmNoQ291bnQiOjMzMjUxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjIyNSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNS0xIDExKzEgNysxIDEtMiAzLTEgNiszIDgtMSAxMCsxIDArMSA0KzQgMC0xIDgtMiA2LTMgMS0xIDItMSA3LTIgOS0zIDcrMiAzKzIgMisxIDErMyA4LTEgNisxIDArMSA0LTQgMC0xIDktMSA4KzEgMS0yIDMtMiA2KzIgMTAtMSA4KzMgNi0zIDctMSAxMS0xIDMrMyAwKzEgNCsxIDEtMSAyLTEgNS0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>354.06ms ± 0.00ms</td>
+<td>7</td>
+<td>0</td>
+<td>622822</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>223.04ms ± 0.00ms</td>
+<td>17</td>
+<td>1256</td>
+<td>328234</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>226.26ms ± 0.00ms</td>
+<td>17</td>
+<td>1242</td>
+<td>299063</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>248.20ms ± 0.00ms</td>
+<td>12</td>
+<td>816</td>
+<td>69716</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-35**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-35.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+..FBBL 
+..FG.L 
+PPFG.LK
+HCCC.. 
+HEEID. 
+JJ.ID. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (4 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>8</td>
+<td>24.42ms ± 5.66ms</td>
+<td>3936</td>
+<td>4075</td>
+<td>33986</td>
+
+<td>1.225</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbi4uRkJCTCBcbi4uRkcuTCBcblBQRkcuTEtcbkhDQ0MuLiBcbkhFRUlELiBcbkpKLklELiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw1LDksMiwxOCwxOSwyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo4LCJkdXJhdGlvbiI6IjI0LjQybXMgwrEgNS42Nm1zIiwidGlja0NvdW50IjozOTM2LCJ2aXNpdGVkTm9kZXMiOjQwNzUsInNlYXJjaENvdW50IjozMzk4NiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4yMjUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDIrMSAxKzEgMy0xIDktMyAxMCsxIDUrMSA2LTEgOC0yIDcrMyA4KzIgMysxIDEtMSAyLTEgNiszIDUtMSAxMC0xIDQrMyAwKzEgNS0zIDAtMSA0LTMgNi0zIDIrMSAxKzEgMy0xIDgtMiA3LTQgOSszIDgrMiAzKzEgMS0xIDItMSA2KzMgNCszIDEtMiAzLTEgMCszIDUrMSAxLTEgNC0zIDYtMSAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>15</td>
+<td>13.16ms ± 8.03ms</td>
+<td>1632</td>
+<td>1633</td>
+<td>13505</td>
+
+<td>1.023</td>
+<td>
+
+[253 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG4uLkZCQkwgXG4uLkZHLkwgXG5QUEZHLkxLXG5IQ0NDLi4gXG5IRUVJRC4gXG5KSi5JRC4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNSw5LDIsMTgsMTksMjUsMjcsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTUsImR1cmF0aW9uIjoiMTMuMTZtcyDCsSA4LjAzbXMiLCJ0aWNrQ291bnQiOjE2MzIsInZpc2l0ZWROb2RlcyI6MTYzMywic2VhcmNoQ291bnQiOjEzNTA1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTArMSA5LTMgNisyIDEwLTEgNi0xIDIrMyAxMCsxIDItMiA1KzEgNi0yIDgtMSAxMCszIDgrMSA2KzIgNS0xIDYtMSAyLTEgNisyIDUrMSA0KzEgMS0zIDUtMSA5LTEgMy0xIDUrMSA0LTEgNi0zIDgtMiAxMC0zIDcrMyA4KzIgNiszIDUtMSAxMC0xIDYtMiAyKzEgMTArMSA2KzEgNSsxIDkrMSA2LTIgOC0xIDEwKzMgOCsxIDYrMiA1LTEgNi0xIDItMSA2KzIgNSsxIDktMSA2LTMgOC0xIDEwLTIgOSsxIDEwKzEgOSsxIDEwLTIgMysxIDEwKzMgOCsxIDYrMSA1LTEgOS0yIDYrMiA0KzMgMCsxIDUtMiAzLTEgMCsyIDErMSAwLTEgOSsxIDUrMyAxLTEgNS0yIDAtMSAzKzEgNSsyIDErMyA1LTQgMS0yIDktMSAwLTEgNC0yIDMtMSA0KzEgOSsxIDMrMSAxKzIgNC0yIDYtMyA4LTEgMTAtNCA4KzEgMTArMSA5KzEgOC0xIDEwKzIgMisxIDEwLTMgOCsxIDYrMSAxMCsxIDktMSA2KzEgMTAtMSAxKzEgNi0yIDEwKzEgOC0xIDEwKzMgOCsxIDYrMiAzLTEgNi0xIDkrMSA2LTEgOC0yIDEwLTQgNy00IDEwKzMgNyszIDEwLTIgNy0yIDEwKzEgNysxIDktMSAxMC0yIDctMSAxMCs0IDctMSAxMC0zIDIrMSAxMC0xIDcrMyAxMCs0IDctMSAxMC0xIDctMSAxMC0xIDIrMSAxMC0xIDcrMiAxMCsyIDctMyA4KzEgMTAtMyA3KzEgMi0xIDEwKzQgNy0xIDEwLTIgMi0xIDcrMSAxMC0xIDgrMSA2KzIgMTAtMSA3LTEgNi0yIDkrMyAxMCsxIDktMiA4LTEgMTArMyA3KzEgMTAtNCA4KzEgNisxIDEwKzEgOSsyIDYrMSAxMC0xIDIrMiA3LTEgMTArMSAyLTEgNi0xIDEwLTEgOS0zIDcrMSAxMCsxIDIrMSA3LTEgMi0yIDkrMiAxMC0xIDIrMiA3KzEgNi0xIDEwKzEgOC0xIDEwKzIgMi0yIDctMSAxMC0zIDIrMSAxMCsxIDkrMSA3KzEgMTArMSA5LTIgMTArMSA3LTEgMysxIDEwLTMgNysxIDEwKzQgOCsxIDctMSA2KzEgMi0xIDcrMSA5LTEgNi0xIDgtMSAxMC00IDctMSAxMCszIDEtMSAxMC0yIDcrMSAxMCsxIDItMSAxMC0yIDctMSAxMCs0IDgrMSA3KzEgNiszIDQrMSA3LTEgNCsyIDArMSAxLTIgOS0xIDMtMSAwKzIgNC0yIDcrMSA1KzQgMS0xIDUtMyA3LTEgNC0xIDYtMyA4LTEgMTAtNCA3KzEgMTArMyAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>13</td>
+<td>15.24ms ± 2.18ms</td>
+<td>2138</td>
+<td>2139</td>
+<td>18216</td>
+
+<td>1.049</td>
+<td>
+
+[140 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbi4uRkJCTCBcbi4uRkcuTCBcblBQRkcuTEtcbkhDQ0MuLiBcbkhFRUlELiBcbkpKLklELiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw1LDksMiwxOCwxOSwyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMywiZHVyYXRpb24iOiIxNS4yNG1zIMKxIDIuMThtcyIsInRpY2tDb3VudCI6MjEzOCwidmlzaXRlZE5vZGVzIjoyMTM5LCJzZWFyY2hDb3VudCI6MTgyMTYsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDQ5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzMgMTArMSA1KzEgMi0zIDYrMiA1LTEgNCsxIDEwLTEgMS0zIDMtMSAxMCsxIDUrMSA0LTEgNi0zIDIrMyA5LTQgOC0xIDkrMyAyLTMgMTArMyA5LTMgOCsxIDIrMiA4LTIgNysyIDItMiA3LTEgMisxIDcrMiA4KzIgNisyIDUtMSA2LTEgMi0xIDYrMiA0KzMgNSsxIDArMyA1LTMgNC0zIDYtMyA4LTEgMTAtNCA4KzEgMTArMSA2KzMgNSszIDYtMyAyKzEgNisyIDUtMyAxMC0xIDYtMSA1KzIgMTArMSA1LTEgMi0xIDEwLTEgNisyIDUrMSA0KzMgMC0zIDkrMSAzKzEgMSszIDArMSA1LTMgMC0xIDQtMiAxMCsxIDQtMSA2LTMgMTAtMSA4LTEgMTArNCA4KzEgNisyIDIrMSA2LTEgOSsxIDYtMSA4LTEgMTAtNCA4KzEgMTArMSA2KzEgOS0xIDEwLTEgNisxIDErMSAzLTEgMTArMSA2LTIgOC0xIDEwLTEgOSsxIDEwKzMgOC0xIDctNCA5KzEgOCsxIDIrMiA3KzEgMysxIDEtMSAxMC0zIDctMSAxMCsyIDkrMSAxMC0xIDgrMSAyLTMgNiszIDEwLTEgNCszIDArMSAxLTIgMy0xIDArMiA0LTIgMTArMSA3KzEgNSs0IDEtMSA1LTMgMTAtMSA3LTEgNC0xIDEwKzEgNi0zIDIrMyAxMC0xIDktMSA4LTEgMTArMyA3KzEgMTAtMiA5KzEgMTAtMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>45.38ms ± 16.24ms</td>
+<td>1823</td>
+<td>1824</td>
+<td>14525</td>
+
+<td>1.082</td>
+<td>
+
+[89 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbi4uRkJCTCBcbi4uRkcuTCBcblBQRkcuTEtcbkhDQ0MuLiBcbkhFRUlELiBcbkpKLklELiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJIIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw1LDksMiwxOCwxOSwyNSwyNywyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjQ1LjM4bXMgwrEgMTYuMjRtcyIsInRpY2tDb3VudCI6MTgyMywidmlzaXRlZE5vZGVzIjoxODI0LCJzZWFyY2hDb3VudCI6MTQ1MjUsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDgyIiwic29sdXRpb25TdGVwcyI6IuKIhSA2KzIgNCsxIDEtMyAzLTEgNC0xIDYtMiA5LTQgNisyIDQrMSAxKzEgMTArMSA1KzEgMS0xIDQtMSA2LTMgOSs0IDIrMSA4LTEgMTArMSAyKzEgOC0xIDcrMSA5LTQgMTArMSA3KzEgMi0xIDcrMSA4KzEgMTAtMSAyLTEgMTAtMSA4KzEgNiszIDUtMSAxMC0xIDQrMyAxKzEgMCszIDUtMyAwLTMgOSsxIDMrMSAxKzIgNC0zIDYtMiA5KzEgMisxIDErMSA5LTEgNisxIDEtMSA2LTIgOC0xIDEwKzMgMSsxIDEwLTEgMy0xIDgtMSA3LTQgOSszIDgrMSAxMC0yIDgrMSA2KzIgMysxIDIrMiAxLTEgMi0zIDYrMSA0KzMgMS0yIDMtMSAwKzMgNSsyIDQtMiAxMCsxIDcrMSA1LTIgMTAtMSA1KzMgMS0xIDEwKzEgNS0yIDctMSAxMC0xIDQtMSA2LTMgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>7</td>
+<td>27.60ms ± 4.04ms</td>
+<td>3845</td>
+<td>3846</td>
+<td>33264</td>
+
+<td>1.225</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuLi5GQkJMIFxuLi5GRy5MIFxuUFBGRy5MS1xuSENDQy4uIFxuSEVFSUQuIFxuSkouSUQuICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkgiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDUsOSwyLDE4LDE5LDI1LDI3LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjcsImR1cmF0aW9uIjoiMjcuNjBtcyDCsSA0LjA0bXMiLCJ0aWNrQ291bnQiOjM4NDUsInZpc2l0ZWROb2RlcyI6Mzg0Niwic2VhcmNoQ291bnQiOjMzMjY0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjIyNSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMisxIDErMSAxMCsxIDktMyA1KzEgNi0xIDMtMSA4LTIgMTArMyA3KzMgOCsyIDMrMSAxLTEgMi0xIDYrMyA0KzMgMCsxIDUtNCAwLTEgNC0zIDYtMyAyKzEgMSsxIDMtMSA4LTIgMTAtNCA3LTQgOCsyIDMrMSAxLTEgMi0xIDkrMyA2KzMgNCszIDArMSA1KzEgMS0zIDMtMSAwKzIgNC0zIDYtMSAyKzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>7</td>
+<td>27.05ms ± 9.13ms</td>
+<td>3856</td>
+<td>3857</td>
+<td>33353</td>
+
+<td>1.225</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG4uLkZCQkwgXG4uLkZHLkwgXG5QUEZHLkxLXG5IQ0NDLi4gXG5IRUVJRC4gXG5KSi5JRC4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNSw5LDIsMTgsMTksMjUsMjcsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NywiZHVyYXRpb24iOiIyNy4wNW1zIMKxIDkuMTNtcyIsInRpY2tDb3VudCI6Mzg1NiwidmlzaXRlZE5vZGVzIjozODU3LCJzZWFyY2hDb3VudCI6MzMzNTMsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjI1Iiwic29sdXRpb25TdGVwcyI6IuKIhSAyKzEgMSsxIDMtMSAxMCsxIDUrMSA2LTEgOC0yIDktMyA3KzMgOCsyIDMrMSAxLTEgMi0xIDYrMyA1LTEgMTAtMSA0KzMgMCsxIDUtMyAwLTEgNC0zIDYtMyAyKzEgMSsxIDMtMSA4LTIgNy00IDgrMiA5KzMgMysxIDEtMSAyLTEgNiszIDQrMyAwKzEgNSsxIDEtMyAzLTEgMCsyIDQtMyA2LTIgMiszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>77.69ms ± 10.10ms</td>
+<td>3724</td>
+<td>3725</td>
+<td>32495</td>
+
+<td>1.224</td>
+<td>
+
+[43 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG4uLkZCQkwgXG4uLkZHLkwgXG5QUEZHLkxLXG5IQ0NDLi4gXG5IRUVJRC4gXG5KSi5JRC4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNSw5LDIsMTgsMTksMjUsMjcsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI3Ny42OW1zIMKxIDEwLjEwbXMiLCJ0aWNrQ291bnQiOjM3MjQsInZpc2l0ZWROb2RlcyI6MzcyNSwic2VhcmNoQ291bnQiOjMyNDk1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjIyNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMisxIDErMSAzLTEgMTArMSA1KzEgNi0xIDktMyA4LTIgNyszIDgrMiAzKzEgMS0xIDItMSA2KzMgNS0xIDEwLTEgNCszIDArMSA1LTMgMC0xIDQtMyA2LTMgMisxIDErMSAzLTEgOC0yIDctNCA4KzIgOSszIDMrMSAxLTEgMi0xIDYrMyA0KzMgMS0yIDMtMSAwKzMgNSsxIDEtMSA0LTMgNi0zIDIrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>298.06ms ± 0.00ms</td>
+<td>6</td>
+<td>0</td>
+<td>149112</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>210.86ms ± 0.00ms</td>
+<td>15</td>
+<td>1688</td>
+<td>311199</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>250.90ms ± 0.00ms</td>
+<td>16</td>
+<td>1867</td>
+<td>400774</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>260.57ms ± 0.00ms</td>
+<td>12</td>
+<td>912</td>
+<td>67872</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-36**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-36.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+FLLLBB 
+FGHH.C 
+FGPP.CK
+MMME.C 
+..IEDD 
+JJI... 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (6 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>15</td>
+<td>12.80ms ± 2.97ms</td>
+<td>2554</td>
+<td>2825</td>
+<td>22212</td>
+
+<td>1.206</td>
+<td>
+
+[44 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZMTExCQiBcbkZHSEguQyBcbkZHUFAuQ0tcbk1NTUUuQyBcbi4uSUVERCBcbkpKSS4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDEsNCw3LDgsMTEsMCwxOCwyMSwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxNSwiZHVyYXRpb24iOiIxMi44MG1zIMKxIDIuOTdtcyIsInRpY2tDb3VudCI6MjU1NCwidmlzaXRlZE5vZGVzIjoyODI1LCJzZWFyY2hDb3VudCI6MjIyMTIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMjA2Iiwic29sdXRpb25TdGVwcyI6IuKIhSA0KzEgMCsxIDgrMSA3KzEgNisxIDEtMSAyLTEgNS0xIDcrMiA5LTMgNy0xIDUrMSAyKzEgMSsxIDYtMSA3LTIgOC0xIDExKzQgOCsxIDcrMSA2KzEgMS0xIDItMSA1LTEgNysyIDMrMyA5KzMgNC0yIDAtMiA3LTEgNSsxIDIrMSAxKzEgNi0xIDctMiA4LTMgNysxIDYrMSAxLTEgOC0xIDEwLTEgMTEtMSA1KzIgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>9.21ms ± 1.70ms</td>
+<td>1487</td>
+<td>1488</td>
+<td>13131</td>
+
+<td>1.036</td>
+<td>
+
+[174 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GTExMQkIgXG5GR0hILkMgXG5GR1BQLkNLXG5NTU1FLkMgXG4uLklFREQgXG5KSkkuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiOS4yMW1zIMKxIDEuNzBtcyIsInRpY2tDb3VudCI6MTQ4NywidmlzaXRlZE5vZGVzIjoxNDg4LCJzZWFyY2hDb3VudCI6MTMxMzEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDM2Iiwic29sdXRpb25TdGVwcyI6IuKIhSAwKzEgOCsxIDcrMiA0KzEgNy0xIDYrMiA0LTEgNi0xIDEtMSA3KzEgNCsxIDMrMiA0LTIgMy0xIDYrMSA0LTEgMysxIDQrMiAyLTEgMy0yIDctMSA1LTEgNysyIDktMiAxMSsxIDkrMSA2LTEgMTEtMSA0KzEgOS0yIDExKzEgNy0yIDYrMiA3KzEgNi0xIDExLTEgNy0xIDUrMSAxMSsxIDIrMSA3KzEgMTEtMSA2LTEgNy0xIDErMSAxMSsxIDcrMSAzKzIgMTEtMSAzLTEgNi0xIDMtMSA3LTIgMTErMSA4LTEgMTErMyA4KzEgNysyIDMrMiA2KzMgMy0xIDYtMiAxLTEgMy0xIDctMSA2KzIgMi0xIDcrMSA2LTEgNS0xIDctMSA2LTEgNysyIDkrMyA3LTIgNC0xIDcrMSAzKzMgNy0xIDQtMSA3KzIgOS0yIDMtMiA5KzEgMysxIDQrMiA5LTEgNC0xIDMtMiA5KzEgMyszIDYrMiAzLTIgOS0xIDYtMSA5KzIgNy0xIDMrMSA2KzEgNSsxIDIrMSA0LTEgMSsxIDMtMSA2LTMgMysyIDctMiAwLTIgOC0zIDExLTEgMTAtMSA3KzIgMTErMSAzLTEgMTArMSAxMS0xIDYrMyAxMC0xIDYtMiA1KzIgMysxIDUtMSAxMSsxIDMtMSA2KzIgNC0xIDExLTEgMysxIDctMSAxMSsxIDYtMSA3KzEgNS0xIDExLTEgMTArMSAzLTEgMTErMSA2KzEgMysxIDctMSAxMS0xIDQrMSAxMC0xIDExKzEgNi0yIDEwKzEgNysxIDExLTEgMS0xIDEwLTEgMTErMSAzLTEgMTArMSA4LTEgMCsyIDExLTEgMTAtMSAzLTEgMTErMSAzKzIgNy0xIDExLTEgMTArMSA2KzIgMTErMSA3KzEgMy0yIDExLTEgNi0xIDMrMiAxMC0xIDYrMSA1KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>9.42ms ± 1.74ms</td>
+<td>1691</td>
+<td>1692</td>
+<td>15073</td>
+
+<td>1.031</td>
+<td>
+
+[203 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZMTExCQiBcbkZHSEguQyBcbkZHUFAuQ0tcbk1NTUUuQyBcbi4uSUVERCBcbkpKSS4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDEsNCw3LDgsMTEsMCwxOCwyMSwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI5LjQybXMgwrEgMS43NG1zIiwidGlja0NvdW50IjoxNjkxLCJ2aXNpdGVkTm9kZXMiOjE2OTIsInNlYXJjaENvdW50IjoxNTA3MywiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgrMSA3KzIgNCsxIDMrMiAwLTEgNC0yIDArMiAzLTEgMC0xIDYrMiAzKzEgNi0xIDQrMSAzLTEgMCsxIDQrMSAzLTEgNisxIDMrMiA0LTMgMy0xIDEtMSAwLTEgMysxIDAtMSA0KzMgNi0xIDArMiA0LTIgMy0xIDAtMSA0KzIgMy0xIDctMSAwKzEgNC0xIDcrMSA2KzEgMC0xIDctMSAyLTEgMCsxIDUtMSA3KzIgOS0yIDExKzEgOSsxIDAtMSAxMS0xIDYtMSA5KzEgNy0yIDQrMSA3KzEgMCsxIDcrMSA5LTMgMTErMSA3LTIgNisyIDcrMSA2LTEgMTEtMSA3LTEgNSsxIDExKzEgMisxIDcrMSAxMS0xIDYtMSA3LTEgMSsxIDExKzEgNi0xIDctMSAxMS0xIDgtMSAxMSs0IDgrMSA3KzIgMyszIDctMSA2KzMgMS0xIDcrMSAzLTMgNy0xIDYtMiAyLTEgNysxIDUtMSA3KzEgOSszIDctMiAwLTEgNysxIDQtMSA3KzEgOS0xIDArMSA5LTEgMyszIDkrMiAzLTIgNy0xIDMrMSAwLTIgNysxIDYrMiAwKzEgOS0xIDMtMSA0KzEgOSsxIDctMSAwKzEgMy0xIDYtMSA0LTEgNy0xIDAtMSA2KzEgNSsxIDcrMSA2LTEgNCsxIDctMSAwKzEgNisxIDIrMSA3KzEgNi0yIDAtMSA3LTEgNC0xIDArMSA2KzEgNysxIDMrMyA3LTEgMC0yIDYtMSA3KzEgMy0xIDArMiAzLTEgMC0xIDQtMSAzKzIgNy0xIDArMSA0KzIgNisyIDAtMyA3KzEgMy0xIDArMiAzLTEgNi0xIDArMSAzKzEgMC0yIDMrMSA0LTMgMCsxIDMtMSA0KzIgMSsxIDMtMiA3LTEgNi0yIDctMSA4LTEgMTEtMSAwKzEgNCsxIDExKzEgOCsxIDcrMiAwLTEgMyszIDctMiA4LTEgMTEtMSAwLTEgOC0xIDEwLTEgNSsyIDQtMiA4LTEgNysyIDMtMSA2KzMgMC0xIDMrMSA3LTEgMCsxIDYtMiAxLTEgOC0xIDcrMSAzLTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>12</td>
+<td>15.56ms ± 1.95ms</td>
+<td>1116</td>
+<td>1117</td>
+<td>9306</td>
+
+<td>1.034</td>
+<td>
+
+[172 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbkZMTExCQiBcbkZHSEguQyBcbkZHUFAuQ0tcbk1NTUUuQyBcbi4uSUVERCBcbkpKSS4uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJNIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE0LDEsNCw3LDgsMTEsMCwxOCwyMSwyNiwyOCwzMF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMiwiZHVyYXRpb24iOiIxNS41Nm1zIMKxIDEuOTVtcyIsInRpY2tDb3VudCI6MTExNiwidmlzaXRlZE5vZGVzIjoxMTE3LCJzZWFyY2hDb3VudCI6OTMwNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzQiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDgrMSA3KzIgNisyIDctMSA2LTEgNCsxIDcrMSAzKzIgNi0xIDQtMiA2KzIgNC0xIDMtMSA0KzMgMS0xIDYtMSA0LTIgMysxIDQrMSA2KzEgMi0xIDUtMSA2LTEgNC0xIDMtMSA2KzEgNSsxIDQtMSAwKzEgNS0xIDQrMyA2LTEgNC0xIDcrMSA5LTIgMTErMSA5KzEgNC0xIDExLTEgNisxIDktMSAxMSsxIDYrMSA0KzIgOS0xIDctMSA2LTIgMTEtMSA2KzEgNSsxIDExKzEgMy0xIDctMSAxMS0xIDYtMSA3KzEgMysyIDExKzEgNisyIDIrMSA2LTEgMTEtMSAzLTIgMSsxIDExKzEgNy0xIDYtMiAxMS0xIDctMSA4LTEgMTErNCA4KzEgNysyIDYrMyA3LTEgNi0yIDEtMSA3KzEgNisxIDMrMyA3LTEgNi0xIDItMSA3KzEgNisyIDUtMSA2LTEgMy0xIDcrMSA5KzMgNy0xIDYtMSA1KzEgNisyIDQtMyA2LTEgNCsyIDMtMiA3LTEgNi0xIDUtMSA3KzEgNisyIDQrMSA3LTEgNi0xIDAtMSA3KzEgNi0xIDUrMSA3LTEgNisyIDQtMSA3KzEgMyszIDctMSA2LTIgNS0xIDcrMSA2KzEgNC0yIDctMSA2KzEgNCszIDcrMSA0LTIgMy0yIDYtMiA1KzEgNisxIDQtMSA2KzEgNCszIDIrMSA2LTIgNC0xIDYrMSAzLTEgNCsxIDMrMyA3LTEgNi0xIDQtMiA3KzEgNisyIDQtMSA3LTEgMSsxIDYtMSA3KzEgNCsyIDYrMSA0KzEgNi0zIDctMiA4LTEgMTEtMSA0LTIgMC0xIDQrMSA4LTEgMTAtMSA1KzIgNC0xIDgtMSA3KzIgNiszIDctMSA2LTIgMS0xIDgtMSAwKzMifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>17</td>
+<td>11.37ms ± 2.26ms</td>
+<td>2100</td>
+<td>2101</td>
+<td>18324</td>
+
+<td>1.195</td>
+<td>
+
+[45 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuRkxMTEJCIFxuRkdISC5DIFxuRkdQUC5DS1xuTU1NRS5DIFxuLi5JRUREIFxuSkpJLi4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkYiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6Ik0iLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTQsMSw0LDcsOCwxMSwwLDE4LDIxLDI2LDI4LDMwXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE3LCJkdXJhdGlvbiI6IjExLjM3bXMgwrEgMi4yNm1zIiwidGlja0NvdW50IjoyMTAwLCJ2aXNpdGVkTm9kZXMiOjIxMDEsInNlYXJjaENvdW50IjoxODMyNCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xOTUiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSA4KzEgNysxIDYrMiAxLTEgMi0xIDUtMSA0KzEgNysyIDktMyA3LTEgNSsxIDIrMSAxKzEgNi0yIDctMiA4LTEgMTErNCA4KzEgNysxIDYrMSAxLTEgMi0xIDUtMSA3KzIgOSszIDctMSA1KzEgMisxIDErMSA2LTEgMyszIDctMiA0LTIgMC0yIDgtMyA3KzEgNisxIDEtMSAxMS0xIDgtMSAxMC0xIDArMiA1KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>15</td>
+<td>12.92ms ± 4.49ms</td>
+<td>2136</td>
+<td>2137</td>
+<td>18620</td>
+
+<td>1.201</td>
+<td>
+
+[44 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GTExMQkIgXG5GR0hILkMgXG5GR1BQLkNLXG5NTU1FLkMgXG4uLklFREQgXG5KSkkuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTUsImR1cmF0aW9uIjoiMTIuOTJtcyDCsSA0LjQ5bXMiLCJ0aWNrQ291bnQiOjIxMzYsInZpc2l0ZWROb2RlcyI6MjEzNywic2VhcmNoQ291bnQiOjE4NjIwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjIwMSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgOCsxIDcrMSA2KzEgMS0xIDItMSA1LTEgMCsxIDQrMSA3KzIgOS0zIDctMSA1KzEgMisxIDErMSA2LTEgNy0yIDgtMSAxMSs0IDgrMSA3KzIgNisxIDEtMSAyLTEgNS0xIDcrMSA5KzMgNy0xIDMrMyAwLTIgNSsxIDIrMSAxKzEgNi0xIDQtMiA3LTIgOC0zIDExLTEgMTAtMSA1KzIgNysxIDYrMiAxLTEgOC0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>7</td>
+<td>26.28ms ± 3.04ms</td>
+<td>1812</td>
+<td>1813</td>
+<td>15787</td>
+
+<td>1.195</td>
+<td>
+
+[44 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG5GTExMQkIgXG5GR0hILkMgXG5GR1BQLkNLXG5NTU1FLkMgXG4uLklFREQgXG5KSkkuLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNCwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzBdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NywiZHVyYXRpb24iOiIyNi4yOG1zIMKxIDMuMDRtcyIsInRpY2tDb3VudCI6MTgxMiwidmlzaXRlZE5vZGVzIjoxODEzLCJzZWFyY2hDb3VudCI6MTU3ODcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTk1Iiwic29sdXRpb25TdGVwcyI6IuKIhSA4KzEgNysyIDYrMSAxLTEgMi0xIDUtMSA0KzEgMCsxIDcrMSA5LTMgNy0xIDUrMSAyKzEgMSsxIDYtMSA3LTIgOC0xIDExKzQgOCsxIDcrMiA2KzEgMS0xIDItMSA1LTEgNysxIDkrMyA3LTEgMyszIDQtMiAwLTIgNSsxIDIrMSAxKzEgNi0xIDctMiA4LTMgMTEtMSAxMC0xIDUrMiA3KzEgNisyIDEtMSA4LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>207.43ms ± 0.00ms</td>
+<td>8</td>
+<td>0</td>
+<td>341856</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>207.04ms ± 0.00ms</td>
+<td>22</td>
+<td>640</td>
+<td>397984</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>224.85ms ± 0.00ms</td>
+<td>22</td>
+<td>621</td>
+<td>373327</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>229.44ms ± 0.00ms</td>
+<td>16</td>
+<td>572</td>
+<td>117050</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-37**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-37.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+12
+BBG.HH 
+EEG.FL 
+CPP.FLK
+CMMMFL 
+C..IDD 
+JJ.INN 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+12 (7 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>20</td>
+<td>9.95ms ± 2.89ms</td>
+<td>1942</td>
+<td>1950</td>
+<td>15257</td>
+
+<td>1.179</td>
+<td>
+
+[47 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy5GTCBcbkNQUC5GTEtcbkNNTU1GTCBcbkMuLklERCBcbkpKLklOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMCwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjkuOTVtcyDCsSAyLjg5bXMiLCJ0aWNrQ291bnQiOjE5NDIsInZpc2l0ZWROb2RlcyI6MTk1MCwic2VhcmNoQ291bnQiOjE1MjU3LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE3OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSA2KzEgMC0xIDErMSAyLTIgNC0xIDUtMSA4KzIgMSsyIDMrMSAwKzEgNi0xIDExLTEgMSsxIDgtMiA0KzEgMisxIDcrMSA2LTIgOC0xIDktMyA4KzEgNisxIDctMSAyLTEgNC0xIDgrMiAxLTEgMTErMSA2KzIgMy0xIDAtMSAxLTIgOC0yIDQrMSAyKzEgMS0xIDArMSA2LTEgMTAtMiAxMS0xIDEyLTIgNSszIDIrMSA5LTEgNCsyIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>6.81ms ± 5.41ms</td>
+<td>928</td>
+<td>929</td>
+<td>6505</td>
+
+<td>1.018</td>
+<td>
+
+[262 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkcuSEggXG5FRUcuRkwgXG5DUFAuRkxLXG5DTU1NRkwgXG5DLi5JREQgXG5KSi5JTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTAsMTEsMTIsMCwxOSwyNywyOCwzMCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI2LjgxbXMgwrEgNS40MW1zIiwidGlja0NvdW50Ijo5MjgsInZpc2l0ZWROb2RlcyI6OTI5LCJzZWFyY2hDb3VudCI6NjUwNSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMTgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDArMSAxMSsxIDYrMSAyLTEgMC0yIDErMSA1LTEgMi0xIDQtMSA4KzIgMSsyIDArMiA2LTEgMTEtMSAxKzEgOC0yIDQrMSAzKzEgNi0xIDQtMSA1KzEgMysxIDQrMSA2KzEgMisyIDMtMiAyLTEgMysxIDYtMSAyKzEgNysyIDMrMSA2LTEgOC0xIDktMSAxMi0xIDMtMSA3LTEgMTIrMSA5KzEgOCsxIDItMSA1LTEgOC0xIDktMSAxMi0xIDMrMSA1KzEgMTIrMSA5KzEgMC0xIDktMiAxMi0xIDEwLTEgNS0xIDEyKzEgMy0xIDEwKzEgMTItMSA5LTEgMTAtMSA4KzEgMTIrMSAxMCsxIDUrMSAxMi0xIDIrMSAxMC0xIDEyKzEgOC0xIDEwKzEgOS0xIDArMSAxMi0xIDEwLTEgNSsxIDAtMSA5KzIgMTIrMSAzKzEgNS0xIDcrMSAxMi0xIDEwKzEgMy0xIDktMSAxMC0xIDUrMiA4KzEgNS0xIDEyKzEgNisyIDUtMSA3LTIgMTArMSAzLTEgMTItMSAxMC0xIDUrMiAzKzEgNS0xIDYtMSAxMisxIDItMiA1LTIgMTItMSAxMCsxIDQtMSAxMisxIDgrMiAxMC0xIDEyLTEgMS0xIDEyLTEgMTArMSA2KzEgMTIrMiAxMSsyIDEwLTEgMTEtMSAxMi0xIDEwKzEgNi0xIDEyKzEgNisyIDAtMSAxLTEgMTItMSAxMC0zIDMtMSAxMisxIDExKzEgMTArMyAxLTEgMTEtMSAxMi0xIDEwLTIgOC0yIDEyKzEgMTErMSAxMC0xIDgrMSAxMS0xIDEyLTEgMTArMiA1KzMgMTAtMSA1LTIgMTIrMSAxMSsxIDEwKzIgOC0xIDExLTEgMTItMSAxMC0zIDUrMiA0KzIgMTArMSA1LTIgMTIrMSAxMSsxIDEwLTEgNC0xIDExLTEgMTArMiAxMi0xIDUtMSAxMC0yIDUrMiAxMCsxIDEyKzEgMTErMSAxMCsxIDUtMiAxMCsxIDExLTEgMisxIDEyLTEgMTAtMiA0KzEgMTIrMSAxMSsxIDEwLTEgNC0xIDEtMSAwKzEgMTEtMSAxMi0xIDEwKzMgNi0xIDEyKzEgMTEtMSAxMi0yIDEwLTMgMTIrMSAxMCsyIDUrMyAxMi0xIDEwLTEgNS0yIDEyKzIgMTErMiAxMC0xIDExLTEgMTItMSAxMCsyIDYrMSAxMisxIDExKzEgMTArMSAyKzEgMTEtMSAxMi0xIDEwLTMgNSsyIDEwKzIgNS0xIDEyKzEgMTErMSAxMC0yIDYtMSAxMS0yIDEyLTIgMTArMiAxMisxIDEwLTEgMTErMSAxMisxIDUtMSAxMCsxIDExLTEgMTArMSAxMi0yIDktMSAwKzEgMTIrMiAxMSsyIDEwLTMgMTEtMSAxMi0xIDExLTEgMTArMiA1KzIgMTItMSAxMC0yIDUtMSAxMisyIDEwKzIgMTErMiAxMC0xIDExLTEgMTItMSAxMS0xIDQrMSAxMi0xIDUtMSAxMC0xIDQrMSAwKzEgMTArMSA1KzIgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>4.09ms ± 0.58ms</td>
+<td>817</td>
+<td>818</td>
+<td>5424</td>
+
+<td>1.033</td>
+<td>
+
+[159 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy5GTCBcbkNQUC5GTEtcbkNNTU1GTCBcbkMuLklERCBcbkpKLklOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMCwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjQuMDltcyDCsSAwLjU4bXMiLCJ0aWNrQ291bnQiOjgxNywidmlzaXRlZE5vZGVzIjo4MTgsInNlYXJjaENvdW50Ijo1NDI0LCJicmFuY2hpbmdGYWN0b3IiOiIxLjAzMyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSAwKzEgNisxIDAtMiAyLTEgNS0xIDErMSAyLTEgNC0xIDgrMiAxKzIgMCsyIDYtMSAxMS0xIDErMSA4LTIgMC0xIDgrMSAzKzIgOCsxIDEtMSAxMSsxIDYtMSAwKzEgMTEtMSAxKzEgOC0yIDAtMSAzLTEgOCsxIDArMSA2KzEgNSsxIDgtMSAwLTEgMysxIDQrMSAwKzEgNi0xIDMtMSAwLTEgMisyIDMrMSAyLTEgNS0xIDArMSAzLTEgNisxIDAtMSAzLTEgNSsxIDArMSAyKzEgMysxIDcrMiAwLTEgNi0yIDgtMSA5LTEgMTItMSAwKzEgMysxIDEyKzEgOSsxIDgrMSA3LTEgMC0xIDgtMSA5LTEgMTItMSAyLTEgMCsxIDEyKzEgOSsxIDUtMSA4KzEgMC0xIDMtMSA4LTEgNSsxIDktMyAxMC0xIDgrMSA1LTEgMTArMSAxMi0xIDUrMSA2KzIgMTIrMSA2LTEgNy0xIDEyLTEgNS0xIDYrMSAxMisxIDEwLTEgNi0xIDUrMiAyLTEgNS0xIDQtMSAxMCsxIDEyLTEgOCsxIDUtMSAxMisxIDEwLTEgOCsxIDEyLTEgMS0xIDEyLTEgMTArMSAxMisyIDExKzIgMTAtMSAxMS0xIDYrMiAxMi0xIDEwKzEgNi0xIDEyKzEgMy0xIDExKzEgMTAtMSA2KzEgMC0xIDMrMSAxLTEgMTAtMiAxMS0xIDEyLTEgMTArMSAzLTEgMTIrMSAxMSsxIDEtMSAxMC0xIDExLTEgMTItMSA4LTIgNSszIDEwKzIgNCsxIDEwLTEgNCsxIDIrMiA5LTEgMS0xIDEwLTEgNC0xIDEwKzIgMCsyIDEwLTEgNi0xIDExLTEgMTItMSA0KzIgMTAtMSAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>9</td>
+<td>21.82ms ± 6.18ms</td>
+<td>849</td>
+<td>850</td>
+<td>5675</td>
+
+<td>1.046</td>
+<td>
+
+[122 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkJCRy5ISCBcbkVFRy5GTCBcbkNQUC5GTEtcbkNNTU1GTCBcbkMuLklERCBcbkpKLklOTiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjEsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjMsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJCIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjgsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMywyLDQsNiwxMCwxMSwxMiwwLDE5LDI3LDI4LDMwLDM0XSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjksImR1cmF0aW9uIjoiMjEuODJtcyDCsSA2LjE4bXMiLCJ0aWNrQ291bnQiOjg0OSwidmlzaXRlZE5vZGVzIjo4NTAsInNlYXJjaENvdW50Ijo1Njc1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjA0NiIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMi0xIDArMSAxMSsxIDYrMSA1LTEgMC0yIDErMSA3KzEgNSsxIDIrMSA3LTEgMi0yIDQtMSA1LTEgOCsyIDErMiAzKzIgMCsyIDYtMiAxMS0xIDYrMSAzLTIgMSsxIDgtMiA1KzEgNCsxIDMrMiA2LTEgNS0xIDQtMSAzLTEgMC0xIDYrMSA0KzEgNSsxIDYtMSAyKzIgNysyIDYtMSA4LTEgOS0xIDEyLTEgNy0xIDktMyAxMisxIDEwLTEgNSsxIDkrMiAyLTEgOS0xIDgrMSA2KzIgNy0xIDItMSA1LTIgMTArMSAxMi0xIDYtMSA1KzEgMTIrMSA0LTEgOCsxIDYrMSAzLTEgMTItMSA4LTEgNS0xIDgrMiAxLTEgMysxIDExKzEgNisxIDEyKzEgMC0xIDEtMSAxMC0zIDEyLTEgMTArMSAzLTEgMTIrMSAxMSsxIDEwLTEgMS0xIDgtMiA1KzIgMTEtMSAxMCsxIDgrMSAxMSsxIDUtMSAxMC0xIDExLTEgMTArMyA4LTEgMTErMSA0KzEgMTAtMyAxMS0xIDEyLTEgNSsyIDEwKzIgMisyIDktMSAxMC0yIDcrMSA1LTEgMTIrMSAxMCsxIDExKzEgNy0xIDEwKzEgMTEtMSAxLTEgMCsyIDExKzEgNi0xIDExLTIgMTItMiAxMC0yIDUrMSA0KzIgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>14</td>
+<td>14.02ms ± 2.54ms</td>
+<td>1928</td>
+<td>1929</td>
+<td>15142</td>
+
+<td>1.179</td>
+<td>
+
+[47 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMlxuQkJHLkhIIFxuRUVHLkZMIFxuQ1BQLkZMS1xuQ01NTUZMIFxuQy4uSUREIFxuSkouSU5OICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6MywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkIiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6OCwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEzLDIsNCw2LDEwLDExLDEyLDAsMTksMjcsMjgsMzAsMzRdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTQsImR1cmF0aW9uIjoiMTQuMDJtcyDCsSAyLjU0bXMiLCJ0aWNrQ291bnQiOjE5MjgsInZpc2l0ZWROb2RlcyI6MTkyOSwic2VhcmNoQ291bnQiOjE1MTQyLCJicmFuY2hpbmdGYWN0b3IiOiIxLjE3OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMSA2KzEgMC0xIDErMSAyLTIgNS0xIDQtMSA4KzIgMSsyIDArMSA2LTEgMTEtMSAxKzEgOC0yIDQrMSAyKzEgNysxIDMrMSA2LTIgOC0xIDktMyA4KzEgNisyIDctMSAyLTEgNC0xIDgrMiAxLTEgMTErMSAzLTEgNisxIDEyLTEgMC0xIDEtMiA4LTIgMTAtMiA1KzMgNCsxIDIrMiAxLTEgOS0xIDArMiA2LTEgMTEtMSAxMi0xIDQrMiAwKzIifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>18</td>
+<td>10.98ms ± 2.08ms</td>
+<td>1942</td>
+<td>1943</td>
+<td>15257</td>
+
+<td>1.179</td>
+<td>
+
+[47 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkcuSEggXG5FRUcuRkwgXG5DUFAuRkxLXG5DTU1NRkwgXG5DLi5JREQgXG5KSi5JTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTAsMTEsMTIsMCwxOSwyNywyOCwzMCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxOCwiZHVyYXRpb24iOiIxMC45OG1zIMKxIDIuMDhtcyIsInRpY2tDb3VudCI6MTk0MiwidmlzaXRlZE5vZGVzIjoxOTQzLCJzZWFyY2hDb3VudCI6MTUyNTcsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTc5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMSsxIDYrMSAwLTEgMSsxIDItMiA0LTEgNS0xIDgrMiAxKzIgMysxIDArMSA2LTIgMTEtMSAxKzEgOC0yIDQrMSAyKzEgNysxIDYtMSA4LTEgOS0zIDgrMSA2KzIgNy0xIDItMSA0LTEgOCsyIDEtMSAxMSsxIDYrMSAwLTEgMy0xIDEtMiAxMC0zIDgtMiA0KzIgMisxIDEtMSAwKzEgNi0xIDExLTEgMTItMiA0KzEgNSszIDIrMSA5LTEgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>48.75ms ± 12.00ms</td>
+<td>1476</td>
+<td>1477</td>
+<td>11152</td>
+
+<td>1.170</td>
+<td>
+
+[47 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5CQkcuSEggXG5FRUcuRkwgXG5DUFAuRkxLXG5DTU1NRkwgXG5DLi5JREQgXG5KSi5JTk4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoxLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjozLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQiIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjo4LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTMsMiw0LDYsMTAsMTEsMTIsMCwxOSwyNywyOCwzMCwzNF0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6IjQ4Ljc1bXMgwrEgMTIuMDBtcyIsInRpY2tDb3VudCI6MTQ3NiwidmlzaXRlZE5vZGVzIjoxNDc3LCJzZWFyY2hDb3VudCI6MTExNTIsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTcwIiwic29sdXRpb25TdGVwcyI6IuKIhSAxMSsxIDYrMSAwLTEgMSsxIDItMiA1LTEgNC0xIDgrMiAxKzIgMCsxIDMrMSA2LTIgMTEtMSAxKzEgOC0yIDQrMSAyKzEgNysxIDYtMSA4LTEgOS0zIDgrMSA2KzEgNy0xIDItMSA0LTEgOCsyIDEtMSAxMSsxIDYrMiAzLTEgMC0xIDEtMiAxMC0zIDgtMiA1KzIgNCsyIDIrMiA5LTEgMS0xIDArMiA2LTEgMTEtMSAxMi0yIDUrMSA0KzEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>267.26ms ± 0.00ms</td>
+<td>11</td>
+<td>0</td>
+<td>303501</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>224.21ms ± 0.00ms</td>
+<td>11</td>
+<td>0</td>
+<td>240084</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>272.81ms ± 0.00ms</td>
+<td>10</td>
+<td>0</td>
+<td>105862</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>215.48ms ± 0.00ms</td>
+<td>32</td>
+<td>777</td>
+<td>286882</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>216.68ms ± 0.00ms</td>
+<td>33</td>
+<td>779</td>
+<td>305447</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>215.49ms ± 0.00ms</td>
+<td>27</td>
+<td>580</td>
+<td>103085</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-38**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-38.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+10
+B..FFF 
+BGGH.. 
+PPEH.LK
+..EIIL 
+..DJJL 
+..DCCC 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+10 (5 Horizontal, 5 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>12</td>
+<td>15.64ms ± 2.49ms</td>
+<td>3711</td>
+<td>3994</td>
+<td>28991</td>
+
+<td>1.193</td>
+<td>
+
+[48 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguTEtcbi4uRUlJTCBcbi4uREpKTCBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw3LDksMCwxNCwxNywyMSwyNiwyNywzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMiwiZHVyYXRpb24iOiIxNS42NG1zIMKxIDIuNDltcyIsInRpY2tDb3VudCI6MzcxMSwidmlzaXRlZE5vZGVzIjozOTk0LCJzZWFyY2hDb3VudCI6Mjg5OTEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTkzIiwic29sdXRpb25TdGVwcyI6IuKIhSAxLTEgNi0yIDcrMSAzKzEgMisyIDUtMSA4LTEgOSsxIDEwLTMgMysyIDctMSA2KzEgMSsxIDUtMSAwKzEgNCszIDAtMSA1KzEgMS0xIDYtMSA3KzEgMy0xIDEwKzMgNCsxIDgrMSA1KzEgMi0zIDUtMSAzLTIgNy00IDYrMSAxKzEgNSsxIDMrMSAyKzMgNS0yIDArMSA3KzEgNC00IDAtMSA3LTEgOC0yIDktNCA4KzEgMysxIDEwLTEgNisyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>6.59ms ± 1.11ms</td>
+<td>1110</td>
+<td>1111</td>
+<td>7795</td>
+
+<td>1.032</td>
+<td>
+
+[176 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CR0dILi4gXG5QUEVILkxLXG4uLkVJSUwgXG4uLkRKSkwgXG4uLkRDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjEsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi41OW1zIMKxIDEuMTFtcyIsInRpY2tDb3VudCI6MTExMCwidmlzaXRlZE5vZGVzIjoxMTExLCJzZWFyY2hDb3VudCI6Nzc5NSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMzIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMSA5KzEgMS0yIDYtMSA5LTEgNysxIDMrMSA5KzEgMysxIDIrMiA1LTEgOC0xIDEwLTMgMy0xIDErMSAzKzIgNy0xIDYrMSAxKzEgNS0xIDArMyA0KzMgMC0zIDUrMSAxLTMgNi0xIDcrMSAzLTIgMTArMyA5LTEgMTAtMiA0KzEgMTArMSA5KzEgMysxIDEwLTEgNC0xIDErMiAxMC0xIDEtMSAxMCszIDgrMSAzLTEgNSsxIDQrMSAzKzEgMi0zIDQtMSAzLTIgOS0xIDctMSA2KzEgOSsxIDIrMSA0KzEgOS0xIDYrMSA0LTEgMS0xIDYtMiA5KzEgNysxIDQrMSA5LTEgMy0xIDQtMSAyLTEgOSsxIDQrMSA3LTEgOS0xIDYrMiA1LTEgNy0zIDgtMSAzKzEgMTAtMiAxKzMgMTArMSA2LTEgMTArMSA5KzEgMTAtMiAzKzIgMTArMSA1LTEgMCszIDEwLTEgOC0xIDEwKzIgOCsyIDcrMSA0LTIgNSsxIDQrMSAxLTMgNCsxIDctMSA4LTEgMTAtMiA2LTEgMTArMSAxKzIgMTArMSA4KzEgNSsxIDIrMyA1LTEgOC0xIDEwLTIgNisxIDEwKzEgMS0yIDEwKzEgOCsxIDcrMSA0LTMgNy0xIDgtMSAxMC0zIDMrMSA2LTEgMSsyIDMtMSAxMCszIDgrMSA3KzEgNC0xIDYrMSA3LTEgOC0xIDEwLTMgMysxIDEtMSA2LTEgMy0xIDEwKzMgOCsxIDUrMSAyLTIgNisxIDIrMSAxKzIgMisxIDUtMiA0KzEgMC0yIDMtMSA5LTEgOC0xIDEwLTMgOSsxIDQtMSAwLTEgOC0xIDEwKzMgOS00IDEwLTIgOSszIDEwKzEgOS0yIDMrMSAxMC0yIDktMSAzKzEgOCsxIDArMyAzLTEgMTArMyA4LTEgMTAtMiA5KzEgMTAtMSAzKzEgNisyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>6.48ms ± 4.78ms</td>
+<td>872</td>
+<td>873</td>
+<td>6010</td>
+
+<td>1.042</td>
+<td>
+
+[134 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguTEtcbi4uRUlJTCBcbi4uREpKTCBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw3LDksMCwxNCwxNywyMSwyNiwyNywzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI2LjQ4bXMgwrEgNC43OG1zIiwidGlja0NvdW50Ijo4NzIsInZpc2l0ZWROb2RlcyI6ODczLCJzZWFyY2hDb3VudCI6NjAxMCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNDIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMSA5KzEgMS0yIDYtMSA5LTEgNysxIDMrMSA5KzEgMysxIDIrMiA1LTEgOC0xIDEwLTMgMysxIDctMSA2KzEgMSsyIDUtMSAwKzMgNSsxIDEtMiA2LTEgNysxIDMtMSAxMCszIDgrMSA1KzEgMi0yIDErMSAyKzEgNCs0IDItMiA0LTIgNS0xIDgtMSAxMC0zIDMrMSA3LTEgNCsxIDYrMSAxLTIgNC0xIDErMyA1LTEgMC0yIDQrMSAwLTEgNSsxIDEtMyA2LTEgNysxIDMtNCAxMCszIDktMSAxMC0yIDctMSA2KzMgNCsxIDMrMSAxKzMgNS0xIDArMSA2LTIgMTArMiA5KzEgMTAtMSA0LTIgMTAtMiA0KzEgMTArMSAwLTEgMTArMiA5LTEgOCsxIDctMiA5KzEgMysyIDQrMSA3LTEgOC0xIDEwLTIgMCszIDEwKzEgNSsxIDEwKzEgOCsxIDcrMSA0LTIgMS0zIDQrMSA2LTEgNCsxIDctMSA1KzEgMiszIDUtMSA4LTEgMTAtMiA2KzEgMTArMSAxKzMgMTArMSA4KzEgNysxIDQtNCA3LTEgOC0xIDEwLTMgMysxIDUtMSA4LTEgMy0xIDEwKzMgNCsxIDEwLTIgOCsxIDEwLTEgMC0yIDEwKzMgOCsxIDQtMSAzLTEgOS0xIDgtMSAxMC0zIDYrMiAwLTEgOC0xIDktMyAzKzIgOCsxIDMtMSAxMCsyIDArNCJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>19</td>
+<td>9.56ms ± 1.16ms</td>
+<td>693</td>
+<td>694</td>
+<td>4748</td>
+
+<td>1.040</td>
+<td>
+
+[133 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTBcbkIuLkZGRiBcbkJHR0guLiBcblBQRUguTEtcbi4uRUlJTCBcbi4uREpKTCBcbi4uRENDQyAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw3LDksMCwxNCwxNywyMSwyNiwyNywzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxOSwiZHVyYXRpb24iOiI5LjU2bXMgwrEgMS4xNm1zIiwidGlja0NvdW50Ijo2OTMsInZpc2l0ZWROb2RlcyI6Njk0LCJzZWFyY2hDb3VudCI6NDc0OCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNDAiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDYtMSAxLTIgNi0xIDcrMSAzKzEgMisyIDUtMSA4LTEgMTAtMiA5KzEgMysxIDEwLTEgMysxIDctMSA2KzEgMSsyIDUtMSAwKzMgNCsxIDUrMSA0KzIgMS0zIDYtMSAxKzIgNysxIDMtMSAxMCsyIDQtMyAxMC0xIDEtMSA0KzMgMTArMiA4KzEgNSsxIDQtMyAyLTIgNCs0IDItMSA1LTEgOC0xIDEwLTIgNC0yIDEwLTEgNCsxIDMrMSA3LTEgNisxIDQtMSAxKzIgNS0xIDQrMSAwLTMgNSsxIDEtMyA2LTEgMSsxIDcrMSAzLTEgMTArMiA0KzEgMTAtMSAxLTEgNC0xIDMtMyA5LTEgNy0xIDYrMyA0KzEgNi0yIDMrMSAxMCsyIDkrMSAxMC0xIDQtMSAxMC0yIDErMiAxMCszIDktMSA4KzEgNy0xIDkrMSA0KzEgNysxIDUrMSA5LTEgNisxIDUtMSA4LTEgMS0xIDQtMSA4KzEgNy0yIDQrMSA3LTEgNSsxIDMrMSAyKzQgNS0xIDgtMSAxMC0yIDYrMSAxMCsxIDMtMSAxLTEgMTAtMSAxKzMgNS0xIDArMSA2LTEgMTArMiA4KzEgNyszIDgtMSAxMC0yIDYrMSAxMCsxIDQtNCAxMC0yIDAtMSAxMCsxIDYtMSAxMCsyIDgrMSA3LTMgOC0xIDEwLTMgNisxIDMrMSA4LTEgOS0zIDgrMSAzKzIgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>10</td>
+<td>19.74ms ± 2.40ms</td>
+<td>3119</td>
+<td>3120</td>
+<td>24116</td>
+
+<td>1.183</td>
+<td>
+
+[49 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMFxuQi4uRkZGIFxuQkdHSC4uIFxuUFBFSC5MS1xuLi5FSUlMIFxuLi5ESkpMIFxuLi5EQ0NDICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6M31dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDcsOSwwLDE0LDE3LDIxLDI2LDI3LDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEwLCJkdXJhdGlvbiI6IjE5Ljc0bXMgwrEgMi40MG1zIiwidGlja0NvdW50IjozMTE5LCJ2aXNpdGVkTm9kZXMiOjMxMjAsInNlYXJjaENvdW50IjoyNDExNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xODMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEtMSA2LTIgNysxIDMrMSAyKzIgNS0xIDgtMSAxMC0zIDkrMSAzKzIgNy0xIDYrMSAxKzEgNS0xIDArMyA0KzMgMC0zIDUrMSAxLTEgNi0xIDcrMSAzLTEgMTArMyA4KzEgNSsxIDItMyAzLTIgNS0xIDQrMSA3LTQgNSsxIDMrMSA2KzEgMSsxIDIrMyA1LTIgMCsxIDcrMSA0LTQgNy0xIDAtMSA4LTIgOS00IDMrMSA4KzEgMCszIDEwLTEgNisyIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>11</td>
+<td>16.74ms ± 0.76ms</td>
+<td>3124</td>
+<td>3125</td>
+<td>24156</td>
+
+<td>1.187</td>
+<td>
+
+[48 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CR0dILi4gXG5QUEVILkxLXG4uLkVJSUwgXG4uLkRKSkwgXG4uLkRDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjEsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTEsImR1cmF0aW9uIjoiMTYuNzRtcyDCsSAwLjc2bXMiLCJ0aWNrQ291bnQiOjMxMjQsInZpc2l0ZWROb2RlcyI6MzEyNSwic2VhcmNoQ291bnQiOjI0MTU2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE4NyIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMS0yIDYtMiA5KzEgNysxIDMrMiAyKzIgNS0xIDgtMSAxMC0zIDMrMSA3LTEgNisxIDErMiA1LTEgMCsxIDQrMyAwLTEgNSsxIDEtMyA2LTEgNysxIDMtMSAxMCszIDgrMSA0KzEgNSsxIDItMyA1LTEgMy0zIDctNCA1KzEgNisxIDMrMiAyKzMgMSszIDUtMiA3KzEgMCsxIDQtNCAwLTEgNy0xIDgtMiA5LTQgMTAtMyAzKzIgOCsxIDYrMiAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>67.52ms ± 12.89ms</td>
+<td>2883</td>
+<td>2884</td>
+<td>22305</td>
+
+<td>1.185</td>
+<td>
+
+[48 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEwXG5CLi5GRkYgXG5CR0dILi4gXG5QUEVILkxLXG4uLkVJSUwgXG4uLkRKSkwgXG4uLkRDQ0MgIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjozfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsNyw5LDAsMTQsMTcsMjEsMjYsMjcsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NCwiZHVyYXRpb24iOiI2Ny41Mm1zIMKxIDEyLjg5bXMiLCJ0aWNrQ291bnQiOjI4ODMsInZpc2l0ZWROb2RlcyI6Mjg4NCwic2VhcmNoQ291bnQiOjIyMzA1LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE4NSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMS0yIDYtMiA5KzEgNysxIDMrMiAyKzIgNS0xIDgtMSAxMC0zIDMrMSA3LTEgNisxIDErMiA1LTEgMCsxIDQrMyAwLTEgNSsxIDEtMiA2LTEgNysxIDMtMSAxMCszIDgrMSA1KzEgMi0zIDUtMSA0KzEgMy0yIDctNCAzKzEgNSsxIDIrMyA2KzEgMSsyIDUtMiA3KzEgMCsxIDQtNCA3LTEgMC0xIDgtMiAxMC0zIDktNCA4KzEgNisyIDMrMiAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td>1</td>
+<td>447.63ms ± 0.00ms</td>
+<td>11</td>
+<td>0</td>
+<td>788050</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>212.20ms ± 0.00ms</td>
+<td>10</td>
+<td>0</td>
+<td>369730</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>404.75ms ± 0.00ms</td>
+<td>12</td>
+<td>0</td>
+<td>275948</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>215.47ms ± 0.00ms</td>
+<td>35</td>
+<td>1809</td>
+<td>462926</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>214.67ms ± 0.00ms</td>
+<td>35</td>
+<td>1840</td>
+<td>457715</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>224.23ms ± 0.00ms</td>
+<td>29</td>
+<td>451</td>
+<td>110721</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-39**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-39.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+11
+..BFFF 
+..BG.. 
+PPHG.CK
+EEHIIC 
+DJLL.C 
+DJMM.. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+11 (5 Horizontal, 6 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>15</td>
+<td>12.73ms ± 1.01ms</td>
+<td>3600</td>
+<td>3709</td>
+<td>24859</td>
+
+<td>1.179</td>
+<td>
+
+[50 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbi4uQkcuLiBcblBQSEcuQ0tcbkVFSElJQyBcbkRKTEwuQyBcbkRKTU0uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwyLDE0LDE3LDE4LDIxLDI0LDI1LDI2LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjE1LCJkdXJhdGlvbiI6IjEyLjczbXMgwrEgMS4wMW1zIiwidGlja0NvdW50IjozNjAwLCJ2aXNpdGVkTm9kZXMiOjM3MDksInNlYXJjaENvdW50IjoyNDg1OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNzkiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUtMSAxMCsyIDExKzIgNCsyIDMrMSAxLTEgNS0xIDcrMSAyKzMgNy0xIDUrMSAxKzEgMy0xIDArMyAzKzEgMS0xIDUtMSA3KzEgNisyIDgtNCA5LTQgNi0yIDctMSA1KzEgMSsxIDMtMSAwLTMgMysxIDEtMSA1LTEgNysxIDItMyA3LTEgNSsxIDErMSAzLTEgNC0yIDEwLTQgNCsxIDMrMSAxLTEgNS0xIDcrMSAxMS0zIDIrMyA3LTEgNSszIDErMSAzLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>9.80ms ± 2.04ms</td>
+<td>1959</td>
+<td>1960</td>
+<td>13456</td>
+
+<td>1.013</td>
+<td>
+
+[400 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG4uLkJHLi4gXG5QUEhHLkNLXG5FRUhJSUMgXG5ESkxMLkMgXG5ESk1NLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMiwxNCwxNywxOCwyMSwyNCwyNSwyNiwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoyMCwiZHVyYXRpb24iOiI5LjgwbXMgwrEgMi4wNG1zIiwidGlja0NvdW50IjoxOTU5LCJ2aXNpdGVkTm9kZXMiOjE5NjAsInNlYXJjaENvdW50IjoxMzQ1NiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMTMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDExKzIgMTArMSAxMS0xIDUtMSAxMS0xIDEwKzEgMTErMiA0KzIgMCsxIDctMSAxMC0xIDUrMSA3KzEgNisxIDExLTEgOC00IDYtMSA1LTEgMC0xIDMrMSAxMSsxIDEwKzEgNC0xIDExLTIgMTAtMSA1KzIgMTErMSA1LTEgMTErMSAxLTIgMTEtMiA1LTIgMTErMSAxMCsxIDExKzEgNysxIDExLTIgMisyIDExKzEgMi0xIDEwLTEgMTEtMSAxKzEgMTErMiAxMCsxIDQrMSAxMS0xIDEwLTEgNisxIDExKzEgMi0xIDEwKzEgMTEtMSA3LTEgMTAtMSA2LTEgMTErMSAxMCsxIDctMSAxMS0xIDUrMSAxMC0xIDExKzEgNSsxIDEtMSAxMS0xIDcrMSA2KzEgMTErMSA1LTIgMTArMSA1KzEgMTEtMSA2LTEgMysxIDExKzEgMTAtMSA1LTEgMTEtMSA3KzEgMTArMSAxMSsxIDIrMyA3LTEgMy0xIDQtMSA1KzEgMSsyIDQrMSA3LTEgMy0xIDArMyA3KzEgNC0yIDgrMSA0KzEgMysxIDQrMSA3LTEgMS0zIDUtMSA3KzIgMi0xIDExLTEgNC0xIDExLTEgMSsyIDExKzIgMisxIDctMSA0KzEgNisxIDcrMSAyLTEgMTEtMSA4LTEgNi0xIDExKzEgMisxIDctMiA1KzEgNysxIDQtMSAxLTEgNS0xIDQrMSA2KzEgNysxIDItMSA4KzQgMTEtMSA4LTIgMS0xIDExKzEgMisxIDctMSA4KzIgNi0xIDQtMSA3KzEgMi0xIDExLTIgMSsyIDExKzEgNCsxIDExKzEgMisxIDYrMiA5LTQgOC00IDYtMiAyLTEgMTEtMSA0LTEgMTEtMyAyKzEgMTErMSA3LTEgNSsxIDExLTEgNCsxIDctMSA1LTEgOSsxIDcrMiAyLTEgNisxIDktMSAyKzEgNy0xIDkrMSA1KzEgMS0xIDYtMSA0LTEgMTErMSA1LTEgNysxIDExLTEgMi0xIDExKzQgMisxIDctMSA0KzEgNy0xIDUrMSAxKzIgNysxIDQtMSAzLTEgNC0xIDktMSA0KzIgNy0xIDgrMSAzKzEgNysxIDQtMSAxLTEgNS0xIDcrMSAyLTEgMTEtMyA5KzEgMTEtMSAyKzEgNy0xIDExKzEgNSsxIDEtMiAxMS0xIDQrMSA3LTEgNS0xIDcrMiAyLTEgNisxIDgrMiAyKzEgNy0xIDgtMiAxKzEgNysxIDYrMSA5KzIgOC0xIDktMSAxKzEgOCszIDktMiA4LTIgNi0yIDItMSAzKzEgOC0xIDIrMSA3LTEgOSsxIDUrMSAxKzEgMy0yIDQtMiAxMSsxIDQrMSA5LTEgMTEtMSA4KzEgNCsxIDctMSA4LTEgMC0zIDMrMSA3KzEgNC0xIDExKzEgMS0xIDUtMSAxMS0xIDcrMSAyLTMgMTErNCAxMC0xIDExLTMgNy0xIDExLTEgNCsxIDEwKzEgNy0xIDUrMSAxMC0xIDUrMiAxKzEgNS0xIDcrMSA0LTEgMTErNCA0KzEgMTEtMSA3LTEgNS0xIDExKzEgMTArMSA3KzEgMTEtMSA0LTEgMTEtMyA0KzEgNisxIDEwLTEgNSsyIDMtMSAwKzEgNS0yIDEwKzEgNi0xIDQtMSAxMSs0IDEwLTEgMTEtMyA1KzIgMTEtMSA1LTEgMTErMiAwLTEgNC0xIDExLTIgMTAtMyAxMSs0IDEwKzIgMTEtMyAxMC0xIDExKzIgNS0xIDExLTMgMTArMyAxMSs0IDEwLTEgMTEtMyAxMC0zIDExKzEgMTArMiA1KzIgMTErMSAxMC0yIDQrMiAwKzEgNC0xIDUtMSAwLTEgMysxIDExLTMgNCsxIDctMSA1LTEgMS0xIDcrMSA0LTEgMTErNCA0KzEgMTEtMSA3LTEgNS0xIDExKzEgNysyIDQtMSAxMS00IDQrMSAyKzEgMysxIDIrMiA3LTEgMy0xIDQtMSAxMSsxIDcrMSAyLTIgMTErMiA0KzEgNisxIDExKzEgMisyIDctMSA2LTEgNC0xIDUrMiAxKzEgNCsxIDctMSA1LTEgMy0xIDArMyA3KzEgNC0yIDEwKzEgNSsxIDkrMSAxMC0xIDQrMiA3LTEgMysxIDUtMSA3KzEgNC0xIDUrMSA5LTEgNCsxIDYrMSA1LTEgMS0xIDYtMSA0LTEgNS0xIDcrMSAyLTEgMTEtNCAyKzEgMTErMSA3LTEgNSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>13</td>
+<td>14.54ms ± 2.24ms</td>
+<td>2371</td>
+<td>2372</td>
+<td>15749</td>
+
+<td>1.021</td>
+<td>
+
+[276 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbi4uQkcuLiBcblBQSEcuQ0tcbkVFSElJQyBcbkRKTEwuQyBcbkRKTU0uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwyLDE0LDE3LDE4LDIxLDI0LDI1LDI2LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEzLCJkdXJhdGlvbiI6IjE0LjU0bXMgwrEgMi4yNG1zIiwidGlja0NvdW50IjoyMzcxLCJ2aXNpdGVkTm9kZXMiOjIzNzIsInNlYXJjaENvdW50IjoxNTc0OSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wMjEiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUrMSAxMSsxIDEwKzEgNCsyIDArMSA2KzEgOC0xIDAtMSAzKzEgMS0zIDItMSA4KzEgNi0xIDMrMSA1LTMgMTErMSAxMCsxIDcrMSAxMS0xIDMtMSA0LTEgMiszIDExKzEgMisxIDctMSA0KzEgNy0xIDUrMSAxKzMgMy0xIDcrMSA0LTEgMCszIDMrMSA0KzEgNy0xIDEtMyA1LTEgNysyIDItMSAxMS0xIDQtMSAxMS0xIDErMiAxMSsyIDIrMSA3LTEgNCsxIDYrMSA4LTQgNysxIDItMSAxMS0xIDYtMSA0LTEgMTEtMSAxLTEgMTErMiAyKzEgNy0xIDQrMSA3LTEgNSsxIDErMiA3KzEgNC0xIDMtMSA0LTEgOCsxIDQrMiA3LTEgMC0yIDgtMSA3KzEgNisxIDArMiA4KzMgMysxIDgtMiAxLTMgNi0xIDQtMSA1LTEgNysxIDItMSAxMS0xIDQrMSA2KzEgMTErMSAyKzEgNisxIDktMyA2LTIgMi0xIDExLTEgNC0xIDExLTMgMisxIDExKzEgNy0xIDUrMSAxMS0xIDQrMSA3LTEgNS0xIDErMiA3KzIgMi0xIDYrMSA5LTEgMisxIDctMSA2LTEgNC0xIDExKzEgNysxIDItMSAxMS0xIDgtMSAxMSs0IDIrMSA3LTEgNCsxIDctMSA1KzEgMSsxIDcrMSA0LTEgOSsxIDEtMiA0KzEgNy0xIDUtMSA3KzIgMi0xIDExLTEgNC0xIDExLTMgMisxIDExKzEgNy0xIDUrMSAxMS0xIDQrMSAzKzEgOCsxIDErMiAzLTIgNC0yIDExKzEgNCsxIDAtMSAxMS0xIDktMSA0KzEgNy0xIDAtMSA4LTEgNysxIDAtMSAzKzEgMS0xIDQtMSAxMSsxIDUtMSA3KzEgMTEtMSAyLTEgMTErNCAyKzEgNy0xIDQrMSA2KzEgNysxIDItMSAxMS0xIDItMiAxMC0xIDExKzEgNy0xIDEwKzEgNi0xIDExLTEgMTAtMSA1KzMgNC0xIDExLTMgNCsxIDctMSAxKzEgMy0xIDcrMSA0LTEgMTErMSA0LTEgMTAtMyA0KzEgMTErMSAzKzEgMS0xIDExKzEgNCsxIDctMSA1LTIgMTErMSA3KzEgNC0xIDUtMSA3KzEgMiszIDctMSA0KzEgNy0xIDUrMiAxKzEgMy0xIDcrMSA0LTEgNS0xIDArMyA0LTEgMTArMSA1KzEgOSsxIDEwLTEgNCsyIDctMSA1LTEgMC0xIDcrMSA0LTEgNSsxIDgrMSA0KzEgNy0xIDktMSA1LTEgNysxIDQtMSAwLTEgNSsxIDQrMSA2KzEgNS0xIDArMiA4LTEgMC0xIDUrMSA5KzEgOCsyIDUtMSAwKzEgMysxIDgtMiA2LTEgNC0xIDUrMSA5LTEgNCsxIDctMSA1LTEgMS0xIDcrMSA0LTEgNS0xIDcrMSAyLTEgMTEtNCAyKzEgMTErMSA3LTEgNSszIDExLTEgNCsxIDctMSAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>39.92ms ± 1.57ms</td>
+<td>2931</td>
+<td>2932</td>
+<td>20010</td>
+
+<td>1.031</td>
+<td>
+
+[209 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTFcbi4uQkZGRiBcbi4uQkcuLiBcblBQSEcuQ0tcbkVFSElJQyBcbkRKTEwuQyBcbkRKTU0uLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJGIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJDIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJFIiwiaWQiOjYsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJJIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzEyLDMsOSwyLDE0LDE3LDE4LDIxLDI0LDI1LDI2LDMyXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiMzkuOTJtcyDCsSAxLjU3bXMiLCJ0aWNrQ291bnQiOjI5MzEsInZpc2l0ZWROb2RlcyI6MjkzMiwic2VhcmNoQ291bnQiOjIwMDEwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjAzMSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNSsxIDExKzEgMTArMSA0KzIgMysyIDEtMyAyLTEgMy0xIDYrMSA4LTEgNS0zIDcrMSA4KzEgMTArMSAxMSsxIDIrNCA4LTEgNy0xIDUrMSAxKzMgMy0xIDArMyA4LTMgNi0xIDgrMSA3LTEgMysxIDgtMSAxLTIgNysxIDgrMSA2KzEgOCszIDYtMSA3LTEgNS0xIDEtMSA3KzEgNisxIDgtMyA2LTEgNy0xIDErMiA4LTEgNysxIDYrMSA4KzIgNysxIDYrMSA5LTQgNi0xIDctMSA5KzEgOC0yIDYtMSA5LTEgOCsxIDctMSA5KzEgNysyIDItMSAxMS0xIDktMSA4LTEgNisxIDkrMSAxLTEgNi0xIDQtMSAxMS0zIDgrMSAxMSsyIDEtMSAxMS0xIDIrMSA3LTEgMTEtMSA1KzEgNCsxIDctMSA1LTEgMSsyIDktMSA4LTEgNysxIDkrMSA2KzEgOCszIDktMSA4LTIgNSsxIDkrMSA4KzEgMS0yIDgrMSAxKzMgOS0xIDgtMyA2LTEgOSsxIDctMSAzLTEgOS0xIDgrMSA3KzEgOSsxIDYrMSA4LTEgMC0xIDktMSA4KzMgMC0yIDMrMSAxLTEgNS0xIDcrMSAyLTMgMTAtMSA3LTEgNSszIDErMSAzLTEgMCsxIDgtMyA2LTEgOCsxIDQtMSAxMSszIDgtMSA0KzEgMC0xIDQtMiAxMC0zIDQrMSAzKzEgMS0xIDQrMSA2KzEgNS0zIDcrMSAyKzIgMTErMSAyKzEgNy0xIDUrMiAxKzEgNS0xIDMtMSA2LTEgNy0xIDUrMSAwKzMgOSsxIDgrMSA3KzEgOS0xIDYrMSA4LTEgOSsxIDgrMiA1LTEgOS0xIDMrMSA4LTIgOSsxIDgrMSA2LTEgOS0xIDctMSA4LTEgOSsxIDEtMiA4KzEgNS0xIDcrMSA4LTEgNisxIDgrMiA1KzIgOC0xIDEtMSA2LTEgNy0xIDErMiA5LTEgOC0xIDcrMSA5KzEgNS0xIDQtMSA1LTEgNysxIDItMSAxMS00IDktMSAxMSszIDgrMSAxMS0yIDkrMSAxMSsxIDEtMiAxMS0yIDQrMSA2KzEgOCsxIDIrMSA3LTEgNSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>13</td>
+<td>14.29ms ± 0.60ms</td>
+<td>3603</td>
+<td>3604</td>
+<td>24886</td>
+
+<td>1.179</td>
+<td>
+
+[50 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMVxuLi5CRkZGIFxuLi5CRy4uIFxuUFBIRy5DS1xuRUVISUlDIFxuREpMTC5DIFxuREpNTS4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkYiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkMiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkUiLCJpZCI6NiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkkiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTIsMyw5LDIsMTQsMTcsMTgsMjEsMjQsMjUsMjYsMzJdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTMsImR1cmF0aW9uIjoiMTQuMjltcyDCsSAwLjYwbXMiLCJ0aWNrQ291bnQiOjM2MDMsInZpc2l0ZWROb2RlcyI6MzYwNCwic2VhcmNoQ291bnQiOjI0ODg2LCJicmFuY2hpbmdGYWN0b3IiOiIxLjE3OSIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTErMiAxMCsxIDQrMiAzKzEgMS0zIDUtMiAxMCsxIDcrMSAyKzMgNy0yIDUrMSAxKzMgMy0xIDArMyAzKzEgMS0xIDUtMSA3KzIgNisyIDktNCA4LTQgNi0yIDctMSA1KzEgMSsxIDMtMSAwLTMgMysyIDEtMSA1LTEgNysxIDItMyA3LTEgNSsxIDErMSAzLTIgNC0yIDEwLTQgNCsxIDMrMSAxLTEgNS0xIDExLTMgNysxIDIrMyA3LTEgNSszIDErMSAzLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>12</td>
+<td>16.22ms ± 1.90ms</td>
+<td>3535</td>
+<td>3536</td>
+<td>24421</td>
+
+<td>1.179</td>
+<td>
+
+[50 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG4uLkJHLi4gXG5QUEhHLkNLXG5FRUhJSUMgXG5ESkxMLkMgXG5ESk1NLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMiwxNCwxNywxOCwyMSwyNCwyNSwyNiwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMiwiZHVyYXRpb24iOiIxNi4yMm1zIMKxIDEuOTBtcyIsInRpY2tDb3VudCI6MzUzNSwidmlzaXRlZE5vZGVzIjozNTM2LCJzZWFyY2hDb3VudCI6MjQ0MjEsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTc5Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMCsxIDExKzIgNCsyIDMrMSAxLTIgNS0yIDcrMSAxMCsxIDIrMyA3LTIgNSsxIDErMiAzLTEgMCszIDMrMSAxLTEgNS0xIDcrMiA2KzIgOS00IDgtNCA2LTIgNy0yIDUrMSAxKzEgMy0xIDAtMyAzKzEgMS0xIDUtMSA3KzIgMi0zIDctMSA1KzEgMSsxIDMtMSA0LTIgMTAtNCA0KzEgMysxIDEtMSA1LTEgMTEtMyA3KzEgMiszIDctMSA1KzMgMSsxIDMtMSAwKzQifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>75.62ms ± 3.41ms</td>
+<td>3472</td>
+<td>3473</td>
+<td>24040</td>
+
+<td>1.178</td>
+<td>
+
+[50 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjExXG4uLkJGRkYgXG4uLkJHLi4gXG5QUEhHLkNLXG5FRUhJSUMgXG5ESkxMLkMgXG5ESk1NLi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiQyIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRSIsImlkIjo2LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiSSIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxMiwzLDksMiwxNCwxNywxOCwyMSwyNCwyNSwyNiwzMl0sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50Ijo0LCJkdXJhdGlvbiI6Ijc1LjYybXMgwrEgMy40MW1zIiwidGlja0NvdW50IjozNDcyLCJ2aXNpdGVkTm9kZXMiOjM0NzMsInNlYXJjaENvdW50IjoyNDA0MCwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNzgiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDUtMSAxMCsyIDExKzIgNCsyIDMrMiAxLTEgNS0xIDcrMSAyKzMgNy0xIDUrMSAxKzEgMy0yIDArMyAzKzEgMS0xIDUtMSA3KzEgNisyIDktNCA4LTQgNi0yIDctMSA1KzEgMSsxIDMtMSAwLTMgMysyIDEtMSA1LTEgNysxIDItMyA3LTEgNSsxIDErMSAzLTIgNC0yIDEwLTQgNCsxIDMrMSAxLTEgMTEtNCA1LTEgNysxIDIrMyA3LTEgNSszIDErMSAzLTEgMCs0In0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>209.56ms ± 0.00ms</td>
+<td>16</td>
+<td>1329</td>
+<td>299263</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>204.52ms ± 0.00ms</td>
+<td>15</td>
+<td>1243</td>
+<td>254255</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>238.89ms ± 0.00ms</td>
+<td>11</td>
+<td>904</td>
+<td>63875</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+
+
+## **Jam-40**
+<table>
+<tbody>
+<tr>
+<td>
+
+**File Name**
+
+</td>
+<td>
+
+`cases\Jam-40.txt`
+
+</td>
+<td rowspan="4">
+
+```
+6 6
+12
+FBB.G. 
+FHE.GL 
+FHEPPLK
+CCCI.L 
+..DIJJ 
+MMDNN. 
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Board Size**
+
+</td>
+<td>
+
+6 x 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Blocking Cars**
+
+</td>
+<td>
+
+12 (5 Horizontal, 7 Vertical)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Exit Position**
+
+</td>
+<td>
+
+(5, 2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Run Count</th>
+<th>Duration</th>
+<th>Tick Count</th>
+<th>Visited Nodes</th>
+<th>Search Count</th>
+<th>Branching Factor</th>
+<th>Solution Steps</th>
+<tr>
+</thead>
+<tbody>
+
+<tr>
+<td>
+
+__UCS__
+
+</td>
+
+<td>10</td>
+<td>18.64ms ± 4.03ms</td>
+<td>3024</td>
+<td>3202</td>
+<td>24451</td>
+
+<td>1.174</td>
+<td>
+
+[51 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJVQ1MiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkZCQi5HLiBcbkZIRS5HTCBcbkZIRVBQTEtcbkNDQ0kuTCBcbi4uRElKSiBcbk1NRE5OLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MTAsImR1cmF0aW9uIjoiMTguNjRtcyDCsSA0LjAzbXMiLCJ0aWNrQ291bnQiOjMwMjQsInZpc2l0ZWROb2RlcyI6MzIwMiwic2VhcmNoQ291bnQiOjI0NDUxLCJicmFuY2hpbmdGYWN0b3IiOiIxLjE3NCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgNS0xIDEyKzEgOCsxIDcrMyAzKzIgOS0xIDExKzEgNiszIDEtMSA0LTEgMC0zIDQrMSAyKzEgMSszIDQtMSAwKzIgNi0zIDMtMyAwLTEgMTEtMSA5KzEgNy0zIDUrMSAxKzEgOC00IDArMSA3KzIgMyszIDAtMSA4KzEgMS0xIDUtMSA3KzEgOS0xIDEwLTEgMTErMSA2KzMgMC0xIDQrMSAxLTMgNC0xIDgtMSAyLTEgMCsxIDYtMSAxMS0xIDkrMSA3LTEgMTItMSA1KzMgMCszIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarDistance__
+
+</td>
+
+<td>20</td>
+<td>9.86ms ± 5.44ms</td>
+<td>1409</td>
+<td>1410</td>
+<td>10340</td>
+
+<td>1.024</td>
+<td>
+
+[232 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckRpc3RhbmNlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5GQkIuRy4gXG5GSEUuR0wgXG5GSEVQUExLXG5DQ0NJLkwgXG4uLkRJSkogXG5NTUROTi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMSw0LDcsOCwxMSwwLDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjIwLCJkdXJhdGlvbiI6IjkuODZtcyDCsSA1LjQ0bXMiLCJ0aWNrQ291bnQiOjE0MDksInZpc2l0ZWROb2RlcyI6MTQxMCwic2VhcmNoQ291bnQiOjEwMzQwLCJicmFuY2hpbmdGYWN0b3IiOiIxLjAyNCIsInNvbHV0aW9uU3RlcHMiOiLiiIUgMTIrMSA4KzEgNysyIDUtMSA3LTEgMSsxIDctMSA4LTEgMTItMSAzLTEgNSsxIDEyKzEgOCsxIDcrMiA1LTEgNysxIDktMSAxMSsxIDMrMyAxLTEgMTEtMSA5KzEgMy0xIDQrMSAzLTEgMSsxIDMrMiA2KzIgMy0zIDYtMSAzKzIgNC0xIDktMSAxMSsxIDMtMSA2KzIgMS0yIDYtMSAxMS0xIDkrMSA3LTIgNi0xIDcrMSA0LTEgNisxIDAtMSAyKzEgNy0xIDYtMSA3KzIgOS0xIDExKzEgMysyIDYrMiAwLTIgNCsxIDErMyA0LTEgMCsyIDMtMyA2LTMgMTEtMSA5KzEgNy0zIDgtMSAxMi0xIDIrMSA1KzEgMTIrMSA4KzEgNysxIDItMSA3KzEgMSsxIDctMiA4LTEgMC0xIDgtMyAwKzEgMTItMSAxMC0xIDcrMiAxMisxIDctMSA1KzEgMTItMSA1KzEgMisxIDUtMiAxMCsxIDEyKzEgNisxIDEwLTEgNSsxIDEyLTEgNisxIDMrMSAxMisxIDItMSA3KzEgMTItMSA1LTEgMTArMSAxMisxIDctMSA2LTEgMTItMSAxMC0xIDUrMiA3KzEgMy0xIDUtMSAxMisxIDMrMyA1LTEgMTArMSAwLTEgOCsxIDEyLTEgMTAtMSA1KzIgNi0xIDUtMSAxMisxIDUtMSAxLTEgMTItMSAxMCsxIDUtMSAxMisxIDcrMSAxMC0xIDEyLTEgOS0xIDEyLTEgMTArMSA2KzIgMTIrMiAxMSsyIDEwLTEgMysxIDYtMiAxMCsxIDYrMyAwLTEgNCsxIDEwLTEgMy0xIDExLTEgMTItMSAxLTMgMTArMSAxMisxIDExKzEgMi0xIDEwLTEgMTEtMSA4LTEgMTItMSAxMCsxIDQtMSAwKzMgMTIrMSAxMSsxIDEwLTEgOS0xIDExLTEgMTItMSAxMC0xIDMtMiAxMisxIDExKzEgMTAtMSA2LTIgMTEtMiAxMi0yIDEwLTEgMTIrMSAxMSsxIDEyKzEgMTArNCA5KzEgMTItMSAxMS0xIDEyLTEgMTAtMSAxMisyIDExKzIgMyszIDEwKzEgMy0yIDExLTIgOS0xIDEyLTIgMTAtMiAxMisxIDExKzEgMTIrMSAxMSsxIDEwLTIgOSsxIDExLTIgMTItMiA0KzEgMTIrMSAxMSsxIDEyKzEgMy0xIDExLTEgOSsxIDEyLTEgNy0yIDQtMSAxMisxIDcrMSAzKzEgMTItMSA3KzEgNCsyIDEyKzEgMSsxIDQtMSAxMi0xIDctMSAzLTEgMTIrMSA3LTEgNi0xIDEyLTEgNy0xIDUrMyAwKzEifQ)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlocked__
+
+</td>
+
+<td>20</td>
+<td>6.77ms ± 1.83ms</td>
+<td>1386</td>
+<td>1387</td>
+<td>10158</td>
+
+<td>1.027</td>
+<td>
+
+[213 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWQiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkZCQi5HLiBcbkZIRS5HTCBcbkZIRVBQTEtcbkNDQ0kuTCBcbi4uRElKSiBcbk1NRE5OLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6MjAsImR1cmF0aW9uIjoiNi43N21zIMKxIDEuODNtcyIsInRpY2tDb3VudCI6MTM4NiwidmlzaXRlZE5vZGVzIjoxMzg3LCJzZWFyY2hDb3VudCI6MTAxNTgsImJyYW5jaGluZ0ZhY3RvciI6IjEuMDI3Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMisxIDgrMSA3KzIgNS0xIDctMSAxKzEgNy0xIDgtMSAxMi0xIDMtMSA1KzEgMTIrMSA4KzEgNysyIDUtMSA3KzEgOS0xIDExKzEgMyszIDEtMSAxMS0xIDkrMSAzLTEgNCsxIDMtMSAxKzEgMysyIDYrMiAzLTMgNi0xIDMrMiA0LTEgOS0xIDExKzEgMy0xIDYrMiAxLTIgNi0xIDExLTEgOSsxIDctMiA2LTEgNysxIDQtMSA3KzEgOS0yIDExKzEgOSsxIDAtMSAxMS0xIDMrMiA5KzEgNy0xIDMtMSA2KzEgNysxIDktMSAxMSsxIDArMSA5LTEgMTEtMSAzKzEgOSsxIDAtMiAxMSsxIDYrMSAwLTEgNCsxIDErMSAyKzEgMSsyIDQtMSAwKzIgMy0zIDYtMyAxMS0xIDkrMSA3LTMgOC0xIDEyLTEgMC0xIDIrMSAxMisxIDgrMSA3KzEgMi0xIDcrMSA1KzEgNy0yIDgtMSAxKzEgMTItMSA4LTMgMTAtMSA1KzIgNysyIDYrMSA1LTIgMTIrMSAxMCsxIDctMSAxMi0xIDArMSA3KzEgNi0xIDEyKzEgMTAtMSA3LTIgNSsxIDcrMSAwLTEgNysxIDYrMiAwKzEgNi0xIDMrMyA1LTEgMTArMSAzLTIgNy0xIDEwLTEgNSsxIDIrMSAzLTEgNS0xIDEwKzEgNi0xIDEyLTEgNy0xIDMrMSAxMisxIDEwLTEgNysxIDYrMiAxMCsxIDEyLTEgMi0xIDcrMSAzKzIgMC0xIDYtMSA4KzEgMS0xIDEyKzEgMTAtMSA1LTEgNysxIDEyLTEgMTArMSA5LTEgMTItMSAxMC0xIDYtMSAxMisyIDExKzIgMTArMSAxMS0xIDEyLTEgNiszIDAtMSA0KzEgMS0zIDItMSA4LTEgNC0xIDEyKzEgMTErMSAxMC0xIDMrMSAwKzMgMTArMSAzLTMgMTEtMSAxMi0xIDEwLTEgOS0xIDEyKzEgMTErMSAxMC0yIDYtMiAxMS0yIDEyLTIgMTAtMSAxMisxIDExKzEgMTIrMSAxMCs0IDMrMiAxMi0xIDExLTEgMTItMSAxMC0yIDEyKzIgMTErMiAxMCsxIDMtMSAxMS0yIDEyLTIgOSsxIDEyKzEgMTErMSAxMisxIDEwKzEgMTEtMSA5KzEgMTItMSA3LTEgMTAtMSA1KzMgMC0xIDMtMSA3LTEgMCsyIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__GBFS CarBlockedRecursive__
+
+</td>
+
+<td>7</td>
+<td>26.89ms ± 6.76ms</td>
+<td>1086</td>
+<td>1087</td>
+<td>7851</td>
+
+<td>1.056</td>
+<td>
+
+[110 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJHQkZTIENhckJsb2NrZWRSZWN1cnNpdmUiLCJib2FyZFN0cmluZyI6IjYgNlxuMTJcbkZCQi5HLiBcbkZIRS5HTCBcbkZIRVBQTEtcbkNDQ0kuTCBcbi4uRElKSiBcbk1NRE5OLiAiLCJib2FyZCI6eyJ3aWR0aCI6NiwiaGVpZ2h0Ijo2LCJjYXJzIjpbeyJzeW1ib2wiOiJQIiwiaWQiOjAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJCIiwiaWQiOjEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJHIiwiaWQiOjIsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJIIiwiaWQiOjMsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJFIiwiaWQiOjQsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJMIiwiaWQiOjUsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJGIiwiaWQiOjYsImRpcmVjdGlvbiI6MSwic2l6ZSI6M30seyJzeW1ib2wiOiJDIiwiaWQiOjcsImRpcmVjdGlvbiI6MCwic2l6ZSI6M30seyJzeW1ib2wiOiJJIiwiaWQiOjgsImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJEIiwiaWQiOjksImRpcmVjdGlvbiI6MSwic2l6ZSI6Mn0seyJzeW1ib2wiOiJKIiwiaWQiOjEwLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTSIsImlkIjoxMSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik4iLCJpZCI6MTIsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn1dLCJjYXJQb3NpdGlvbnMiOlsxNSwxLDQsNyw4LDExLDAsMTgsMjEsMjYsMjgsMzAsMzNdLCJ3YWxscyI6W10sImV4aXRQb3NpdGlvbiI6MTd9LCJydW5Db3VudCI6NywiZHVyYXRpb24iOiIyNi44OW1zIMKxIDYuNzZtcyIsInRpY2tDb3VudCI6MTA4NiwidmlzaXRlZE5vZGVzIjoxMDg3LCJzZWFyY2hDb3VudCI6Nzg1MSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4wNTYiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDErMSAxMisxIDgrMSA3KzIgNisyIDctMSA2LTEgMS0yIDcrMSA0LTEgNisxIDctMSA1LTEgNi0xIDAtMSA3KzEgNisxIDMrMiA1KzEgMisxIDAtMSA1LTEgNysxIDktMSAxMSsxIDYtMSAwKzEgNisyIDAtMiA0KzEgMSszIDQtMSAwKzIgNi0zIDExLTEgOSsxIDctMSA1KzEgNisyIDMtMyA2LTEgMC0xIDUtMSA3LTEgNi0xIDctMSA4LTEgMTItMSA1KzEgMisxIDErMSA4LTMgMi0xIDcrMiAxMisxIDYrMiAwKzEgMTItMSA2LTEgMyszIDEyKzEgMTAtMSAwLTEgNi0xIDEwKzEgNisyIDgrMSAxLTEgMTItMSA2LTIgNS0xIDcrMSAxMC0xIDktMSAxMi0xIDEwKzEgNisyIDEyKzEgMTErMSAxMC0xIDYrMSAwLTEgMTArMSAxMisxIDQrMSAxMSsxIDEwLTEgMysxIDEtMyA4LTEgMTArMSAzLTEgMTEtMSAxMi0xIDQtMSAxMC0xIDItMSAwKzMgOS0xIDEwLTEgNi0yIDExLTEgMTItMSAxMCsxIDkrMSAxMisxIDkrMSA3LTEgNSszIDArMSJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarDistance__
+
+</td>
+
+<td>10</td>
+<td>18.21ms ± 2.11ms</td>
+<td>2786</td>
+<td>2787</td>
+<td>22446</td>
+
+<td>1.168</td>
+<td>
+
+[52 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJEaXN0YW5jZSIsImJvYXJkU3RyaW5nIjoiNiA2XG4xMlxuRkJCLkcuIFxuRkhFLkdMIFxuRkhFUFBMS1xuQ0NDSS5MIFxuLi5ESUpKIFxuTU1ETk4uICIsImJvYXJkIjp7IndpZHRoIjo2LCJoZWlnaHQiOjYsImNhcnMiOlt7InN5bWJvbCI6IlAiLCJpZCI6MCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkIiLCJpZCI6MSwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6IkciLCJpZCI6MiwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkgiLCJpZCI6MywiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkUiLCJpZCI6NCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkwiLCJpZCI6NSwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkYiLCJpZCI6NiwiZGlyZWN0aW9uIjoxLCJzaXplIjozfSx7InN5bWJvbCI6IkMiLCJpZCI6NywiZGlyZWN0aW9uIjowLCJzaXplIjozfSx7InN5bWJvbCI6IkkiLCJpZCI6OCwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkQiLCJpZCI6OSwiZGlyZWN0aW9uIjoxLCJzaXplIjoyfSx7InN5bWJvbCI6IkoiLCJpZCI6MTAsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJNIiwiaWQiOjExLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiTiIsImlkIjoxMiwiZGlyZWN0aW9uIjowLCJzaXplIjoyfV0sImNhclBvc2l0aW9ucyI6WzE1LDEsNCw3LDgsMTEsMCwxOCwyMSwyNiwyOCwzMCwzM10sIndhbGxzIjpbXSwiZXhpdFBvc2l0aW9uIjoxN30sInJ1bkNvdW50IjoxMCwiZHVyYXRpb24iOiIxOC4yMW1zIMKxIDIuMTFtcyIsInRpY2tDb3VudCI6Mjc4NiwidmlzaXRlZE5vZGVzIjoyNzg3LCJzZWFyY2hDb3VudCI6MjI0NDYsImJyYW5jaGluZ0ZhY3RvciI6IjEuMTY4Iiwic29sdXRpb25TdGVwcyI6IuKIhSAxMisxIDUtMSA4KzEgNyszIDktMSAxMSsxIDYrMyAxLTEgNC0xIDMrMiAwLTMgMisxIDQrMSAxKzMgNC0xIDArMiA2LTMgMTEtMSA5KzEgMy0zIDctMyA1KzEgMSsxIDAtMSA4LTQgMCsxIDcrMiAzKzMgMC0xIDgrMSAxLTEgNS0xIDcrMSA5LTEgMTErMSA2KzMgMC0xIDQrMSAxLTMgNC0xIDArMSA4LTEgMi0xIDArMiAxMi0xIDYtMSAxMS0xIDkrMSAxMC0xIDctMSA1KzMgMCsxIn0)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlocked__
+
+</td>
+
+<td>12</td>
+<td>15.79ms ± 1.39ms</td>
+<td>2853</td>
+<td>2854</td>
+<td>23036</td>
+
+<td>1.173</td>
+<td>
+
+[51 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5GQkIuRy4gXG5GSEUuR0wgXG5GSEVQUExLXG5DQ0NJLkwgXG4uLkRJSkogXG5NTUROTi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMSw0LDcsOCwxMSwwLDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjEyLCJkdXJhdGlvbiI6IjE1Ljc5bXMgwrEgMS4zOW1zIiwidGlja0NvdW50IjoyODUzLCJ2aXNpdGVkTm9kZXMiOjI4NTQsInNlYXJjaENvdW50IjoyMzAzNiwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNzMiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEyKzEgNS0xIDgrMSA3KzMgOS0xIDExKzEgMysyIDYrMyAxLTEgNC0xIDAtMyAyKzEgNCsxIDErMyA0LTEgMCsyIDMtMyA2LTMgMTEtMSA5KzEgNy0zIDUrMSAxKzEgMC0xIDgtNCA3KzIgMCsxIDMrMyAwLTEgOCsxIDEtMSA1LTEgNysxIDktMSAxMSsxIDYrMyAwLTEgNCsxIDEtMyA0LTEgMCsxIDEyLTEgNi0yIDExLTEgOSsxIDEwLTEgNy0xIDUrMyAyLTEgOC0xIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__A* CarBlockedRecursive__
+
+</td>
+
+<td>4</td>
+<td>54.32ms ± 15.20ms</td>
+<td>1999</td>
+<td>2000</td>
+<td>15185</td>
+
+<td>1.162</td>
+<td>
+
+[51 Steps](https://rushhour.bwks.link/#eyJjb21iaW5hdGlvbk5hbWUiOiJBKiBDYXJCbG9ja2VkUmVjdXJzaXZlIiwiYm9hcmRTdHJpbmciOiI2IDZcbjEyXG5GQkIuRy4gXG5GSEUuR0wgXG5GSEVQUExLXG5DQ0NJLkwgXG4uLkRJSkogXG5NTUROTi4gIiwiYm9hcmQiOnsid2lkdGgiOjYsImhlaWdodCI6NiwiY2FycyI6W3sic3ltYm9sIjoiUCIsImlkIjowLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiQiIsImlkIjoxLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9LHsic3ltYm9sIjoiRyIsImlkIjoyLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSCIsImlkIjozLCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRSIsImlkIjo0LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiTCIsImlkIjo1LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiRiIsImlkIjo2LCJkaXJlY3Rpb24iOjEsInNpemUiOjN9LHsic3ltYm9sIjoiQyIsImlkIjo3LCJkaXJlY3Rpb24iOjAsInNpemUiOjN9LHsic3ltYm9sIjoiSSIsImlkIjo4LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiRCIsImlkIjo5LCJkaXJlY3Rpb24iOjEsInNpemUiOjJ9LHsic3ltYm9sIjoiSiIsImlkIjoxMCwiZGlyZWN0aW9uIjowLCJzaXplIjoyfSx7InN5bWJvbCI6Ik0iLCJpZCI6MTEsImRpcmVjdGlvbiI6MCwic2l6ZSI6Mn0seyJzeW1ib2wiOiJOIiwiaWQiOjEyLCJkaXJlY3Rpb24iOjAsInNpemUiOjJ9XSwiY2FyUG9zaXRpb25zIjpbMTUsMSw0LDcsOCwxMSwwLDE4LDIxLDI2LDI4LDMwLDMzXSwid2FsbHMiOltdLCJleGl0UG9zaXRpb24iOjE3fSwicnVuQ291bnQiOjQsImR1cmF0aW9uIjoiNTQuMzJtcyDCsSAxNS4yMG1zIiwidGlja0NvdW50IjoxOTk5LCJ2aXNpdGVkTm9kZXMiOjIwMDAsInNlYXJjaENvdW50IjoxNTE4NSwiYnJhbmNoaW5nRmFjdG9yIjoiMS4xNjIiLCJzb2x1dGlvblN0ZXBzIjoi4oiFIDEyKzEgOCsxIDUtMSA3KzMgOS0xIDExKzEgNiszIDEtMSA0LTEgMysyIDAtMyAyKzEgNCsxIDErMyA0LTEgMCsyIDYtMyAzLTMgMTEtMSA5KzEgNy0zIDUrMSAxKzEgMC0xIDgtNCA3KzIgMCsxIDMrMyAwLTEgOCsxIDEtMSA1LTEgNysxIDktMSAxMSsxIDYrMyAwLTEgNCsxIDEtMyA4LTEgNC0xIDArMSA2LTIgMTEtMSAxMC0xIDItMSA5KzEgNy0xIDEyLTEgNSszIDArMyJ9)
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarDistance__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlocked__
+
+</td>
+
+<td colspan="7">
+
+___Timed out___
+
+</td>
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>211.75ms ± 0.00ms</td>
+<td>9</td>
+<td>0</td>
+<td>119256</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarDistance__
+
+</td>
+
+<td>1</td>
+<td>210.08ms ± 0.00ms</td>
+<td>22</td>
+<td>466</td>
+<td>278041</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlocked__
+
+</td>
+
+<td>1</td>
+<td>207.89ms ± 0.00ms</td>
+<td>25</td>
+<td>590</td>
+<td>414827</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+
+<tr>
+<td>
+
+__IDA* Approx CarBlockedRecursive__
+
+</td>
+
+<td>1</td>
+<td>243.15ms ± 0.00ms</td>
+<td>18</td>
+<td>388</td>
+<td>116981</td>
+
+<td colspan="2">
+
+___Timed out, ticked too many/long___
+
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+

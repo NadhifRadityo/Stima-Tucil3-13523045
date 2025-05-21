@@ -79,7 +79,7 @@ export class QueueSolver {
 					this.#stateQueueInsert(expandedState);
 					this.#openHashes.set(expandedStateHash, expandedState);
 				}
-				if(oldState != null && oldState.publicBoundF > expandedState.publicBoundF) {
+				if(oldState != null && oldState.publicBoundG > expandedState.publicBoundG) {
 					this.#stateQueueRemoveAt(oldState.publicIndex);
 					this.#stateQueueInsert(expandedState);
 					this.#openHashes.set(expandedStateHash, expandedState);
@@ -241,7 +241,7 @@ export class QueueSolverUniform {
 		// Optimisation: Sort the newly added states, and merge sort to the queue.
 		// The premise is, the newly added states will always be smaller than the existing states.
 		// Because inserting to queue first and sort the queue, will unnecessarily compare sorted entries.
-		toAddStates.sort((a, b) => a.publicBoundF - b.publicBoundF);
+		toAddStates.sort((a, b) => a.publicBoundG - b.publicBoundG);
 		this.#mergeSortedArraysInPlace(toAddStates);
 		return this.#stateQueue.length != 0;
 	}
@@ -256,7 +256,7 @@ export class QueueSolverUniform {
 			let high = this.#stateQueue.length;
 			while(queueIndex < high) {
 				const mid = (queueIndex + high) >> 1;
-				if(this.#stateQueue[mid].publicBoundF <= state.publicBoundF)
+				if(this.#stateQueue[mid].publicBoundG <= state.publicBoundG)
 					queueIndex = mid + 1;
 				else
 					high = mid;
@@ -432,7 +432,7 @@ export class StackSolverApprox {
 		if(this.#solution != null || this.#bound == Infinity)
 			return false;
 		this.#closedHashes.clear();
-		this.#closedHashes.set(this.#initialState.hashCode(), this.#initialState.publicBoundF);
+		this.#closedHashes.set(this.#initialState.hashCode(), this.#initialState.publicBoundG);
 		const newBound = this.#search(this.#initialState);
 		if(newBound instanceof State) {
 			this.#solution = newBound;
@@ -467,9 +467,9 @@ export class StackSolverApprox {
 				expandedState.publicBoundG = this.#heuristicGCalculator(state.publicBoundG, expandedState);
 				expandedState.publicBoundH = this.#heuristicHCalculator(state.publicBoundH, expandedState);
 				expandedState.publicBoundF = expandedState.publicBoundG + expandedState.publicBoundH;
-				const closedHashBound = this.#closedHashes.get(expandedStateHash);
-				if(closedHashBound != null && closedHashBound <= expandedState.publicBoundF) continue;
-				this.#closedHashes.set(expandedStateHash, expandedState.publicBoundF);
+				const closedHashBoundG = this.#closedHashes.get(expandedStateHash);
+				if(closedHashBoundG != null && closedHashBoundG <= expandedState.publicBoundG) continue;
+				this.#closedHashes.set(expandedStateHash, expandedState.publicBoundG);
 				const result = this.#search(expandedState);
 				if(result instanceof State) {
 					if(result.publicBoundF < minBound) {
@@ -533,11 +533,9 @@ export const computeBranchingFactor = (searchCount, solutionDepth) => {
  */
 
 /** @type {HeuristicCalculator} */
-export const heuristicNone = () => 0;
+export const heuristicZero = () => 0;
 /** @type {HeuristicCalculator} */
 export const heuristicUniform = (b, _) => b + 1;
-/** @type {HeuristicCalculator} */
-export const heuristicPathCost = (b, s) => b + s.getPathCost();
 /** @type {HeuristicCalculator} */
 export const heuristicCarDistance = (_, state) => {
 	if(state.isSolved()) return 0;
@@ -1176,60 +1174,6 @@ export class State {
 			descriptions.push(`Car#${car.id} moved ${steps} step${steps > 1 ? "s" : ""} ${direction}`);
 		}
 		return descriptions;
-	}
-	/** @type {number?} */
-	#__cachedPathCost = null; // Optimisation: Cache.
-	getPathCost() {
-		if(this.#__cachedPathCost != null)
-			return this.#__cachedPathCost;
-		if(this.#parent == null)
-			return this.#__cachedPathCost = 0;
-		const pathCost = this.#isDifference ? this.#getPathCost_isDifference() : this.#getPathCost_absolute();
-		return this.#__cachedPathCost = pathCost;
-	}
-	#getPathCost_isDifference() {
-		let pathCost = 0;
-		for(let i = 0; i < this.#carIds.length; i++) {
-			const car = this.#allCars[this.#carIds[i]];
-			const hintPosition = ((this.#carPositions[i] >>> 16) & 0xFFFF) - 1;
-			const carPosition = this.#carPositions[i] & 0xFFFF;
-			if(car.direction == HORIZONTAL) {
-				const previousX = hintPosition % this.#width;
-				const currentX = carPosition % this.#width;
-				const dx = currentX - previousX;
-				pathCost += Math.abs(dx);
-			}
-			if(car.direction == VERTICAL) {
-				const previousY = Math.floor(hintPosition / this.#width);
-				const currentY = Math.floor(carPosition / this.#width);
-				const dy = currentY - previousY;
-				pathCost += Math.abs(dy);
-			}
-		}
-		return pathCost;
-	}
-	#getPathCost_absolute() {
-		let pathCost = 0;
-		const parentComputedCarPositions = this.#parent.getComputedCarPositions();
-		const computedCarPositions = this.getComputedCarPositions();
-		for(const car of this.#allCars) {
-			const previousCarPosition = parentComputedCarPositions[car.id];
-			const currentCarPosition = computedCarPositions[car.id];
-			if(previousCarPosition == currentCarPosition) continue;
-			if(car.direction == HORIZONTAL) {
-				const previousX = previousCarPosition % this.#width;
-				const currentX = currentCarPosition % this.#width;
-				const dx = currentX - previousX;
-				pathCost += Math.abs(dx);
-			}
-			if(car.direction == VERTICAL) {
-				const previousY = Math.floor(previousCarPosition / this.#width);
-				const currentY = Math.floor(currentCarPosition / this.#width);
-				const dy = currentY - previousY;
-				pathCost += Math.abs(dy);
-			}
-		}
-		return pathCost;
 	}
 	/**
 	 * @param {number} direction

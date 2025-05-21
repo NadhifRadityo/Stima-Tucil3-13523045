@@ -116,20 +116,20 @@ const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 		solverName = "QueueSolverUniform";
 		if(heuristicName == "none") {
 			heuristicGName = "Uniform";
-			heuristicHName = "None";
+			heuristicHName = "Zero";
 		} else
 			throw `Unknown heuristic for UCS algorithm: ${heuristicName}`;
 	}
 	if(algorithmName == "gbfs") {
 		solverName = "QueueSolver";
 		if(heuristicName == "car-distance") {
-			heuristicGName = "None";
+			heuristicGName = "Zero";
 			heuristicHName = "CarDistance";	
 		} else if(heuristicName == "car-blocked") {
-			heuristicGName = "None";
+			heuristicGName = "Zero";
 			heuristicHName = "CarBlocked";	
 		} else if(heuristicName == "car-blocked-recursive") {
-			heuristicGName = "None";
+			heuristicGName = "Zero";
 			heuristicHName = "CarBlockedRecursive";	
 		} else
 			throw `Unknown heuristic for GBFS algorithm: ${heuristicName}`;
@@ -137,13 +137,13 @@ const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 	if(algorithmName == "a-star") {
 		solverName = "QueueSolver";
 		if(heuristicName == "car-distance") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarDistance";	
 		} else if(heuristicName == "car-blocked") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlocked";	
 		} else if(heuristicName == "car-blocked-recursive") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlockedRecursive";	
 		} else
 			throw `Unknown heuristic for A-Star algorithm: ${heuristicName}`;
@@ -151,13 +151,13 @@ const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 	if(algorithmName == "ida-star") {
 		solverName = "StackSolver";
 		if(heuristicName == "car-distance") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarDistance";	
 		} else if(heuristicName == "car-blocked") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlocked";	
 		} else if(heuristicName == "car-blocked-recursive") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlockedRecursive";	
 		} else
 			throw `Unknown heuristic for IDA-Star algorithm: ${heuristicName}`;
@@ -165,13 +165,13 @@ const getSolverNameAndHeuristicName = (algorithmName, heuristicName) => {
 	if(algorithmName == "ida-star-approx") {
 		solverName = "StackSolverApprox";
 		if(heuristicName == "car-distance") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarDistance";	
 		} else if(heuristicName == "car-blocked") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlocked";	
 		} else if(heuristicName == "car-blocked-recursive") {
-			heuristicGName = "PathCost";
+			heuristicGName = "Uniform";
 			heuristicHName = "CarBlockedRecursive";	
 		} else
 			throw `Unknown heuristic for IDA-Star Approx algorithm: ${heuristicName}`;

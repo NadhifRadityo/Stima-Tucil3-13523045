@@ -1,6 +1,6 @@
 import { parentPort } from "worker_threads";
 import { setupMessagingHandler, Sia, DeSia } from "../protocols.mjs";
-import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicNone, heuristicUniform, heuristicPathCost, heuristicCarDistance, heuristicCarBlocked, heuristicCarBlockedRecursive } from "../logic.mjs";
+import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicZero, heuristicUniform, heuristicCarDistance, heuristicCarBlocked, heuristicCarBlockedRecursive } from "../logic.mjs";
 
 const solvers = {
 	"QueueSolver": QueueSolver,
@@ -9,9 +9,8 @@ const solvers = {
 	"StackSolverApprox": StackSolverApprox
 };
 const heuristics = {
-	"None": heuristicNone,
+	"Zero": heuristicZero,
 	"Uniform": heuristicUniform,
-	"PathCost": heuristicPathCost,
 	"CarDistance": heuristicCarDistance,
 	"CarBlocked": heuristicCarBlocked,
 	"CarBlockedRecursive": heuristicCarBlockedRecursive
@@ -97,7 +96,8 @@ onMessage(e => {
 				searchCount: lastSolver.getSearchCount(),
 				...(errorMessage == null ? {
 					branchingFactor: solution != null ? computeBranchingFactor(lastSolver.getSearchCount(), solution.getDepth()).toFixed(3) : null,
-					solutionSteps: solution != null ? solution.getStepDescription().split(" ").map(s => [...s.matchAll(/^([0-9]+)([\+-][0-9]+)$/g)][0]).map(r => r == null ? "∅" : `${r[1] == "0" ? "P" : board.cars.find(c => `${c.id}` == r[1])?.symbol ?? "?"}${r[2]}`).join(" ") : "NO SOLUTION"
+					solutionSteps: solution.getStepDescription(),
+					parsedSolutionSteps: solution != null ? solution.getStepDescription().split(" ").map(s => [...s.matchAll(/^([0-9]+)([\+-][0-9]+)$/g)][0]).map(r => r == null ? "∅" : `${r[1] == "0" ? "P" : board.cars.find(c => `${c.id}` == r[1])?.symbol ?? "?"}${r[2]}`).join(" ") : "NO SOLUTION"
 				} : {
 					errorMessage: errorMessage
 				})

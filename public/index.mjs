@@ -25,7 +25,7 @@ const reconstructCarPositions = (board, solutionSteps) => {
 
 const ApplicationElement = () => {
 	const boardElementRef = useRef(null);
-	const [boardText, setBoardText] = useState(`6 6
+	const [boardString, setBoardString] = useState(`6 6
 11
 AAB..F
 ..BCDF
@@ -44,7 +44,7 @@ LLJMM.`);
 		const file = e.target.files?.[0];
 		if(file == null) return;
 		const reader = new FileReader();
-		reader.onload = event => setBoardText(event.target.result);
+		reader.onload = event => setBoardString(event.target.result);
 		reader.readAsText(file);
 	};
 	const handleSubmit = async () => {
@@ -52,7 +52,7 @@ LLJMM.`);
 		setIsPending(true);
 		let result;
 		try {
-			result = await solvePuzzle(boardText, algorithmName, heuristicName);
+			result = await solvePuzzle(boardString, algorithmName, heuristicName);
 		} catch(e) {
 			alert(`Tidak dapat menjalankan solver: ${e.stack ?? e.message ?? e}`);
 			return;
@@ -70,6 +70,87 @@ LLJMM.`);
 		setStepPositions(stepPositions);
 		setCurrentStepPosition(stepPositions.length - 1);
 	};
+	useLayoutEffect(() => {
+		const decodeBase64 = base64 => {
+			const text = atob(base64);
+			const length = text.length;
+			const bytes = new Uint8Array(length);
+			for(let i = 0; i < length; i++)
+				bytes[i] = text.charCodeAt(i);
+			const decoder = new TextDecoder();
+			return decoder.decode(bytes);
+		};
+		const onHashUpdate = () => {
+			try {
+				const hash = location.hash.slice(1);
+				const result = JSON.parse(decodeBase64(hash));
+				setBoardString(result.boardString);
+				if(result.combinationName == "UCS") {
+					setAlgorithmName("ucs");
+					setHeuristicName("none");
+				}
+				if(result.combinationName == "GBFS CarDistance") {
+					setAlgorithmName("gbfs");
+					setHeuristicName("car-distance");
+				}
+				if(result.combinationName == "GBFS CarBlocked") {
+					setAlgorithmName("gbfs");
+					setHeuristicName("car-blocked");
+				}
+				if(result.combinationName == "GBFS CarBlockedRecursive") {
+					setAlgorithmName("gbfs");
+					setHeuristicName("car-blocked-recursive");
+				}
+				if(result.combinationName == "A* CarDistance") {
+					setAlgorithmName("a-star");
+					setHeuristicName("car-distance");
+				}
+				if(result.combinationName == "A* CarBlocked") {
+					setAlgorithmName("a-star");
+					setHeuristicName("car-blocked");
+				}
+				if(result.combinationName == "A* CarBlockedRecursive") {
+					setAlgorithmName("a-star");
+					setHeuristicName("car-blocked-recursive");
+				}
+				if(result.combinationName == "IDA* CarDistance") {
+					setAlgorithmName("ida-star");
+					setHeuristicName("car-distance");
+				}
+				if(result.combinationName == "IDA* CarBlocked") {
+					setAlgorithmName("ida-star");
+					setHeuristicName("car-blocked");
+				}
+				if(result.combinationName == "IDA* CarBlockedRecursive") {
+					setAlgorithmName("ida-star");
+					setHeuristicName("car-blocked-recursive");
+				}
+				if(result.combinationName == "IDA* Approx CarDistance") {
+					setAlgorithmName("ida-star-approx");
+					setHeuristicName("car-distance");
+				}
+				if(result.combinationName == "IDA* Approx CarBlocked") {
+					setAlgorithmName("ida-star-approx");
+					setHeuristicName("car-blocked");
+				}
+				if(result.combinationName == "IDA* Approx CarBlockedRecursive") {
+					setAlgorithmName("ida-star-approx");
+					setHeuristicName("car-blocked-recursive");
+				}
+				setResult(result);
+				const stepPositions = reconstructCarPositions(result.board, result.solutionSteps);
+				setStepPositions(stepPositions);
+				setCurrentStepPosition(stepPositions.length - 1);
+			} catch(e) {
+				console.log(e);
+			}
+		};
+		onHashUpdate();
+		window.addEventListener("hashchange", onHashUpdate);
+		return () => {
+			window.removeEventListener("hashchange", onHashUpdate);
+		};
+	}, []);
 
 	const stepPositionsRef = useRef(null);
 	stepPositionsRef.current = stepPositions;
@@ -117,14 +198,14 @@ LLJMM.`);
 			const abortController = abortController_ = new AbortController();
 			const abortPromise = new Promise((_, r) => abortController.signal.addEventListener("abort", r));
 			recorderVideoRef.current.abortController = abortController;
-			const puzzles = boardText.split("=====================================\n").filter(p => p.trim() != "");
+			const puzzles = boardString.split("=====================================\n").filter(p => p.trim() != "");
 			for(const puzzle of puzzles) {
 				const lines = puzzle.split("\n");
 				const name = lines.shift().trim();
 				const board = lines.join("\n");
 				const fileHandle = await Promise.race([directoryHandle.getFileHandle(`${name}_${algorithmName}_${heuristicName}.mp4`, { create: true }), abortPromise]);
 				const fileWritable = await Promise.race([fileHandle.createWritable(), abortPromise]);
-				setBoardText(board);
+				setBoardString(board);
 				setAlgorithmName(algorithmName);
 				setHeuristicName(heuristicName);
 				await Promise.race([waitRerender(), abortPromise]);
@@ -174,8 +255,8 @@ LLJMM.`);
 				<div className="space-y-4">
 					<label className="block font-semibold">Konfigurasi Permainan:</label>
 					<textarea
-						value=${boardText}
-						onInput=${e => setBoardText(e.target.value)}
+						value=${boardString}
+						onInput=${e => setBoardString(e.target.value)}
 						className="w-full p-3 border rounded h-44 font-mono text-sm resize-none"
 						placeholder="Paste konfigurasi dari file .txt di sini"
 					></textarea>
@@ -243,7 +324,7 @@ LLJMM.`);
 			</div>
 			${result && html`<${React.Fragment}>
 				<div className="bg-gray-100 p-4 rounded shadow text-sm">
-					<p><strong>Waktu eksekusi:</strong> ${result.duration}ms</p>
+					<p><strong>Waktu eksekusi:</strong> ${result.duration}${typeof result.duration == "number" ? "ms" : ""}</p>
 					<p><strong>Tick count:</strong> ${result.tickCount}</p>
 					<p><strong>Node diperiksa:</strong> ${result.visitedNodes}</p>
 					<p><strong>Banyak pencarian:</strong> ${result.searchCount}</p>

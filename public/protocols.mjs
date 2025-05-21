@@ -655,7 +655,7 @@ const SIA_BUILTIN_CONSTRUCTORS = [
 export class Sia {
 	constructor({ size = 33554432, constructors = SIA_BUILTIN_CONSTRUCTORS } = {}) {
 		this.buffer = new Uint8Array(size);
-		this.dataView = new DataView(this.buffer.buffer);
+		this.dataView = new DataView(this.buffer.buffer, this.buffer.byteOffset, this.buffer.byteLength);
 		this.textEncoder = new TextEncoder();
 		this.offset = 0;
 		this.constructors = constructors;
@@ -729,7 +729,7 @@ export class Sia {
 		this.offset += 8;
 	}
 	writeString(str, offset) {
-		const subBuffer = new Uint8Array(this.buffer.buffer, offset, this.buffer.byteLength - offset);
+		const subBuffer = new Uint8Array(this.buffer.buffer, this.buffer.byteOffset + offset, this.buffer.byteLength - offset);
 		return this.textEncoder.encodeInto(str, subBuffer).written;
 	}
 
@@ -1240,7 +1240,7 @@ export class DeSia {
 		return number;
 	}
 	readString(length) {
-		const str = this.textDecoder.decode(new Uint8Array(this.buffer.buffer, this.offset, length));
+		const str = this.textDecoder.decode(new Uint8Array(this.buffer.buffer, this.buffer.byteOffset + this.offset, length));
 		this.offset += length;
 		return str;
 	}
@@ -1531,7 +1531,7 @@ export class DeSia {
 			}
 			const buffer = new Uint8Array(length);
 			this.refs[this.refCount++] = buffer.buffer;
-			buffer.set(new Uint8Array(this.buffer.buffer, this.offset, length));
+			buffer.set(new Uint8Array(this.buffer.buffer, this.buffer.byteOffset + this.offset, length));
 			this.offset += length;
 			return buffer.buffer;
 		}
@@ -1557,7 +1557,7 @@ export class DeSia {
 		}
 		const buffer = new Uint8Array(length);
 		this.refs[this.refCount++] = buffer.buffer;
-		buffer.set(new Uint8Array(this.buffer.buffer, this.offset, length));
+		buffer.set(new Uint8Array(this.buffer.buffer, this.buffer.byteOffset + this.offset, length));
 		this.offset += length;
 		return buffer.buffer;
 	}

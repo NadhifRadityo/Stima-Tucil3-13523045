@@ -1,6 +1,6 @@
 import { parentPort } from "worker_threads";
 import { setupMessagingHandler, Sia, DeSia } from "./protocols.mjs";
-import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicNone, heuristicUniform, heuristicPathCost, heuristicCarDistance, heuristicCarBlocked, heuristicCarBlockedRecursive } from "./logic.mjs";
+import { QueueSolver, QueueSolverUniform, StackSolver, StackSolverApprox, computeBranchingFactor, State, heuristicZero, heuristicUniform, heuristicCarDistance, heuristicCarBlocked, heuristicCarBlockedRecursive } from "./logic.mjs";
 
 const solvers = {
 	"QueueSolver": QueueSolver,
@@ -9,9 +9,8 @@ const solvers = {
 	"StackSolverApprox": StackSolverApprox
 };
 const heuristics = {
-	"None": heuristicNone,
+	"Zero": heuristicZero,
 	"Uniform": heuristicUniform,
-	"PathCost": heuristicPathCost,
 	"CarDistance": heuristicCarDistance,
 	"CarBlocked": heuristicCarBlocked,
 	"CarBlockedRecursive": heuristicCarBlockedRecursive
